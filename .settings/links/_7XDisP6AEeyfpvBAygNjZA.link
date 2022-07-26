@@ -1,0 +1,41 @@
+{
+  "itemId" : "_7XDisP6AEeyfpvBAygNjZA",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_Cn4oIPXSEeynBeV-b3d1ug",
+    "parameterList" : [ {
+      "id" : "_CoeeAfXSEeynBeV-b3d1ug",
+      "name" : "GIM_Port"
+    }, {
+      "id" : "_CoeeAvXSEeynBeV-b3d1ug",
+      "name" : "GIM_Password"
+    }, {
+      "id" : "_CoeeA_XSEeynBeV-b3d1ug",
+      "name" : "GIM_Schema_PO"
+    }, {
+      "id" : "_CoeeBPXSEeynBeV-b3d1ug",
+      "name" : "GIM_Schema_System"
+    }, {
+      "id" : "_CoeeBfXSEeynBeV-b3d1ug",
+      "name" : "GIM_Login"
+    }, {
+      "id" : "_CoeeBvXSEeynBeV-b3d1ug",
+      "name" : "GIM_Server"
+    }, {
+      "id" : "_CoeeB_XSEeynBeV-b3d1ug",
+      "name" : "GIM_Database"
+    }, {
+      "id" : "_CoeeCPXSEeynBeV-b3d1ug",
+      "name" : "GIM_AdditionalParams"
+    }, {
+      "id" : "_8uAa8PXiEeynBeV-b3d1ug",
+      "name" : "GIM_Schema_Inventory"
+    }, {
+      "id" : "_jKphMPX9EeynBeV-b3d1ug",
+      "name" : "GIM_Schema_Master"
+    }, {
+      "id" : "_bEjEoP6AEeyfpvBAygNjZA",
+      "name" : "GIM_Schema_Order_Processing"
+    } ]
+  } ]
+}
