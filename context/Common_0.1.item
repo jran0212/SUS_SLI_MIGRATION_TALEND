@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_1AI5AAzbEe2eWPQCKoTP8Q" confirmationNeeded="false" name="Default">
-  <contextParameter xmi:id="_1AI5AQzbEe2eWPQCKoTP8Q" comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="056"/>
-  <contextParameter xmi:id="_1AI5AgzbEe2eWPQCKoTP8Q" comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
-  <contextParameter xmi:id="_1AI5AwzbEe2eWPQCKoTP8Q" comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="056"/>
-  <contextParameter xmi:id="_1AI5BAzbEe2eWPQCKoTP8Q" comment="svop" name="svop" prompt="svop?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
-</talendfile:ContextType>
