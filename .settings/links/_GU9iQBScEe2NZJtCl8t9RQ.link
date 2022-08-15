@@ -1,0 +1,32 @@
+{
+  "itemId" : "_GU9iQBScEe2NZJtCl8t9RQ",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_VeNiUPILEeyQ56Px76rksQ",
+    "parameterList" : [ {
+      "id" : "_W2RE8PIMEeyQ56Px76rksQ",
+      "name" : "SUS_Port"
+    }, {
+      "id" : "_W2RE8fIMEeyQ56Px76rksQ",
+      "name" : "SUS_Login"
+    }, {
+      "id" : "_W2RE8vIMEeyQ56Px76rksQ",
+      "name" : "SUS_Password"
+    }, {
+      "id" : "_W2RE8_IMEeyQ56Px76rksQ",
+      "name" : "SUS_Database"
+    }, {
+      "id" : "_W2RE9PIMEeyQ56Px76rksQ",
+      "name" : "SUS_Server"
+    }, {
+      "id" : "_W2RE9fIMEeyQ56Px76rksQ",
+      "name" : "SUS_Schema"
+    }, {
+      "id" : "_W2RE9vIMEeyQ56Px76rksQ",
+      "name" : "SUS_Additional_Params"
+    }, {
+      "id" : "_DNlhoBScEe2NZJtCl8t9RQ",
+      "name" : "SUS_Database_ARDBFA"
+    } ]
+  } ]
+}
