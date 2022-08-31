@@ -6875,7 +6875,7 @@ class DealChildJobLibrary_tRunJob_2 {
 			String osName_tRunJob_2 = System.getProperty("os.name");
 			if (osName_tRunJob_2 != null && osName_tRunJob_2.toLowerCase().startsWith("win")){
 				
-						paraList_tRunJob_2.add("java");
+						paraList_tRunJob_2.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_2.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -6905,21 +6905,23 @@ class DealChildJobLibrary_tRunJob_2 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_2.add("-D" + key + "=" + System.getProperty(key)));
 					
-		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-Xms256M");
 		      				
 		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-Xmx1024M");
 		      				
+		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-Dfile.encoding=UTF-8");
+		      				
+		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-cp");
 		      				
-              					String classpath_tRunJob_2_5 = ".;../lib/routines.jar;../lib/log4j-slf4j-impl-2.13.2.jar;../lib/log4j-api-2.13.2.jar;../lib/log4j-core-2.13.2.jar;../lib/jboss-marshalling-2.0.12.Final.jar;../lib/dom4j-2.1.3.jar;../lib/slf4j-api-1.7.29.jar;../lib/jt400-9.8.jar;../lib/postgresql-42.2.14.jar;../lib/crypto-utils-0.31.12.jar;anticipated_demand_inbound_0_1.jar;";
+              					String classpath_tRunJob_2_6 = "C:/Program Files (x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/anticipated_demand_inbound_0.1/target/classpath.jar;";
               					
               					if(audit_jar_path_tRunJob_2!=null && !audit_jar_path_tRunJob_2.isEmpty()) {
-		      						classpath_tRunJob_2_5 += audit_jar_path_tRunJob_2;
+		      						classpath_tRunJob_2_6 += audit_jar_path_tRunJob_2;
 		      					}
 		      					
-	        					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, dealChildJobLibrary_tRunJob_2.replaceJarPathsFromCrcMap(classpath_tRunJob_2_5), true);
+	        					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, dealChildJobLibrary_tRunJob_2.replaceJarPathsFromCrcMap(classpath_tRunJob_2_6), true);
 		      				
 		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "sus_sli_etl.anticipated_demand_inbound_0_1.Anticipated_Demand_Inbound");
 		      				
@@ -6929,13 +6931,13 @@ class DealChildJobLibrary_tRunJob_2 {
 		      				
 		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "--father_node=tRunJob_2");
 		      				
-		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "--context=PROD");
+		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "--context=Default");
 		      				
 		      					jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "%*");
 		      				
 			} else {
 	      		
-						paraList_tRunJob_2.add("java");
+						paraList_tRunJob_2.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_2.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -6965,21 +6967,23 @@ class DealChildJobLibrary_tRunJob_2 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_2.add("-D" + key + "=" + System.getProperty(key)));
 					
-								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-Xms256M");
 		      				
 								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-Xmx1024M");
 		      				
+								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-Dfile.encoding=UTF-8");
+		      				
+								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "-cp");
 		      				
-		      					String classpath_tRunJob_2_5 = ".:$ROOT_PATH:$ROOT_PATH/../lib/routines.jar:$ROOT_PATH/../lib/log4j-slf4j-impl-2.13.2.jar:$ROOT_PATH/../lib/log4j-api-2.13.2.jar:$ROOT_PATH/../lib/log4j-core-2.13.2.jar:$ROOT_PATH/../lib/jboss-marshalling-2.0.12.Final.jar:$ROOT_PATH/../lib/dom4j-2.1.3.jar:$ROOT_PATH/../lib/slf4j-api-1.7.29.jar:$ROOT_PATH/../lib/jt400-9.8.jar:$ROOT_PATH/../lib/postgresql-42.2.14.jar:$ROOT_PATH/../lib/crypto-utils-0.31.12.jar:$ROOT_PATH/anticipated_demand_inbound_0_1.jar:";
+		      					String classpath_tRunJob_2_6 = "C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/anticipated_demand_inbound_0.1/target/classes:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/anticipated_demand_inbound_0.1/src/main/ext-resources:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/code/routines/target/classes:.:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.13.2/log4j-slf4j-impl-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-api/2.13.2/log4j-api-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-core/2.13.2/log4j-core-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/jboss/marshalling/jboss-marshalling/2.0.12.Final/jboss-marshalling-2.0.12.Final.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/net/sf/jt400/jt400/9.8/jt400-9.8.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/postgresql/postgresql/42.2.14/postgresql-42.2.14.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/talend/daikon/crypto-utils/0.31.12/crypto-utils-0.31.12.jar:";
 		      					
 		      					if(audit_jar_path_tRunJob_2!=null && !audit_jar_path_tRunJob_2.isEmpty()) {
-		      						classpath_tRunJob_2_5 += audit_jar_path_tRunJob_2;
+		      						classpath_tRunJob_2_6 += audit_jar_path_tRunJob_2;
 		      					}
 		      					
-								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, dealChildJobLibrary_tRunJob_2.replaceJarPathsFromCrcMap(classpath_tRunJob_2_5).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
+	      						jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, dealChildJobLibrary_tRunJob_2.replaceJarPathsFromCrcMap(classpath_tRunJob_2_6).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
 		      				
 								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "sus_sli_etl.anticipated_demand_inbound_0_1.Anticipated_Demand_Inbound");
 		      				
@@ -6989,7 +6993,7 @@ class DealChildJobLibrary_tRunJob_2 {
 		      				
 								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "--father_node=tRunJob_2");
 		      				
-								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "--context=PROD");
+								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "--context=Default");
 		      				
 								jvm_argument_helper_tRunJob_2.addArgumentsTo(paraList_tRunJob_2, "$@");
 		      				
@@ -8183,7 +8187,7 @@ class DealChildJobLibrary_tRunJob_4 {
 			String osName_tRunJob_4 = System.getProperty("os.name");
 			if (osName_tRunJob_4 != null && osName_tRunJob_4.toLowerCase().startsWith("win")){
 				
-						paraList_tRunJob_4.add("java");
+						paraList_tRunJob_4.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_4.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -8213,21 +8217,23 @@ class DealChildJobLibrary_tRunJob_4 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_4.add("-D" + key + "=" + System.getProperty(key)));
 					
-		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-Xms256M");
 		      				
 		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-Xmx1024M");
 		      				
+		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-Dfile.encoding=UTF-8");
+		      				
+		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-cp");
 		      				
-              					String classpath_tRunJob_4_5 = ".;../lib/routines.jar;../lib/log4j-slf4j-impl-2.13.2.jar;../lib/log4j-api-2.13.2.jar;../lib/log4j-core-2.13.2.jar;../lib/jboss-marshalling-2.0.12.Final.jar;../lib/dom4j-2.1.3.jar;../lib/slf4j-api-1.7.29.jar;../lib/jt400-9.8.jar;../lib/postgresql-42.2.14.jar;../lib/crypto-utils-0.31.12.jar;item_relationship_inbound_0_1.jar;";
+              					String classpath_tRunJob_4_6 = "C:/Program Files (x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_relationship_inbound_0.1/target/classpath.jar;";
               					
               					if(audit_jar_path_tRunJob_4!=null && !audit_jar_path_tRunJob_4.isEmpty()) {
-		      						classpath_tRunJob_4_5 += audit_jar_path_tRunJob_4;
+		      						classpath_tRunJob_4_6 += audit_jar_path_tRunJob_4;
 		      					}
 		      					
-	        					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, dealChildJobLibrary_tRunJob_4.replaceJarPathsFromCrcMap(classpath_tRunJob_4_5), true);
+	        					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, dealChildJobLibrary_tRunJob_4.replaceJarPathsFromCrcMap(classpath_tRunJob_4_6), true);
 		      				
 		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "sus_sli_etl.item_relationship_inbound_0_1.Item_Relationship_Inbound");
 		      				
@@ -8237,13 +8243,13 @@ class DealChildJobLibrary_tRunJob_4 {
 		      				
 		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "--father_node=tRunJob_4");
 		      				
-		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "--context=PROD");
+		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "--context=Default");
 		      				
 		      					jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "%*");
 		      				
 			} else {
 	      		
-						paraList_tRunJob_4.add("java");
+						paraList_tRunJob_4.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_4.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -8273,21 +8279,23 @@ class DealChildJobLibrary_tRunJob_4 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_4.add("-D" + key + "=" + System.getProperty(key)));
 					
-								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-Xms256M");
 		      				
 								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-Xmx1024M");
 		      				
+								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-Dfile.encoding=UTF-8");
+		      				
+								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "-cp");
 		      				
-		      					String classpath_tRunJob_4_5 = ".:$ROOT_PATH:$ROOT_PATH/../lib/routines.jar:$ROOT_PATH/../lib/log4j-slf4j-impl-2.13.2.jar:$ROOT_PATH/../lib/log4j-api-2.13.2.jar:$ROOT_PATH/../lib/log4j-core-2.13.2.jar:$ROOT_PATH/../lib/jboss-marshalling-2.0.12.Final.jar:$ROOT_PATH/../lib/dom4j-2.1.3.jar:$ROOT_PATH/../lib/slf4j-api-1.7.29.jar:$ROOT_PATH/../lib/jt400-9.8.jar:$ROOT_PATH/../lib/postgresql-42.2.14.jar:$ROOT_PATH/../lib/crypto-utils-0.31.12.jar:$ROOT_PATH/item_relationship_inbound_0_1.jar:";
+		      					String classpath_tRunJob_4_6 = "C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_relationship_inbound_0.1/target/classes:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_relationship_inbound_0.1/src/main/ext-resources:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/code/routines/target/classes:.:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.13.2/log4j-slf4j-impl-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-api/2.13.2/log4j-api-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-core/2.13.2/log4j-core-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/jboss/marshalling/jboss-marshalling/2.0.12.Final/jboss-marshalling-2.0.12.Final.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/net/sf/jt400/jt400/9.8/jt400-9.8.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/postgresql/postgresql/42.2.14/postgresql-42.2.14.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/talend/daikon/crypto-utils/0.31.12/crypto-utils-0.31.12.jar:";
 		      					
 		      					if(audit_jar_path_tRunJob_4!=null && !audit_jar_path_tRunJob_4.isEmpty()) {
-		      						classpath_tRunJob_4_5 += audit_jar_path_tRunJob_4;
+		      						classpath_tRunJob_4_6 += audit_jar_path_tRunJob_4;
 		      					}
 		      					
-								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, dealChildJobLibrary_tRunJob_4.replaceJarPathsFromCrcMap(classpath_tRunJob_4_5).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
+	      						jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, dealChildJobLibrary_tRunJob_4.replaceJarPathsFromCrcMap(classpath_tRunJob_4_6).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
 		      				
 								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "sus_sli_etl.item_relationship_inbound_0_1.Item_Relationship_Inbound");
 		      				
@@ -8297,7 +8305,7 @@ class DealChildJobLibrary_tRunJob_4 {
 		      				
 								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "--father_node=tRunJob_4");
 		      				
-								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "--context=PROD");
+								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "--context=Default");
 		      				
 								jvm_argument_helper_tRunJob_4.addArgumentsTo(paraList_tRunJob_4, "$@");
 		      				
@@ -9491,7 +9499,7 @@ class DealChildJobLibrary_tRunJob_5 {
 			String osName_tRunJob_5 = System.getProperty("os.name");
 			if (osName_tRunJob_5 != null && osName_tRunJob_5.toLowerCase().startsWith("win")){
 				
-						paraList_tRunJob_5.add("java");
+						paraList_tRunJob_5.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_5.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -9521,21 +9529,23 @@ class DealChildJobLibrary_tRunJob_5 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_5.add("-D" + key + "=" + System.getProperty(key)));
 					
-		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-Xms256M");
 		      				
 		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-Xmx1024M");
 		      				
+		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-Dfile.encoding=UTF-8");
+		      				
+		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-cp");
 		      				
-              					String classpath_tRunJob_5_5 = ".;../lib/routines.jar;../lib/log4j-slf4j-impl-2.13.2.jar;../lib/log4j-api-2.13.2.jar;../lib/log4j-core-2.13.2.jar;../lib/jboss-marshalling-2.0.12.Final.jar;../lib/dom4j-2.1.3.jar;../lib/slf4j-api-1.7.29.jar;../lib/jt400-9.8.jar;../lib/postgresql-42.2.14.jar;../lib/crypto-utils-0.31.12.jar;item_true_vendor_inbound_0_1.jar;";
+              					String classpath_tRunJob_5_6 = "C:/Program Files (x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_true_vendor_inbound_0.1/target/classpath.jar;";
               					
               					if(audit_jar_path_tRunJob_5!=null && !audit_jar_path_tRunJob_5.isEmpty()) {
-		      						classpath_tRunJob_5_5 += audit_jar_path_tRunJob_5;
+		      						classpath_tRunJob_5_6 += audit_jar_path_tRunJob_5;
 		      					}
 		      					
-	        					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, dealChildJobLibrary_tRunJob_5.replaceJarPathsFromCrcMap(classpath_tRunJob_5_5), true);
+	        					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, dealChildJobLibrary_tRunJob_5.replaceJarPathsFromCrcMap(classpath_tRunJob_5_6), true);
 		      				
 		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "sus_sli_etl.item_true_vendor_inbound_0_1.Item_True_Vendor_Inbound");
 		      				
@@ -9545,13 +9555,13 @@ class DealChildJobLibrary_tRunJob_5 {
 		      				
 		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "--father_node=tRunJob_5");
 		      				
-		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "--context=PROD");
+		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "--context=Default");
 		      				
 		      					jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "%*");
 		      				
 			} else {
 	      		
-						paraList_tRunJob_5.add("java");
+						paraList_tRunJob_5.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_5.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -9581,21 +9591,23 @@ class DealChildJobLibrary_tRunJob_5 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_5.add("-D" + key + "=" + System.getProperty(key)));
 					
-								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-Xms256M");
 		      				
 								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-Xmx1024M");
 		      				
+								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-Dfile.encoding=UTF-8");
+		      				
+								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "-cp");
 		      				
-		      					String classpath_tRunJob_5_5 = ".:$ROOT_PATH:$ROOT_PATH/../lib/routines.jar:$ROOT_PATH/../lib/log4j-slf4j-impl-2.13.2.jar:$ROOT_PATH/../lib/log4j-api-2.13.2.jar:$ROOT_PATH/../lib/log4j-core-2.13.2.jar:$ROOT_PATH/../lib/jboss-marshalling-2.0.12.Final.jar:$ROOT_PATH/../lib/dom4j-2.1.3.jar:$ROOT_PATH/../lib/slf4j-api-1.7.29.jar:$ROOT_PATH/../lib/jt400-9.8.jar:$ROOT_PATH/../lib/postgresql-42.2.14.jar:$ROOT_PATH/../lib/crypto-utils-0.31.12.jar:$ROOT_PATH/item_true_vendor_inbound_0_1.jar:";
+		      					String classpath_tRunJob_5_6 = "C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_true_vendor_inbound_0.1/target/classes:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_true_vendor_inbound_0.1/src/main/ext-resources:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/code/routines/target/classes:.:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.13.2/log4j-slf4j-impl-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-api/2.13.2/log4j-api-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-core/2.13.2/log4j-core-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/jboss/marshalling/jboss-marshalling/2.0.12.Final/jboss-marshalling-2.0.12.Final.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/net/sf/jt400/jt400/9.8/jt400-9.8.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/postgresql/postgresql/42.2.14/postgresql-42.2.14.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/talend/daikon/crypto-utils/0.31.12/crypto-utils-0.31.12.jar:";
 		      					
 		      					if(audit_jar_path_tRunJob_5!=null && !audit_jar_path_tRunJob_5.isEmpty()) {
-		      						classpath_tRunJob_5_5 += audit_jar_path_tRunJob_5;
+		      						classpath_tRunJob_5_6 += audit_jar_path_tRunJob_5;
 		      					}
 		      					
-								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, dealChildJobLibrary_tRunJob_5.replaceJarPathsFromCrcMap(classpath_tRunJob_5_5).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
+	      						jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, dealChildJobLibrary_tRunJob_5.replaceJarPathsFromCrcMap(classpath_tRunJob_5_6).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
 		      				
 								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "sus_sli_etl.item_true_vendor_inbound_0_1.Item_True_Vendor_Inbound");
 		      				
@@ -9605,7 +9617,7 @@ class DealChildJobLibrary_tRunJob_5 {
 		      				
 								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "--father_node=tRunJob_5");
 		      				
-								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "--context=PROD");
+								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "--context=Default");
 		      				
 								jvm_argument_helper_tRunJob_5.addArgumentsTo(paraList_tRunJob_5, "$@");
 		      				
@@ -10799,7 +10811,7 @@ class DealChildJobLibrary_tRunJob_6 {
 			String osName_tRunJob_6 = System.getProperty("os.name");
 			if (osName_tRunJob_6 != null && osName_tRunJob_6.toLowerCase().startsWith("win")){
 				
-						paraList_tRunJob_6.add("java");
+						paraList_tRunJob_6.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_6.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -10829,21 +10841,23 @@ class DealChildJobLibrary_tRunJob_6 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_6.add("-D" + key + "=" + System.getProperty(key)));
 					
-		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-Xms256M");
 		      				
 		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-Xmx1024M");
 		      				
+		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-Dfile.encoding=UTF-8");
+		      				
+		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-cp");
 		      				
-              					String classpath_tRunJob_6_5 = ".;../lib/routines.jar;../lib/log4j-slf4j-impl-2.13.2.jar;../lib/log4j-api-2.13.2.jar;../lib/log4j-core-2.13.2.jar;../lib/jboss-marshalling-2.0.12.Final.jar;../lib/dom4j-2.1.3.jar;../lib/slf4j-api-1.7.29.jar;../lib/jt400-9.8.jar;../lib/postgresql-42.2.14.jar;../lib/crypto-utils-0.31.12.jar;vendor_item_inbound_0_1.jar;";
+              					String classpath_tRunJob_6_6 = "C:/Program Files (x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/vendor_item_inbound_0.1/target/classpath.jar;";
               					
               					if(audit_jar_path_tRunJob_6!=null && !audit_jar_path_tRunJob_6.isEmpty()) {
-		      						classpath_tRunJob_6_5 += audit_jar_path_tRunJob_6;
+		      						classpath_tRunJob_6_6 += audit_jar_path_tRunJob_6;
 		      					}
 		      					
-	        					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, dealChildJobLibrary_tRunJob_6.replaceJarPathsFromCrcMap(classpath_tRunJob_6_5), true);
+	        					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, dealChildJobLibrary_tRunJob_6.replaceJarPathsFromCrcMap(classpath_tRunJob_6_6), true);
 		      				
 		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "sus_sli_etl.vendor_item_inbound_0_1.Vendor_Item_Inbound");
 		      				
@@ -10853,13 +10867,13 @@ class DealChildJobLibrary_tRunJob_6 {
 		      				
 		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "--father_node=tRunJob_6");
 		      				
-		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "--context=PROD");
+		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "--context=Default");
 		      				
 		      					jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "%*");
 		      				
 			} else {
 	      		
-						paraList_tRunJob_6.add("java");
+						paraList_tRunJob_6.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_6.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -10889,21 +10903,23 @@ class DealChildJobLibrary_tRunJob_6 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_6.add("-D" + key + "=" + System.getProperty(key)));
 					
-								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-Xms256M");
 		      				
 								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-Xmx1024M");
 		      				
+								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-Dfile.encoding=UTF-8");
+		      				
+								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "-cp");
 		      				
-		      					String classpath_tRunJob_6_5 = ".:$ROOT_PATH:$ROOT_PATH/../lib/routines.jar:$ROOT_PATH/../lib/log4j-slf4j-impl-2.13.2.jar:$ROOT_PATH/../lib/log4j-api-2.13.2.jar:$ROOT_PATH/../lib/log4j-core-2.13.2.jar:$ROOT_PATH/../lib/jboss-marshalling-2.0.12.Final.jar:$ROOT_PATH/../lib/dom4j-2.1.3.jar:$ROOT_PATH/../lib/slf4j-api-1.7.29.jar:$ROOT_PATH/../lib/jt400-9.8.jar:$ROOT_PATH/../lib/postgresql-42.2.14.jar:$ROOT_PATH/../lib/crypto-utils-0.31.12.jar:$ROOT_PATH/vendor_item_inbound_0_1.jar:";
+		      					String classpath_tRunJob_6_6 = "C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/vendor_item_inbound_0.1/target/classes:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/vendor_item_inbound_0.1/src/main/ext-resources:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/code/routines/target/classes:.:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.13.2/log4j-slf4j-impl-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-api/2.13.2/log4j-api-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-core/2.13.2/log4j-core-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/jboss/marshalling/jboss-marshalling/2.0.12.Final/jboss-marshalling-2.0.12.Final.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/net/sf/jt400/jt400/9.8/jt400-9.8.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/postgresql/postgresql/42.2.14/postgresql-42.2.14.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/talend/daikon/crypto-utils/0.31.12/crypto-utils-0.31.12.jar:";
 		      					
 		      					if(audit_jar_path_tRunJob_6!=null && !audit_jar_path_tRunJob_6.isEmpty()) {
-		      						classpath_tRunJob_6_5 += audit_jar_path_tRunJob_6;
+		      						classpath_tRunJob_6_6 += audit_jar_path_tRunJob_6;
 		      					}
 		      					
-								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, dealChildJobLibrary_tRunJob_6.replaceJarPathsFromCrcMap(classpath_tRunJob_6_5).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
+	      						jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, dealChildJobLibrary_tRunJob_6.replaceJarPathsFromCrcMap(classpath_tRunJob_6_6).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
 		      				
 								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "sus_sli_etl.vendor_item_inbound_0_1.Vendor_Item_Inbound");
 		      				
@@ -10913,7 +10929,7 @@ class DealChildJobLibrary_tRunJob_6 {
 		      				
 								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "--father_node=tRunJob_6");
 		      				
-								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "--context=PROD");
+								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "--context=Default");
 		      				
 								jvm_argument_helper_tRunJob_6.addArgumentsTo(paraList_tRunJob_6, "$@");
 		      				
@@ -12107,7 +12123,7 @@ class DealChildJobLibrary_tRunJob_8 {
 			String osName_tRunJob_8 = System.getProperty("os.name");
 			if (osName_tRunJob_8 != null && osName_tRunJob_8.toLowerCase().startsWith("win")){
 				
-						paraList_tRunJob_8.add("java");
+						paraList_tRunJob_8.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_8.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -12137,21 +12153,23 @@ class DealChildJobLibrary_tRunJob_8 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_8.add("-D" + key + "=" + System.getProperty(key)));
 					
-		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-Xms256M");
 		      				
 		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-Xmx1024M");
 		      				
+		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-Dfile.encoding=UTF-8");
+		      				
+		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-cp");
 		      				
-              					String classpath_tRunJob_8_5 = ".;../lib/routines.jar;../lib/log4j-slf4j-impl-2.13.2.jar;../lib/log4j-api-2.13.2.jar;../lib/log4j-core-2.13.2.jar;../lib/jboss-marshalling-2.0.12.Final.jar;../lib/dom4j-2.1.3.jar;../lib/slf4j-api-1.7.29.jar;../lib/jt400-9.8.jar;../lib/postgresql-42.2.14.jar;../lib/crypto-utils-0.31.12.jar;order_process_detail_inbound_0_1.jar;";
+              					String classpath_tRunJob_8_6 = "C:/Program Files (x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/order_process_detail_inbound_0.1/target/classpath.jar;";
               					
               					if(audit_jar_path_tRunJob_8!=null && !audit_jar_path_tRunJob_8.isEmpty()) {
-		      						classpath_tRunJob_8_5 += audit_jar_path_tRunJob_8;
+		      						classpath_tRunJob_8_6 += audit_jar_path_tRunJob_8;
 		      					}
 		      					
-	        					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, dealChildJobLibrary_tRunJob_8.replaceJarPathsFromCrcMap(classpath_tRunJob_8_5), true);
+	        					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, dealChildJobLibrary_tRunJob_8.replaceJarPathsFromCrcMap(classpath_tRunJob_8_6), true);
 		      				
 		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "sus_sli_etl.order_process_detail_inbound_0_1.Order_Process_Detail_Inbound");
 		      				
@@ -12161,13 +12179,13 @@ class DealChildJobLibrary_tRunJob_8 {
 		      				
 		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "--father_node=tRunJob_8");
 		      				
-		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "--context=PROD");
+		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "--context=Default");
 		      				
 		      					jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "%*");
 		      				
 			} else {
 	      		
-						paraList_tRunJob_8.add("java");
+						paraList_tRunJob_8.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_8.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -12197,21 +12215,23 @@ class DealChildJobLibrary_tRunJob_8 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_8.add("-D" + key + "=" + System.getProperty(key)));
 					
-								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-Xms256M");
 		      				
 								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-Xmx1024M");
 		      				
+								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-Dfile.encoding=UTF-8");
+		      				
+								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "-cp");
 		      				
-		      					String classpath_tRunJob_8_5 = ".:$ROOT_PATH:$ROOT_PATH/../lib/routines.jar:$ROOT_PATH/../lib/log4j-slf4j-impl-2.13.2.jar:$ROOT_PATH/../lib/log4j-api-2.13.2.jar:$ROOT_PATH/../lib/log4j-core-2.13.2.jar:$ROOT_PATH/../lib/jboss-marshalling-2.0.12.Final.jar:$ROOT_PATH/../lib/dom4j-2.1.3.jar:$ROOT_PATH/../lib/slf4j-api-1.7.29.jar:$ROOT_PATH/../lib/jt400-9.8.jar:$ROOT_PATH/../lib/postgresql-42.2.14.jar:$ROOT_PATH/../lib/crypto-utils-0.31.12.jar:$ROOT_PATH/order_process_detail_inbound_0_1.jar:";
+		      					String classpath_tRunJob_8_6 = "C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/order_process_detail_inbound_0.1/target/classes:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/order_process_detail_inbound_0.1/src/main/ext-resources:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/code/routines/target/classes:.:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.13.2/log4j-slf4j-impl-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-api/2.13.2/log4j-api-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-core/2.13.2/log4j-core-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/jboss/marshalling/jboss-marshalling/2.0.12.Final/jboss-marshalling-2.0.12.Final.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/net/sf/jt400/jt400/9.8/jt400-9.8.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/postgresql/postgresql/42.2.14/postgresql-42.2.14.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/talend/daikon/crypto-utils/0.31.12/crypto-utils-0.31.12.jar:";
 		      					
 		      					if(audit_jar_path_tRunJob_8!=null && !audit_jar_path_tRunJob_8.isEmpty()) {
-		      						classpath_tRunJob_8_5 += audit_jar_path_tRunJob_8;
+		      						classpath_tRunJob_8_6 += audit_jar_path_tRunJob_8;
 		      					}
 		      					
-								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, dealChildJobLibrary_tRunJob_8.replaceJarPathsFromCrcMap(classpath_tRunJob_8_5).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
+	      						jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, dealChildJobLibrary_tRunJob_8.replaceJarPathsFromCrcMap(classpath_tRunJob_8_6).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
 		      				
 								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "sus_sli_etl.order_process_detail_inbound_0_1.Order_Process_Detail_Inbound");
 		      				
@@ -12221,7 +12241,7 @@ class DealChildJobLibrary_tRunJob_8 {
 		      				
 								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "--father_node=tRunJob_8");
 		      				
-								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "--context=PROD");
+								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "--context=Default");
 		      				
 								jvm_argument_helper_tRunJob_8.addArgumentsTo(paraList_tRunJob_8, "$@");
 		      				
@@ -13415,7 +13435,7 @@ class DealChildJobLibrary_tRunJob_9 {
 			String osName_tRunJob_9 = System.getProperty("os.name");
 			if (osName_tRunJob_9 != null && osName_tRunJob_9.toLowerCase().startsWith("win")){
 				
-						paraList_tRunJob_9.add("java");
+						paraList_tRunJob_9.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_9.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -13445,21 +13465,23 @@ class DealChildJobLibrary_tRunJob_9 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_9.add("-D" + key + "=" + System.getProperty(key)));
 					
-		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-Xms256M");
 		      				
 		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-Xmx1024M");
 		      				
+		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-Dfile.encoding=UTF-8");
+		      				
+		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-cp");
 		      				
-              					String classpath_tRunJob_9_5 = ".;../lib/routines.jar;../lib/log4j-slf4j-impl-2.13.2.jar;../lib/log4j-api-2.13.2.jar;../lib/log4j-core-2.13.2.jar;../lib/jboss-marshalling-2.0.12.Final.jar;../lib/dom4j-2.1.3.jar;../lib/slf4j-api-1.7.29.jar;../lib/jt400-9.8.jar;../lib/postgresql-42.2.14.jar;../lib/crypto-utils-0.31.12.jar;rdc_item_pay_to_vendor_inbound_0_1.jar;";
+              					String classpath_tRunJob_9_6 = "C:/Program Files (x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/rdc_item_pay_to_vendor_inbound_0.1/target/classpath.jar;";
               					
               					if(audit_jar_path_tRunJob_9!=null && !audit_jar_path_tRunJob_9.isEmpty()) {
-		      						classpath_tRunJob_9_5 += audit_jar_path_tRunJob_9;
+		      						classpath_tRunJob_9_6 += audit_jar_path_tRunJob_9;
 		      					}
 		      					
-	        					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, dealChildJobLibrary_tRunJob_9.replaceJarPathsFromCrcMap(classpath_tRunJob_9_5), true);
+	        					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, dealChildJobLibrary_tRunJob_9.replaceJarPathsFromCrcMap(classpath_tRunJob_9_6), true);
 		      				
 		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "sus_sli_etl.rdc_item_pay_to_vendor_inbound_0_1.Rdc_Item_Pay_To_Vendor_Inbound");
 		      				
@@ -13469,13 +13491,13 @@ class DealChildJobLibrary_tRunJob_9 {
 		      				
 		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "--father_node=tRunJob_9");
 		      				
-		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "--context=PROD");
+		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "--context=Default");
 		      				
 		      					jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "%*");
 		      				
 			} else {
 	      		
-						paraList_tRunJob_9.add("java");
+						paraList_tRunJob_9.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_9.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -13505,21 +13527,23 @@ class DealChildJobLibrary_tRunJob_9 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_9.add("-D" + key + "=" + System.getProperty(key)));
 					
-								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-Xms256M");
 		      				
 								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-Xmx1024M");
 		      				
+								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-Dfile.encoding=UTF-8");
+		      				
+								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "-cp");
 		      				
-		      					String classpath_tRunJob_9_5 = ".:$ROOT_PATH:$ROOT_PATH/../lib/routines.jar:$ROOT_PATH/../lib/log4j-slf4j-impl-2.13.2.jar:$ROOT_PATH/../lib/log4j-api-2.13.2.jar:$ROOT_PATH/../lib/log4j-core-2.13.2.jar:$ROOT_PATH/../lib/jboss-marshalling-2.0.12.Final.jar:$ROOT_PATH/../lib/dom4j-2.1.3.jar:$ROOT_PATH/../lib/slf4j-api-1.7.29.jar:$ROOT_PATH/../lib/jt400-9.8.jar:$ROOT_PATH/../lib/postgresql-42.2.14.jar:$ROOT_PATH/../lib/crypto-utils-0.31.12.jar:$ROOT_PATH/rdc_item_pay_to_vendor_inbound_0_1.jar:";
+		      					String classpath_tRunJob_9_6 = "C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/rdc_item_pay_to_vendor_inbound_0.1/target/classes:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/rdc_item_pay_to_vendor_inbound_0.1/src/main/ext-resources:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/code/routines/target/classes:.:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.13.2/log4j-slf4j-impl-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-api/2.13.2/log4j-api-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-core/2.13.2/log4j-core-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/jboss/marshalling/jboss-marshalling/2.0.12.Final/jboss-marshalling-2.0.12.Final.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/net/sf/jt400/jt400/9.8/jt400-9.8.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/postgresql/postgresql/42.2.14/postgresql-42.2.14.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/talend/daikon/crypto-utils/0.31.12/crypto-utils-0.31.12.jar:";
 		      					
 		      					if(audit_jar_path_tRunJob_9!=null && !audit_jar_path_tRunJob_9.isEmpty()) {
-		      						classpath_tRunJob_9_5 += audit_jar_path_tRunJob_9;
+		      						classpath_tRunJob_9_6 += audit_jar_path_tRunJob_9;
 		      					}
 		      					
-								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, dealChildJobLibrary_tRunJob_9.replaceJarPathsFromCrcMap(classpath_tRunJob_9_5).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
+	      						jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, dealChildJobLibrary_tRunJob_9.replaceJarPathsFromCrcMap(classpath_tRunJob_9_6).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
 		      				
 								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "sus_sli_etl.rdc_item_pay_to_vendor_inbound_0_1.Rdc_Item_Pay_To_Vendor_Inbound");
 		      				
@@ -13529,7 +13553,7 @@ class DealChildJobLibrary_tRunJob_9 {
 		      				
 								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "--father_node=tRunJob_9");
 		      				
-								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "--context=PROD");
+								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "--context=Default");
 		      				
 								jvm_argument_helper_tRunJob_9.addArgumentsTo(paraList_tRunJob_9, "$@");
 		      				
@@ -14723,7 +14747,7 @@ class DealChildJobLibrary_tRunJob_1 {
 			String osName_tRunJob_1 = System.getProperty("os.name");
 			if (osName_tRunJob_1 != null && osName_tRunJob_1.toLowerCase().startsWith("win")){
 				
-						paraList_tRunJob_1.add("java");
+						paraList_tRunJob_1.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_1.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -14753,21 +14777,23 @@ class DealChildJobLibrary_tRunJob_1 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_1.add("-D" + key + "=" + System.getProperty(key)));
 					
-		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-Xms256M");
 		      				
 		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-Xmx1024M");
 		      				
+		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-Dfile.encoding=UTF-8");
+		      				
+		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-cp");
 		      				
-              					String classpath_tRunJob_1_5 = ".;../lib/routines.jar;../lib/log4j-slf4j-impl-2.13.2.jar;../lib/log4j-api-2.13.2.jar;../lib/log4j-core-2.13.2.jar;../lib/jboss-marshalling-2.0.12.Final.jar;../lib/dom4j-2.1.3.jar;../lib/slf4j-api-1.7.29.jar;../lib/jt400-9.8.jar;../lib/postgresql-42.2.14.jar;../lib/crypto-utils-0.31.12.jar;item_inventory_inbound_0_1.jar;";
+              					String classpath_tRunJob_1_6 = "C:/Program Files (x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_inventory_inbound_0.1/target/classpath.jar;";
               					
               					if(audit_jar_path_tRunJob_1!=null && !audit_jar_path_tRunJob_1.isEmpty()) {
-		      						classpath_tRunJob_1_5 += audit_jar_path_tRunJob_1;
+		      						classpath_tRunJob_1_6 += audit_jar_path_tRunJob_1;
 		      					}
 		      					
-	        					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, dealChildJobLibrary_tRunJob_1.replaceJarPathsFromCrcMap(classpath_tRunJob_1_5), true);
+	        					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, dealChildJobLibrary_tRunJob_1.replaceJarPathsFromCrcMap(classpath_tRunJob_1_6), true);
 		      				
 		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "sus_sli_etl.item_inventory_inbound_0_1.Item_Inventory_Inbound");
 		      				
@@ -14777,13 +14803,13 @@ class DealChildJobLibrary_tRunJob_1 {
 		      				
 		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "--father_node=tRunJob_1");
 		      				
-		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "--context=PROD");
+		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "--context=Default");
 		      				
 		      					jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "%*");
 		      				
 			} else {
 	      		
-						paraList_tRunJob_1.add("java");
+						paraList_tRunJob_1.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_1.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -14813,21 +14839,23 @@ class DealChildJobLibrary_tRunJob_1 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_1.add("-D" + key + "=" + System.getProperty(key)));
 					
-								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-Xms256M");
 		      				
 								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-Xmx1024M");
 		      				
+								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-Dfile.encoding=UTF-8");
+		      				
+								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "-cp");
 		      				
-		      					String classpath_tRunJob_1_5 = ".:$ROOT_PATH:$ROOT_PATH/../lib/routines.jar:$ROOT_PATH/../lib/log4j-slf4j-impl-2.13.2.jar:$ROOT_PATH/../lib/log4j-api-2.13.2.jar:$ROOT_PATH/../lib/log4j-core-2.13.2.jar:$ROOT_PATH/../lib/jboss-marshalling-2.0.12.Final.jar:$ROOT_PATH/../lib/dom4j-2.1.3.jar:$ROOT_PATH/../lib/slf4j-api-1.7.29.jar:$ROOT_PATH/../lib/jt400-9.8.jar:$ROOT_PATH/../lib/postgresql-42.2.14.jar:$ROOT_PATH/../lib/crypto-utils-0.31.12.jar:$ROOT_PATH/item_inventory_inbound_0_1.jar:";
+		      					String classpath_tRunJob_1_6 = "C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_inventory_inbound_0.1/target/classes:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_inventory_inbound_0.1/src/main/ext-resources:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/code/routines/target/classes:.:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.13.2/log4j-slf4j-impl-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-api/2.13.2/log4j-api-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-core/2.13.2/log4j-core-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/jboss/marshalling/jboss-marshalling/2.0.12.Final/jboss-marshalling-2.0.12.Final.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/net/sf/jt400/jt400/9.8/jt400-9.8.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/postgresql/postgresql/42.2.14/postgresql-42.2.14.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/talend/daikon/crypto-utils/0.31.12/crypto-utils-0.31.12.jar:";
 		      					
 		      					if(audit_jar_path_tRunJob_1!=null && !audit_jar_path_tRunJob_1.isEmpty()) {
-		      						classpath_tRunJob_1_5 += audit_jar_path_tRunJob_1;
+		      						classpath_tRunJob_1_6 += audit_jar_path_tRunJob_1;
 		      					}
 		      					
-								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, dealChildJobLibrary_tRunJob_1.replaceJarPathsFromCrcMap(classpath_tRunJob_1_5).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
+	      						jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, dealChildJobLibrary_tRunJob_1.replaceJarPathsFromCrcMap(classpath_tRunJob_1_6).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
 		      				
 								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "sus_sli_etl.item_inventory_inbound_0_1.Item_Inventory_Inbound");
 		      				
@@ -14837,7 +14865,7 @@ class DealChildJobLibrary_tRunJob_1 {
 		      				
 								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "--father_node=tRunJob_1");
 		      				
-								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "--context=PROD");
+								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "--context=Default");
 		      				
 								jvm_argument_helper_tRunJob_1.addArgumentsTo(paraList_tRunJob_1, "$@");
 		      				
@@ -16031,7 +16059,7 @@ class DealChildJobLibrary_tRunJob_3 {
 			String osName_tRunJob_3 = System.getProperty("os.name");
 			if (osName_tRunJob_3 != null && osName_tRunJob_3.toLowerCase().startsWith("win")){
 				
-						paraList_tRunJob_3.add("java");
+						paraList_tRunJob_3.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_3.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -16061,21 +16089,23 @@ class DealChildJobLibrary_tRunJob_3 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_3.add("-D" + key + "=" + System.getProperty(key)));
 					
-		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-Xms256M");
 		      				
 		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-Xmx1024M");
 		      				
+		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-Dfile.encoding=UTF-8");
+		      				
+		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-cp");
 		      				
-              					String classpath_tRunJob_3_5 = ".;../lib/routines.jar;../lib/log4j-slf4j-impl-2.13.2.jar;../lib/log4j-api-2.13.2.jar;../lib/log4j-core-2.13.2.jar;../lib/jboss-marshalling-2.0.12.Final.jar;../lib/dom4j-2.1.3.jar;../lib/slf4j-api-1.7.29.jar;../lib/jt400-9.8.jar;../lib/postgresql-42.2.14.jar;../lib/crypto-utils-0.31.12.jar;item_master_inbound_0_1.jar;";
+              					String classpath_tRunJob_3_6 = "C:/Program Files (x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_master_inbound_0.1/target/classpath.jar;";
               					
               					if(audit_jar_path_tRunJob_3!=null && !audit_jar_path_tRunJob_3.isEmpty()) {
-		      						classpath_tRunJob_3_5 += audit_jar_path_tRunJob_3;
+		      						classpath_tRunJob_3_6 += audit_jar_path_tRunJob_3;
 		      					}
 		      					
-	        					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, dealChildJobLibrary_tRunJob_3.replaceJarPathsFromCrcMap(classpath_tRunJob_3_5), true);
+	        					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, dealChildJobLibrary_tRunJob_3.replaceJarPathsFromCrcMap(classpath_tRunJob_3_6), true);
 		      				
 		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "sus_sli_etl.item_master_inbound_0_1.Item_Master_Inbound");
 		      				
@@ -16085,13 +16115,13 @@ class DealChildJobLibrary_tRunJob_3 {
 		      				
 		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "--father_node=tRunJob_3");
 		      				
-		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "--context=PROD");
+		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "--context=Default");
 		      				
 		      					jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "%*");
 		      				
 			} else {
 	      		
-						paraList_tRunJob_3.add("java");
+						paraList_tRunJob_3.add("C:/Program Files/Java/jdk-11.0.15.1/bin/java.exe");
 						String m2 = System.getProperty("talend.component.manager.m2.repository");
 						if (m2 != null){
 							paraList_tRunJob_3.add("-Dtalend.component.manager.m2.repository=" + m2);
@@ -16121,21 +16151,23 @@ class DealChildJobLibrary_tRunJob_3 {
 							.filter(it -> it.startsWith("runtime.lineage.") || "classpath.extended".equals(it))
 							.forEach(key -> paraList_tRunJob_3.add("-D" + key + "=" + System.getProperty(key)));
 					
-								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-Dtalend.component.manager.m2.repository=../lib");
-		      				
 								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-Xms256M");
 		      				
 								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-Xmx1024M");
 		      				
+								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-Dfile.encoding=UTF-8");
+		      				
+								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-Dtalend.component.manager.m2.repository=C:/Program Files (x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository");
+		      				
 								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "-cp");
 		      				
-		      					String classpath_tRunJob_3_5 = ".:$ROOT_PATH:$ROOT_PATH/../lib/routines.jar:$ROOT_PATH/../lib/log4j-slf4j-impl-2.13.2.jar:$ROOT_PATH/../lib/log4j-api-2.13.2.jar:$ROOT_PATH/../lib/log4j-core-2.13.2.jar:$ROOT_PATH/../lib/jboss-marshalling-2.0.12.Final.jar:$ROOT_PATH/../lib/dom4j-2.1.3.jar:$ROOT_PATH/../lib/slf4j-api-1.7.29.jar:$ROOT_PATH/../lib/jt400-9.8.jar:$ROOT_PATH/../lib/postgresql-42.2.14.jar:$ROOT_PATH/../lib/crypto-utils-0.31.12.jar:$ROOT_PATH/item_master_inbound_0_1.jar:";
+		      					String classpath_tRunJob_3_6 = "C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_master_inbound_0.1/target/classes:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/jobs/process/SUS_to_GIM/item_master_inbound_0.1/src/main/ext-resources:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/workspace/SUS_SLI_ETL/poms/code/routines/target/classes:.:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.13.2/log4j-slf4j-impl-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-api/2.13.2/log4j-api-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/apache/logging/log4j/log4j-core/2.13.2/log4j-core-2.13.2.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/jboss/marshalling/jboss-marshalling/2.0.12.Final/jboss-marshalling-2.0.12.Final.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/net/sf/jt400/jt400/9.8/jt400-9.8.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/postgresql/postgresql/42.2.14/postgresql-42.2.14.jar:C:/Program%20Files%20(x86)/TOS_DI-8.0.1/studio/configuration/.m2/repository/org/talend/daikon/crypto-utils/0.31.12/crypto-utils-0.31.12.jar:";
 		      					
 		      					if(audit_jar_path_tRunJob_3!=null && !audit_jar_path_tRunJob_3.isEmpty()) {
-		      						classpath_tRunJob_3_5 += audit_jar_path_tRunJob_3;
+		      						classpath_tRunJob_3_6 += audit_jar_path_tRunJob_3;
 		      					}
 		      					
-								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, dealChildJobLibrary_tRunJob_3.replaceJarPathsFromCrcMap(classpath_tRunJob_3_5).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
+	      						jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, dealChildJobLibrary_tRunJob_3.replaceJarPathsFromCrcMap(classpath_tRunJob_3_6).replace("$ROOT_PATH",System.getProperty("user.dir")), true);
 		      				
 								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "sus_sli_etl.item_master_inbound_0_1.Item_Master_Inbound");
 		      				
@@ -16145,7 +16177,7 @@ class DealChildJobLibrary_tRunJob_3 {
 		      				
 								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "--father_node=tRunJob_3");
 		      				
-								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "--context=PROD");
+								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "--context=Default");
 		      				
 								jvm_argument_helper_tRunJob_3.addArgumentsTo(paraList_tRunJob_3, "$@");
 		      				
@@ -18017,6 +18049,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     503845 characters generated by Talend Open Studio for Data Integration 
- *     on the August 14, 2022 at 10:32:29 PM IST
+ *     515414 characters generated by Talend Open Studio for Data Integration 
+ *     on the August 31, 2022 at 3:39:53 PM IST
  ************************************************************************************************/

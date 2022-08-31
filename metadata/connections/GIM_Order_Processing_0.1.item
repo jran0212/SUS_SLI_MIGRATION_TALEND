@@ -427,7 +427,7 @@
           <initialValue xsi:type="relational:TdExpression" xmi:id="_jvUQuBuXEe25jaK7YFabrA" language="COLUMN_DEF"/>
           <sqlDataType xmi:id="_jvUQuRuXEe25jaK7YFabrA" name="TIMESTAMP" numericPrecision="6" numericPrecisionRadix="10" javaDataType="93" nullable="columnNullable"/>
         </feature>
-        <feature xsi:type="relational:TdColumn" xmi:id="_jvUQuhuXEe25jaK7YFabrA" name="B7PF_SVOP" label="B7PF_SVOP" length="25" sourceType="VARCHAR" talendType="id_String">
+        <feature xsi:type="relational:TdColumn" xmi:id="_jvUQuhuXEe25jaK7YFabrA" name="B7PF_SVOP" label="B7PF_SVOP" length="50" sourceType="VARCHAR" talendType="id_String">
           <taggedValue xmi:id="_jvUQuxuXEe25jaK7YFabrA" tag="Comment" value=""/>
           <initialValue xsi:type="relational:TdExpression" xmi:id="_jvUQvBuXEe25jaK7YFabrA" language="COLUMN_DEF"/>
           <sqlDataType xmi:id="_jvUQvRuXEe25jaK7YFabrA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>

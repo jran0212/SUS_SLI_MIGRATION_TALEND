@@ -22,7 +22,7 @@ SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
 [WARNING] The POM for org.apache.maven:maven-core:jar:3.0 is missing, no dependency information available
 [WARNING] The POM for org.apache.maven.shared:maven-shared-utils:jar:3.0.0 is missing, no dependency information available
 [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] Copying 1 resource
+[INFO] Copying 2 resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ Item_Master_Inbound ---
 [WARNING] The POM for org.codehaus.plexus:plexus-utils:jar:3.3.0 is missing, no dependency information available
@@ -69,6 +69,6 @@ SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.854 s
-[INFO] Finished at: 2022-08-03T15:59:26+05:30
+[INFO] Total time:  2.020 s
+[INFO] Finished at: 2022-08-15T17:29:26+05:30
 [INFO] ------------------------------------------------------------------------

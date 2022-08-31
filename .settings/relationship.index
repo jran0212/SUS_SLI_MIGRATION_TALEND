@@ -156,6 +156,14 @@
     "id" : "CharSetHandling",
     "version" : "Latest",
     "type" : "routine"
+  }, {
+    "id" : "_saet0PX9EeynBeV-b3d1ug - ITEM_DETAIL",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_saet0PX9EeynBeV-b3d1ug - ITEM_HEADER",
+    "version" : "Latest",
+    "type" : "schema"
   } ]
 }, {
   "baseItem" : {
@@ -323,6 +331,10 @@
     "id" : "CharSetHandling",
     "version" : "Latest",
     "type" : "routine"
+  }, {
+    "id" : "_saet0PX9EeynBeV-b3d1ug - VENDOR_ITEM",
+    "version" : "Latest",
+    "type" : "schema"
   } ]
 }, {
   "baseItem" : {
@@ -914,6 +926,10 @@
     "id" : "TimeStampConverting",
     "version" : "Latest",
     "type" : "routine"
+  }, {
+    "id" : "_9djBgPXiEeynBeV-b3d1ug - ITEM_INVENTORY",
+    "version" : "Latest",
+    "type" : "schema"
   } ]
 }, {
   "baseItem" : {
@@ -949,6 +965,10 @@
     "id" : "TimeStampConverting",
     "version" : "Latest",
     "type" : "routine"
+  }, {
+    "id" : "_saet0PX9EeynBeV-b3d1ug - ITEM_RELATIONSHIP",
+    "version" : "Latest",
+    "type" : "schema"
   } ]
 }, {
   "baseItem" : {
