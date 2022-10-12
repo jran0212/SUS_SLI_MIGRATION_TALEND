@@ -14,7 +14,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 package sus_sli_etl.anticipated_demand_inbound_0_1;
 
 import routines.Numeric;
@@ -43,34 +42,31 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
 import java.io.IOException;
 import java.util.Comparator;
- 
 
-
-
-
-	//the import part of tJava_1
-	//import java.util.List;
-
+//the import part of tJava_1
+//import java.util.List;
 
 @SuppressWarnings("unused")
 
 /**
- * Job: Anticipated_Demand_Inbound Purpose: Migrating data from IMMKTNPF to Anticipated Demand<br>
- * Description: Migrating data from IMMKTNPF in SUS to Anticipated Demand in GIM <br>
+ * Job: Anticipated_Demand_Inbound Purpose: Migrating data from IMMKTNPF to
+ * Anticipated Demand<br>
+ * Description: Migrating data from IMMKTNPF in SUS to Anticipated Demand in GIM
+ * <br>
+ * 
  * @author user@talend.com
  * @version 8.0.1.20211109_1610
- * @status 
+ * @status
  */
 public class Anticipated_Demand_Inbound implements TalendJob {
 
-protected static void logIgnoredError(String message, Throwable cause) {
-       System.err.println(message);
-       if (cause != null) {
-               cause.printStackTrace();
-       }
+	protected static void logIgnoredError(String message, Throwable cause) {
+		System.err.println(message);
+		if (cause != null) {
+			cause.printStackTrace();
+		}
 
-}
-
+	}
 
 	public final Object obj = new Object();
 
@@ -84,274 +80,319 @@ protected static void logIgnoredError(String message, Throwable cause) {
 	public void setValueObject(Object valueObject) {
 		this.valueObject = valueObject;
 	}
+
 	private Object[] multiThreadLockWrite = new Object[0];
-	
+
 	private final static String defaultCharset = java.nio.charset.Charset.defaultCharset().name();
 
-	
 	private final static String utf8Charset = "UTF-8";
-	//contains type for every context property
+
+	// contains type for every context property
 	public class PropertiesWithType extends java.util.Properties {
 		private static final long serialVersionUID = 1L;
-		private java.util.Map<String,String> propertyTypes = new java.util.HashMap<>();
-		
-		public PropertiesWithType(java.util.Properties properties){
+		private java.util.Map<String, String> propertyTypes = new java.util.HashMap<>();
+
+		public PropertiesWithType(java.util.Properties properties) {
 			super(properties);
 		}
-		public PropertiesWithType(){
+
+		public PropertiesWithType() {
 			super();
 		}
-		
+
 		public void setContextType(String key, String type) {
-			propertyTypes.put(key,type);
+			propertyTypes.put(key, type);
 		}
-	
+
 		public String getContextType(String key) {
 			return propertyTypes.get(key);
 		}
 	}
-	
+
 	// create and load default properties
 	private java.util.Properties defaultProps = new java.util.Properties();
+
 	// create application properties with default
 	public class ContextProperties extends PropertiesWithType {
 
 		private static final long serialVersionUID = 1L;
 
-		public ContextProperties(java.util.Properties properties){
+		public ContextProperties(java.util.Properties properties) {
 			super(properties);
 		}
-		public ContextProperties(){
+
+		public ContextProperties() {
 			super();
 		}
 
-		public void synchronizeContext(){
-			
-			if(opco != null){
-				
-					this.setProperty("opco", opco.toString());
-				
+		public void synchronizeContext() {
+
+			if (opco != null) {
+
+				this.setProperty("opco", opco.toString());
+
 			}
-			
-			if(server != null){
-				
-					this.setProperty("server", server.toString());
-				
+
+			if (server != null) {
+
+				this.setProperty("server", server.toString());
+
 			}
-			
-			if(sopco != null){
-				
-					this.setProperty("sopco", sopco.toString());
-				
+
+			if (sopco != null) {
+
+				this.setProperty("sopco", sopco.toString());
+
 			}
-			
-			if(svop != null){
-				
-					this.setProperty("svop", svop.toString());
-				
+
+			if (svop != null) {
+
+				this.setProperty("svop", svop.toString());
+
 			}
-			
-			if(GIM_AdditionalParams != null){
-				
-					this.setProperty("GIM_AdditionalParams", GIM_AdditionalParams.toString());
-				
+
+			if (GIM_AdditionalParams != null) {
+
+				this.setProperty("GIM_AdditionalParams", GIM_AdditionalParams.toString());
+
 			}
-			
-			if(GIM_Database != null){
-				
-					this.setProperty("GIM_Database", GIM_Database.toString());
-				
+
+			if (GIM_Database != null) {
+
+				this.setProperty("GIM_Database", GIM_Database.toString());
+
 			}
-			
-			if(GIM_Login != null){
-				
-					this.setProperty("GIM_Login", GIM_Login.toString());
-				
+
+			if (GIM_Login != null) {
+
+				this.setProperty("GIM_Login", GIM_Login.toString());
+
 			}
-			
-			if(GIM_Password != null){
-				
-					this.setProperty("GIM_Password", GIM_Password.toString());
-				
+
+			if (GIM_Password != null) {
+
+				this.setProperty("GIM_Password", GIM_Password.toString());
+
 			}
-			
-			if(GIM_Port != null){
-				
-					this.setProperty("GIM_Port", GIM_Port.toString());
-				
+
+			if (GIM_Port != null) {
+
+				this.setProperty("GIM_Port", GIM_Port.toString());
+
 			}
-			
-			if(GIM_Schema_Demand != null){
-				
-					this.setProperty("GIM_Schema_Demand", GIM_Schema_Demand.toString());
-				
+
+			if (GIM_Schema_Demand != null) {
+
+				this.setProperty("GIM_Schema_Demand", GIM_Schema_Demand.toString());
+
 			}
-			
-			if(GIM_Schema_PO != null){
-				
-					this.setProperty("GIM_Schema_PO", GIM_Schema_PO.toString());
-				
+
+			if (GIM_Schema_PO != null) {
+
+				this.setProperty("GIM_Schema_PO", GIM_Schema_PO.toString());
+
 			}
-			
-			if(GIM_Server != null){
-				
-					this.setProperty("GIM_Server", GIM_Server.toString());
-				
+
+			if (GIM_Server != null) {
+
+				this.setProperty("GIM_Server", GIM_Server.toString());
+
 			}
-			
-			if(SUS_Additional_Params != null){
-				
-					this.setProperty("SUS_Additional_Params", SUS_Additional_Params.toString());
-				
+
+			if (SUS_Additional_Params != null) {
+
+				this.setProperty("SUS_Additional_Params", SUS_Additional_Params.toString());
+
 			}
-			
-			if(SUS_Database != null){
-				
-					this.setProperty("SUS_Database", SUS_Database.toString());
-				
+
+			if (SUS_Database != null) {
+
+				this.setProperty("SUS_Database", SUS_Database.toString());
+
 			}
-			
-			if(SUS_Login != null){
-				
-					this.setProperty("SUS_Login", SUS_Login.toString());
-				
+
+			if (SUS_Login != null) {
+
+				this.setProperty("SUS_Login", SUS_Login.toString());
+
 			}
-			
-			if(SUS_Password != null){
-				
-					this.setProperty("SUS_Password", SUS_Password.toString());
-				
+
+			if (SUS_Password != null) {
+
+				this.setProperty("SUS_Password", SUS_Password.toString());
+
 			}
-			
-			if(SUS_Server != null){
-				
-					this.setProperty("SUS_Server", SUS_Server.toString());
-				
+
+			if (SUS_Server != null) {
+
+				this.setProperty("SUS_Server", SUS_Server.toString());
+
 			}
-			
+
 		}
-		
-		//if the stored or passed value is "<TALEND_NULL>" string, it mean null
+
+		// if the stored or passed value is "<TALEND_NULL>" string, it mean null
 		public String getStringValue(String key) {
 			String origin_value = this.getProperty(key);
-			if(NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY.equals(origin_value)) {
+			if (NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY.equals(origin_value)) {
 				return null;
 			}
 			return origin_value;
 		}
 
-public String opco;
-public String getOpco(){
-	return this.opco;
-}
-public String server;
-public String getServer(){
-	return this.server;
-}
-public String sopco;
-public String getSopco(){
-	return this.sopco;
-}
-public String svop;
-public String getSvop(){
-	return this.svop;
-}
-public String GIM_AdditionalParams;
-public String getGIM_AdditionalParams(){
-	return this.GIM_AdditionalParams;
-}
-public String GIM_Database;
-public String getGIM_Database(){
-	return this.GIM_Database;
-}
-public String GIM_Login;
-public String getGIM_Login(){
-	return this.GIM_Login;
-}
-public java.lang.String GIM_Password;
-public java.lang.String getGIM_Password(){
-	return this.GIM_Password;
-}
-public String GIM_Port;
-public String getGIM_Port(){
-	return this.GIM_Port;
-}
-public String GIM_Schema_Demand;
-public String getGIM_Schema_Demand(){
-	return this.GIM_Schema_Demand;
-}
-public String GIM_Schema_PO;
-public String getGIM_Schema_PO(){
-	return this.GIM_Schema_PO;
-}
-public String GIM_Server;
-public String getGIM_Server(){
-	return this.GIM_Server;
-}
-public String SUS_Additional_Params;
-public String getSUS_Additional_Params(){
-	return this.SUS_Additional_Params;
-}
-public String SUS_Database;
-public String getSUS_Database(){
-	return this.SUS_Database;
-}
-public String SUS_Login;
-public String getSUS_Login(){
-	return this.SUS_Login;
-}
-public java.lang.String SUS_Password;
-public java.lang.String getSUS_Password(){
-	return this.SUS_Password;
-}
-public String SUS_Server;
-public String getSUS_Server(){
-	return this.SUS_Server;
-}
+		public String opco;
+
+		public String getOpco() {
+			return this.opco;
+		}
+
+		public String server;
+
+		public String getServer() {
+			return this.server;
+		}
+
+		public String sopco;
+
+		public String getSopco() {
+			return this.sopco;
+		}
+
+		public String svop;
+
+		public String getSvop() {
+			return this.svop;
+		}
+
+		public String GIM_AdditionalParams;
+
+		public String getGIM_AdditionalParams() {
+			return this.GIM_AdditionalParams;
+		}
+
+		public String GIM_Database;
+
+		public String getGIM_Database() {
+			return this.GIM_Database;
+		}
+
+		public String GIM_Login;
+
+		public String getGIM_Login() {
+			return this.GIM_Login;
+		}
+
+		public java.lang.String GIM_Password;
+
+		public java.lang.String getGIM_Password() {
+			return this.GIM_Password;
+		}
+
+		public String GIM_Port;
+
+		public String getGIM_Port() {
+			return this.GIM_Port;
+		}
+
+		public String GIM_Schema_Demand;
+
+		public String getGIM_Schema_Demand() {
+			return this.GIM_Schema_Demand;
+		}
+
+		public String GIM_Schema_PO;
+
+		public String getGIM_Schema_PO() {
+			return this.GIM_Schema_PO;
+		}
+
+		public String GIM_Server;
+
+		public String getGIM_Server() {
+			return this.GIM_Server;
+		}
+
+		public String SUS_Additional_Params;
+
+		public String getSUS_Additional_Params() {
+			return this.SUS_Additional_Params;
+		}
+
+		public String SUS_Database;
+
+		public String getSUS_Database() {
+			return this.SUS_Database;
+		}
+
+		public String SUS_Login;
+
+		public String getSUS_Login() {
+			return this.SUS_Login;
+		}
+
+		public java.lang.String SUS_Password;
+
+		public java.lang.String getSUS_Password() {
+			return this.SUS_Password;
+		}
+
+		public String SUS_Server;
+
+		public String getSUS_Server() {
+			return this.SUS_Server;
+		}
 	}
+
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
+
 	public ContextProperties getContext() {
 		return this.context;
 	}
+
 	private final String jobVersion = "0.1";
 	private final String jobName = "Anticipated_Demand_Inbound";
 	private final String projectName = "SUS_SLI_ETL";
 	public Integer errorCode = null;
 	private String currentComponent = "";
-	
-		private final java.util.Map<String, Object> globalMap = java.util.Collections.synchronizedMap(new java.util.HashMap<String, Object>());
-		
-	
-		private final java.util.Map<String, Long> start_Hash = java.util.Collections.synchronizedMap(new java.util.HashMap<String, Long>());
-		private final java.util.Map<String, Long> end_Hash = java.util.Collections.synchronizedMap(new java.util.HashMap<String, Long>());
-		private final java.util.Map<String, Boolean> ok_Hash = java.util.Collections.synchronizedMap(new java.util.HashMap<String, Boolean>());
-		public  final java.util.List<String[]> globalBuffer = java.util.Collections.synchronizedList(new java.util.ArrayList<String[]>());
-	
 
-private RunStat runStat = new RunStat();
+	private final java.util.Map<String, Object> globalMap = java.util.Collections
+			.synchronizedMap(new java.util.HashMap<String, Object>());
+
+	private final java.util.Map<String, Long> start_Hash = java.util.Collections
+			.synchronizedMap(new java.util.HashMap<String, Long>());
+	private final java.util.Map<String, Long> end_Hash = java.util.Collections
+			.synchronizedMap(new java.util.HashMap<String, Long>());
+	private final java.util.Map<String, Boolean> ok_Hash = java.util.Collections
+			.synchronizedMap(new java.util.HashMap<String, Boolean>());
+	public final java.util.List<String[]> globalBuffer = java.util.Collections
+			.synchronizedList(new java.util.ArrayList<String[]>());
+
+	private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
-	
+
 	private final static String KEY_DB_DATASOURCES_RAW = "KEY_DB_DATASOURCES_RAW";
 
 	public void setDataSources(java.util.Map<String, javax.sql.DataSource> dataSources) {
 		java.util.Map<String, routines.system.TalendDataSource> talendDataSources = new java.util.HashMap<String, routines.system.TalendDataSource>();
 		for (java.util.Map.Entry<String, javax.sql.DataSource> dataSourceEntry : dataSources.entrySet()) {
-			talendDataSources.put(dataSourceEntry.getKey(), new routines.system.TalendDataSource(dataSourceEntry.getValue()));
+			talendDataSources.put(dataSourceEntry.getKey(),
+					new routines.system.TalendDataSource(dataSourceEntry.getValue()));
 		}
 		globalMap.put(KEY_DB_DATASOURCES, talendDataSources);
 		globalMap.put(KEY_DB_DATASOURCES_RAW, new java.util.HashMap<String, javax.sql.DataSource>(dataSources));
 	}
-	
-	public void setDataSourceReferences(List serviceReferences) throws Exception{
-		
+
+	public void setDataSourceReferences(List serviceReferences) throws Exception {
+
 		java.util.Map<String, routines.system.TalendDataSource> talendDataSources = new java.util.HashMap<String, routines.system.TalendDataSource>();
 		java.util.Map<String, javax.sql.DataSource> dataSources = new java.util.HashMap<String, javax.sql.DataSource>();
-		
-		for (java.util.Map.Entry<String, javax.sql.DataSource> entry : BundleUtils.getServices(serviceReferences,  javax.sql.DataSource.class).entrySet()) {
-                    dataSources.put(entry.getKey(), entry.getValue());
-                    talendDataSources.put(entry.getKey(), new routines.system.TalendDataSource(entry.getValue()));
+
+		for (java.util.Map.Entry<String, javax.sql.DataSource> entry : BundleUtils
+				.getServices(serviceReferences, javax.sql.DataSource.class).entrySet()) {
+			dataSources.put(entry.getKey(), entry.getValue());
+			talendDataSources.put(entry.getKey(), new routines.system.TalendDataSource(entry.getValue()));
 		}
 
 		globalMap.put(KEY_DB_DATASOURCES, talendDataSources);
@@ -362,1416 +403,1452 @@ private RunStat runStat = new RunStat();
 	StatCatcherUtils tStatCatcher_1 = new StatCatcherUtils("_ovlgsPYOEeynBeV-b3d1ug", "0.1");
 	MetterCatcherUtils tFlowMeterCatcher_1 = new MetterCatcherUtils("_ovlgsPYOEeynBeV-b3d1ug", "0.1");
 
-private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
-private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
+	private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
+	private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
 
-public String getExceptionStackTrace() {
-	if ("failure".equals(this.getStatus())) {
-		errorMessagePS.flush();
-		return baos.toString();
-	}
-	return null;
-}
-
-private Exception exception;
-
-public Exception getException() {
-	if ("failure".equals(this.getStatus())) {
-		return this.exception;
-	}
-	return null;
-}
-
-private class TalendException extends Exception {
-
-	private static final long serialVersionUID = 1L;
-
-	private java.util.Map<String, Object> globalMap = null;
-	private Exception e = null;
-	private String currentComponent = null;
-	private String virtualComponentName = null;
-	
-	public void setVirtualComponentName (String virtualComponentName){
-		this.virtualComponentName = virtualComponentName;
+	public String getExceptionStackTrace() {
+		if ("failure".equals(this.getStatus())) {
+			errorMessagePS.flush();
+			return baos.toString();
+		}
+		return null;
 	}
 
-	private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
-		this.currentComponent= errorComponent;
-		this.globalMap = globalMap;
-		this.e = e;
-	}
+	private Exception exception;
 
 	public Exception getException() {
-		return this.e;
+		if ("failure".equals(this.getStatus())) {
+			return this.exception;
+		}
+		return null;
 	}
 
-	public String getCurrentComponent() {
-		return this.currentComponent;
-	}
+	private class TalendException extends Exception {
 
-	
-    public String getExceptionCauseMessage(Exception e){
-        Throwable cause = e;
-        String message = null;
-        int i = 10;
-        while (null != cause && 0 < i--) {
-            message = cause.getMessage();
-            if (null == message) {
-                cause = cause.getCause();
-            } else {
-                break;          
-            }
-        }
-        if (null == message) {
-            message = e.getClass().getName();
-        }   
-        return message;
-    }
+		private static final long serialVersionUID = 1L;
 
-	@Override
-	public void printStackTrace() {
-		if (!(e instanceof TalendException || e instanceof TDieException)) {
-			if(virtualComponentName!=null && currentComponent.indexOf(virtualComponentName+"_")==0){
-				globalMap.put(virtualComponentName+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
-			}
-			globalMap.put(currentComponent+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
-			System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
+		private java.util.Map<String, Object> globalMap = null;
+		private Exception e = null;
+		private String currentComponent = null;
+		private String virtualComponentName = null;
+
+		public void setVirtualComponentName(String virtualComponentName) {
+			this.virtualComponentName = virtualComponentName;
 		}
-		if (!(e instanceof TDieException)) {
-			if(e instanceof TalendException){
-				e.printStackTrace();
-			} else {
-				e.printStackTrace();
-				e.printStackTrace(errorMessagePS);
-				Anticipated_Demand_Inbound.this.exception = e;
-			}
+
+		private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
+			this.currentComponent = errorComponent;
+			this.globalMap = globalMap;
+			this.e = e;
 		}
-		if (!(e instanceof TalendException)) {
-		try {
-			for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
-				if (m.getName().compareTo(currentComponent + "_error") == 0) {
-					m.invoke(Anticipated_Demand_Inbound.this, new Object[] { e , currentComponent, globalMap});
+
+		public Exception getException() {
+			return this.e;
+		}
+
+		public String getCurrentComponent() {
+			return this.currentComponent;
+		}
+
+		public String getExceptionCauseMessage(Exception e) {
+			Throwable cause = e;
+			String message = null;
+			int i = 10;
+			while (null != cause && 0 < i--) {
+				message = cause.getMessage();
+				if (null == message) {
+					cause = cause.getCause();
+				} else {
 					break;
 				}
 			}
-
-			if(!(e instanceof TDieException)){
-				tLogCatcher_1.addMessage("Java Exception", currentComponent, 6, e.getClass().getName() + ":" + e.getMessage(), 1);
-				tLogCatcher_1Process(globalMap);
+			if (null == message) {
+				message = e.getClass().getName();
 			}
-			} catch (TalendException e) {
-				// do nothing
-			
-		} catch (Exception e) {
-			this.e.printStackTrace();
+			return message;
 		}
-		}
-	}
-}
 
-			public void tStatCatcher_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tStatCatcher_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tMap_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tStatCatcher_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tLogRow_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tStatCatcher_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tLogCatcher_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tLogCatcher_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tMap_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tLogCatcher_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tLogRow_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tLogCatcher_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tJava_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tJava_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tDBInput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-							tStatCatcher_1.addMessage("failure",errorComponent, end_Hash.get(errorComponent)-start_Hash.get(errorComponent));
-							tStatCatcher_1Process(globalMap);
-							
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tDBOutput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tFlowMeterCatcher_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tFlowMeterCatcher_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tMap_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tFlowMeterCatcher_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tLogRow_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				((java.util.Map)threadLocal.get()).put("status", "failure");
-				
-					tFlowMeterCatcher_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tStatCatcher_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
-			public void tLogCatcher_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
-			public void tJava_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
-			public void tDBInput_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
-			public void tFlowMeterCatcher_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
-	
-
-
-
-
-
-
-public static class Main_StatStruct implements routines.system.IPersistableRow<Main_StatStruct> {
-    final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-    static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-
-	
-			    public java.util.Date moment;
-
-				public java.util.Date getMoment () {
-					return this.moment;
+		@Override
+		public void printStackTrace() {
+			if (!(e instanceof TalendException || e instanceof TDieException)) {
+				if (virtualComponentName != null && currentComponent.indexOf(virtualComponentName + "_") == 0) {
+					globalMap.put(virtualComponentName + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
 				}
-				
-			    public String pid;
-
-				public String getPid () {
-					return this.pid;
-				}
-				
-			    public String job;
-
-				public String getJob () {
-					return this.job;
-				}
-				
-			    public String origin;
-
-				public String getOrigin () {
-					return this.origin;
-				}
-				
-			    public String message_type;
-
-				public String getMessage_type () {
-					return this.message_type;
-				}
-				
-			    public String message;
-
-				public String getMessage () {
-					return this.message;
-				}
-				
-			    public Long duration;
-
-				public Long getDuration () {
-					return this.duration;
-				}
-				
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-	
-	private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = unmarshaller.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(unmarshaller.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-    
-    private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(date1 == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+				globalMap.put(currentComponent + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
+				System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
+			}
+			if (!(e instanceof TDieException)) {
+				if (e instanceof TalendException) {
+					e.printStackTrace();
 				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
+					e.printStackTrace();
+					e.printStackTrace(errorMessagePS);
+					Anticipated_Demand_Inbound.this.exception = e;
+				}
 			}
-			dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-	
-	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = unmarshaller.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
+			if (!(e instanceof TalendException)) {
+				try {
+					for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
+						if (m.getName().compareTo(currentComponent + "_error") == 0) {
+							m.invoke(Anticipated_Demand_Inbound.this, new Object[] { e, currentComponent, globalMap });
+							break;
+						}
+					}
+
+					if (!(e instanceof TDieException)) {
+						tLogCatcher_1.addMessage("Java Exception", currentComponent, 6,
+								e.getClass().getName() + ":" + e.getMessage(), 1);
+						tLogCatcher_1Process(globalMap);
+					}
+				} catch (TalendException e) {
+					// do nothing
+
+				} catch (Exception e) {
+					this.e.printStackTrace();
+				}
 			}
-			unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
 		}
-		return strReturn;
 	}
 
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-    
-    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(str == null) {
-			marshaller.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-            marshaller.writeInt(byteArray.length);
-            marshaller.write(byteArray);
-    	}
-    }
+	public void tFlowMeterCatcher_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
 
-    public void readData(ObjectInputStream dis) {
+		end_Hash.put(errorComponent, System.currentTimeMillis());
 
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+		((java.util.Map) threadLocal.get()).put("status", "failure");
 
-        	try {
+		tFlowMeterCatcher_1_onSubJobError(exception, errorComponent, globalMap);
+	}
 
-        		int length = 0;
-		
+	public void tMap_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tFlowMeterCatcher_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tLogRow_4_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tFlowMeterCatcher_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tJava_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tJava_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tDBInput_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		tStatCatcher_1.addMessage("failure", errorComponent,
+				end_Hash.get(errorComponent) - start_Hash.get(errorComponent));
+		tStatCatcher_1Process(globalMap);
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tDBOutput_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tLogCatcher_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tLogCatcher_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tMap_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tLogCatcher_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tLogRow_3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tLogCatcher_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tStatCatcher_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tStatCatcher_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tMap_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tStatCatcher_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tLogRow_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		((java.util.Map) threadLocal.get()).put("status", "failure");
+
+		tStatCatcher_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tFlowMeterCatcher_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tJava_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tDBInput_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tLogCatcher_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tStatCatcher_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public static class Main_Flow_MeterStruct implements routines.system.IPersistableRow<Main_Flow_MeterStruct> {
+		final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+		static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+
+		public java.util.Date moment;
+
+		public java.util.Date getMoment() {
+			return this.moment;
+		}
+
+		public String pid;
+
+		public String getPid() {
+			return this.pid;
+		}
+
+		public String job;
+
+		public String getJob() {
+			return this.job;
+		}
+
+		public String origin;
+
+		public String getOrigin() {
+			return this.origin;
+		}
+
+		public String label;
+
+		public String getLabel() {
+			return this.label;
+		}
+
+		public Integer count;
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public Integer reference;
+
+		public Integer getReference() {
+			return this.reference;
+		}
+
+		public String thresholds;
+
+		public String getThresholds() {
+			return this.thresholds;
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(unmarshaller.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (date1 == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeLong(date1.getTime());
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
 					this.moment = readDate(dis);
-					
+
 					this.pid = readString(dis);
-					
+
 					this.job = readString(dis);
-					
+
 					this.origin = readString(dis);
-					
-					this.message_type = readString(dis);
-					
-					this.message = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.duration = null;
-           				} else {
-           			    	this.duration = dis.readLong();
-           				}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
 
-		
+					this.label = readString(dis);
 
-        }
+					this.count = readInteger(dis);
 
-		
+					this.reference = readInteger(dis);
 
-      }
+					this.thresholds = readString(dis);
 
+				} catch (IOException e) {
+					throw new RuntimeException(e);
 
-    }
-    
-    public void readData(org.jboss.marshalling.Unmarshaller dis) {
+				}
 
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+			}
 
-        	try {
+		}
 
-        		int length = 0;
-		
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
 					this.moment = readDate(dis);
-					
+
 					this.pid = readString(dis);
-					
+
 					this.job = readString(dis);
-					
+
 					this.origin = readString(dis);
-					
-					this.message_type = readString(dis);
-					
-					this.message = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.duration = null;
-           				} else {
-           			    	this.duration = dis.readLong();
-           				}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
 
-		
+					this.label = readString(dis);
 
-        }
+					this.count = readInteger(dis);
 
-		
+					this.reference = readInteger(dis);
 
-      }
+					this.thresholds = readString(dis);
 
+				} catch (IOException e) {
+					throw new RuntimeException(e);
 
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.message_type,dos);
-					
-					// String
-				
-						writeString(this.message,dos);
-					
-					// Long
-				
-						if(this.duration == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.duration);
-		            	}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-    
-    public void writeData(org.jboss.marshalling.Marshaller dos) {
-        try {
-
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.message_type,dos);
-					
-					// String
-				
-						writeString(this.message,dos);
-					
-					// Long
-				
-						if(this.duration == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.duration);
-		            	}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("moment="+String.valueOf(moment));
-		sb.append(",pid="+pid);
-		sb.append(",job="+job);
-		sb.append(",origin="+origin);
-		sb.append(",message_type="+message_type);
-		sb.append(",message="+message);
-		sb.append(",duration="+String.valueOf(duration));
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Main_StatStruct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
-    final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-    static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-
-	
-			    public java.util.Date moment;
-
-				public java.util.Date getMoment () {
-					return this.moment;
 				}
-				
-			    public String pid;
 
-				public String getPid () {
-					return this.pid;
-				}
-				
-			    public String father_pid;
-
-				public String getFather_pid () {
-					return this.father_pid;
-				}
-				
-			    public String root_pid;
-
-				public String getRoot_pid () {
-					return this.root_pid;
-				}
-				
-			    public Long system_pid;
-
-				public Long getSystem_pid () {
-					return this.system_pid;
-				}
-				
-			    public String project;
-
-				public String getProject () {
-					return this.project;
-				}
-				
-			    public String job;
-
-				public String getJob () {
-					return this.job;
-				}
-				
-			    public String job_repository_id;
-
-				public String getJob_repository_id () {
-					return this.job_repository_id;
-				}
-				
-			    public String job_version;
-
-				public String getJob_version () {
-					return this.job_version;
-				}
-				
-			    public String context;
-
-				public String getContext () {
-					return this.context;
-				}
-				
-			    public String origin;
-
-				public String getOrigin () {
-					return this.origin;
-				}
-				
-			    public String message_type;
-
-				public String getMessage_type () {
-					return this.message_type;
-				}
-				
-			    public String message;
-
-				public String getMessage () {
-					return this.message;
-				}
-				
-			    public Long duration;
-
-				public Long getDuration () {
-					return this.duration;
-				}
-				
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-	
-	private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = unmarshaller.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(unmarshaller.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-    
-    private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(date1 == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
 			}
-			dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+
 		}
-		return strReturn;
-	}
-	
-	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = unmarshaller.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.label, dos);
+
+				// Integer
+
+				writeInteger(this.count, dos);
+
+				// Integer
+
+				writeInteger(this.reference, dos);
+
+				// String
+
+				writeString(this.thresholds, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
 			}
-			unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+
 		}
-		return strReturn;
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.label, dos);
+
+				// Integer
+
+				writeInteger(this.count, dos);
+
+				// Integer
+
+				writeInteger(this.reference, dos);
+
+				// String
+
+				writeString(this.thresholds, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("moment=" + String.valueOf(moment));
+			sb.append(",pid=" + pid);
+			sb.append(",job=" + job);
+			sb.append(",origin=" + origin);
+			sb.append(",label=" + label);
+			sb.append(",count=" + String.valueOf(count));
+			sb.append(",reference=" + String.valueOf(reference));
+			sb.append(",thresholds=" + thresholds);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(Main_Flow_MeterStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
 	}
 
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-    
-    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(str == null) {
-			marshaller.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-            marshaller.writeInt(byteArray.length);
-            marshaller.write(byteArray);
-    	}
-    }
+	public static class row3_0Struct implements routines.system.IPersistableRow<row3_0Struct> {
+		final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+		static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
 
-    public void readData(ObjectInputStream dis) {
+		public java.util.Date moment;
 
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+		public java.util.Date getMoment() {
+			return this.moment;
+		}
 
-        	try {
+		public String pid;
 
-        		int length = 0;
-		
+		public String getPid() {
+			return this.pid;
+		}
+
+		public String father_pid;
+
+		public String getFather_pid() {
+			return this.father_pid;
+		}
+
+		public String root_pid;
+
+		public String getRoot_pid() {
+			return this.root_pid;
+		}
+
+		public Long system_pid;
+
+		public Long getSystem_pid() {
+			return this.system_pid;
+		}
+
+		public String project;
+
+		public String getProject() {
+			return this.project;
+		}
+
+		public String job;
+
+		public String getJob() {
+			return this.job;
+		}
+
+		public String job_repository_id;
+
+		public String getJob_repository_id() {
+			return this.job_repository_id;
+		}
+
+		public String job_version;
+
+		public String getJob_version() {
+			return this.job_version;
+		}
+
+		public String context;
+
+		public String getContext() {
+			return this.context;
+		}
+
+		public String origin;
+
+		public String getOrigin() {
+			return this.origin;
+		}
+
+		public String label;
+
+		public String getLabel() {
+			return this.label;
+		}
+
+		public Integer count;
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public Integer reference;
+
+		public Integer getReference() {
+			return this.reference;
+		}
+
+		public String thresholds;
+
+		public String getThresholds() {
+			return this.thresholds;
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(unmarshaller.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (date1 == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeLong(date1.getTime());
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
 					this.moment = readDate(dis);
-					
+
 					this.pid = readString(dis);
-					
+
 					this.father_pid = readString(dis);
-					
+
 					this.root_pid = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.system_pid = null;
-           				} else {
-           			    	this.system_pid = dis.readLong();
-           				}
-					
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.system_pid = null;
+					} else {
+						this.system_pid = dis.readLong();
+					}
+
 					this.project = readString(dis);
-					
+
 					this.job = readString(dis);
-					
+
 					this.job_repository_id = readString(dis);
-					
+
 					this.job_version = readString(dis);
-					
+
 					this.context = readString(dis);
-					
+
 					this.origin = readString(dis);
-					
-					this.message_type = readString(dis);
-					
-					this.message = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.duration = null;
-           				} else {
-           			    	this.duration = dis.readLong();
-           				}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
 
-		
+					this.label = readString(dis);
 
-        }
+					this.count = readInteger(dis);
 
-		
+					this.reference = readInteger(dis);
 
-      }
+					this.thresholds = readString(dis);
 
+				} catch (IOException e) {
+					throw new RuntimeException(e);
 
-    }
-    
-    public void readData(org.jboss.marshalling.Unmarshaller dis) {
+				}
 
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+			}
 
-        	try {
+		}
 
-        		int length = 0;
-		
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
 					this.moment = readDate(dis);
-					
+
 					this.pid = readString(dis);
-					
+
 					this.father_pid = readString(dis);
-					
+
 					this.root_pid = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.system_pid = null;
-           				} else {
-           			    	this.system_pid = dis.readLong();
-           				}
-					
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.system_pid = null;
+					} else {
+						this.system_pid = dis.readLong();
+					}
+
 					this.project = readString(dis);
-					
+
 					this.job = readString(dis);
-					
+
 					this.job_repository_id = readString(dis);
-					
+
 					this.job_version = readString(dis);
-					
+
 					this.context = readString(dis);
-					
+
 					this.origin = readString(dis);
-					
-					this.message_type = readString(dis);
-					
-					this.message = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.duration = null;
-           				} else {
-           			    	this.duration = dis.readLong();
-           				}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
 
-		
+					this.label = readString(dis);
 
-        }
+					this.count = readInteger(dis);
 
-		
+					this.reference = readInteger(dis);
 
-      }
+					this.thresholds = readString(dis);
 
+				} catch (IOException e) {
+					throw new RuntimeException(e);
 
-    }
+				}
 
-    public void writeData(ObjectOutputStream dos) {
-        try {
+			}
 
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.father_pid,dos);
-					
-					// String
-				
-						writeString(this.root_pid,dos);
-					
-					// Long
-				
-						if(this.system_pid == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.system_pid);
-		            	}
-					
-					// String
-				
-						writeString(this.project,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.job_repository_id,dos);
-					
-					// String
-				
-						writeString(this.job_version,dos);
-					
-					// String
-				
-						writeString(this.context,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.message_type,dos);
-					
-					// String
-				
-						writeString(this.message,dos);
-					
-					// Long
-				
-						if(this.duration == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.duration);
-		            	}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
+		}
 
+		public void writeData(ObjectOutputStream dos) {
+			try {
 
-    }
-    
-    public void writeData(org.jboss.marshalling.Marshaller dos) {
-        try {
+				// java.util.Date
 
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.father_pid,dos);
-					
-					// String
-				
-						writeString(this.root_pid,dos);
-					
-					// Long
-				
-						if(this.system_pid == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.system_pid);
-		            	}
-					
-					// String
-				
-						writeString(this.project,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.job_repository_id,dos);
-					
-					// String
-				
-						writeString(this.job_version,dos);
-					
-					// String
-				
-						writeString(this.context,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.message_type,dos);
-					
-					// String
-				
-						writeString(this.message,dos);
-					
-					// Long
-				
-						if(this.duration == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.duration);
-		            	}
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
+				writeDate(this.moment, dos);
 
+				// String
 
-    }
+				writeString(this.pid, dos);
 
+				// String
 
-    public String toString() {
+				writeString(this.father_pid, dos);
 
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("moment="+String.valueOf(moment));
-		sb.append(",pid="+pid);
-		sb.append(",father_pid="+father_pid);
-		sb.append(",root_pid="+root_pid);
-		sb.append(",system_pid="+String.valueOf(system_pid));
-		sb.append(",project="+project);
-		sb.append(",job="+job);
-		sb.append(",job_repository_id="+job_repository_id);
-		sb.append(",job_version="+job_version);
-		sb.append(",context="+context);
-		sb.append(",origin="+origin);
-		sb.append(",message_type="+message_type);
-		sb.append(",message="+message);
-		sb.append(",duration="+String.valueOf(duration));
-	    sb.append("]");
+				// String
 
-	    return sb.toString();
-    }
+				writeString(this.root_pid, dos);
 
-    /**
-     * Compare keys
-     */
-    public int compareTo(row3Struct other) {
+				// Long
 
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
+				if (this.system_pid == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.system_pid);
+				}
 
+				// String
 
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
+				writeString(this.project, dos);
 
-        return returnValue;
-    }
+				// String
 
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
+				writeString(this.job, dos);
 
+				// String
 
-}
-public void tStatCatcher_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tStatCatcher_1_SUBPROCESS_STATE", 0);
+				writeString(this.job_repository_id, dos);
 
- final boolean execStat = this.execStat;
-	
+				// String
+
+				writeString(this.job_version, dos);
+
+				// String
+
+				writeString(this.context, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.label, dos);
+
+				// Integer
+
+				writeInteger(this.count, dos);
+
+				// Integer
+
+				writeInteger(this.reference, dos);
+
+				// String
+
+				writeString(this.thresholds, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.father_pid, dos);
+
+				// String
+
+				writeString(this.root_pid, dos);
+
+				// Long
+
+				if (this.system_pid == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.system_pid);
+				}
+
+				// String
+
+				writeString(this.project, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.job_repository_id, dos);
+
+				// String
+
+				writeString(this.job_version, dos);
+
+				// String
+
+				writeString(this.context, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.label, dos);
+
+				// Integer
+
+				writeInteger(this.count, dos);
+
+				// Integer
+
+				writeInteger(this.reference, dos);
+
+				// String
+
+				writeString(this.thresholds, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("moment=" + String.valueOf(moment));
+			sb.append(",pid=" + pid);
+			sb.append(",father_pid=" + father_pid);
+			sb.append(",root_pid=" + root_pid);
+			sb.append(",system_pid=" + String.valueOf(system_pid));
+			sb.append(",project=" + project);
+			sb.append(",job=" + job);
+			sb.append(",job_repository_id=" + job_repository_id);
+			sb.append(",job_version=" + job_version);
+			sb.append(",context=" + context);
+			sb.append(",origin=" + origin);
+			sb.append(",label=" + label);
+			sb.append(",count=" + String.valueOf(count));
+			sb.append(",reference=" + String.valueOf(reference));
+			sb.append(",thresholds=" + thresholds);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row3_0Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tFlowMeterCatcher_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tFlowMeterCatcher_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
 		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-	try {
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { //start the resume
+			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
+				row3_0Struct row3_0 = new row3_0Struct();
+				Main_Flow_MeterStruct Main_Flow_Meter = new Main_Flow_MeterStruct();
 
+				/**
+				 * [tLogRow_4 begin ] start
+				 */
 
-		row3Struct row3 = new row3Struct();
-Main_StatStruct Main_Stat = new Main_StatStruct();
+				ok_Hash.put("tLogRow_4", false);
+				start_Hash.put("tLogRow_4", System.currentTimeMillis());
 
+				currentComponent = "tLogRow_4";
 
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Main_Flow_Meter");
+				}
 
+				int tos_count_tLogRow_4 = 0;
 
+				///////////////////////
 
-	
-	/**
-	 * [tLogRow_2 begin ] start
-	 */
+				class Util_tLogRow_4 {
 
-	
+					String[] des_top = { ".", ".", "-", "+" };
 
-	
-		
-		ok_Hash.put("tLogRow_2", false);
-		start_Hash.put("tLogRow_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tLogRow_2";
+					String[] des_head = { "|=", "=|", "-", "+" };
 
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Main_Stat");
+					String[] des_bottom = { "'", "'", "-", "+" };
+
+					String name = "";
+
+					java.util.List<String[]> list = new java.util.ArrayList<String[]>();
+
+					int[] colLengths = new int[8];
+
+					public void addRow(String[] row) {
+
+						for (int i = 0; i < 8; i++) {
+							if (row[i] != null) {
+								colLengths[i] = Math.max(colLengths[i], row[i].length());
+							}
+						}
+						list.add(row);
 					}
-				
-		int tos_count_tLogRow_2 = 0;
-		
 
-	///////////////////////
-	
-         class Util_tLogRow_2 {
+					public void setTableName(String name) {
 
-        String[] des_top = { ".", ".", "-", "+" };
+						this.name = name;
+					}
 
-        String[] des_head = { "|=", "=|", "-", "+" };
+					public StringBuilder format() {
 
-        String[] des_bottom = { "'", "'", "-", "+" };
+						StringBuilder sb = new StringBuilder();
 
-        String name="";
+						sb.append(print(des_top));
 
-        java.util.List<String[]> list = new java.util.ArrayList<String[]>();
+						int totals = 0;
+						for (int i = 0; i < colLengths.length; i++) {
+							totals = totals + colLengths[i];
+						}
 
-        int[] colLengths = new int[7];
+						// name
+						sb.append("|");
+						int k = 0;
+						for (k = 0; k < (totals + 7 - name.length()) / 2; k++) {
+							sb.append(' ');
+						}
+						sb.append(name);
+						for (int i = 0; i < totals + 7 - name.length() - k; i++) {
+							sb.append(' ');
+						}
+						sb.append("|\n");
 
-        public void addRow(String[] row) {
+						// head and rows
+						sb.append(print(des_head));
+						for (int i = 0; i < list.size(); i++) {
 
-            for (int i = 0; i < 7; i++) {
-                if (row[i]!=null) {
-                  colLengths[i] = Math.max(colLengths[i], row[i].length());
-                }
-            }
-            list.add(row);
-        }
+							String[] row = list.get(i);
 
-        public void setTableName(String name) {
+							java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
 
-            this.name = name;
-        }
+							StringBuilder sbformat = new StringBuilder();
+							sbformat.append("|%1$-");
+							sbformat.append(colLengths[0]);
+							sbformat.append("s");
 
-            public StringBuilder format() {
-            
-                StringBuilder sb = new StringBuilder();
-  
-            
-                    sb.append(print(des_top));
-    
-                    int totals = 0;
-                    for (int i = 0; i < colLengths.length; i++) {
-                        totals = totals + colLengths[i];
-                    }
-    
-                    // name
-                    sb.append("|");
-                    int k = 0;
-                    for (k = 0; k < (totals + 6 - name.length()) / 2; k++) {
-                        sb.append(' ');
-                    }
-                    sb.append(name);
-                    for (int i = 0; i < totals + 6 - name.length() - k; i++) {
-                        sb.append(' ');
-                    }
-                    sb.append("|\n");
+							sbformat.append("|%2$-");
+							sbformat.append(colLengths[1]);
+							sbformat.append("s");
 
-                    // head and rows
-                    sb.append(print(des_head));
-                    for (int i = 0; i < list.size(); i++) {
-    
-                        String[] row = list.get(i);
-    
-                        java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
-                        
-                        StringBuilder sbformat = new StringBuilder();                                             
-        			        sbformat.append("|%1$-");
-        			        sbformat.append(colLengths[0]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%2$-");
-        			        sbformat.append(colLengths[1]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%3$-");
-        			        sbformat.append(colLengths[2]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%4$-");
-        			        sbformat.append(colLengths[3]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%5$-");
-        			        sbformat.append(colLengths[4]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%6$-");
-        			        sbformat.append(colLengths[5]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%7$-");
-        			        sbformat.append(colLengths[6]);
-        			        sbformat.append("s");
-        			                      
-                        sbformat.append("|\n");                    
-       
-                        formatter.format(sbformat.toString(), (Object[])row);	
-                                
-                        sb.append(formatter.toString());
-                        if (i == 0)
-                            sb.append(print(des_head)); // print the head
-                    }
-    
-                    // end
-                    sb.append(print(des_bottom));
-                    return sb;
-                }
-            
+							sbformat.append("|%3$-");
+							sbformat.append(colLengths[2]);
+							sbformat.append("s");
 
-            private StringBuilder print(String[] fillChars) {
-                StringBuilder sb = new StringBuilder();
-                //first column
-                sb.append(fillChars[0]);                
-                    for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);	                
+							sbformat.append("|%4$-");
+							sbformat.append(colLengths[3]);
+							sbformat.append("s");
 
-                    for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                    for (int i = 0; i < colLengths[2] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                    for (int i = 0; i < colLengths[3] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                    for (int i = 0; i < colLengths[4] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                    for (int i = 0; i < colLengths[5] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                
-                    //last column
-                    for (int i = 0; i < colLengths[6] - fillChars[1].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }         
-                sb.append(fillChars[1]);
-                sb.append("\n");               
-                return sb;
-            }
-            
-            public boolean isTableEmpty(){
-            	if (list.size() > 1)
-            		return false;
-            	return true;
-            }
-        }
-        Util_tLogRow_2 util_tLogRow_2 = new Util_tLogRow_2();
-        util_tLogRow_2.setTableName("tLogRow_2");
-        util_tLogRow_2.addRow(new String[]{"moment","pid","job","origin","message_type","message","duration",});        
- 		StringBuilder strBuffer_tLogRow_2 = null;
-		int nb_line_tLogRow_2 = 0;
+							sbformat.append("|%5$-");
+							sbformat.append(colLengths[4]);
+							sbformat.append("s");
+
+							sbformat.append("|%6$-");
+							sbformat.append(colLengths[5]);
+							sbformat.append("s");
+
+							sbformat.append("|%7$-");
+							sbformat.append(colLengths[6]);
+							sbformat.append("s");
+
+							sbformat.append("|%8$-");
+							sbformat.append(colLengths[7]);
+							sbformat.append("s");
+
+							sbformat.append("|\n");
+
+							formatter.format(sbformat.toString(), (Object[]) row);
+
+							sb.append(formatter.toString());
+							if (i == 0)
+								sb.append(print(des_head)); // print the head
+						}
+
+						// end
+						sb.append(print(des_bottom));
+						return sb;
+					}
+
+					private StringBuilder print(String[] fillChars) {
+						StringBuilder sb = new StringBuilder();
+						// first column
+						sb.append(fillChars[0]);
+						for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[2] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[3] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[4] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[5] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[6] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						// last column
+						for (int i = 0; i < colLengths[7] - fillChars[1].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[1]);
+						sb.append("\n");
+						return sb;
+					}
+
+					public boolean isTableEmpty() {
+						if (list.size() > 1)
+							return false;
+						return true;
+					}
+				}
+				Util_tLogRow_4 util_tLogRow_4 = new Util_tLogRow_4();
+				util_tLogRow_4.setTableName("tLogRow_4");
+				util_tLogRow_4.addRow(new String[] { "moment", "pid", "job", "origin", "label", "count", "reference",
+						"thresholds", });
+				StringBuilder strBuffer_tLogRow_4 = null;
+				int nb_line_tLogRow_4 = 0;
 ///////////////////////    			
 
+				/**
+				 * [tLogRow_4 begin ] stop
+				 */
 
+				/**
+				 * [tMap_4 begin ] start
+				 */
 
- 
+				ok_Hash.put("tMap_4", false);
+				start_Hash.put("tMap_4", System.currentTimeMillis());
 
+				currentComponent = "tMap_4";
 
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3_0");
+				}
 
-/**
- * [tLogRow_2 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tMap_2 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tMap_2", false);
-		start_Hash.put("tMap_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tMap_2";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
-					}
-				
-		int tos_count_tMap_2 = 0;
-		
-
-
-
+				int tos_count_tMap_4 = 0;
 
 // ###############################
 // # Lookup's keys initialization
@@ -1779,8082 +1856,6664 @@ Main_StatStruct Main_Stat = new Main_StatStruct();
 
 // ###############################
 // # Vars initialization
-class  Var__tMap_2__Struct  {
-}
-Var__tMap_2__Struct Var__tMap_2 = new Var__tMap_2__Struct();
+				class Var__tMap_4__Struct {
+				}
+				Var__tMap_4__Struct Var__tMap_4 = new Var__tMap_4__Struct();
 // ###############################
 
 // ###############################
 // # Outputs initialization
-Main_StatStruct Main_Stat_tmp = new Main_StatStruct();
+				Main_Flow_MeterStruct Main_Flow_Meter_tmp = new Main_Flow_MeterStruct();
 // ###############################
 
-        
-        
+				/**
+				 * [tMap_4 begin ] stop
+				 */
 
+				/**
+				 * [tFlowMeterCatcher_1 begin ] start
+				 */
 
+				ok_Hash.put("tFlowMeterCatcher_1", false);
+				start_Hash.put("tFlowMeterCatcher_1", System.currentTimeMillis());
 
-        
+				currentComponent = "tFlowMeterCatcher_1";
 
+				int tos_count_tFlowMeterCatcher_1 = 0;
 
+				for (MetterCatcherUtils.MetterCatcherMessage mcm : tFlowMeterCatcher_1.getMessages()) {
+					row3_0.pid = pid;
+					row3_0.root_pid = rootPid;
+					row3_0.father_pid = fatherPid;
+					row3_0.project = projectName;
+					row3_0.job = jobName;
+					row3_0.context = contextStr;
+					row3_0.origin = (mcm.getOrigin() == null || mcm.getOrigin().length() < 1 ? null : mcm.getOrigin());
+					row3_0.moment = mcm.getMoment();
+					row3_0.job_version = mcm.getJobVersion();
+					row3_0.job_repository_id = mcm.getJobId();
+					row3_0.system_pid = mcm.getSystemPid();
+					row3_0.label = mcm.getLabel();
+					row3_0.count = mcm.getCount();
+					row3_0.reference = tFlowMeterCatcher_1.getConnLinesCount(mcm.getReferense() + "_count");
+					row3_0.thresholds = mcm.getThresholds();
 
+					/**
+					 * [tFlowMeterCatcher_1 begin ] stop
+					 */
 
+					/**
+					 * [tFlowMeterCatcher_1 main ] start
+					 */
 
+					currentComponent = "tFlowMeterCatcher_1";
 
+					tos_count_tFlowMeterCatcher_1++;
 
+					/**
+					 * [tFlowMeterCatcher_1 main ] stop
+					 */
 
+					/**
+					 * [tFlowMeterCatcher_1 process_data_begin ] start
+					 */
 
- 
+					currentComponent = "tFlowMeterCatcher_1";
 
+					/**
+					 * [tFlowMeterCatcher_1 process_data_begin ] stop
+					 */
 
+					/**
+					 * [tMap_4 main ] start
+					 */
 
-/**
- * [tMap_2 begin ] stop
- */
+					currentComponent = "tMap_4";
 
+					if (execStat) {
+						runStat.updateStatOnConnection(iterateId, 1, 1
 
+								, "row3_0"
 
-	
-	/**
-	 * [tStatCatcher_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tStatCatcher_1", false);
-		start_Hash.put("tStatCatcher_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tStatCatcher_1";
-
-	
-		int tos_count_tStatCatcher_1 = 0;
-		
-
-	for (StatCatcherUtils.StatCatcherMessage scm : tStatCatcher_1.getMessages()) {
-		row3.pid = pid;
-		row3.root_pid = rootPid;
-		row3.father_pid = fatherPid;	
-    	row3.project = projectName;
-    	row3.job = jobName;
-    	row3.context = contextStr;
-		row3.origin = (scm.getOrigin()==null || scm.getOrigin().length()<1 ? null : scm.getOrigin());
-		row3.message = scm.getMessage();
-		row3.duration = scm.getDuration();
-		row3.moment = scm.getMoment();
-		row3.message_type = scm.getMessageType();
-		row3.job_version = scm.getJobVersion();
-		row3.job_repository_id = scm.getJobId();
-		row3.system_pid = scm.getSystemPid();
-
- 
-
-
-
-/**
- * [tStatCatcher_1 begin ] stop
- */
-	
-	/**
-	 * [tStatCatcher_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tStatCatcher_1";
-
-	
-
- 
-
-
-	tos_count_tStatCatcher_1++;
-
-/**
- * [tStatCatcher_1 main ] stop
- */
-	
-	/**
-	 * [tStatCatcher_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tStatCatcher_1";
-
-	
-
- 
-
-
-
-/**
- * [tStatCatcher_1 process_data_begin ] stop
- */
-
-	
-	/**
-	 * [tMap_2 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_2";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1
-						
-							,"row3"
-						
 						);
 					}
-					
 
-		
-		
-		boolean hasCasePrimitiveKeyWithNull_tMap_2 = false;
-		
+					boolean hasCasePrimitiveKeyWithNull_tMap_4 = false;
 
-        // ###############################
-        // # Input tables (lookups)
-		  boolean rejectedInnerJoin_tMap_2 = false;
-		  boolean mainRowRejected_tMap_2 = false;
-            				    								  
-		// ###############################
-        { // start of Var scope
-        
-	        // ###############################
-        	// # Vars tables
-        
-Var__tMap_2__Struct Var = Var__tMap_2;// ###############################
-        // ###############################
-        // # Output tables
+					// ###############################
+					// # Input tables (lookups)
+					boolean rejectedInnerJoin_tMap_4 = false;
+					boolean mainRowRejected_tMap_4 = false;
 
-Main_Stat = null;
+					// ###############################
+					{ // start of Var scope
 
+						// ###############################
+						// # Vars tables
 
-// # Output table : 'Main_Stat'
-Main_Stat_tmp.moment = row3.moment ;
-Main_Stat_tmp.pid = row3.pid ;
-Main_Stat_tmp.job = row3.job ;
-Main_Stat_tmp.origin = row3.origin ;
-Main_Stat_tmp.message_type = row3.message_type ;
-Main_Stat_tmp.message = row3.message ;
-Main_Stat_tmp.duration = row3.duration ;
-Main_Stat = Main_Stat_tmp;
-// ###############################
+						Var__tMap_4__Struct Var = Var__tMap_4;// ###############################
+						// ###############################
+						// # Output tables
 
-} // end of Var scope
-
-rejectedInnerJoin_tMap_2 = false;
-
-
-
-
-
-
-
-
-
-
- 
-
-
-	tos_count_tMap_2++;
-
-/**
- * [tMap_2 main ] stop
- */
-	
-	/**
-	 * [tMap_2 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_2";
-
-	
-
- 
-
-
-
-/**
- * [tMap_2 process_data_begin ] stop
- */
-// Start of branch "Main_Stat"
-if(Main_Stat != null) { 
-
-
-
-	
-	/**
-	 * [tLogRow_2 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_2";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1
-						
-							,"Main_Stat"
-						
-						);
-					}
-					
-///////////////////////		
-						
-
-				
-				String[] row_tLogRow_2 = new String[7];
-   				
-	    		if(Main_Stat.moment != null) { //              
-                 row_tLogRow_2[0]=    						
-								FormatterUtils.format_Date(Main_Stat.moment, "yyyy-MM-dd HH:mm:ss")
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Stat.pid != null) { //              
-                 row_tLogRow_2[1]=    						    
-				                String.valueOf(Main_Stat.pid)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Stat.job != null) { //              
-                 row_tLogRow_2[2]=    						    
-				                String.valueOf(Main_Stat.job)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Stat.origin != null) { //              
-                 row_tLogRow_2[3]=    						    
-				                String.valueOf(Main_Stat.origin)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Stat.message_type != null) { //              
-                 row_tLogRow_2[4]=    						    
-				                String.valueOf(Main_Stat.message_type)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Stat.message != null) { //              
-                 row_tLogRow_2[5]=    						    
-				                String.valueOf(Main_Stat.message)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Stat.duration != null) { //              
-                 row_tLogRow_2[6]=    						    
-				                String.valueOf(Main_Stat.duration)			
-					          ;	
-							
-	    		} //			
-    			 
-
-				util_tLogRow_2.addRow(row_tLogRow_2);	
-				nb_line_tLogRow_2++;
-//////
-
-//////                    
-                    
-///////////////////////    			
-
- 
-
-
-	tos_count_tLogRow_2++;
-
-/**
- * [tLogRow_2 main ] stop
- */
-	
-	/**
-	 * [tLogRow_2 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_2";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_2 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLogRow_2 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_2";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_2 process_data_end ] stop
- */
-
-} // End of branch "Main_Stat"
-
-
-
-
-	
-	/**
-	 * [tMap_2 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_2";
-
-	
-
- 
-
-
-
-/**
- * [tMap_2 process_data_end ] stop
- */
-
-
-
-	
-	/**
-	 * [tStatCatcher_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tStatCatcher_1";
-
-	
-
- 
-
-
-
-/**
- * [tStatCatcher_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tStatCatcher_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tStatCatcher_1";
-
-	
-
-	}
-
-
- 
-
-ok_Hash.put("tStatCatcher_1", true);
-end_Hash.put("tStatCatcher_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tStatCatcher_1 end ] stop
- */
-
-	
-	/**
-	 * [tMap_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_2";
-
-	
-
-
-// ###############################
-// # Lookup hashes releasing
-// ###############################      
-
-
-
-
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
-			  	}
-			  	
- 
-
-ok_Hash.put("tMap_2", true);
-end_Hash.put("tMap_2", System.currentTimeMillis());
-
-
-
-
-/**
- * [tMap_2 end ] stop
- */
-
-	
-	/**
-	 * [tLogRow_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_2";
-
-	
-
-
-//////
-
-                    
-                    java.io.PrintStream consoleOut_tLogRow_2 = null;
-                    if (globalMap.get("tLogRow_CONSOLE")!=null)
-                    {
-                    	consoleOut_tLogRow_2 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-                    }
-                    else
-                    {
-                    	consoleOut_tLogRow_2 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-                    	globalMap.put("tLogRow_CONSOLE",consoleOut_tLogRow_2);
-                    }
-                    
-                    consoleOut_tLogRow_2.println(util_tLogRow_2.format().toString());
-                    consoleOut_tLogRow_2.flush();
-//////
-globalMap.put("tLogRow_2_NB_LINE",nb_line_tLogRow_2);
-
-///////////////////////    			
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Main_Stat");
-			  	}
-			  	
- 
-
-ok_Hash.put("tLogRow_2", true);
-end_Hash.put("tLogRow_2", System.currentTimeMillis());
-
-
-
-
-/**
- * [tLogRow_2 end ] stop
- */
-
-
-
-
-
-
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tStatCatcher_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tStatCatcher_1";
-
-	
-
- 
-
-
-
-/**
- * [tStatCatcher_1 finally ] stop
- */
-
-	
-	/**
-	 * [tMap_2 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_2";
-
-	
-
- 
-
-
-
-/**
- * [tMap_2 finally ] stop
- */
-
-	
-	/**
-	 * [tLogRow_2 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_2";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_2 finally ] stop
- */
-
-
-
-
-
-
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tStatCatcher_1_SUBPROCESS_STATE", 1);
-	}
-	
-
-
-public static class Main_LogStruct implements routines.system.IPersistableRow<Main_LogStruct> {
-    final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-    static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-
-	
-			    public java.util.Date moment;
-
-				public java.util.Date getMoment () {
-					return this.moment;
-				}
-				
-			    public String pid;
-
-				public String getPid () {
-					return this.pid;
-				}
-				
-			    public String job;
-
-				public String getJob () {
-					return this.job;
-				}
-				
-			    public String type;
-
-				public String getType () {
-					return this.type;
-				}
-				
-			    public String origin;
-
-				public String getOrigin () {
-					return this.origin;
-				}
-				
-			    public String message;
-
-				public String getMessage () {
-					return this.message;
-				}
-				
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-	
-	private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = unmarshaller.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(unmarshaller.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-    
-    private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(date1 == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-	
-	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = unmarshaller.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-    
-    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(str == null) {
-			marshaller.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-            marshaller.writeInt(byteArray.length);
-            marshaller.write(byteArray);
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.moment = readDate(dis);
-					
-					this.pid = readString(dis);
-					
-					this.job = readString(dis);
-					
-					this.type = readString(dis);
-					
-					this.origin = readString(dis);
-					
-					this.message = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-    
-    public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.moment = readDate(dis);
-					
-					this.pid = readString(dis);
-					
-					this.job = readString(dis);
-					
-					this.type = readString(dis);
-					
-					this.origin = readString(dis);
-					
-					this.message = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.type,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.message,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-    
-    public void writeData(org.jboss.marshalling.Marshaller dos) {
-        try {
-
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.type,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.message,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("moment="+String.valueOf(moment));
-		sb.append(",pid="+pid);
-		sb.append(",job="+job);
-		sb.append(",type="+type);
-		sb.append(",origin="+origin);
-		sb.append(",message="+message);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Main_LogStruct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class row4Struct implements routines.system.IPersistableRow<row4Struct> {
-    final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-    static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-
-	
-			    public java.util.Date moment;
-
-				public java.util.Date getMoment () {
-					return this.moment;
-				}
-				
-			    public String pid;
-
-				public String getPid () {
-					return this.pid;
-				}
-				
-			    public String root_pid;
-
-				public String getRoot_pid () {
-					return this.root_pid;
-				}
-				
-			    public String father_pid;
-
-				public String getFather_pid () {
-					return this.father_pid;
-				}
-				
-			    public String project;
-
-				public String getProject () {
-					return this.project;
-				}
-				
-			    public String job;
-
-				public String getJob () {
-					return this.job;
-				}
-				
-			    public String context;
-
-				public String getContext () {
-					return this.context;
-				}
-				
-			    public Integer priority;
-
-				public Integer getPriority () {
-					return this.priority;
-				}
-				
-			    public String type;
-
-				public String getType () {
-					return this.type;
-				}
-				
-			    public String origin;
-
-				public String getOrigin () {
-					return this.origin;
-				}
-				
-			    public String message;
-
-				public String getMessage () {
-					return this.message;
-				}
-				
-			    public Integer code;
-
-				public Integer getCode () {
-					return this.code;
-				}
-				
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-	
-	private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = unmarshaller.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(unmarshaller.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-    
-    private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(date1 == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-	
-	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = unmarshaller.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-    
-    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(str == null) {
-			marshaller.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-            marshaller.writeInt(byteArray.length);
-            marshaller.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-	
-	private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-	
-	private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(intNum == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.moment = readDate(dis);
-					
-					this.pid = readString(dis);
-					
-					this.root_pid = readString(dis);
-					
-					this.father_pid = readString(dis);
-					
-					this.project = readString(dis);
-					
-					this.job = readString(dis);
-					
-					this.context = readString(dis);
-					
-						this.priority = readInteger(dis);
-					
-					this.type = readString(dis);
-					
-					this.origin = readString(dis);
-					
-					this.message = readString(dis);
-					
-						this.code = readInteger(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-    
-    public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.moment = readDate(dis);
-					
-					this.pid = readString(dis);
-					
-					this.root_pid = readString(dis);
-					
-					this.father_pid = readString(dis);
-					
-					this.project = readString(dis);
-					
-					this.job = readString(dis);
-					
-					this.context = readString(dis);
-					
-						this.priority = readInteger(dis);
-					
-					this.type = readString(dis);
-					
-					this.origin = readString(dis);
-					
-					this.message = readString(dis);
-					
-						this.code = readInteger(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.root_pid,dos);
-					
-					// String
-				
-						writeString(this.father_pid,dos);
-					
-					// String
-				
-						writeString(this.project,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.context,dos);
-					
-					// Integer
-				
-						writeInteger(this.priority,dos);
-					
-					// String
-				
-						writeString(this.type,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.message,dos);
-					
-					// Integer
-				
-						writeInteger(this.code,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-    
-    public void writeData(org.jboss.marshalling.Marshaller dos) {
-        try {
-
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.root_pid,dos);
-					
-					// String
-				
-						writeString(this.father_pid,dos);
-					
-					// String
-				
-						writeString(this.project,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.context,dos);
-					
-					// Integer
-				
-						writeInteger(this.priority,dos);
-					
-					// String
-				
-						writeString(this.type,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.message,dos);
-					
-					// Integer
-				
-						writeInteger(this.code,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("moment="+String.valueOf(moment));
-		sb.append(",pid="+pid);
-		sb.append(",root_pid="+root_pid);
-		sb.append(",father_pid="+father_pid);
-		sb.append(",project="+project);
-		sb.append(",job="+job);
-		sb.append(",context="+context);
-		sb.append(",priority="+String.valueOf(priority));
-		sb.append(",type="+type);
-		sb.append(",origin="+origin);
-		sb.append(",message="+message);
-		sb.append(",code="+String.valueOf(code));
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row4Struct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-public void tLogCatcher_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tLogCatcher_1_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-		row4Struct row4 = new row4Struct();
-Main_LogStruct Main_Log = new Main_LogStruct();
-
-
-
-
-
-	
-	/**
-	 * [tLogRow_3 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tLogRow_3", false);
-		start_Hash.put("tLogRow_3", System.currentTimeMillis());
-		
-	
-	currentComponent="tLogRow_3";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Main_Log");
-					}
-				
-		int tos_count_tLogRow_3 = 0;
-		
-
-	///////////////////////
-	
-		final String OUTPUT_FIELD_SEPARATOR_tLogRow_3 = "|";
-		java.io.PrintStream consoleOut_tLogRow_3 = null;	
-
- 		StringBuilder strBuffer_tLogRow_3 = null;
-		int nb_line_tLogRow_3 = 0;
-///////////////////////    			
-
-
-
- 
-
-
-
-/**
- * [tLogRow_3 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tMap_3 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tMap_3", false);
-		start_Hash.put("tMap_3", System.currentTimeMillis());
-		
-	
-	currentComponent="tMap_3";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row4");
-					}
-				
-		int tos_count_tMap_3 = 0;
-		
-
-
-
-
-// ###############################
-// # Lookup's keys initialization
-// ###############################        
-
-// ###############################
-// # Vars initialization
-class  Var__tMap_3__Struct  {
-}
-Var__tMap_3__Struct Var__tMap_3 = new Var__tMap_3__Struct();
-// ###############################
-
-// ###############################
-// # Outputs initialization
-Main_LogStruct Main_Log_tmp = new Main_LogStruct();
-// ###############################
-
-        
-        
-
-
-
-        
-
-
-
-
-
-
-
-
-
- 
-
-
-
-/**
- * [tMap_3 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tLogCatcher_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tLogCatcher_1", false);
-		start_Hash.put("tLogCatcher_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tLogCatcher_1";
-
-	
-		int tos_count_tLogCatcher_1 = 0;
-		
-
-try {
-	for (LogCatcherUtils.LogCatcherMessage lcm : tLogCatcher_1.getMessages()) {
-		row4.type = lcm.getType();
-		row4.origin = (lcm.getOrigin()==null || lcm.getOrigin().length()<1 ? null : lcm.getOrigin());
-		row4.priority = lcm.getPriority();
-		row4.message = lcm.getMessage();
-		row4.code = lcm.getCode();
-		
-		row4.moment = java.util.Calendar.getInstance().getTime();
-	
-    	row4.pid = pid;
-		row4.root_pid = rootPid;
-		row4.father_pid = fatherPid;
-	
-    	row4.project = projectName;
-    	row4.job = jobName;
-    	row4.context = contextStr;
-    		
- 
-
-
-
-/**
- * [tLogCatcher_1 begin ] stop
- */
-	
-	/**
-	 * [tLogCatcher_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogCatcher_1";
-
-	
-
- 
-
-
-	tos_count_tLogCatcher_1++;
-
-/**
- * [tLogCatcher_1 main ] stop
- */
-	
-	/**
-	 * [tLogCatcher_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogCatcher_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogCatcher_1 process_data_begin ] stop
- */
-
-	
-	/**
-	 * [tMap_3 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_3";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1
-						
-							,"row4"
-						
-						);
-					}
-					
-
-		
-		
-		boolean hasCasePrimitiveKeyWithNull_tMap_3 = false;
-		
-
-        // ###############################
-        // # Input tables (lookups)
-		  boolean rejectedInnerJoin_tMap_3 = false;
-		  boolean mainRowRejected_tMap_3 = false;
-            				    								  
-		// ###############################
-        { // start of Var scope
-        
-	        // ###############################
-        	// # Vars tables
-        
-Var__tMap_3__Struct Var = Var__tMap_3;// ###############################
-        // ###############################
-        // # Output tables
-
-Main_Log = null;
-
-
-// # Output table : 'Main_Log'
-Main_Log_tmp.moment = row4.moment ;
-Main_Log_tmp.pid = row4.pid ;
-Main_Log_tmp.job = row4.job ;
-Main_Log_tmp.type = row4.type ;
-Main_Log_tmp.origin = row4.origin ;
-Main_Log_tmp.message = row4.message ;
-Main_Log = Main_Log_tmp;
-// ###############################
-
-} // end of Var scope
-
-rejectedInnerJoin_tMap_3 = false;
-
-
-
-
-
-
-
-
-
-
- 
-
-
-	tos_count_tMap_3++;
-
-/**
- * [tMap_3 main ] stop
- */
-	
-	/**
-	 * [tMap_3 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_3";
-
-	
-
- 
-
-
-
-/**
- * [tMap_3 process_data_begin ] stop
- */
-// Start of branch "Main_Log"
-if(Main_Log != null) { 
-
-
-
-	
-	/**
-	 * [tLogRow_3 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_3";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1
-						
-							,"Main_Log"
-						
-						);
-					}
-					
-///////////////////////		
-						
-
-
-
-				strBuffer_tLogRow_3 = new StringBuilder();
-
-
-
-
-   				
-	    		if(Main_Log.moment != null) { //              
-                    							
-       
-				strBuffer_tLogRow_3.append(
-								FormatterUtils.format_Date(Main_Log.moment, "yyyy-MM-dd HH:mm:ss")				
-				);
-
-
-							
-	    		} //  			
-
-    			strBuffer_tLogRow_3.append("|");
-    			
-
-
-   				
-	    		if(Main_Log.pid != null) { //              
-                    							
-       
-				strBuffer_tLogRow_3.append(
-				                String.valueOf(Main_Log.pid)							
-				);
-
-
-							
-	    		} //  			
-
-    			strBuffer_tLogRow_3.append("|");
-    			
-
-
-   				
-	    		if(Main_Log.job != null) { //              
-                    							
-       
-				strBuffer_tLogRow_3.append(
-				                String.valueOf(Main_Log.job)							
-				);
-
-
-							
-	    		} //  			
-
-    			strBuffer_tLogRow_3.append("|");
-    			
-
-
-   				
-	    		if(Main_Log.type != null) { //              
-                    							
-       
-				strBuffer_tLogRow_3.append(
-				                String.valueOf(Main_Log.type)							
-				);
-
-
-							
-	    		} //  			
-
-    			strBuffer_tLogRow_3.append("|");
-    			
-
-
-   				
-	    		if(Main_Log.origin != null) { //              
-                    							
-       
-				strBuffer_tLogRow_3.append(
-				                String.valueOf(Main_Log.origin)							
-				);
-
-
-							
-	    		} //  			
-
-    			strBuffer_tLogRow_3.append("|");
-    			
-
-
-   				
-	    		if(Main_Log.message != null) { //              
-                    							
-       
-				strBuffer_tLogRow_3.append(
-				                String.valueOf(Main_Log.message)							
-				);
-
-
-							
-	    		} //  			
- 
-
-                    if (globalMap.get("tLogRow_CONSOLE")!=null)
-                    {
-                    	consoleOut_tLogRow_3 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-                    }
-                    else
-                    {
-                    	consoleOut_tLogRow_3 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-                    	globalMap.put("tLogRow_CONSOLE",consoleOut_tLogRow_3);
-                    }
-                    consoleOut_tLogRow_3.println(strBuffer_tLogRow_3.toString());
-                    consoleOut_tLogRow_3.flush();
-                    nb_line_tLogRow_3++;
-//////
-
-//////                    
-                    
-///////////////////////    			
-
- 
-
-
-	tos_count_tLogRow_3++;
-
-/**
- * [tLogRow_3 main ] stop
- */
-	
-	/**
-	 * [tLogRow_3 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_3";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_3 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLogRow_3 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_3";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_3 process_data_end ] stop
- */
-
-} // End of branch "Main_Log"
-
-
-
-
-	
-	/**
-	 * [tMap_3 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_3";
-
-	
-
- 
-
-
-
-/**
- * [tMap_3 process_data_end ] stop
- */
-
-
-
-	
-	/**
-	 * [tLogCatcher_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogCatcher_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogCatcher_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tLogCatcher_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogCatcher_1";
-
-	
-	}
-} catch (Exception e_tLogCatcher_1) {
-globalMap.put("tLogCatcher_1_ERROR_MESSAGE",e_tLogCatcher_1.getMessage());
-	logIgnoredError(String.format("tLogCatcher_1 - tLogCatcher failed to process log message(s) due to internal error: %s", e_tLogCatcher_1), e_tLogCatcher_1);
-}
-
- 
-
-ok_Hash.put("tLogCatcher_1", true);
-end_Hash.put("tLogCatcher_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tLogCatcher_1 end ] stop
- */
-
-	
-	/**
-	 * [tMap_3 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_3";
-
-	
-
-
-// ###############################
-// # Lookup hashes releasing
-// ###############################      
-
-
-
-
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row4");
-			  	}
-			  	
- 
-
-ok_Hash.put("tMap_3", true);
-end_Hash.put("tMap_3", System.currentTimeMillis());
-
-
-
-
-/**
- * [tMap_3 end ] stop
- */
-
-	
-	/**
-	 * [tLogRow_3 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_3";
-
-	
-
-
-//////
-//////
-globalMap.put("tLogRow_3_NB_LINE",nb_line_tLogRow_3);
-
-///////////////////////    			
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Main_Log");
-			  	}
-			  	
- 
-
-ok_Hash.put("tLogRow_3", true);
-end_Hash.put("tLogRow_3", System.currentTimeMillis());
-
-
-
-
-/**
- * [tLogRow_3 end ] stop
- */
-
-
-
-
-
-
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tLogCatcher_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogCatcher_1";
-
-	
-
- 
-
-
-
-/**
- * [tLogCatcher_1 finally ] stop
- */
-
-	
-	/**
-	 * [tMap_3 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_3";
-
-	
-
- 
-
-
-
-/**
- * [tMap_3 finally ] stop
- */
-
-	
-	/**
-	 * [tLogRow_3 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_3";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_3 finally ] stop
- */
-
-
-
-
-
-
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tLogCatcher_1_SUBPROCESS_STATE", 1);
-	}
-	
-
-public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tJava_1_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-		
-
-
-	
-	/**
-	 * [tJava_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tJava_1", false);
-		start_Hash.put("tJava_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tJava_1";
-
-	
-		int tos_count_tJava_1 = 0;
-		
-
-
-System.out.println("Starting the Migrating Data from IMMKTNF to ANTICIPATED_DEMAND...........");
-System.out.println("Target OpCO No    : " + context.opco);
-System.out.println("Source OpCO No    : " + context.sopco);
-System.out.println("Migration SVOP    : " + context.svop);
-System.out.println("DateTime          : " + java.time.LocalDate.now());  
-System.out.println("SUS DB2 Connection: " + context.SUS_Server); 
-System.out.println("SUS DB2 Database  : " + context.SUS_Database);  
-System.out.println("PG Connection     : " + context.GIM_Server);  
-System.out.println("PG Database       : " + context.GIM_Database);  
- 
-
-
-
-/**
- * [tJava_1 begin ] stop
- */
-	
-	/**
-	 * [tJava_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-	tos_count_tJava_1++;
-
-/**
- * [tJava_1 main ] stop
- */
-	
-	/**
-	 * [tJava_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-
-/**
- * [tJava_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tJava_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-
-/**
- * [tJava_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tJava_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-ok_Hash.put("tJava_1", true);
-end_Hash.put("tJava_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tJava_1 end ] stop
- */
-				}//end the resume
-
-				
-				    			if(resumeEntryMethodName == null || globalResumeTicket){
-				    				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tJava_1:OnSubjobOk", "", Thread.currentThread().getId() + "", "", "", "", "", "");
-								}	    				    			
-					    	
-								if(execStat){    	
-									runStat.updateStatOnConnection("OnSubjobOk1", 0, "ok");
-								} 
-							
-							tDBInput_1Process(globalMap); 
-						
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tJava_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tJava_1";
-
-	
-
- 
-
-
-
-/**
- * [tJava_1 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tJava_1_SUBPROCESS_STATE", 1);
-	}
-	
-
-
-public static class Anticipated_Demand_InboundStruct implements routines.system.IPersistableRow<Anticipated_Demand_InboundStruct> {
-    final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-    static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public String SITE_ID;
-
-				public String getSITE_ID () {
-					return this.SITE_ID;
-				}
-				
-			    public String ITEM_NO;
-
-				public String getITEM_NO () {
-					return this.ITEM_NO;
-				}
-				
-			    public java.util.Date DEMAND_WEEK_END_DATE;
-
-				public java.util.Date getDEMAND_WEEK_END_DATE () {
-					return this.DEMAND_WEEK_END_DATE;
-				}
-				
-			    public String DEMAND_TYPE;
-
-				public String getDEMAND_TYPE () {
-					return this.DEMAND_TYPE;
-				}
-				
-			    public String REFERENCE_NO;
-
-				public String getREFERENCE_NO () {
-					return this.REFERENCE_NO;
-				}
-				
-			    public String STATUS_OF_DEMAND;
-
-				public String getSTATUS_OF_DEMAND () {
-					return this.STATUS_OF_DEMAND;
-				}
-				
-			    public BigDecimal DEMAND_CASE_QTY_DAY_1;
-
-				public BigDecimal getDEMAND_CASE_QTY_DAY_1 () {
-					return this.DEMAND_CASE_QTY_DAY_1;
-				}
-				
-			    public BigDecimal DEMAND_CASE_QTY_DAY_2;
-
-				public BigDecimal getDEMAND_CASE_QTY_DAY_2 () {
-					return this.DEMAND_CASE_QTY_DAY_2;
-				}
-				
-			    public BigDecimal DEMAND_CASE_QTY_DAY_3;
-
-				public BigDecimal getDEMAND_CASE_QTY_DAY_3 () {
-					return this.DEMAND_CASE_QTY_DAY_3;
-				}
-				
-			    public BigDecimal DEMAND_CASE_QTY_DAY_4;
-
-				public BigDecimal getDEMAND_CASE_QTY_DAY_4 () {
-					return this.DEMAND_CASE_QTY_DAY_4;
-				}
-				
-			    public BigDecimal DEMAND_CASE_QTY_DAY_5;
-
-				public BigDecimal getDEMAND_CASE_QTY_DAY_5 () {
-					return this.DEMAND_CASE_QTY_DAY_5;
-				}
-				
-			    public BigDecimal DEMAND_CASE_QTY_DAY_6;
-
-				public BigDecimal getDEMAND_CASE_QTY_DAY_6 () {
-					return this.DEMAND_CASE_QTY_DAY_6;
-				}
-				
-			    public BigDecimal DEMAND_CASE_QTY_DAY_7;
-
-				public BigDecimal getDEMAND_CASE_QTY_DAY_7 () {
-					return this.DEMAND_CASE_QTY_DAY_7;
-				}
-				
-			    public BigDecimal DEMAND_SPLIT_QTY_DAY_1;
-
-				public BigDecimal getDEMAND_SPLIT_QTY_DAY_1 () {
-					return this.DEMAND_SPLIT_QTY_DAY_1;
-				}
-				
-			    public BigDecimal DEMAND_SPLIT_QTY_DAY_2;
-
-				public BigDecimal getDEMAND_SPLIT_QTY_DAY_2 () {
-					return this.DEMAND_SPLIT_QTY_DAY_2;
-				}
-				
-			    public BigDecimal DEMAND_SPLIT_QTY_DAY_3;
-
-				public BigDecimal getDEMAND_SPLIT_QTY_DAY_3 () {
-					return this.DEMAND_SPLIT_QTY_DAY_3;
-				}
-				
-			    public BigDecimal DEMAND_SPLIT_QTY_DAY_4;
-
-				public BigDecimal getDEMAND_SPLIT_QTY_DAY_4 () {
-					return this.DEMAND_SPLIT_QTY_DAY_4;
-				}
-				
-			    public BigDecimal DEMAND_SPLIT_QTY_DAY_5;
-
-				public BigDecimal getDEMAND_SPLIT_QTY_DAY_5 () {
-					return this.DEMAND_SPLIT_QTY_DAY_5;
-				}
-				
-			    public BigDecimal DEMAND_SPLIT_QTY_DAY_6;
-
-				public BigDecimal getDEMAND_SPLIT_QTY_DAY_6 () {
-					return this.DEMAND_SPLIT_QTY_DAY_6;
-				}
-				
-			    public BigDecimal DEMAND_SPLIT_QTY_DAY_7;
-
-				public BigDecimal getDEMAND_SPLIT_QTY_DAY_7 () {
-					return this.DEMAND_SPLIT_QTY_DAY_7;
-				}
-				
-			    public BigDecimal DEMAND_CASE_WEEK_TOTAL_QTY;
-
-				public BigDecimal getDEMAND_CASE_WEEK_TOTAL_QTY () {
-					return this.DEMAND_CASE_WEEK_TOTAL_QTY;
-				}
-				
-			    public BigDecimal DEMAND_SPLIT_WEEK_TOTAL_QTY;
-
-				public BigDecimal getDEMAND_SPLIT_WEEK_TOTAL_QTY () {
-					return this.DEMAND_SPLIT_WEEK_TOTAL_QTY;
-				}
-				
-			    public java.util.Date CREATED_TIMESTAMP;
-
-				public java.util.Date getCREATED_TIMESTAMP () {
-					return this.CREATED_TIMESTAMP;
-				}
-				
-			    public String CREATED_USER_ID;
-
-				public String getCREATED_USER_ID () {
-					return this.CREATED_USER_ID;
-				}
-				
-			    public java.util.Date UPDATED_TIMESTAMP;
-
-				public java.util.Date getUPDATED_TIMESTAMP () {
-					return this.UPDATED_TIMESTAMP;
-				}
-				
-			    public String UPDATED_USER_ID;
-
-				public String getUPDATED_USER_ID () {
-					return this.UPDATED_USER_ID;
-				}
-				
-			    public boolean IS_DELETED;
-
-				public boolean getIS_DELETED () {
-					return this.IS_DELETED;
-				}
-				
-			    public String CREATED_ORIGIN;
-
-				public String getCREATED_ORIGIN () {
-					return this.CREATED_ORIGIN;
-				}
-				
-			    public java.util.Date CREATED_ORIGIN_TIMESTAMP;
-
-				public java.util.Date getCREATED_ORIGIN_TIMESTAMP () {
-					return this.CREATED_ORIGIN_TIMESTAMP;
-				}
-				
-			    public String UPDATED_ORIGIN;
-
-				public String getUPDATED_ORIGIN () {
-					return this.UPDATED_ORIGIN;
-				}
-				
-			    public java.util.Date UPDATED_ORIGIN_TIMESTAMP;
-
-				public java.util.Date getUPDATED_ORIGIN_TIMESTAMP () {
-					return this.UPDATED_ORIGIN_TIMESTAMP;
-				}
-				
-			    public String TNPF_SVOP;
-
-				public String getTNPF_SVOP () {
-					return this.TNPF_SVOP;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-						result = prime * result + ((this.SITE_ID == null) ? 0 : this.SITE_ID.hashCode());
-					
-						result = prime * result + ((this.ITEM_NO == null) ? 0 : this.ITEM_NO.hashCode());
-					
-						result = prime * result + ((this.DEMAND_WEEK_END_DATE == null) ? 0 : this.DEMAND_WEEK_END_DATE.hashCode());
-					
-						result = prime * result + ((this.DEMAND_TYPE == null) ? 0 : this.DEMAND_TYPE.hashCode());
-					
-						result = prime * result + ((this.REFERENCE_NO == null) ? 0 : this.REFERENCE_NO.hashCode());
-					
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final Anticipated_Demand_InboundStruct other = (Anticipated_Demand_InboundStruct) obj;
-		
-						if (this.SITE_ID == null) {
-							if (other.SITE_ID != null)
-								return false;
-						
-						} else if (!this.SITE_ID.equals(other.SITE_ID))
-						
-							return false;
-					
-						if (this.ITEM_NO == null) {
-							if (other.ITEM_NO != null)
-								return false;
-						
-						} else if (!this.ITEM_NO.equals(other.ITEM_NO))
-						
-							return false;
-					
-						if (this.DEMAND_WEEK_END_DATE == null) {
-							if (other.DEMAND_WEEK_END_DATE != null)
-								return false;
-						
-						} else if (!this.DEMAND_WEEK_END_DATE.equals(other.DEMAND_WEEK_END_DATE))
-						
-							return false;
-					
-						if (this.DEMAND_TYPE == null) {
-							if (other.DEMAND_TYPE != null)
-								return false;
-						
-						} else if (!this.DEMAND_TYPE.equals(other.DEMAND_TYPE))
-						
-							return false;
-					
-						if (this.REFERENCE_NO == null) {
-							if (other.REFERENCE_NO != null)
-								return false;
-						
-						} else if (!this.REFERENCE_NO.equals(other.REFERENCE_NO))
-						
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(Anticipated_Demand_InboundStruct other) {
-
-		other.SITE_ID = this.SITE_ID;
-	            other.ITEM_NO = this.ITEM_NO;
-	            other.DEMAND_WEEK_END_DATE = this.DEMAND_WEEK_END_DATE;
-	            other.DEMAND_TYPE = this.DEMAND_TYPE;
-	            other.REFERENCE_NO = this.REFERENCE_NO;
-	            other.STATUS_OF_DEMAND = this.STATUS_OF_DEMAND;
-	            other.DEMAND_CASE_QTY_DAY_1 = this.DEMAND_CASE_QTY_DAY_1;
-	            other.DEMAND_CASE_QTY_DAY_2 = this.DEMAND_CASE_QTY_DAY_2;
-	            other.DEMAND_CASE_QTY_DAY_3 = this.DEMAND_CASE_QTY_DAY_3;
-	            other.DEMAND_CASE_QTY_DAY_4 = this.DEMAND_CASE_QTY_DAY_4;
-	            other.DEMAND_CASE_QTY_DAY_5 = this.DEMAND_CASE_QTY_DAY_5;
-	            other.DEMAND_CASE_QTY_DAY_6 = this.DEMAND_CASE_QTY_DAY_6;
-	            other.DEMAND_CASE_QTY_DAY_7 = this.DEMAND_CASE_QTY_DAY_7;
-	            other.DEMAND_SPLIT_QTY_DAY_1 = this.DEMAND_SPLIT_QTY_DAY_1;
-	            other.DEMAND_SPLIT_QTY_DAY_2 = this.DEMAND_SPLIT_QTY_DAY_2;
-	            other.DEMAND_SPLIT_QTY_DAY_3 = this.DEMAND_SPLIT_QTY_DAY_3;
-	            other.DEMAND_SPLIT_QTY_DAY_4 = this.DEMAND_SPLIT_QTY_DAY_4;
-	            other.DEMAND_SPLIT_QTY_DAY_5 = this.DEMAND_SPLIT_QTY_DAY_5;
-	            other.DEMAND_SPLIT_QTY_DAY_6 = this.DEMAND_SPLIT_QTY_DAY_6;
-	            other.DEMAND_SPLIT_QTY_DAY_7 = this.DEMAND_SPLIT_QTY_DAY_7;
-	            other.DEMAND_CASE_WEEK_TOTAL_QTY = this.DEMAND_CASE_WEEK_TOTAL_QTY;
-	            other.DEMAND_SPLIT_WEEK_TOTAL_QTY = this.DEMAND_SPLIT_WEEK_TOTAL_QTY;
-	            other.CREATED_TIMESTAMP = this.CREATED_TIMESTAMP;
-	            other.CREATED_USER_ID = this.CREATED_USER_ID;
-	            other.UPDATED_TIMESTAMP = this.UPDATED_TIMESTAMP;
-	            other.UPDATED_USER_ID = this.UPDATED_USER_ID;
-	            other.IS_DELETED = this.IS_DELETED;
-	            other.CREATED_ORIGIN = this.CREATED_ORIGIN;
-	            other.CREATED_ORIGIN_TIMESTAMP = this.CREATED_ORIGIN_TIMESTAMP;
-	            other.UPDATED_ORIGIN = this.UPDATED_ORIGIN;
-	            other.UPDATED_ORIGIN_TIMESTAMP = this.UPDATED_ORIGIN_TIMESTAMP;
-	            other.TNPF_SVOP = this.TNPF_SVOP;
-	            
-	}
-
-	public void copyKeysDataTo(Anticipated_Demand_InboundStruct other) {
-
-		other.SITE_ID = this.SITE_ID;
-	            	other.ITEM_NO = this.ITEM_NO;
-	            	other.DEMAND_WEEK_END_DATE = this.DEMAND_WEEK_END_DATE;
-	            	other.DEMAND_TYPE = this.DEMAND_TYPE;
-	            	other.REFERENCE_NO = this.REFERENCE_NO;
-	            	
-	}
-
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-	
-	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = unmarshaller.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-    
-    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(str == null) {
-			marshaller.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-            marshaller.writeInt(byteArray.length);
-            marshaller.write(byteArray);
-    	}
-    }
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-	
-	private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = unmarshaller.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(unmarshaller.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-    
-    private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(date1 == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeLong(date1.getTime());
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.SITE_ID = readString(dis);
-					
-					this.ITEM_NO = readString(dis);
-					
-					this.DEMAND_WEEK_END_DATE = readDate(dis);
-					
-					this.DEMAND_TYPE = readString(dis);
-					
-					this.REFERENCE_NO = readString(dis);
-					
-					this.STATUS_OF_DEMAND = readString(dis);
-					
-						this.DEMAND_CASE_QTY_DAY_1 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_2 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_3 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_4 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_5 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_6 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_7 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_1 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_2 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_3 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_4 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_5 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_6 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_7 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_WEEK_TOTAL_QTY = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_WEEK_TOTAL_QTY = (BigDecimal) dis.readObject();
-					
-					this.CREATED_TIMESTAMP = readDate(dis);
-					
-					this.CREATED_USER_ID = readString(dis);
-					
-					this.UPDATED_TIMESTAMP = readDate(dis);
-					
-					this.UPDATED_USER_ID = readString(dis);
-					
-			        this.IS_DELETED = dis.readBoolean();
-					
-					this.CREATED_ORIGIN = readString(dis);
-					
-					this.CREATED_ORIGIN_TIMESTAMP = readDate(dis);
-					
-					this.UPDATED_ORIGIN = readString(dis);
-					
-					this.UPDATED_ORIGIN_TIMESTAMP = readDate(dis);
-					
-					this.TNPF_SVOP = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-    
-    public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.SITE_ID = readString(dis);
-					
-					this.ITEM_NO = readString(dis);
-					
-					this.DEMAND_WEEK_END_DATE = readDate(dis);
-					
-					this.DEMAND_TYPE = readString(dis);
-					
-					this.REFERENCE_NO = readString(dis);
-					
-					this.STATUS_OF_DEMAND = readString(dis);
-					
-						this.DEMAND_CASE_QTY_DAY_1 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_2 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_3 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_4 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_5 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_6 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_QTY_DAY_7 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_1 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_2 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_3 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_4 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_5 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_6 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_QTY_DAY_7 = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_CASE_WEEK_TOTAL_QTY = (BigDecimal) dis.readObject();
-					
-						this.DEMAND_SPLIT_WEEK_TOTAL_QTY = (BigDecimal) dis.readObject();
-					
-					this.CREATED_TIMESTAMP = readDate(dis);
-					
-					this.CREATED_USER_ID = readString(dis);
-					
-					this.UPDATED_TIMESTAMP = readDate(dis);
-					
-					this.UPDATED_USER_ID = readString(dis);
-					
-			        this.IS_DELETED = dis.readBoolean();
-					
-					this.CREATED_ORIGIN = readString(dis);
-					
-					this.CREATED_ORIGIN_TIMESTAMP = readDate(dis);
-					
-					this.UPDATED_ORIGIN = readString(dis);
-					
-					this.UPDATED_ORIGIN_TIMESTAMP = readDate(dis);
-					
-					this.TNPF_SVOP = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.SITE_ID,dos);
-					
-					// String
-				
-						writeString(this.ITEM_NO,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.DEMAND_WEEK_END_DATE,dos);
-					
-					// String
-				
-						writeString(this.DEMAND_TYPE,dos);
-					
-					// String
-				
-						writeString(this.REFERENCE_NO,dos);
-					
-					// String
-				
-						writeString(this.STATUS_OF_DEMAND,dos);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_1);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_2);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_3);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_4);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_5);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_6);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_7);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_1);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_2);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_3);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_4);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_5);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_6);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_7);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_WEEK_TOTAL_QTY);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_WEEK_TOTAL_QTY);
-					
-					// java.util.Date
-				
-						writeDate(this.CREATED_TIMESTAMP,dos);
-					
-					// String
-				
-						writeString(this.CREATED_USER_ID,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.UPDATED_TIMESTAMP,dos);
-					
-					// String
-				
-						writeString(this.UPDATED_USER_ID,dos);
-					
-					// boolean
-				
-		            	dos.writeBoolean(this.IS_DELETED);
-					
-					// String
-				
-						writeString(this.CREATED_ORIGIN,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.CREATED_ORIGIN_TIMESTAMP,dos);
-					
-					// String
-				
-						writeString(this.UPDATED_ORIGIN,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.UPDATED_ORIGIN_TIMESTAMP,dos);
-					
-					// String
-				
-						writeString(this.TNPF_SVOP,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-    
-    public void writeData(org.jboss.marshalling.Marshaller dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.SITE_ID,dos);
-					
-					// String
-				
-						writeString(this.ITEM_NO,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.DEMAND_WEEK_END_DATE,dos);
-					
-					// String
-				
-						writeString(this.DEMAND_TYPE,dos);
-					
-					// String
-				
-						writeString(this.REFERENCE_NO,dos);
-					
-					// String
-				
-						writeString(this.STATUS_OF_DEMAND,dos);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_1);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_2);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_3);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_4);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_5);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_6);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_QTY_DAY_7);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_1);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_2);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_3);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_4);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_5);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_6);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_7);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_CASE_WEEK_TOTAL_QTY);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.DEMAND_SPLIT_WEEK_TOTAL_QTY);
-					
-					// java.util.Date
-				
-						writeDate(this.CREATED_TIMESTAMP,dos);
-					
-					// String
-				
-						writeString(this.CREATED_USER_ID,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.UPDATED_TIMESTAMP,dos);
-					
-					// String
-				
-						writeString(this.UPDATED_USER_ID,dos);
-					
-					// boolean
-				
-		            	dos.writeBoolean(this.IS_DELETED);
-					
-					// String
-				
-						writeString(this.CREATED_ORIGIN,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.CREATED_ORIGIN_TIMESTAMP,dos);
-					
-					// String
-				
-						writeString(this.UPDATED_ORIGIN,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.UPDATED_ORIGIN_TIMESTAMP,dos);
-					
-					// String
-				
-						writeString(this.TNPF_SVOP,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("SITE_ID="+SITE_ID);
-		sb.append(",ITEM_NO="+ITEM_NO);
-		sb.append(",DEMAND_WEEK_END_DATE="+String.valueOf(DEMAND_WEEK_END_DATE));
-		sb.append(",DEMAND_TYPE="+DEMAND_TYPE);
-		sb.append(",REFERENCE_NO="+REFERENCE_NO);
-		sb.append(",STATUS_OF_DEMAND="+STATUS_OF_DEMAND);
-		sb.append(",DEMAND_CASE_QTY_DAY_1="+String.valueOf(DEMAND_CASE_QTY_DAY_1));
-		sb.append(",DEMAND_CASE_QTY_DAY_2="+String.valueOf(DEMAND_CASE_QTY_DAY_2));
-		sb.append(",DEMAND_CASE_QTY_DAY_3="+String.valueOf(DEMAND_CASE_QTY_DAY_3));
-		sb.append(",DEMAND_CASE_QTY_DAY_4="+String.valueOf(DEMAND_CASE_QTY_DAY_4));
-		sb.append(",DEMAND_CASE_QTY_DAY_5="+String.valueOf(DEMAND_CASE_QTY_DAY_5));
-		sb.append(",DEMAND_CASE_QTY_DAY_6="+String.valueOf(DEMAND_CASE_QTY_DAY_6));
-		sb.append(",DEMAND_CASE_QTY_DAY_7="+String.valueOf(DEMAND_CASE_QTY_DAY_7));
-		sb.append(",DEMAND_SPLIT_QTY_DAY_1="+String.valueOf(DEMAND_SPLIT_QTY_DAY_1));
-		sb.append(",DEMAND_SPLIT_QTY_DAY_2="+String.valueOf(DEMAND_SPLIT_QTY_DAY_2));
-		sb.append(",DEMAND_SPLIT_QTY_DAY_3="+String.valueOf(DEMAND_SPLIT_QTY_DAY_3));
-		sb.append(",DEMAND_SPLIT_QTY_DAY_4="+String.valueOf(DEMAND_SPLIT_QTY_DAY_4));
-		sb.append(",DEMAND_SPLIT_QTY_DAY_5="+String.valueOf(DEMAND_SPLIT_QTY_DAY_5));
-		sb.append(",DEMAND_SPLIT_QTY_DAY_6="+String.valueOf(DEMAND_SPLIT_QTY_DAY_6));
-		sb.append(",DEMAND_SPLIT_QTY_DAY_7="+String.valueOf(DEMAND_SPLIT_QTY_DAY_7));
-		sb.append(",DEMAND_CASE_WEEK_TOTAL_QTY="+String.valueOf(DEMAND_CASE_WEEK_TOTAL_QTY));
-		sb.append(",DEMAND_SPLIT_WEEK_TOTAL_QTY="+String.valueOf(DEMAND_SPLIT_WEEK_TOTAL_QTY));
-		sb.append(",CREATED_TIMESTAMP="+String.valueOf(CREATED_TIMESTAMP));
-		sb.append(",CREATED_USER_ID="+CREATED_USER_ID);
-		sb.append(",UPDATED_TIMESTAMP="+String.valueOf(UPDATED_TIMESTAMP));
-		sb.append(",UPDATED_USER_ID="+UPDATED_USER_ID);
-		sb.append(",IS_DELETED="+String.valueOf(IS_DELETED));
-		sb.append(",CREATED_ORIGIN="+CREATED_ORIGIN);
-		sb.append(",CREATED_ORIGIN_TIMESTAMP="+String.valueOf(CREATED_ORIGIN_TIMESTAMP));
-		sb.append(",UPDATED_ORIGIN="+UPDATED_ORIGIN);
-		sb.append(",UPDATED_ORIGIN_TIMESTAMP="+String.valueOf(UPDATED_ORIGIN_TIMESTAMP));
-		sb.append(",TNPF_SVOP="+TNPF_SVOP);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Anticipated_Demand_InboundStruct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.SITE_ID, other.SITE_ID);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-						returnValue = checkNullsAndCompare(this.ITEM_NO, other.ITEM_NO);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-						returnValue = checkNullsAndCompare(this.DEMAND_WEEK_END_DATE, other.DEMAND_WEEK_END_DATE);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-						returnValue = checkNullsAndCompare(this.DEMAND_TYPE, other.DEMAND_TYPE);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-						returnValue = checkNullsAndCompare(this.REFERENCE_NO, other.REFERENCE_NO);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
-    final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-    static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-
-	
-			    public String TNITEM;
-
-				public String getTNITEM () {
-					return this.TNITEM;
-				}
-				
-			    public BigDecimal TNDMED;
-
-				public BigDecimal getTNDMED () {
-					return this.TNDMED;
-				}
-				
-			    public String TNDTYP;
-
-				public String getTNDTYP () {
-					return this.TNDTYP;
-				}
-				
-			    public String TNADRF;
-
-				public String getTNADRF () {
-					return this.TNADRF;
-				}
-				
-			    public String TNDSTS;
-
-				public String getTNDSTS () {
-					return this.TNDSTS;
-				}
-				
-			    public String TNFCMT;
-
-				public String getTNFCMT () {
-					return this.TNFCMT;
-				}
-				
-			    public BigDecimal TNAPDT;
-
-				public BigDecimal getTNAPDT () {
-					return this.TNAPDT;
-				}
-				
-			    public BigDecimal TNDCD1;
-
-				public BigDecimal getTNDCD1 () {
-					return this.TNDCD1;
-				}
-				
-			    public BigDecimal TNDCD2;
-
-				public BigDecimal getTNDCD2 () {
-					return this.TNDCD2;
-				}
-				
-			    public BigDecimal TNDCD3;
-
-				public BigDecimal getTNDCD3 () {
-					return this.TNDCD3;
-				}
-				
-			    public BigDecimal TNDCD4;
-
-				public BigDecimal getTNDCD4 () {
-					return this.TNDCD4;
-				}
-				
-			    public BigDecimal TNDCD5;
-
-				public BigDecimal getTNDCD5 () {
-					return this.TNDCD5;
-				}
-				
-			    public BigDecimal TNDCD6;
-
-				public BigDecimal getTNDCD6 () {
-					return this.TNDCD6;
-				}
-				
-			    public BigDecimal TNDCD7;
-
-				public BigDecimal getTNDCD7 () {
-					return this.TNDCD7;
-				}
-				
-			    public BigDecimal TNDSD1;
-
-				public BigDecimal getTNDSD1 () {
-					return this.TNDSD1;
-				}
-				
-			    public BigDecimal TNDSD2;
-
-				public BigDecimal getTNDSD2 () {
-					return this.TNDSD2;
-				}
-				
-			    public BigDecimal TNDSD3;
-
-				public BigDecimal getTNDSD3 () {
-					return this.TNDSD3;
-				}
-				
-			    public BigDecimal TNDSD4;
-
-				public BigDecimal getTNDSD4 () {
-					return this.TNDSD4;
-				}
-				
-			    public BigDecimal TNDSD5;
-
-				public BigDecimal getTNDSD5 () {
-					return this.TNDSD5;
-				}
-				
-			    public BigDecimal TNDSD6;
-
-				public BigDecimal getTNDSD6 () {
-					return this.TNDSD6;
-				}
-				
-			    public BigDecimal TNDSD7;
-
-				public BigDecimal getTNDSD7 () {
-					return this.TNDSD7;
-				}
-				
-			    public BigDecimal TNDCWT;
-
-				public BigDecimal getTNDCWT () {
-					return this.TNDCWT;
-				}
-				
-			    public BigDecimal TNDSWT;
-
-				public BigDecimal getTNDSWT () {
-					return this.TNDSWT;
-				}
-				
-			    public String TNCPVN;
-
-				public String getTNCPVN () {
-					return this.TNCPVN;
-				}
-				
-			    public String TNWHSE;
-
-				public String getTNWHSE () {
-					return this.TNWHSE;
-				}
-				
-			    public String TNBUYR;
-
-				public String getTNBUYR () {
-					return this.TNBUYR;
-				}
-				
-			    public BigDecimal TNEADT;
-
-				public BigDecimal getTNEADT () {
-					return this.TNEADT;
-				}
-				
-			    public BigDecimal TNEATM;
-
-				public BigDecimal getTNEATM () {
-					return this.TNEATM;
-				}
-				
-			    public String TNEAID;
-
-				public String getTNEAID () {
-					return this.TNEAID;
-				}
-				
-			    public BigDecimal TNMODT;
-
-				public BigDecimal getTNMODT () {
-					return this.TNMODT;
-				}
-				
-			    public BigDecimal TNMOTM;
-
-				public BigDecimal getTNMOTM () {
-					return this.TNMOTM;
-				}
-				
-			    public String TNMOID;
-
-				public String getTNMOID () {
-					return this.TNMOID;
-				}
-				
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-	
-	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = unmarshaller.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-    
-    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(str == null) {
-			marshaller.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-            marshaller.writeInt(byteArray.length);
-            marshaller.write(byteArray);
-    	}
-    }
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.TNITEM = readString(dis);
-					
-						this.TNDMED = (BigDecimal) dis.readObject();
-					
-					this.TNDTYP = readString(dis);
-					
-					this.TNADRF = readString(dis);
-					
-					this.TNDSTS = readString(dis);
-					
-					this.TNFCMT = readString(dis);
-					
-						this.TNAPDT = (BigDecimal) dis.readObject();
-					
-						this.TNDCD1 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD2 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD3 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD4 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD5 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD6 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD7 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD1 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD2 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD3 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD4 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD5 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD6 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD7 = (BigDecimal) dis.readObject();
-					
-						this.TNDCWT = (BigDecimal) dis.readObject();
-					
-						this.TNDSWT = (BigDecimal) dis.readObject();
-					
-					this.TNCPVN = readString(dis);
-					
-					this.TNWHSE = readString(dis);
-					
-					this.TNBUYR = readString(dis);
-					
-						this.TNEADT = (BigDecimal) dis.readObject();
-					
-						this.TNEATM = (BigDecimal) dis.readObject();
-					
-					this.TNEAID = readString(dis);
-					
-						this.TNMODT = (BigDecimal) dis.readObject();
-					
-						this.TNMOTM = (BigDecimal) dis.readObject();
-					
-					this.TNMOID = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-    
-    public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.TNITEM = readString(dis);
-					
-						this.TNDMED = (BigDecimal) dis.readObject();
-					
-					this.TNDTYP = readString(dis);
-					
-					this.TNADRF = readString(dis);
-					
-					this.TNDSTS = readString(dis);
-					
-					this.TNFCMT = readString(dis);
-					
-						this.TNAPDT = (BigDecimal) dis.readObject();
-					
-						this.TNDCD1 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD2 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD3 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD4 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD5 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD6 = (BigDecimal) dis.readObject();
-					
-						this.TNDCD7 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD1 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD2 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD3 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD4 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD5 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD6 = (BigDecimal) dis.readObject();
-					
-						this.TNDSD7 = (BigDecimal) dis.readObject();
-					
-						this.TNDCWT = (BigDecimal) dis.readObject();
-					
-						this.TNDSWT = (BigDecimal) dis.readObject();
-					
-					this.TNCPVN = readString(dis);
-					
-					this.TNWHSE = readString(dis);
-					
-					this.TNBUYR = readString(dis);
-					
-						this.TNEADT = (BigDecimal) dis.readObject();
-					
-						this.TNEATM = (BigDecimal) dis.readObject();
-					
-					this.TNEAID = readString(dis);
-					
-						this.TNMODT = (BigDecimal) dis.readObject();
-					
-						this.TNMOTM = (BigDecimal) dis.readObject();
-					
-					this.TNMOID = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.TNITEM,dos);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDMED);
-					
-					// String
-				
-						writeString(this.TNDTYP,dos);
-					
-					// String
-				
-						writeString(this.TNADRF,dos);
-					
-					// String
-				
-						writeString(this.TNDSTS,dos);
-					
-					// String
-				
-						writeString(this.TNFCMT,dos);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNAPDT);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD1);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD2);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD3);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD4);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD5);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD6);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD7);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD1);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD2);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD3);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD4);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD5);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD6);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD7);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCWT);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSWT);
-					
-					// String
-				
-						writeString(this.TNCPVN,dos);
-					
-					// String
-				
-						writeString(this.TNWHSE,dos);
-					
-					// String
-				
-						writeString(this.TNBUYR,dos);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNEADT);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNEATM);
-					
-					// String
-				
-						writeString(this.TNEAID,dos);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNMODT);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNMOTM);
-					
-					// String
-				
-						writeString(this.TNMOID,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-    
-    public void writeData(org.jboss.marshalling.Marshaller dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.TNITEM,dos);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDMED);
-					
-					// String
-				
-						writeString(this.TNDTYP,dos);
-					
-					// String
-				
-						writeString(this.TNADRF,dos);
-					
-					// String
-				
-						writeString(this.TNDSTS,dos);
-					
-					// String
-				
-						writeString(this.TNFCMT,dos);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNAPDT);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD1);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD2);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD3);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD4);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD5);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD6);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCD7);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD1);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD2);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD3);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD4);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD5);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD6);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSD7);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDCWT);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNDSWT);
-					
-					// String
-				
-						writeString(this.TNCPVN,dos);
-					
-					// String
-				
-						writeString(this.TNWHSE,dos);
-					
-					// String
-				
-						writeString(this.TNBUYR,dos);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNEADT);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNEATM);
-					
-					// String
-				
-						writeString(this.TNEAID,dos);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNMODT);
-					
-					// BigDecimal
-				
-       			    	dos.writeObject(this.TNMOTM);
-					
-					// String
-				
-						writeString(this.TNMOID,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("TNITEM="+TNITEM);
-		sb.append(",TNDMED="+String.valueOf(TNDMED));
-		sb.append(",TNDTYP="+TNDTYP);
-		sb.append(",TNADRF="+TNADRF);
-		sb.append(",TNDSTS="+TNDSTS);
-		sb.append(",TNFCMT="+TNFCMT);
-		sb.append(",TNAPDT="+String.valueOf(TNAPDT));
-		sb.append(",TNDCD1="+String.valueOf(TNDCD1));
-		sb.append(",TNDCD2="+String.valueOf(TNDCD2));
-		sb.append(",TNDCD3="+String.valueOf(TNDCD3));
-		sb.append(",TNDCD4="+String.valueOf(TNDCD4));
-		sb.append(",TNDCD5="+String.valueOf(TNDCD5));
-		sb.append(",TNDCD6="+String.valueOf(TNDCD6));
-		sb.append(",TNDCD7="+String.valueOf(TNDCD7));
-		sb.append(",TNDSD1="+String.valueOf(TNDSD1));
-		sb.append(",TNDSD2="+String.valueOf(TNDSD2));
-		sb.append(",TNDSD3="+String.valueOf(TNDSD3));
-		sb.append(",TNDSD4="+String.valueOf(TNDSD4));
-		sb.append(",TNDSD5="+String.valueOf(TNDSD5));
-		sb.append(",TNDSD6="+String.valueOf(TNDSD6));
-		sb.append(",TNDSD7="+String.valueOf(TNDSD7));
-		sb.append(",TNDCWT="+String.valueOf(TNDCWT));
-		sb.append(",TNDSWT="+String.valueOf(TNDSWT));
-		sb.append(",TNCPVN="+TNCPVN);
-		sb.append(",TNWHSE="+TNWHSE);
-		sb.append(",TNBUYR="+TNBUYR);
-		sb.append(",TNEADT="+String.valueOf(TNEADT));
-		sb.append(",TNEATM="+String.valueOf(TNEATM));
-		sb.append(",TNEAID="+TNEAID);
-		sb.append(",TNMODT="+String.valueOf(TNMODT));
-		sb.append(",TNMOTM="+String.valueOf(TNMOTM));
-		sb.append(",TNMOID="+TNMOID);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row1Struct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tDBInput_1_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-		row1Struct row1 = new row1Struct();
-Anticipated_Demand_InboundStruct Anticipated_Demand_Inbound = new Anticipated_Demand_InboundStruct();
-
-
-
-
-
-	
-	/**
-	 * [tDBOutput_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tDBOutput_1", false);
-		start_Hash.put("tDBOutput_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tDBOutput_1";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Anticipated_Demand_Inbound");
-					}
-				
-		int tos_count_tDBOutput_1 = 0;
-		
-
-
-
-
-
-String dbschema_tDBOutput_1 = null;
-	dbschema_tDBOutput_1 = context.GIM_Schema_Demand;
-	
-
-String tableName_tDBOutput_1 = null;
-if(dbschema_tDBOutput_1 == null || dbschema_tDBOutput_1.trim().length() == 0) {
-	tableName_tDBOutput_1 = ("ANTICIPATED_DEMAND");
-} else {
-	tableName_tDBOutput_1 = dbschema_tDBOutput_1 + "\".\"" + ("ANTICIPATED_DEMAND");
-}
-
-
-int nb_line_tDBOutput_1 = 0;
-int nb_line_update_tDBOutput_1 = 0;
-int nb_line_inserted_tDBOutput_1 = 0;
-int nb_line_deleted_tDBOutput_1 = 0;
-int nb_line_rejected_tDBOutput_1 = 0;
-
-int deletedCount_tDBOutput_1=0;
-int updatedCount_tDBOutput_1=0;
-int insertedCount_tDBOutput_1=0;
-int rowsToCommitCount_tDBOutput_1=0;
-int rejectedCount_tDBOutput_1=0;
-
-boolean whetherReject_tDBOutput_1 = false;
-
-java.sql.Connection conn_tDBOutput_1 = null;
-String dbUser_tDBOutput_1 = null;
-
-	
-    java.lang.Class.forName("org.postgresql.Driver");
-    
-        String url_tDBOutput_1 = "jdbc:postgresql://"+context.GIM_Server+":"+context.GIM_Port+"/"+context.GIM_Database + "?" + context.GIM_AdditionalParams;
-    dbUser_tDBOutput_1 = context.GIM_Login;
-
-	final String decryptedPassword_tDBOutput_1 = context.GIM_Password; 
-
-    String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
-
-    conn_tDBOutput_1 = java.sql.DriverManager.getConnection(url_tDBOutput_1,dbUser_tDBOutput_1,dbPwd_tDBOutput_1);
-	
-	resourceMap.put("conn_tDBOutput_1", conn_tDBOutput_1);
-        conn_tDBOutput_1.setAutoCommit(false);
-        int commitEvery_tDBOutput_1 = 1;
-        int commitCounter_tDBOutput_1 = 0;
-
-
-   int batchSize_tDBOutput_1 = 10000;
-   int batchSizeCounter_tDBOutput_1=0;
-
-int count_tDBOutput_1=0;
-	    String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1 + "\" (\"SITE_ID\",\"ITEM_NO\",\"DEMAND_WEEK_END_DATE\",\"DEMAND_TYPE\",\"REFERENCE_NO\",\"STATUS_OF_DEMAND\",\"DEMAND_CASE_QTY_DAY_1\",\"DEMAND_CASE_QTY_DAY_2\",\"DEMAND_CASE_QTY_DAY_3\",\"DEMAND_CASE_QTY_DAY_4\",\"DEMAND_CASE_QTY_DAY_5\",\"DEMAND_CASE_QTY_DAY_6\",\"DEMAND_CASE_QTY_DAY_7\",\"DEMAND_SPLIT_QTY_DAY_1\",\"DEMAND_SPLIT_QTY_DAY_2\",\"DEMAND_SPLIT_QTY_DAY_3\",\"DEMAND_SPLIT_QTY_DAY_4\",\"DEMAND_SPLIT_QTY_DAY_5\",\"DEMAND_SPLIT_QTY_DAY_6\",\"DEMAND_SPLIT_QTY_DAY_7\",\"DEMAND_CASE_WEEK_TOTAL_QTY\",\"DEMAND_SPLIT_WEEK_TOTAL_QTY\",\"CREATED_TIMESTAMP\",\"CREATED_USER_ID\",\"UPDATED_TIMESTAMP\",\"UPDATED_USER_ID\",\"IS_DELETED\",\"CREATED_ORIGIN\",\"CREATED_ORIGIN_TIMESTAMP\",\"UPDATED_ORIGIN\",\"UPDATED_ORIGIN_TIMESTAMP\",\"TNPF_SVOP\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	    
-	    java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(insert_tDBOutput_1);
-	    resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
-	    
-
- 
-
-
-
-/**
- * [tDBOutput_1 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tMap_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tMap_1", false);
-		start_Hash.put("tMap_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tMap_1";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
-					}
-				
-		int tos_count_tMap_1 = 0;
-		
-
-
-
-
-// ###############################
-// # Lookup's keys initialization
-// ###############################        
-
-// ###############################
-// # Vars initialization
-class  Var__tMap_1__Struct  {
-	String TNITEM;
-	String DEMAND_WEEK_END_DATE;
-	String TNDTYP;
-	String TNADRF;
-	String TNDSTS;
-	String CREATED_TIMESTAMP;
-	String TNEAID;
-	String UPDATED_TIMESTAMP;
-	String TNMOID;
-}
-Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
-// ###############################
-
-// ###############################
-// # Outputs initialization
-Anticipated_Demand_InboundStruct Anticipated_Demand_Inbound_tmp = new Anticipated_Demand_InboundStruct();
-// ###############################
-
-        
-        
-
-
-
-        
-
-
-
-
-
-
-
-
-
- 
-
-
-
-/**
- * [tMap_1 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tDBInput_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tDBInput_1", false);
-		start_Hash.put("tDBInput_1", System.currentTimeMillis());
-		
-				tStatCatcher_1.addMessage("begin","tDBInput_1");
-				tStatCatcher_1Process(globalMap);
-			
-	
-	currentComponent="tDBInput_1";
-
-	
-		int tos_count_tDBInput_1 = 0;
-		
-	
-    
-	
-		    int nb_line_tDBInput_1 = 0;
-		    java.sql.Connection conn_tDBInput_1 = null;
-				String driverClass_tDBInput_1 = "com.ibm.as400.access.AS400JDBCDriver";
-			    java.lang.Class jdbcclazz_tDBInput_1 = java.lang.Class.forName(driverClass_tDBInput_1);
-				String dbUser_tDBInput_1 = context.SUS_Login;
-				
-				
-	final String decryptedPassword_tDBInput_1 = context.SUS_Password; 
-				
-				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
-				  
-				String url_tDBInput_1 = "jdbc:as400://" + context.SUS_Server + "/" + context.SUS_Database + ";" + context.SUS_Additional_Params;
-				
-				conn_tDBInput_1 = java.sql.DriverManager.getConnection(url_tDBInput_1,dbUser_tDBInput_1,dbPwd_tDBInput_1);
-		        
-		    
-			java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
-
-		    String dbquery_tDBInput_1 = "SELECT \n  IMMKTNPF.TNITEM, \n  IMMKTNPF.TNDMED, \n  IMMKTNPF.TNDTYP, \n  IMMKTNPF.TNADRF, \n  IMMKTNPF.TNDSTS, \n  IMMKTNPF."
-+"TNFCMT, \n  IMMKTNPF.TNAPDT, \n  IMMKTNPF.TNDCD1, \n  IMMKTNPF.TNDCD2, \n  IMMKTNPF.TNDCD3, \n  IMMKTNPF.TNDCD4, \n  IMMKTNPF."
-+"TNDCD5, \n  IMMKTNPF.TNDCD6, \n  IMMKTNPF.TNDCD7, \n  IMMKTNPF.TNDSD1, \n  IMMKTNPF.TNDSD2, \n  IMMKTNPF.TNDSD3, \n  IMMKTNPF."
-+"TNDSD4, \n  IMMKTNPF.TNDSD5, \n  IMMKTNPF.TNDSD6, \n  IMMKTNPF.TNDSD7, \n  IMMKTNPF.TNDCWT, \n  IMMKTNPF.TNDSWT, \n  IMMKTNPF."
-+"TNCPVN, \n  IMMKTNPF.TNWHSE, \n  IMMKTNPF.TNBUYR, \n  IMMKTNPF.TNEADT, \n  IMMKTNPF.TNEATM, \n  IMMKTNPF.TNEAID, \n  IMMKTNPF."
-+"TNMODT, \n  IMMKTNPF.TNMOTM, \n  IMMKTNPF.TNMOID\nFROM IMMKTNPF ORDER BY IMMKTNPF.TNEADT DESC";
-		    
-
-            	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
-		    java.sql.ResultSet rs_tDBInput_1 = null;
-
-		    try {
-		    	rs_tDBInput_1 = stmt_tDBInput_1.executeQuery(dbquery_tDBInput_1);
-		    	java.sql.ResultSetMetaData rsmd_tDBInput_1 = rs_tDBInput_1.getMetaData();
-		    	int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
-
-		    String tmpContent_tDBInput_1 = null;
-		    
-		    
-		    while (rs_tDBInput_1.next()) {
-		        nb_line_tDBInput_1++;
-		        
-							if(colQtyInRs_tDBInput_1 < 1) {
-								row1.TNITEM = null;
-							} else {
-	                         		
-        	row1.TNITEM = routines.system.JDBCUtil.getString(rs_tDBInput_1, 1, true);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 2) {
-								row1.TNDMED = null;
-							} else {
-		                          
-            row1.TNDMED = rs_tDBInput_1.getBigDecimal(2);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 3) {
-								row1.TNDTYP = null;
-							} else {
-	                         		
-        	row1.TNDTYP = routines.system.JDBCUtil.getString(rs_tDBInput_1, 3, true);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 4) {
-								row1.TNADRF = null;
-							} else {
-	                         		
-        	row1.TNADRF = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, true);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 5) {
-								row1.TNDSTS = null;
-							} else {
-	                         		
-        	row1.TNDSTS = routines.system.JDBCUtil.getString(rs_tDBInput_1, 5, true);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 6) {
-								row1.TNFCMT = null;
-							} else {
-	                         		
-        	row1.TNFCMT = routines.system.JDBCUtil.getString(rs_tDBInput_1, 6, true);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 7) {
-								row1.TNAPDT = null;
-							} else {
-		                          
-            row1.TNAPDT = rs_tDBInput_1.getBigDecimal(7);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 8) {
-								row1.TNDCD1 = null;
-							} else {
-		                          
-            row1.TNDCD1 = rs_tDBInput_1.getBigDecimal(8);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 9) {
-								row1.TNDCD2 = null;
-							} else {
-		                          
-            row1.TNDCD2 = rs_tDBInput_1.getBigDecimal(9);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 10) {
-								row1.TNDCD3 = null;
-							} else {
-		                          
-            row1.TNDCD3 = rs_tDBInput_1.getBigDecimal(10);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 11) {
-								row1.TNDCD4 = null;
-							} else {
-		                          
-            row1.TNDCD4 = rs_tDBInput_1.getBigDecimal(11);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 12) {
-								row1.TNDCD5 = null;
-							} else {
-		                          
-            row1.TNDCD5 = rs_tDBInput_1.getBigDecimal(12);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 13) {
-								row1.TNDCD6 = null;
-							} else {
-		                          
-            row1.TNDCD6 = rs_tDBInput_1.getBigDecimal(13);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 14) {
-								row1.TNDCD7 = null;
-							} else {
-		                          
-            row1.TNDCD7 = rs_tDBInput_1.getBigDecimal(14);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 15) {
-								row1.TNDSD1 = null;
-							} else {
-		                          
-            row1.TNDSD1 = rs_tDBInput_1.getBigDecimal(15);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 16) {
-								row1.TNDSD2 = null;
-							} else {
-		                          
-            row1.TNDSD2 = rs_tDBInput_1.getBigDecimal(16);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 17) {
-								row1.TNDSD3 = null;
-							} else {
-		                          
-            row1.TNDSD3 = rs_tDBInput_1.getBigDecimal(17);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 18) {
-								row1.TNDSD4 = null;
-							} else {
-		                          
-            row1.TNDSD4 = rs_tDBInput_1.getBigDecimal(18);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 19) {
-								row1.TNDSD5 = null;
-							} else {
-		                          
-            row1.TNDSD5 = rs_tDBInput_1.getBigDecimal(19);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 20) {
-								row1.TNDSD6 = null;
-							} else {
-		                          
-            row1.TNDSD6 = rs_tDBInput_1.getBigDecimal(20);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 21) {
-								row1.TNDSD7 = null;
-							} else {
-		                          
-            row1.TNDSD7 = rs_tDBInput_1.getBigDecimal(21);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 22) {
-								row1.TNDCWT = null;
-							} else {
-		                          
-            row1.TNDCWT = rs_tDBInput_1.getBigDecimal(22);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 23) {
-								row1.TNDSWT = null;
-							} else {
-		                          
-            row1.TNDSWT = rs_tDBInput_1.getBigDecimal(23);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 24) {
-								row1.TNCPVN = null;
-							} else {
-	                         		
-        	row1.TNCPVN = routines.system.JDBCUtil.getString(rs_tDBInput_1, 24, true);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 25) {
-								row1.TNWHSE = null;
-							} else {
-	                         		
-        	row1.TNWHSE = routines.system.JDBCUtil.getString(rs_tDBInput_1, 25, true);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 26) {
-								row1.TNBUYR = null;
-							} else {
-	                         		
-        	row1.TNBUYR = routines.system.JDBCUtil.getString(rs_tDBInput_1, 26, true);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 27) {
-								row1.TNEADT = null;
-							} else {
-		                          
-            row1.TNEADT = rs_tDBInput_1.getBigDecimal(27);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 28) {
-								row1.TNEATM = null;
-							} else {
-		                          
-            row1.TNEATM = rs_tDBInput_1.getBigDecimal(28);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 29) {
-								row1.TNEAID = null;
-							} else {
-	                         		
-        	row1.TNEAID = routines.system.JDBCUtil.getString(rs_tDBInput_1, 29, true);
-		                    }
-							if(colQtyInRs_tDBInput_1 < 30) {
-								row1.TNMODT = null;
-							} else {
-		                          
-            row1.TNMODT = rs_tDBInput_1.getBigDecimal(30);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 31) {
-								row1.TNMOTM = null;
-							} else {
-		                          
-            row1.TNMOTM = rs_tDBInput_1.getBigDecimal(31);
-            if(rs_tDBInput_1.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_1 < 32) {
-								row1.TNMOID = null;
-							} else {
-	                         		
-        	row1.TNMOID = routines.system.JDBCUtil.getString(rs_tDBInput_1, 32, true);
-		                    }
-					
-
-
-
- 
-
-
-
-/**
- * [tDBInput_1 begin ] stop
- */
-	
-	/**
-	 * [tDBInput_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBInput_1";
-
-	
-
- 
-
-
-	tos_count_tDBInput_1++;
-
-/**
- * [tDBInput_1 main ] stop
- */
-	
-	/**
-	 * [tDBInput_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBInput_1";
-
-	
-
- 
-
-
-
-/**
- * [tDBInput_1 process_data_begin ] stop
- */
-
-	
-	/**
-	 * [tMap_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_1";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1
-						
-							,"row1"
-						
-						);
-					}
-					
-
-		
-		
-		boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
-		
-
-        // ###############################
-        // # Input tables (lookups)
-		  boolean rejectedInnerJoin_tMap_1 = false;
-		  boolean mainRowRejected_tMap_1 = false;
-            				    								  
-		// ###############################
-        { // start of Var scope
-        
-	        // ###############################
-        	// # Vars tables
-        
-Var__tMap_1__Struct Var = Var__tMap_1;
-Var.TNITEM = CharSetHandling.convertEBCDICStrToASCII(row1.TNITEM) ;
-Var.DEMAND_WEEK_END_DATE = TimeStampConverting.convertToDate(row1.TNDMED.toString()) ;
-Var.TNDTYP = CharSetHandling.convertEBCDICStrToASCII(row1.TNDTYP) ;
-Var.TNADRF = CharSetHandling.convertEBCDICStrToASCII(row1.TNADRF) ;
-Var.TNDSTS = CharSetHandling.convertEBCDICStrToASCII(row1.TNDSTS) ;
-Var.CREATED_TIMESTAMP = TimeStampConverting.convertToTimeStamp(row1.TNEADT.toString(),row1.TNEATM.toString()) ;
-Var.TNEAID = CharSetHandling.convertEBCDICStrToASCII(row1.TNEAID) ;
-Var.UPDATED_TIMESTAMP = TimeStampConverting.convertToTimeStamp(row1.TNMODT.toString(),row1.TNMOTM.toString()) ;
-Var.TNMOID = CharSetHandling.convertEBCDICStrToASCII(row1.TNMOID) ;// ###############################
-        // ###############################
-        // # Output tables
-
-Anticipated_Demand_Inbound = null;
-
-
-// # Output table : 'Anticipated_Demand_Inbound'
-Anticipated_Demand_Inbound_tmp.SITE_ID = context.opco;
-Anticipated_Demand_Inbound_tmp.ITEM_NO = Var.TNITEM ;
-Anticipated_Demand_Inbound_tmp.DEMAND_WEEK_END_DATE = Var.DEMAND_WEEK_END_DATE!=""? TalendDate.parseDate("dd-MM-yyyy",Var.DEMAND_WEEK_END_DATE):null ;
-Anticipated_Demand_Inbound_tmp.DEMAND_TYPE = Var.TNDTYP ;
-Anticipated_Demand_Inbound_tmp.REFERENCE_NO = Var.TNADRF ;
-Anticipated_Demand_Inbound_tmp.STATUS_OF_DEMAND = Var.TNDSTS;
-Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_1 = row1.TNDCD1 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_2 = row1.TNDCD2 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_3 = row1.TNDCD3 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_4 = row1.TNDCD4 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_5 = row1.TNDCD5 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_6 = row1.TNDCD6 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_7 = row1.TNDCD7 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_1 = row1.TNDSD1 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_2 = row1.TNDSD2 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_3 = row1.TNDSD3 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_4 = row1.TNDSD4 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_5 = row1.TNDSD5 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_6 = row1.TNDSD6 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_7 = row1.TNDSD7 ;
-Anticipated_Demand_Inbound_tmp.DEMAND_CASE_WEEK_TOTAL_QTY = row1.TNDCWT ;
-Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_WEEK_TOTAL_QTY = row1.TNDSWT ;
-Anticipated_Demand_Inbound_tmp.CREATED_TIMESTAMP = Var.CREATED_TIMESTAMP!=""? TalendDate.parseDate("dd-MM-yyyy HH:mm:ss",Var.CREATED_TIMESTAMP):null ;
-Anticipated_Demand_Inbound_tmp.CREATED_USER_ID = Var.TNEAID;
-Anticipated_Demand_Inbound_tmp.UPDATED_TIMESTAMP = Var.UPDATED_TIMESTAMP!=""? TalendDate.parseDate("dd-MM-yyyy HH:mm:ss",Var.UPDATED_TIMESTAMP):null ;
-Anticipated_Demand_Inbound_tmp.UPDATED_USER_ID = Var.TNMOID ;
-Anticipated_Demand_Inbound_tmp.IS_DELETED = false;
-Anticipated_Demand_Inbound_tmp.CREATED_ORIGIN = "SUS";
-Anticipated_Demand_Inbound_tmp.CREATED_ORIGIN_TIMESTAMP = TalendDate.parseDate("dd-MM-yyyy HH:mm:ss", TalendDate.getDate("dd-MM-yyyy HH:mm:ss")) ;
-Anticipated_Demand_Inbound_tmp.UPDATED_ORIGIN = "SUS";
-Anticipated_Demand_Inbound_tmp.UPDATED_ORIGIN_TIMESTAMP = TalendDate.parseDate("dd-MM-yyyy HH:mm:ss", TalendDate.getDate("dd-MM-yyyy HH:mm:ss")) ;
-Anticipated_Demand_Inbound_tmp.TNPF_SVOP = context.svop;
-Anticipated_Demand_Inbound = Anticipated_Demand_Inbound_tmp;
-// ###############################
-
-} // end of Var scope
-
-rejectedInnerJoin_tMap_1 = false;
-
-
-
-
-
-
-
-
-
-
- 
-
-
-	tos_count_tMap_1++;
-
-/**
- * [tMap_1 main ] stop
- */
-	
-	/**
-	 * [tMap_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_1";
-
-	
-
- 
-
-
-
-/**
- * [tMap_1 process_data_begin ] stop
- */
-// Start of branch "Anticipated_Demand_Inbound"
-if(Anticipated_Demand_Inbound != null) { 
-
-
-
-	
-	/**
-	 * [tDBOutput_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_1";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1
-						
-							,"Anticipated_Demand_Inbound"
-						
-						);
-					}
-					
-
-
-
-        whetherReject_tDBOutput_1 = false;
-                    if(Anticipated_Demand_Inbound.SITE_ID == null) {
-pstmt_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(1, Anticipated_Demand_Inbound.SITE_ID);
-}
-
-                    if(Anticipated_Demand_Inbound.ITEM_NO == null) {
-pstmt_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(2, Anticipated_Demand_Inbound.ITEM_NO);
-}
-
-                    if(Anticipated_Demand_Inbound.DEMAND_WEEK_END_DATE != null) {
-pstmt_tDBOutput_1.setTimestamp(3, new java.sql.Timestamp(Anticipated_Demand_Inbound.DEMAND_WEEK_END_DATE.getTime()));
-} else {
-pstmt_tDBOutput_1.setNull(3, java.sql.Types.TIMESTAMP);
-}
-
-                    if(Anticipated_Demand_Inbound.DEMAND_TYPE == null) {
-pstmt_tDBOutput_1.setNull(4, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(4, Anticipated_Demand_Inbound.DEMAND_TYPE);
-}
-
-                    if(Anticipated_Demand_Inbound.REFERENCE_NO == null) {
-pstmt_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(5, Anticipated_Demand_Inbound.REFERENCE_NO);
-}
-
-                    if(Anticipated_Demand_Inbound.STATUS_OF_DEMAND == null) {
-pstmt_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(6, Anticipated_Demand_Inbound.STATUS_OF_DEMAND);
-}
-
-                    pstmt_tDBOutput_1.setBigDecimal(7, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_1);
-
-                    pstmt_tDBOutput_1.setBigDecimal(8, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_2);
-
-                    pstmt_tDBOutput_1.setBigDecimal(9, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_3);
-
-                    pstmt_tDBOutput_1.setBigDecimal(10, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_4);
-
-                    pstmt_tDBOutput_1.setBigDecimal(11, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_5);
-
-                    pstmt_tDBOutput_1.setBigDecimal(12, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_6);
-
-                    pstmt_tDBOutput_1.setBigDecimal(13, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_7);
-
-                    pstmt_tDBOutput_1.setBigDecimal(14, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_1);
-
-                    pstmt_tDBOutput_1.setBigDecimal(15, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_2);
-
-                    pstmt_tDBOutput_1.setBigDecimal(16, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_3);
-
-                    pstmt_tDBOutput_1.setBigDecimal(17, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_4);
-
-                    pstmt_tDBOutput_1.setBigDecimal(18, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_5);
-
-                    pstmt_tDBOutput_1.setBigDecimal(19, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_6);
-
-                    pstmt_tDBOutput_1.setBigDecimal(20, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_7);
-
-                    pstmt_tDBOutput_1.setBigDecimal(21, Anticipated_Demand_Inbound.DEMAND_CASE_WEEK_TOTAL_QTY);
-
-                    pstmt_tDBOutput_1.setBigDecimal(22, Anticipated_Demand_Inbound.DEMAND_SPLIT_WEEK_TOTAL_QTY);
-
-                    if(Anticipated_Demand_Inbound.CREATED_TIMESTAMP != null) {
-pstmt_tDBOutput_1.setTimestamp(23, new java.sql.Timestamp(Anticipated_Demand_Inbound.CREATED_TIMESTAMP.getTime()));
-} else {
-pstmt_tDBOutput_1.setNull(23, java.sql.Types.TIMESTAMP);
-}
-
-                    if(Anticipated_Demand_Inbound.CREATED_USER_ID == null) {
-pstmt_tDBOutput_1.setNull(24, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(24, Anticipated_Demand_Inbound.CREATED_USER_ID);
-}
-
-                    if(Anticipated_Demand_Inbound.UPDATED_TIMESTAMP != null) {
-pstmt_tDBOutput_1.setTimestamp(25, new java.sql.Timestamp(Anticipated_Demand_Inbound.UPDATED_TIMESTAMP.getTime()));
-} else {
-pstmt_tDBOutput_1.setNull(25, java.sql.Types.TIMESTAMP);
-}
-
-                    if(Anticipated_Demand_Inbound.UPDATED_USER_ID == null) {
-pstmt_tDBOutput_1.setNull(26, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(26, Anticipated_Demand_Inbound.UPDATED_USER_ID);
-}
-
-                    pstmt_tDBOutput_1.setBoolean(27, Anticipated_Demand_Inbound.IS_DELETED);
-
-                    if(Anticipated_Demand_Inbound.CREATED_ORIGIN == null) {
-pstmt_tDBOutput_1.setNull(28, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(28, Anticipated_Demand_Inbound.CREATED_ORIGIN);
-}
-
-                    if(Anticipated_Demand_Inbound.CREATED_ORIGIN_TIMESTAMP != null) {
-pstmt_tDBOutput_1.setTimestamp(29, new java.sql.Timestamp(Anticipated_Demand_Inbound.CREATED_ORIGIN_TIMESTAMP.getTime()));
-} else {
-pstmt_tDBOutput_1.setNull(29, java.sql.Types.TIMESTAMP);
-}
-
-                    if(Anticipated_Demand_Inbound.UPDATED_ORIGIN == null) {
-pstmt_tDBOutput_1.setNull(30, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(30, Anticipated_Demand_Inbound.UPDATED_ORIGIN);
-}
-
-                    if(Anticipated_Demand_Inbound.UPDATED_ORIGIN_TIMESTAMP != null) {
-pstmt_tDBOutput_1.setTimestamp(31, new java.sql.Timestamp(Anticipated_Demand_Inbound.UPDATED_ORIGIN_TIMESTAMP.getTime()));
-} else {
-pstmt_tDBOutput_1.setNull(31, java.sql.Types.TIMESTAMP);
-}
-
-                    if(Anticipated_Demand_Inbound.TNPF_SVOP == null) {
-pstmt_tDBOutput_1.setNull(32, java.sql.Types.VARCHAR);
-} else {pstmt_tDBOutput_1.setString(32, Anticipated_Demand_Inbound.TNPF_SVOP);
-}
-
-			
-    		pstmt_tDBOutput_1.addBatch();
-    		nb_line_tDBOutput_1++;
-    		  
-    		  
-    		  batchSizeCounter_tDBOutput_1++;
-    		  
-    			if ((batchSize_tDBOutput_1 > 0) && (batchSize_tDBOutput_1 <= batchSizeCounter_tDBOutput_1)) {
-                try {
-						int countSum_tDBOutput_1 = 0;
-						    
-						for(int countEach_tDBOutput_1: pstmt_tDBOutput_1.executeBatch()) {
-							countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0 : countEach_tDBOutput_1);
-						}
-				    	rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
-				    	
-				    		insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
-				    	
-            	    	batchSizeCounter_tDBOutput_1 = 0;
-                }catch (java.sql.BatchUpdateException e_tDBOutput_1){
-globalMap.put("tDBOutput_1_ERROR_MESSAGE",e_tDBOutput_1.getMessage());
-				    	java.sql.SQLException ne_tDBOutput_1 = e_tDBOutput_1.getNextException(),sqle_tDBOutput_1=null;
-				    	String errormessage_tDBOutput_1;
-						if (ne_tDBOutput_1 != null) {
-							// build new exception to provide the original cause
-							sqle_tDBOutput_1 = new java.sql.SQLException(e_tDBOutput_1.getMessage() + "\ncaused by: " + ne_tDBOutput_1.getMessage(), ne_tDBOutput_1.getSQLState(), ne_tDBOutput_1.getErrorCode(), ne_tDBOutput_1);
-							errormessage_tDBOutput_1 = sqle_tDBOutput_1.getMessage();
-						}else{
-							errormessage_tDBOutput_1 = e_tDBOutput_1.getMessage();
-						}
-				    	
-				    	int countSum_tDBOutput_1 = 0;
-						for(int countEach_tDBOutput_1: e_tDBOutput_1.getUpdateCounts()) {
-							countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0 : countEach_tDBOutput_1);
-						}
-						rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
-						
-				    		insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
-				    	
-				    	System.err.println(errormessage_tDBOutput_1);
-				    	
-					}
-    			}
-    		
-    		    commitCounter_tDBOutput_1++;
-                if(commitEvery_tDBOutput_1 <= commitCounter_tDBOutput_1) {
-                if ((batchSize_tDBOutput_1 > 0) && (batchSizeCounter_tDBOutput_1 > 0)) {
-                try {
-                		int countSum_tDBOutput_1 = 0;
-                		    
-						for(int countEach_tDBOutput_1: pstmt_tDBOutput_1.executeBatch()) {
-							countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0 : countEach_tDBOutput_1);
-						}
-            	    	rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
-            	    	
-            	    		insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
-            	    	
-                batchSizeCounter_tDBOutput_1 = 0;
-               }catch (java.sql.BatchUpdateException e_tDBOutput_1){
-globalMap.put("tDBOutput_1_ERROR_MESSAGE",e_tDBOutput_1.getMessage());
-			    	java.sql.SQLException ne_tDBOutput_1 = e_tDBOutput_1.getNextException(),sqle_tDBOutput_1=null;
-			    	String errormessage_tDBOutput_1;
-					if (ne_tDBOutput_1 != null) {
-						// build new exception to provide the original cause
-						sqle_tDBOutput_1 = new java.sql.SQLException(e_tDBOutput_1.getMessage() + "\ncaused by: " + ne_tDBOutput_1.getMessage(), ne_tDBOutput_1.getSQLState(), ne_tDBOutput_1.getErrorCode(), ne_tDBOutput_1);
-						errormessage_tDBOutput_1 = sqle_tDBOutput_1.getMessage();
-					}else{
-						errormessage_tDBOutput_1 = e_tDBOutput_1.getMessage();
-					}
-			    	
-			    	int countSum_tDBOutput_1 = 0;
-					for(int countEach_tDBOutput_1: e_tDBOutput_1.getUpdateCounts()) {
-						countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0 : countEach_tDBOutput_1);
-					}
-					rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
-					
-			    		insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
-			    	
-			    	System.err.println(errormessage_tDBOutput_1);
-			    	
-				}
-            }
-                    if(rowsToCommitCount_tDBOutput_1 != 0){
-                    	
-                    }
-                    conn_tDBOutput_1.commit();
-                    if(rowsToCommitCount_tDBOutput_1 != 0){
-                    	
-                    	rowsToCommitCount_tDBOutput_1 = 0;
-                    }
-                    commitCounter_tDBOutput_1=0;
-                }
-
- 
-
-
-	tos_count_tDBOutput_1++;
-
-/**
- * [tDBOutput_1 main ] stop
- */
-	
-	/**
-	 * [tDBOutput_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_1";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tDBOutput_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_1";
-
-	
-
- 
-
-
-
-/**
- * [tDBOutput_1 process_data_end ] stop
- */
-
-} // End of branch "Anticipated_Demand_Inbound"
-
-
-
-
-	
-	/**
-	 * [tMap_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_1";
-
-	
-
- 
-
-
-
-/**
- * [tMap_1 process_data_end ] stop
- */
-
-
-
-	
-	/**
-	 * [tDBInput_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBInput_1";
-
-	
-
- 
-
-
-
-/**
- * [tDBInput_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tDBInput_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBInput_1";
-
-	
-
-	}
-}finally{
-	if (rs_tDBInput_1 != null) {
-		rs_tDBInput_1.close();
-	}
-	if (stmt_tDBInput_1 != null) {
-		stmt_tDBInput_1.close();
-	}
-		if(conn_tDBInput_1 != null && !conn_tDBInput_1.isClosed()) {
-			
-			conn_tDBInput_1.close();
-			
-			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
-			    && routines.system.BundleUtils.inOSGi()) {
-			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
-			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
-			}
-			
-		}
-}
-globalMap.put("tDBInput_1_NB_LINE",nb_line_tDBInput_1);
-
- 
-
-ok_Hash.put("tDBInput_1", true);
-end_Hash.put("tDBInput_1", System.currentTimeMillis());
-
-tStatCatcher_1.addMessage("end","tDBInput_1", end_Hash.get("tDBInput_1")-start_Hash.get("tDBInput_1"));
-tStatCatcher_1Process(globalMap);
-
-
-
-/**
- * [tDBInput_1 end ] stop
- */
-
-	
-	/**
-	 * [tMap_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_1";
-
-	
-
-
-// ###############################
-// # Lookup hashes releasing
-// ###############################      
-
-
-
-
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
-			  	}
-			  	
- 
-
-ok_Hash.put("tMap_1", true);
-end_Hash.put("tMap_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tMap_1 end ] stop
- */
-
-	
-	/**
-	 * [tDBOutput_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_1";
-
-	
-
-
-
-	    try {
-				int countSum_tDBOutput_1 = 0;
-				if (pstmt_tDBOutput_1 != null && batchSizeCounter_tDBOutput_1 > 0) {
-						
-					for(int countEach_tDBOutput_1: pstmt_tDBOutput_1.executeBatch()) {
-						countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0 : countEach_tDBOutput_1);
-					}
-					rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
-						
-				}
-		    	
-		    		insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
-		    	
-	    }catch (java.sql.BatchUpdateException e_tDBOutput_1){
-globalMap.put("tDBOutput_1_ERROR_MESSAGE",e_tDBOutput_1.getMessage());
-	    	java.sql.SQLException ne_tDBOutput_1 = e_tDBOutput_1.getNextException(),sqle_tDBOutput_1=null;
-	    	String errormessage_tDBOutput_1;
-			if (ne_tDBOutput_1 != null) {
-				// build new exception to provide the original cause
-				sqle_tDBOutput_1 = new java.sql.SQLException(e_tDBOutput_1.getMessage() + "\ncaused by: " + ne_tDBOutput_1.getMessage(), ne_tDBOutput_1.getSQLState(), ne_tDBOutput_1.getErrorCode(), ne_tDBOutput_1);
-				errormessage_tDBOutput_1 = sqle_tDBOutput_1.getMessage();
-			}else{
-				errormessage_tDBOutput_1 = e_tDBOutput_1.getMessage();
-			}
-	    	
-	    	int countSum_tDBOutput_1 = 0;
-			for(int countEach_tDBOutput_1: e_tDBOutput_1.getUpdateCounts()) {
-				countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0 : countEach_tDBOutput_1);
-			}
-			rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
-			
-	    		insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
-	    	
-	    	System.err.println(errormessage_tDBOutput_1);
-	    	
-		}
-	    
-        if(pstmt_tDBOutput_1 != null) {
-        		
-            pstmt_tDBOutput_1.close();
-            resourceMap.remove("pstmt_tDBOutput_1");
-        }
-    resourceMap.put("statementClosed_tDBOutput_1", true);
-			if(rowsToCommitCount_tDBOutput_1 != 0){
-				
-			}
-			conn_tDBOutput_1.commit();
-			if(rowsToCommitCount_tDBOutput_1 != 0){
-				
-				rowsToCommitCount_tDBOutput_1 = 0;
-			}
-			commitCounter_tDBOutput_1 = 0;
-		
-    	conn_tDBOutput_1 .close();
-    	
-    	resourceMap.put("finish_tDBOutput_1", true);
-    	
-
-	nb_line_deleted_tDBOutput_1=nb_line_deleted_tDBOutput_1+ deletedCount_tDBOutput_1;
-	nb_line_update_tDBOutput_1=nb_line_update_tDBOutput_1 + updatedCount_tDBOutput_1;
-	nb_line_inserted_tDBOutput_1=nb_line_inserted_tDBOutput_1 + insertedCount_tDBOutput_1;
-	nb_line_rejected_tDBOutput_1=nb_line_rejected_tDBOutput_1 + rejectedCount_tDBOutput_1;
-	
-        globalMap.put("tDBOutput_1_NB_LINE",nb_line_tDBOutput_1);
-        globalMap.put("tDBOutput_1_NB_LINE_UPDATED",nb_line_update_tDBOutput_1);
-        globalMap.put("tDBOutput_1_NB_LINE_INSERTED",nb_line_inserted_tDBOutput_1);
-        globalMap.put("tDBOutput_1_NB_LINE_DELETED",nb_line_deleted_tDBOutput_1);
-        globalMap.put("tDBOutput_1_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_1);
-    
-
-	
-
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Anticipated_Demand_Inbound");
-			  	}
-			  	
- 
-
-ok_Hash.put("tDBOutput_1", true);
-end_Hash.put("tDBOutput_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tDBOutput_1 end ] stop
- */
-
-
-
-
-
-
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tDBInput_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBInput_1";
-
-	
-
- 
-
-
-
-/**
- * [tDBInput_1 finally ] stop
- */
-
-	
-	/**
-	 * [tMap_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_1";
-
-	
-
- 
-
-
-
-/**
- * [tMap_1 finally ] stop
- */
-
-	
-	/**
-	 * [tDBOutput_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tDBOutput_1";
-
-	
-
-
-
-    try {
-    if (resourceMap.get("statementClosed_tDBOutput_1") == null) {
-                java.sql.PreparedStatement pstmtToClose_tDBOutput_1 = null;
-                if ((pstmtToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap.remove("pstmt_tDBOutput_1")) != null) {
-                    pstmtToClose_tDBOutput_1.close();
-                }
-    }
-    } finally {
-        if(resourceMap.get("finish_tDBOutput_1") == null){
-            java.sql.Connection ctn_tDBOutput_1 = null;
-            if((ctn_tDBOutput_1 = (java.sql.Connection)resourceMap.get("conn_tDBOutput_1")) != null){
-                try {
-                    ctn_tDBOutput_1.close();
-                } catch (java.sql.SQLException sqlEx_tDBOutput_1) {
-                    String errorMessage_tDBOutput_1 = "failed to close the connection in tDBOutput_1 :" + sqlEx_tDBOutput_1.getMessage();
-                    System.err.println(errorMessage_tDBOutput_1);
-                }
-            }
-        }
-    }
- 
-
-
-
-/**
- * [tDBOutput_1 finally ] stop
- */
-
-
-
-
-
-
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 1);
-	}
-	
-
-
-public static class Main_Flow_MeterStruct implements routines.system.IPersistableRow<Main_Flow_MeterStruct> {
-    final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-    static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-
-	
-			    public java.util.Date moment;
-
-				public java.util.Date getMoment () {
-					return this.moment;
-				}
-				
-			    public String pid;
-
-				public String getPid () {
-					return this.pid;
-				}
-				
-			    public String job;
-
-				public String getJob () {
-					return this.job;
-				}
-				
-			    public String origin;
-
-				public String getOrigin () {
-					return this.origin;
-				}
-				
-			    public String label;
-
-				public String getLabel () {
-					return this.label;
-				}
-				
-			    public Integer count;
-
-				public Integer getCount () {
-					return this.count;
-				}
-				
-			    public Integer reference;
-
-				public Integer getReference () {
-					return this.reference;
-				}
-				
-			    public String thresholds;
-
-				public String getThresholds () {
-					return this.thresholds;
-				}
-				
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-	
-	private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = unmarshaller.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(unmarshaller.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-    
-    private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(date1 == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-	
-	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = unmarshaller.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-    
-    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(str == null) {
-			marshaller.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-            marshaller.writeInt(byteArray.length);
-            marshaller.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-	
-	private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-	
-	private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(intNum == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.moment = readDate(dis);
-					
-					this.pid = readString(dis);
-					
-					this.job = readString(dis);
-					
-					this.origin = readString(dis);
-					
-					this.label = readString(dis);
-					
-						this.count = readInteger(dis);
-					
-						this.reference = readInteger(dis);
-					
-					this.thresholds = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-    
-    public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.moment = readDate(dis);
-					
-					this.pid = readString(dis);
-					
-					this.job = readString(dis);
-					
-					this.origin = readString(dis);
-					
-					this.label = readString(dis);
-					
-						this.count = readInteger(dis);
-					
-						this.reference = readInteger(dis);
-					
-					this.thresholds = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.label,dos);
-					
-					// Integer
-				
-						writeInteger(this.count,dos);
-					
-					// Integer
-				
-						writeInteger(this.reference,dos);
-					
-					// String
-				
-						writeString(this.thresholds,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-    
-    public void writeData(org.jboss.marshalling.Marshaller dos) {
-        try {
-
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.label,dos);
-					
-					// Integer
-				
-						writeInteger(this.count,dos);
-					
-					// Integer
-				
-						writeInteger(this.reference,dos);
-					
-					// String
-				
-						writeString(this.thresholds,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("moment="+String.valueOf(moment));
-		sb.append(",pid="+pid);
-		sb.append(",job="+job);
-		sb.append(",origin="+origin);
-		sb.append(",label="+label);
-		sb.append(",count="+String.valueOf(count));
-		sb.append(",reference="+String.valueOf(reference));
-		sb.append(",thresholds="+thresholds);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(Main_Flow_MeterStruct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class row3_0Struct implements routines.system.IPersistableRow<row3_0Struct> {
-    final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-    static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
-
-	
-			    public java.util.Date moment;
-
-				public java.util.Date getMoment () {
-					return this.moment;
-				}
-				
-			    public String pid;
-
-				public String getPid () {
-					return this.pid;
-				}
-				
-			    public String father_pid;
-
-				public String getFather_pid () {
-					return this.father_pid;
-				}
-				
-			    public String root_pid;
-
-				public String getRoot_pid () {
-					return this.root_pid;
-				}
-				
-			    public Long system_pid;
-
-				public Long getSystem_pid () {
-					return this.system_pid;
-				}
-				
-			    public String project;
-
-				public String getProject () {
-					return this.project;
-				}
-				
-			    public String job;
-
-				public String getJob () {
-					return this.job;
-				}
-				
-			    public String job_repository_id;
-
-				public String getJob_repository_id () {
-					return this.job_repository_id;
-				}
-				
-			    public String job_version;
-
-				public String getJob_version () {
-					return this.job_version;
-				}
-				
-			    public String context;
-
-				public String getContext () {
-					return this.context;
-				}
-				
-			    public String origin;
-
-				public String getOrigin () {
-					return this.origin;
-				}
-				
-			    public String label;
-
-				public String getLabel () {
-					return this.label;
-				}
-				
-			    public Integer count;
-
-				public Integer getCount () {
-					return this.count;
-				}
-				
-			    public Integer reference;
-
-				public Integer getReference () {
-					return this.reference;
-				}
-				
-			    public String thresholds;
-
-				public String getThresholds () {
-					return this.thresholds;
-				}
-				
-
-
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-	
-	private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = unmarshaller.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(unmarshaller.readLong());
-		}
-		return dateReturn;
-	}
-
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
-    
-    private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(date1 == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeLong(date1.getTime());
-    	}
-    }
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-	
-	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = unmarshaller.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
-				if(length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
-				} else {
-   					commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
-   				}
-			}
-			unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
-			strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
-		}
-		return strReturn;
-	}
-
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-    
-    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(str == null) {
-			marshaller.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-            marshaller.writeInt(byteArray.length);
-            marshaller.write(byteArray);
-    	}
-    }
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-	
-	private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-	
-	private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(intNum == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeInt(intNum);
-    	}
-	}
-
-    public void readData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.moment = readDate(dis);
-					
-					this.pid = readString(dis);
-					
-					this.father_pid = readString(dis);
-					
-					this.root_pid = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.system_pid = null;
-           				} else {
-           			    	this.system_pid = dis.readLong();
-           				}
-					
-					this.project = readString(dis);
-					
-					this.job = readString(dis);
-					
-					this.job_repository_id = readString(dis);
-					
-					this.job_version = readString(dis);
-					
-					this.context = readString(dis);
-					
-					this.origin = readString(dis);
-					
-					this.label = readString(dis);
-					
-						this.count = readInteger(dis);
-					
-						this.reference = readInteger(dis);
-					
-					this.thresholds = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-    
-    public void readData(org.jboss.marshalling.Unmarshaller dis) {
-
-		synchronized(commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
-
-        	try {
-
-        		int length = 0;
-		
-					this.moment = readDate(dis);
-					
-					this.pid = readString(dis);
-					
-					this.father_pid = readString(dis);
-					
-					this.root_pid = readString(dis);
-					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.system_pid = null;
-           				} else {
-           			    	this.system_pid = dis.readLong();
-           				}
-					
-					this.project = readString(dis);
-					
-					this.job = readString(dis);
-					
-					this.job_repository_id = readString(dis);
-					
-					this.job_version = readString(dis);
-					
-					this.context = readString(dis);
-					
-					this.origin = readString(dis);
-					
-					this.label = readString(dis);
-					
-						this.count = readInteger(dis);
-					
-						this.reference = readInteger(dis);
-					
-					this.thresholds = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.father_pid,dos);
-					
-					// String
-				
-						writeString(this.root_pid,dos);
-					
-					// Long
-				
-						if(this.system_pid == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.system_pid);
-		            	}
-					
-					// String
-				
-						writeString(this.project,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.job_repository_id,dos);
-					
-					// String
-				
-						writeString(this.job_version,dos);
-					
-					// String
-				
-						writeString(this.context,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.label,dos);
-					
-					// Integer
-				
-						writeInteger(this.count,dos);
-					
-					// Integer
-				
-						writeInteger(this.reference,dos);
-					
-					// String
-				
-						writeString(this.thresholds,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-    
-    public void writeData(org.jboss.marshalling.Marshaller dos) {
-        try {
-
-		
-					// java.util.Date
-				
-						writeDate(this.moment,dos);
-					
-					// String
-				
-						writeString(this.pid,dos);
-					
-					// String
-				
-						writeString(this.father_pid,dos);
-					
-					// String
-				
-						writeString(this.root_pid,dos);
-					
-					// Long
-				
-						if(this.system_pid == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeLong(this.system_pid);
-		            	}
-					
-					// String
-				
-						writeString(this.project,dos);
-					
-					// String
-				
-						writeString(this.job,dos);
-					
-					// String
-				
-						writeString(this.job_repository_id,dos);
-					
-					// String
-				
-						writeString(this.job_version,dos);
-					
-					// String
-				
-						writeString(this.context,dos);
-					
-					// String
-				
-						writeString(this.origin,dos);
-					
-					// String
-				
-						writeString(this.label,dos);
-					
-					// Integer
-				
-						writeInteger(this.count,dos);
-					
-					// Integer
-				
-						writeInteger(this.reference,dos);
-					
-					// String
-				
-						writeString(this.thresholds,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("moment="+String.valueOf(moment));
-		sb.append(",pid="+pid);
-		sb.append(",father_pid="+father_pid);
-		sb.append(",root_pid="+root_pid);
-		sb.append(",system_pid="+String.valueOf(system_pid));
-		sb.append(",project="+project);
-		sb.append(",job="+job);
-		sb.append(",job_repository_id="+job_repository_id);
-		sb.append(",job_version="+job_version);
-		sb.append(",context="+context);
-		sb.append(",origin="+origin);
-		sb.append(",label="+label);
-		sb.append(",count="+String.valueOf(count));
-		sb.append(",reference="+String.valueOf(reference));
-		sb.append(",thresholds="+thresholds);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row3_0Struct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-public void tFlowMeterCatcher_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tFlowMeterCatcher_1_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-		row3_0Struct row3_0 = new row3_0Struct();
-Main_Flow_MeterStruct Main_Flow_Meter = new Main_Flow_MeterStruct();
-
-
-
-
-
-	
-	/**
-	 * [tLogRow_4 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tLogRow_4", false);
-		start_Hash.put("tLogRow_4", System.currentTimeMillis());
-		
-	
-	currentComponent="tLogRow_4";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Main_Flow_Meter");
-					}
-				
-		int tos_count_tLogRow_4 = 0;
-		
-
-	///////////////////////
-	
-         class Util_tLogRow_4 {
-
-        String[] des_top = { ".", ".", "-", "+" };
-
-        String[] des_head = { "|=", "=|", "-", "+" };
-
-        String[] des_bottom = { "'", "'", "-", "+" };
-
-        String name="";
-
-        java.util.List<String[]> list = new java.util.ArrayList<String[]>();
-
-        int[] colLengths = new int[8];
-
-        public void addRow(String[] row) {
-
-            for (int i = 0; i < 8; i++) {
-                if (row[i]!=null) {
-                  colLengths[i] = Math.max(colLengths[i], row[i].length());
-                }
-            }
-            list.add(row);
-        }
-
-        public void setTableName(String name) {
-
-            this.name = name;
-        }
-
-            public StringBuilder format() {
-            
-                StringBuilder sb = new StringBuilder();
-  
-            
-                    sb.append(print(des_top));
-    
-                    int totals = 0;
-                    for (int i = 0; i < colLengths.length; i++) {
-                        totals = totals + colLengths[i];
-                    }
-    
-                    // name
-                    sb.append("|");
-                    int k = 0;
-                    for (k = 0; k < (totals + 7 - name.length()) / 2; k++) {
-                        sb.append(' ');
-                    }
-                    sb.append(name);
-                    for (int i = 0; i < totals + 7 - name.length() - k; i++) {
-                        sb.append(' ');
-                    }
-                    sb.append("|\n");
-
-                    // head and rows
-                    sb.append(print(des_head));
-                    for (int i = 0; i < list.size(); i++) {
-    
-                        String[] row = list.get(i);
-    
-                        java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
-                        
-                        StringBuilder sbformat = new StringBuilder();                                             
-        			        sbformat.append("|%1$-");
-        			        sbformat.append(colLengths[0]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%2$-");
-        			        sbformat.append(colLengths[1]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%3$-");
-        			        sbformat.append(colLengths[2]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%4$-");
-        			        sbformat.append(colLengths[3]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%5$-");
-        			        sbformat.append(colLengths[4]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%6$-");
-        			        sbformat.append(colLengths[5]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%7$-");
-        			        sbformat.append(colLengths[6]);
-        			        sbformat.append("s");
-        			              
-        			        sbformat.append("|%8$-");
-        			        sbformat.append(colLengths[7]);
-        			        sbformat.append("s");
-        			                      
-                        sbformat.append("|\n");                    
-       
-                        formatter.format(sbformat.toString(), (Object[])row);	
-                                
-                        sb.append(formatter.toString());
-                        if (i == 0)
-                            sb.append(print(des_head)); // print the head
-                    }
-    
-                    // end
-                    sb.append(print(des_bottom));
-                    return sb;
-                }
-            
-
-            private StringBuilder print(String[] fillChars) {
-                StringBuilder sb = new StringBuilder();
-                //first column
-                sb.append(fillChars[0]);                
-                    for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);	                
-
-                    for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                    for (int i = 0; i < colLengths[2] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                    for (int i = 0; i < colLengths[3] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                    for (int i = 0; i < colLengths[4] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                    for (int i = 0; i < colLengths[5] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                    for (int i = 0; i < colLengths[6] - fillChars[3].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }
-                    sb.append(fillChars[3]);
-                
-                    //last column
-                    for (int i = 0; i < colLengths[7] - fillChars[1].length() + 1; i++) {
-                        sb.append(fillChars[2]);
-                    }         
-                sb.append(fillChars[1]);
-                sb.append("\n");               
-                return sb;
-            }
-            
-            public boolean isTableEmpty(){
-            	if (list.size() > 1)
-            		return false;
-            	return true;
-            }
-        }
-        Util_tLogRow_4 util_tLogRow_4 = new Util_tLogRow_4();
-        util_tLogRow_4.setTableName("tLogRow_4");
-        util_tLogRow_4.addRow(new String[]{"moment","pid","job","origin","label","count","reference","thresholds",});        
- 		StringBuilder strBuffer_tLogRow_4 = null;
-		int nb_line_tLogRow_4 = 0;
-///////////////////////    			
-
-
-
- 
-
-
-
-/**
- * [tLogRow_4 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tMap_4 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tMap_4", false);
-		start_Hash.put("tMap_4", System.currentTimeMillis());
-		
-	
-	currentComponent="tMap_4";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3_0");
-					}
-				
-		int tos_count_tMap_4 = 0;
-		
-
-
-
-
-// ###############################
-// # Lookup's keys initialization
-// ###############################        
-
-// ###############################
-// # Vars initialization
-class  Var__tMap_4__Struct  {
-}
-Var__tMap_4__Struct Var__tMap_4 = new Var__tMap_4__Struct();
-// ###############################
-
-// ###############################
-// # Outputs initialization
-Main_Flow_MeterStruct Main_Flow_Meter_tmp = new Main_Flow_MeterStruct();
-// ###############################
-
-        
-        
-
-
-
-        
-
-
-
-
-
-
-
-
-
- 
-
-
-
-/**
- * [tMap_4 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tFlowMeterCatcher_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tFlowMeterCatcher_1", false);
-		start_Hash.put("tFlowMeterCatcher_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tFlowMeterCatcher_1";
-
-	
-		int tos_count_tFlowMeterCatcher_1 = 0;
-		
-
-	for (MetterCatcherUtils.MetterCatcherMessage mcm : tFlowMeterCatcher_1.getMessages()) {
-		row3_0.pid = pid;
-		row3_0.root_pid = rootPid;
-		row3_0.father_pid = fatherPid;	
-        row3_0.project = projectName;
-        row3_0.job = jobName;
-        row3_0.context = contextStr;
-		row3_0.origin = (mcm.getOrigin()==null || mcm.getOrigin().length()<1 ? null : mcm.getOrigin());
-		row3_0.moment = mcm.getMoment();
-		row3_0.job_version = mcm.getJobVersion();
-		row3_0.job_repository_id = mcm.getJobId();
-		row3_0.system_pid = mcm.getSystemPid();
-		row3_0.label = mcm.getLabel();
-		row3_0.count = mcm.getCount();
-		row3_0.reference = tFlowMeterCatcher_1.getConnLinesCount(mcm.getReferense()+"_count");
-		row3_0.thresholds = mcm.getThresholds();
-		
-
- 
-
-
-
-/**
- * [tFlowMeterCatcher_1 begin ] stop
- */
-	
-	/**
-	 * [tFlowMeterCatcher_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFlowMeterCatcher_1";
-
-	
-
- 
-
-
-	tos_count_tFlowMeterCatcher_1++;
-
-/**
- * [tFlowMeterCatcher_1 main ] stop
- */
-	
-	/**
-	 * [tFlowMeterCatcher_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFlowMeterCatcher_1";
-
-	
-
- 
-
-
-
-/**
- * [tFlowMeterCatcher_1 process_data_begin ] stop
- */
-
-	
-	/**
-	 * [tMap_4 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_4";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1
-						
-							,"row3_0"
-						
-						);
-					}
-					
-
-		
-		
-		boolean hasCasePrimitiveKeyWithNull_tMap_4 = false;
-		
-
-        // ###############################
-        // # Input tables (lookups)
-		  boolean rejectedInnerJoin_tMap_4 = false;
-		  boolean mainRowRejected_tMap_4 = false;
-            				    								  
-		// ###############################
-        { // start of Var scope
-        
-	        // ###############################
-        	// # Vars tables
-        
-Var__tMap_4__Struct Var = Var__tMap_4;// ###############################
-        // ###############################
-        // # Output tables
-
-Main_Flow_Meter = null;
-
+						Main_Flow_Meter = null;
 
 // # Output table : 'Main_Flow_Meter'
-Main_Flow_Meter_tmp.moment = row3_0.moment ;
-Main_Flow_Meter_tmp.pid = row3_0.pid ;
-Main_Flow_Meter_tmp.job = row3_0.job ;
-Main_Flow_Meter_tmp.origin = row3_0.origin ;
-Main_Flow_Meter_tmp.label = row3_0.label ;
-Main_Flow_Meter_tmp.count = row3_0.count ;
-Main_Flow_Meter_tmp.reference = row3_0.reference ;
-Main_Flow_Meter_tmp.thresholds = row3_0.thresholds ;
-Main_Flow_Meter = Main_Flow_Meter_tmp;
+						Main_Flow_Meter_tmp.moment = row3_0.moment;
+						Main_Flow_Meter_tmp.pid = row3_0.pid;
+						Main_Flow_Meter_tmp.job = row3_0.job;
+						Main_Flow_Meter_tmp.origin = row3_0.origin;
+						Main_Flow_Meter_tmp.label = row3_0.label;
+						Main_Flow_Meter_tmp.count = row3_0.count;
+						Main_Flow_Meter_tmp.reference = row3_0.reference;
+						Main_Flow_Meter_tmp.thresholds = row3_0.thresholds;
+						Main_Flow_Meter = Main_Flow_Meter_tmp;
 // ###############################
 
-} // end of Var scope
+					} // end of Var scope
 
-rejectedInnerJoin_tMap_4 = false;
+					rejectedInnerJoin_tMap_4 = false;
 
+					tos_count_tMap_4++;
 
+					/**
+					 * [tMap_4 main ] stop
+					 */
 
+					/**
+					 * [tMap_4 process_data_begin ] start
+					 */
 
+					currentComponent = "tMap_4";
 
-
-
-
-
-
- 
-
-
-	tos_count_tMap_4++;
-
-/**
- * [tMap_4 main ] stop
- */
-	
-	/**
-	 * [tMap_4 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_4";
-
-	
-
- 
-
-
-
-/**
- * [tMap_4 process_data_begin ] stop
- */
+					/**
+					 * [tMap_4 process_data_begin ] stop
+					 */
 // Start of branch "Main_Flow_Meter"
-if(Main_Flow_Meter != null) { 
+					if (Main_Flow_Meter != null) {
 
+						/**
+						 * [tLogRow_4 main ] start
+						 */
 
+						currentComponent = "tLogRow_4";
 
-	
-	/**
-	 * [tLogRow_4 main ] start
-	 */
+						if (execStat) {
+							runStat.updateStatOnConnection(iterateId, 1, 1
 
-	
+									, "Main_Flow_Meter"
 
-	
-	
-	currentComponent="tLogRow_4";
+							);
+						}
 
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1
-						
-							,"Main_Flow_Meter"
-						
-						);
-					}
-					
 ///////////////////////		
-						
 
-				
-				String[] row_tLogRow_4 = new String[8];
-   				
-	    		if(Main_Flow_Meter.moment != null) { //              
-                 row_tLogRow_4[0]=    						
-								FormatterUtils.format_Date(Main_Flow_Meter.moment, "yyyy-MM-dd HH:mm:ss")
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Flow_Meter.pid != null) { //              
-                 row_tLogRow_4[1]=    						    
-				                String.valueOf(Main_Flow_Meter.pid)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Flow_Meter.job != null) { //              
-                 row_tLogRow_4[2]=    						    
-				                String.valueOf(Main_Flow_Meter.job)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Flow_Meter.origin != null) { //              
-                 row_tLogRow_4[3]=    						    
-				                String.valueOf(Main_Flow_Meter.origin)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Flow_Meter.label != null) { //              
-                 row_tLogRow_4[4]=    						    
-				                String.valueOf(Main_Flow_Meter.label)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Flow_Meter.count != null) { //              
-                 row_tLogRow_4[5]=    						    
-				                String.valueOf(Main_Flow_Meter.count)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Flow_Meter.reference != null) { //              
-                 row_tLogRow_4[6]=    						    
-				                String.valueOf(Main_Flow_Meter.reference)			
-					          ;	
-							
-	    		} //			
-    			   				
-	    		if(Main_Flow_Meter.thresholds != null) { //              
-                 row_tLogRow_4[7]=    						    
-				                String.valueOf(Main_Flow_Meter.thresholds)			
-					          ;	
-							
-	    		} //			
-    			 
+						String[] row_tLogRow_4 = new String[8];
 
-				util_tLogRow_4.addRow(row_tLogRow_4);	
-				nb_line_tLogRow_4++;
+						if (Main_Flow_Meter.moment != null) { //
+							row_tLogRow_4[0] = FormatterUtils.format_Date(Main_Flow_Meter.moment,
+									"yyyy-MM-dd HH:mm:ss");
+
+						} //
+
+						if (Main_Flow_Meter.pid != null) { //
+							row_tLogRow_4[1] = String.valueOf(Main_Flow_Meter.pid);
+
+						} //
+
+						if (Main_Flow_Meter.job != null) { //
+							row_tLogRow_4[2] = String.valueOf(Main_Flow_Meter.job);
+
+						} //
+
+						if (Main_Flow_Meter.origin != null) { //
+							row_tLogRow_4[3] = String.valueOf(Main_Flow_Meter.origin);
+
+						} //
+
+						if (Main_Flow_Meter.label != null) { //
+							row_tLogRow_4[4] = String.valueOf(Main_Flow_Meter.label);
+
+						} //
+
+						if (Main_Flow_Meter.count != null) { //
+							row_tLogRow_4[5] = String.valueOf(Main_Flow_Meter.count);
+
+						} //
+
+						if (Main_Flow_Meter.reference != null) { //
+							row_tLogRow_4[6] = String.valueOf(Main_Flow_Meter.reference);
+
+						} //
+
+						if (Main_Flow_Meter.thresholds != null) { //
+							row_tLogRow_4[7] = String.valueOf(Main_Flow_Meter.thresholds);
+
+						} //
+
+						util_tLogRow_4.addRow(row_tLogRow_4);
+						nb_line_tLogRow_4++;
 //////
 
 //////                    
-                    
+
 ///////////////////////    			
 
- 
+						tos_count_tLogRow_4++;
 
+						/**
+						 * [tLogRow_4 main ] stop
+						 */
 
-	tos_count_tLogRow_4++;
+						/**
+						 * [tLogRow_4 process_data_begin ] start
+						 */
 
-/**
- * [tLogRow_4 main ] stop
- */
-	
-	/**
-	 * [tLogRow_4 process_data_begin ] start
-	 */
+						currentComponent = "tLogRow_4";
 
-	
+						/**
+						 * [tLogRow_4 process_data_begin ] stop
+						 */
 
-	
-	
-	currentComponent="tLogRow_4";
+						/**
+						 * [tLogRow_4 process_data_end ] start
+						 */
 
-	
+						currentComponent = "tLogRow_4";
 
- 
+						/**
+						 * [tLogRow_4 process_data_end ] stop
+						 */
 
+					} // End of branch "Main_Flow_Meter"
 
+					/**
+					 * [tMap_4 process_data_end ] start
+					 */
 
-/**
- * [tLogRow_4 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLogRow_4 process_data_end ] start
-	 */
+					currentComponent = "tMap_4";
 
-	
+					/**
+					 * [tMap_4 process_data_end ] stop
+					 */
 
-	
-	
-	currentComponent="tLogRow_4";
+					/**
+					 * [tFlowMeterCatcher_1 process_data_end ] start
+					 */
 
-	
+					currentComponent = "tFlowMeterCatcher_1";
 
- 
+					/**
+					 * [tFlowMeterCatcher_1 process_data_end ] stop
+					 */
 
+					/**
+					 * [tFlowMeterCatcher_1 end ] start
+					 */
 
+					currentComponent = "tFlowMeterCatcher_1";
 
-/**
- * [tLogRow_4 process_data_end ] stop
- */
+				}
 
-} // End of branch "Main_Flow_Meter"
+				ok_Hash.put("tFlowMeterCatcher_1", true);
+				end_Hash.put("tFlowMeterCatcher_1", System.currentTimeMillis());
 
+				/**
+				 * [tFlowMeterCatcher_1 end ] stop
+				 */
 
+				/**
+				 * [tMap_4 end ] start
+				 */
 
-
-	
-	/**
-	 * [tMap_4 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_4";
-
-	
-
- 
-
-
-
-/**
- * [tMap_4 process_data_end ] stop
- */
-
-
-
-	
-	/**
-	 * [tFlowMeterCatcher_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFlowMeterCatcher_1";
-
-	
-
- 
-
-
-
-/**
- * [tFlowMeterCatcher_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tFlowMeterCatcher_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFlowMeterCatcher_1";
-
-	
-
-	}
-
-
- 
-
-ok_Hash.put("tFlowMeterCatcher_1", true);
-end_Hash.put("tFlowMeterCatcher_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tFlowMeterCatcher_1 end ] stop
- */
-
-	
-	/**
-	 * [tMap_4 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_4";
-
-	
-
+				currentComponent = "tMap_4";
 
 // ###############################
 // # Lookup hashes releasing
 // ###############################      
 
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3_0");
+				}
 
+				ok_Hash.put("tMap_4", true);
+				end_Hash.put("tMap_4", System.currentTimeMillis());
 
+				/**
+				 * [tMap_4 end ] stop
+				 */
 
+				/**
+				 * [tLogRow_4 end ] start
+				 */
 
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3_0");
-			  	}
-			  	
- 
-
-ok_Hash.put("tMap_4", true);
-end_Hash.put("tMap_4", System.currentTimeMillis());
-
-
-
-
-/**
- * [tMap_4 end ] stop
- */
-
-	
-	/**
-	 * [tLogRow_4 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_4";
-
-	
-
+				currentComponent = "tLogRow_4";
 
 //////
 
-                    
-                    java.io.PrintStream consoleOut_tLogRow_4 = null;
-                    if (globalMap.get("tLogRow_CONSOLE")!=null)
-                    {
-                    	consoleOut_tLogRow_4 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-                    }
-                    else
-                    {
-                    	consoleOut_tLogRow_4 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-                    	globalMap.put("tLogRow_CONSOLE",consoleOut_tLogRow_4);
-                    }
-                    
-                    consoleOut_tLogRow_4.println(util_tLogRow_4.format().toString());
-                    consoleOut_tLogRow_4.flush();
+				java.io.PrintStream consoleOut_tLogRow_4 = null;
+				if (globalMap.get("tLogRow_CONSOLE") != null) {
+					consoleOut_tLogRow_4 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+				} else {
+					consoleOut_tLogRow_4 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_4);
+				}
+
+				consoleOut_tLogRow_4.println(util_tLogRow_4.format().toString());
+				consoleOut_tLogRow_4.flush();
 //////
-globalMap.put("tLogRow_4_NB_LINE",nb_line_tLogRow_4);
+				globalMap.put("tLogRow_4_NB_LINE", nb_line_tLogRow_4);
 
 ///////////////////////    			
 
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"Main_Flow_Meter");
-			  	}
-			  	
- 
-
-ok_Hash.put("tLogRow_4", true);
-end_Hash.put("tLogRow_4", System.currentTimeMillis());
-
-
-
-
-/**
- * [tLogRow_4 end ] stop
- */
-
-
-
-
-
-
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tFlowMeterCatcher_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFlowMeterCatcher_1";
-
-	
-
- 
-
-
-
-/**
- * [tFlowMeterCatcher_1 finally ] stop
- */
-
-	
-	/**
-	 * [tMap_4 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMap_4";
-
-	
-
- 
-
-
-
-/**
- * [tMap_4 finally ] stop
- */
-
-	
-	/**
-	 * [tLogRow_4 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLogRow_4";
-
-	
-
- 
-
-
-
-/**
- * [tLogRow_4 finally ] stop
- */
-
-
-
-
-
-
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "Main_Flow_Meter");
 				}
-				resourceMap = null;
+
+				ok_Hash.put("tLogRow_4", true);
+				end_Hash.put("tLogRow_4", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_4 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tFlowMeterCatcher_1 finally ] start
+				 */
+
+				currentComponent = "tFlowMeterCatcher_1";
+
+				/**
+				 * [tFlowMeterCatcher_1 finally ] stop
+				 */
+
+				/**
+				 * [tMap_4 finally ] start
+				 */
+
+				currentComponent = "tMap_4";
+
+				/**
+				 * [tMap_4 finally ] stop
+				 */
+
+				/**
+				 * [tLogRow_4 finally ] start
+				 */
+
+				currentComponent = "tLogRow_4";
+
+				/**
+				 * [tLogRow_4 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
 			}
-		
+			resourceMap = null;
+		}
 
 		globalMap.put("tFlowMeterCatcher_1_SUBPROCESS_STATE", 1);
 	}
-	
-    public String resuming_logs_dir_path = null;
-    public String resuming_checkpoint_path = null;
-    public String parent_part_launcher = null;
-    private String resumeEntryMethodName = null;
-    private boolean globalResumeTicket = false;
 
-    public boolean watch = false;
-    // portStats is null, it means don't execute the statistics
-    public Integer portStats = null;
-    public int portTraces = 4334;
-    public String clientHost;
-    public String defaultClientHost = "localhost";
-    public String contextStr = "Default";
-    public boolean isDefaultContext = true;
-    public String pid = "0";
-    public String rootPid = null;
-    public String fatherPid = null;
-    public String fatherNode = null;
-    public long startTime = 0;
-    public boolean isChildJob = false;
-    public String log4jLevel = "";
-    
-    private boolean enableLogStash;
+	public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tJava_1_SUBPROCESS_STATE", 0);
 
-    private boolean execStat = true;
+		final boolean execStat = this.execStat;
 
-    private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
-        protected java.util.Map<String, String> initialValue() {
-            java.util.Map<String,String> threadRunResultMap = new java.util.HashMap<String, String>();
-            threadRunResultMap.put("errorCode", null);
-            threadRunResultMap.put("status", "");
-            return threadRunResultMap;
-        };
-    };
+		String iterateId = "";
 
-    private SyncInt runningThreadCount =new SyncInt();
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-    private class SyncInt
-    {
-        private int count = 0;
-        public synchronized void add(int i)
-        {
-            count +=i;
-        }
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
 
-        public synchronized int getCount()
-        {
-            return count;
-        }
-    }
+				/**
+				 * [tJava_1 begin ] start
+				 */
 
-    protected PropertiesWithType context_param = new PropertiesWithType();
-    public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
+				ok_Hash.put("tJava_1", false);
+				start_Hash.put("tJava_1", System.currentTimeMillis());
 
-    public String status= "";
-    
+				currentComponent = "tJava_1";
 
-    public static void main(String[] args){
-        final Anticipated_Demand_Inbound Anticipated_Demand_InboundClass = new Anticipated_Demand_Inbound();
+				int tos_count_tJava_1 = 0;
 
-        int exitCode = Anticipated_Demand_InboundClass.runJobInTOS(args);
+				System.out.println("Starting the Migrating Data from IMMKTNF to ANTICIPATED_DEMAND...........");
+				System.out.println("Target OpCO No    : " + context.opco);
+				System.out.println("Source OpCO No    : " + context.sopco);
+				System.out.println("Migration SVOP    : " + context.svop);
+				System.out.println("DateTime          : " + java.time.LocalDate.now());
+				System.out.println("SUS DB2 Connection: " + context.SUS_Server);
+				System.out.println("SUS DB2 Database  : " + context.SUS_Database);
+				System.out.println("PG Connection     : " + context.GIM_Server);
+				System.out.println("PG Database       : " + context.GIM_Database);
 
-        System.exit(exitCode);
-    }
+				/**
+				 * [tJava_1 begin ] stop
+				 */
 
+				/**
+				 * [tJava_1 main ] start
+				 */
 
-    public String[][] runJob(String[] args) {
+				currentComponent = "tJava_1";
 
-        int exitCode = runJobInTOS(args);
-        String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
+				tos_count_tJava_1++;
 
-        return bufferValue;
-    }
+				/**
+				 * [tJava_1 main ] stop
+				 */
 
-    public boolean hastBufferOutputComponent() {
+				/**
+				 * [tJava_1 process_data_begin ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				/**
+				 * [tJava_1 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tJava_1 process_data_end ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				/**
+				 * [tJava_1 process_data_end ] stop
+				 */
+
+				/**
+				 * [tJava_1 end ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				ok_Hash.put("tJava_1", true);
+				end_Hash.put("tJava_1", System.currentTimeMillis());
+
+				/**
+				 * [tJava_1 end ] stop
+				 */
+			} // end the resume
+
+			if (resumeEntryMethodName == null || globalResumeTicket) {
+				resumeUtil.addLog("CHECKPOINT", "CONNECTION:SUBJOB_OK:tJava_1:OnSubjobOk", "",
+						Thread.currentThread().getId() + "", "", "", "", "", "");
+			}
+
+			if (execStat) {
+				runStat.updateStatOnConnection("OnSubjobOk1", 0, "ok");
+			}
+
+			tDBInput_1Process(globalMap);
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tJava_1 finally ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				/**
+				 * [tJava_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tJava_1_SUBPROCESS_STATE", 1);
+	}
+
+	public static class Anticipated_Demand_InboundStruct
+			implements routines.system.IPersistableRow<Anticipated_Demand_InboundStruct> {
+		final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+		static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public String SITE_ID;
+
+		public String getSITE_ID() {
+			return this.SITE_ID;
+		}
+
+		public String ITEM_NO;
+
+		public String getITEM_NO() {
+			return this.ITEM_NO;
+		}
+
+		public java.util.Date DEMAND_WEEK_END_DATE;
+
+		public java.util.Date getDEMAND_WEEK_END_DATE() {
+			return this.DEMAND_WEEK_END_DATE;
+		}
+
+		public String DEMAND_TYPE;
+
+		public String getDEMAND_TYPE() {
+			return this.DEMAND_TYPE;
+		}
+
+		public String REFERENCE_NO;
+
+		public String getREFERENCE_NO() {
+			return this.REFERENCE_NO;
+		}
+
+		public String STATUS_OF_DEMAND;
+
+		public String getSTATUS_OF_DEMAND() {
+			return this.STATUS_OF_DEMAND;
+		}
+
+		public BigDecimal DEMAND_CASE_QTY_DAY_1;
+
+		public BigDecimal getDEMAND_CASE_QTY_DAY_1() {
+			return this.DEMAND_CASE_QTY_DAY_1;
+		}
+
+		public BigDecimal DEMAND_CASE_QTY_DAY_2;
+
+		public BigDecimal getDEMAND_CASE_QTY_DAY_2() {
+			return this.DEMAND_CASE_QTY_DAY_2;
+		}
+
+		public BigDecimal DEMAND_CASE_QTY_DAY_3;
+
+		public BigDecimal getDEMAND_CASE_QTY_DAY_3() {
+			return this.DEMAND_CASE_QTY_DAY_3;
+		}
+
+		public BigDecimal DEMAND_CASE_QTY_DAY_4;
+
+		public BigDecimal getDEMAND_CASE_QTY_DAY_4() {
+			return this.DEMAND_CASE_QTY_DAY_4;
+		}
+
+		public BigDecimal DEMAND_CASE_QTY_DAY_5;
+
+		public BigDecimal getDEMAND_CASE_QTY_DAY_5() {
+			return this.DEMAND_CASE_QTY_DAY_5;
+		}
+
+		public BigDecimal DEMAND_CASE_QTY_DAY_6;
+
+		public BigDecimal getDEMAND_CASE_QTY_DAY_6() {
+			return this.DEMAND_CASE_QTY_DAY_6;
+		}
+
+		public BigDecimal DEMAND_CASE_QTY_DAY_7;
+
+		public BigDecimal getDEMAND_CASE_QTY_DAY_7() {
+			return this.DEMAND_CASE_QTY_DAY_7;
+		}
+
+		public BigDecimal DEMAND_SPLIT_QTY_DAY_1;
+
+		public BigDecimal getDEMAND_SPLIT_QTY_DAY_1() {
+			return this.DEMAND_SPLIT_QTY_DAY_1;
+		}
+
+		public BigDecimal DEMAND_SPLIT_QTY_DAY_2;
+
+		public BigDecimal getDEMAND_SPLIT_QTY_DAY_2() {
+			return this.DEMAND_SPLIT_QTY_DAY_2;
+		}
+
+		public BigDecimal DEMAND_SPLIT_QTY_DAY_3;
+
+		public BigDecimal getDEMAND_SPLIT_QTY_DAY_3() {
+			return this.DEMAND_SPLIT_QTY_DAY_3;
+		}
+
+		public BigDecimal DEMAND_SPLIT_QTY_DAY_4;
+
+		public BigDecimal getDEMAND_SPLIT_QTY_DAY_4() {
+			return this.DEMAND_SPLIT_QTY_DAY_4;
+		}
+
+		public BigDecimal DEMAND_SPLIT_QTY_DAY_5;
+
+		public BigDecimal getDEMAND_SPLIT_QTY_DAY_5() {
+			return this.DEMAND_SPLIT_QTY_DAY_5;
+		}
+
+		public BigDecimal DEMAND_SPLIT_QTY_DAY_6;
+
+		public BigDecimal getDEMAND_SPLIT_QTY_DAY_6() {
+			return this.DEMAND_SPLIT_QTY_DAY_6;
+		}
+
+		public BigDecimal DEMAND_SPLIT_QTY_DAY_7;
+
+		public BigDecimal getDEMAND_SPLIT_QTY_DAY_7() {
+			return this.DEMAND_SPLIT_QTY_DAY_7;
+		}
+
+		public BigDecimal DEMAND_CASE_WEEK_TOTAL_QTY;
+
+		public BigDecimal getDEMAND_CASE_WEEK_TOTAL_QTY() {
+			return this.DEMAND_CASE_WEEK_TOTAL_QTY;
+		}
+
+		public BigDecimal DEMAND_SPLIT_WEEK_TOTAL_QTY;
+
+		public BigDecimal getDEMAND_SPLIT_WEEK_TOTAL_QTY() {
+			return this.DEMAND_SPLIT_WEEK_TOTAL_QTY;
+		}
+
+		public java.util.Date CREATED_TIMESTAMP;
+
+		public java.util.Date getCREATED_TIMESTAMP() {
+			return this.CREATED_TIMESTAMP;
+		}
+
+		public String CREATED_USER_ID;
+
+		public String getCREATED_USER_ID() {
+			return this.CREATED_USER_ID;
+		}
+
+		public java.util.Date UPDATED_TIMESTAMP;
+
+		public java.util.Date getUPDATED_TIMESTAMP() {
+			return this.UPDATED_TIMESTAMP;
+		}
+
+		public String UPDATED_USER_ID;
+
+		public String getUPDATED_USER_ID() {
+			return this.UPDATED_USER_ID;
+		}
+
+		public boolean IS_DELETED;
+
+		public boolean getIS_DELETED() {
+			return this.IS_DELETED;
+		}
+
+		public String CREATED_ORIGIN;
+
+		public String getCREATED_ORIGIN() {
+			return this.CREATED_ORIGIN;
+		}
+
+		public java.util.Date CREATED_ORIGIN_TIMESTAMP;
+
+		public java.util.Date getCREATED_ORIGIN_TIMESTAMP() {
+			return this.CREATED_ORIGIN_TIMESTAMP;
+		}
+
+		public String UPDATED_ORIGIN;
+
+		public String getUPDATED_ORIGIN() {
+			return this.UPDATED_ORIGIN;
+		}
+
+		public java.util.Date UPDATED_ORIGIN_TIMESTAMP;
+
+		public java.util.Date getUPDATED_ORIGIN_TIMESTAMP() {
+			return this.UPDATED_ORIGIN_TIMESTAMP;
+		}
+
+		public String TNPF_SVOP;
+
+		public String getTNPF_SVOP() {
+			return this.TNPF_SVOP;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + ((this.SITE_ID == null) ? 0 : this.SITE_ID.hashCode());
+
+				result = prime * result + ((this.ITEM_NO == null) ? 0 : this.ITEM_NO.hashCode());
+
+				result = prime * result
+						+ ((this.DEMAND_WEEK_END_DATE == null) ? 0 : this.DEMAND_WEEK_END_DATE.hashCode());
+
+				result = prime * result + ((this.DEMAND_TYPE == null) ? 0 : this.DEMAND_TYPE.hashCode());
+
+				result = prime * result + ((this.REFERENCE_NO == null) ? 0 : this.REFERENCE_NO.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final Anticipated_Demand_InboundStruct other = (Anticipated_Demand_InboundStruct) obj;
+
+			if (this.SITE_ID == null) {
+				if (other.SITE_ID != null)
+					return false;
+
+			} else if (!this.SITE_ID.equals(other.SITE_ID))
+
+				return false;
+
+			if (this.ITEM_NO == null) {
+				if (other.ITEM_NO != null)
+					return false;
+
+			} else if (!this.ITEM_NO.equals(other.ITEM_NO))
+
+				return false;
+
+			if (this.DEMAND_WEEK_END_DATE == null) {
+				if (other.DEMAND_WEEK_END_DATE != null)
+					return false;
+
+			} else if (!this.DEMAND_WEEK_END_DATE.equals(other.DEMAND_WEEK_END_DATE))
+
+				return false;
+
+			if (this.DEMAND_TYPE == null) {
+				if (other.DEMAND_TYPE != null)
+					return false;
+
+			} else if (!this.DEMAND_TYPE.equals(other.DEMAND_TYPE))
+
+				return false;
+
+			if (this.REFERENCE_NO == null) {
+				if (other.REFERENCE_NO != null)
+					return false;
+
+			} else if (!this.REFERENCE_NO.equals(other.REFERENCE_NO))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(Anticipated_Demand_InboundStruct other) {
+
+			other.SITE_ID = this.SITE_ID;
+			other.ITEM_NO = this.ITEM_NO;
+			other.DEMAND_WEEK_END_DATE = this.DEMAND_WEEK_END_DATE;
+			other.DEMAND_TYPE = this.DEMAND_TYPE;
+			other.REFERENCE_NO = this.REFERENCE_NO;
+			other.STATUS_OF_DEMAND = this.STATUS_OF_DEMAND;
+			other.DEMAND_CASE_QTY_DAY_1 = this.DEMAND_CASE_QTY_DAY_1;
+			other.DEMAND_CASE_QTY_DAY_2 = this.DEMAND_CASE_QTY_DAY_2;
+			other.DEMAND_CASE_QTY_DAY_3 = this.DEMAND_CASE_QTY_DAY_3;
+			other.DEMAND_CASE_QTY_DAY_4 = this.DEMAND_CASE_QTY_DAY_4;
+			other.DEMAND_CASE_QTY_DAY_5 = this.DEMAND_CASE_QTY_DAY_5;
+			other.DEMAND_CASE_QTY_DAY_6 = this.DEMAND_CASE_QTY_DAY_6;
+			other.DEMAND_CASE_QTY_DAY_7 = this.DEMAND_CASE_QTY_DAY_7;
+			other.DEMAND_SPLIT_QTY_DAY_1 = this.DEMAND_SPLIT_QTY_DAY_1;
+			other.DEMAND_SPLIT_QTY_DAY_2 = this.DEMAND_SPLIT_QTY_DAY_2;
+			other.DEMAND_SPLIT_QTY_DAY_3 = this.DEMAND_SPLIT_QTY_DAY_3;
+			other.DEMAND_SPLIT_QTY_DAY_4 = this.DEMAND_SPLIT_QTY_DAY_4;
+			other.DEMAND_SPLIT_QTY_DAY_5 = this.DEMAND_SPLIT_QTY_DAY_5;
+			other.DEMAND_SPLIT_QTY_DAY_6 = this.DEMAND_SPLIT_QTY_DAY_6;
+			other.DEMAND_SPLIT_QTY_DAY_7 = this.DEMAND_SPLIT_QTY_DAY_7;
+			other.DEMAND_CASE_WEEK_TOTAL_QTY = this.DEMAND_CASE_WEEK_TOTAL_QTY;
+			other.DEMAND_SPLIT_WEEK_TOTAL_QTY = this.DEMAND_SPLIT_WEEK_TOTAL_QTY;
+			other.CREATED_TIMESTAMP = this.CREATED_TIMESTAMP;
+			other.CREATED_USER_ID = this.CREATED_USER_ID;
+			other.UPDATED_TIMESTAMP = this.UPDATED_TIMESTAMP;
+			other.UPDATED_USER_ID = this.UPDATED_USER_ID;
+			other.IS_DELETED = this.IS_DELETED;
+			other.CREATED_ORIGIN = this.CREATED_ORIGIN;
+			other.CREATED_ORIGIN_TIMESTAMP = this.CREATED_ORIGIN_TIMESTAMP;
+			other.UPDATED_ORIGIN = this.UPDATED_ORIGIN;
+			other.UPDATED_ORIGIN_TIMESTAMP = this.UPDATED_ORIGIN_TIMESTAMP;
+			other.TNPF_SVOP = this.TNPF_SVOP;
+
+		}
+
+		public void copyKeysDataTo(Anticipated_Demand_InboundStruct other) {
+
+			other.SITE_ID = this.SITE_ID;
+			other.ITEM_NO = this.ITEM_NO;
+			other.DEMAND_WEEK_END_DATE = this.DEMAND_WEEK_END_DATE;
+			other.DEMAND_TYPE = this.DEMAND_TYPE;
+			other.REFERENCE_NO = this.REFERENCE_NO;
+
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(unmarshaller.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (date1 == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.SITE_ID = readString(dis);
+
+					this.ITEM_NO = readString(dis);
+
+					this.DEMAND_WEEK_END_DATE = readDate(dis);
+
+					this.DEMAND_TYPE = readString(dis);
+
+					this.REFERENCE_NO = readString(dis);
+
+					this.STATUS_OF_DEMAND = readString(dis);
+
+					this.DEMAND_CASE_QTY_DAY_1 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_2 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_3 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_4 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_5 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_6 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_7 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_1 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_2 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_3 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_4 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_5 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_6 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_7 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_WEEK_TOTAL_QTY = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_WEEK_TOTAL_QTY = (BigDecimal) dis.readObject();
+
+					this.CREATED_TIMESTAMP = readDate(dis);
+
+					this.CREATED_USER_ID = readString(dis);
+
+					this.UPDATED_TIMESTAMP = readDate(dis);
+
+					this.UPDATED_USER_ID = readString(dis);
+
+					this.IS_DELETED = dis.readBoolean();
+
+					this.CREATED_ORIGIN = readString(dis);
+
+					this.CREATED_ORIGIN_TIMESTAMP = readDate(dis);
+
+					this.UPDATED_ORIGIN = readString(dis);
+
+					this.UPDATED_ORIGIN_TIMESTAMP = readDate(dis);
+
+					this.TNPF_SVOP = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				} catch (ClassNotFoundException eCNFE) {
+					throw new RuntimeException(eCNFE);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.SITE_ID = readString(dis);
+
+					this.ITEM_NO = readString(dis);
+
+					this.DEMAND_WEEK_END_DATE = readDate(dis);
+
+					this.DEMAND_TYPE = readString(dis);
+
+					this.REFERENCE_NO = readString(dis);
+
+					this.STATUS_OF_DEMAND = readString(dis);
+
+					this.DEMAND_CASE_QTY_DAY_1 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_2 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_3 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_4 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_5 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_6 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_QTY_DAY_7 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_1 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_2 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_3 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_4 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_5 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_6 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_QTY_DAY_7 = (BigDecimal) dis.readObject();
+
+					this.DEMAND_CASE_WEEK_TOTAL_QTY = (BigDecimal) dis.readObject();
+
+					this.DEMAND_SPLIT_WEEK_TOTAL_QTY = (BigDecimal) dis.readObject();
+
+					this.CREATED_TIMESTAMP = readDate(dis);
+
+					this.CREATED_USER_ID = readString(dis);
+
+					this.UPDATED_TIMESTAMP = readDate(dis);
+
+					this.UPDATED_USER_ID = readString(dis);
+
+					this.IS_DELETED = dis.readBoolean();
+
+					this.CREATED_ORIGIN = readString(dis);
+
+					this.CREATED_ORIGIN_TIMESTAMP = readDate(dis);
+
+					this.UPDATED_ORIGIN = readString(dis);
+
+					this.UPDATED_ORIGIN_TIMESTAMP = readDate(dis);
+
+					this.TNPF_SVOP = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				} catch (ClassNotFoundException eCNFE) {
+					throw new RuntimeException(eCNFE);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.SITE_ID, dos);
+
+				// String
+
+				writeString(this.ITEM_NO, dos);
+
+				// java.util.Date
+
+				writeDate(this.DEMAND_WEEK_END_DATE, dos);
+
+				// String
+
+				writeString(this.DEMAND_TYPE, dos);
+
+				// String
+
+				writeString(this.REFERENCE_NO, dos);
+
+				// String
+
+				writeString(this.STATUS_OF_DEMAND, dos);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_1);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_2);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_3);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_4);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_5);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_6);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_7);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_1);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_2);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_3);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_4);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_5);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_6);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_7);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_WEEK_TOTAL_QTY);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_WEEK_TOTAL_QTY);
+
+				// java.util.Date
+
+				writeDate(this.CREATED_TIMESTAMP, dos);
+
+				// String
+
+				writeString(this.CREATED_USER_ID, dos);
+
+				// java.util.Date
+
+				writeDate(this.UPDATED_TIMESTAMP, dos);
+
+				// String
+
+				writeString(this.UPDATED_USER_ID, dos);
+
+				// boolean
+
+				dos.writeBoolean(this.IS_DELETED);
+
+				// String
+
+				writeString(this.CREATED_ORIGIN, dos);
+
+				// java.util.Date
+
+				writeDate(this.CREATED_ORIGIN_TIMESTAMP, dos);
+
+				// String
+
+				writeString(this.UPDATED_ORIGIN, dos);
+
+				// java.util.Date
+
+				writeDate(this.UPDATED_ORIGIN_TIMESTAMP, dos);
+
+				// String
+
+				writeString(this.TNPF_SVOP, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// String
+
+				writeString(this.SITE_ID, dos);
+
+				// String
+
+				writeString(this.ITEM_NO, dos);
+
+				// java.util.Date
+
+				writeDate(this.DEMAND_WEEK_END_DATE, dos);
+
+				// String
+
+				writeString(this.DEMAND_TYPE, dos);
+
+				// String
+
+				writeString(this.REFERENCE_NO, dos);
+
+				// String
+
+				writeString(this.STATUS_OF_DEMAND, dos);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_1);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_2);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_3);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_4);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_5);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_6);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_QTY_DAY_7);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_1);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_2);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_3);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_4);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_5);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_6);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_QTY_DAY_7);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_CASE_WEEK_TOTAL_QTY);
+
+				// BigDecimal
+
+				dos.writeObject(this.DEMAND_SPLIT_WEEK_TOTAL_QTY);
+
+				// java.util.Date
+
+				writeDate(this.CREATED_TIMESTAMP, dos);
+
+				// String
+
+				writeString(this.CREATED_USER_ID, dos);
+
+				// java.util.Date
+
+				writeDate(this.UPDATED_TIMESTAMP, dos);
+
+				// String
+
+				writeString(this.UPDATED_USER_ID, dos);
+
+				// boolean
+
+				dos.writeBoolean(this.IS_DELETED);
+
+				// String
+
+				writeString(this.CREATED_ORIGIN, dos);
+
+				// java.util.Date
+
+				writeDate(this.CREATED_ORIGIN_TIMESTAMP, dos);
+
+				// String
+
+				writeString(this.UPDATED_ORIGIN, dos);
+
+				// java.util.Date
+
+				writeDate(this.UPDATED_ORIGIN_TIMESTAMP, dos);
+
+				// String
+
+				writeString(this.TNPF_SVOP, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("SITE_ID=" + SITE_ID);
+			sb.append(",ITEM_NO=" + ITEM_NO);
+			sb.append(",DEMAND_WEEK_END_DATE=" + String.valueOf(DEMAND_WEEK_END_DATE));
+			sb.append(",DEMAND_TYPE=" + DEMAND_TYPE);
+			sb.append(",REFERENCE_NO=" + REFERENCE_NO);
+			sb.append(",STATUS_OF_DEMAND=" + STATUS_OF_DEMAND);
+			sb.append(",DEMAND_CASE_QTY_DAY_1=" + String.valueOf(DEMAND_CASE_QTY_DAY_1));
+			sb.append(",DEMAND_CASE_QTY_DAY_2=" + String.valueOf(DEMAND_CASE_QTY_DAY_2));
+			sb.append(",DEMAND_CASE_QTY_DAY_3=" + String.valueOf(DEMAND_CASE_QTY_DAY_3));
+			sb.append(",DEMAND_CASE_QTY_DAY_4=" + String.valueOf(DEMAND_CASE_QTY_DAY_4));
+			sb.append(",DEMAND_CASE_QTY_DAY_5=" + String.valueOf(DEMAND_CASE_QTY_DAY_5));
+			sb.append(",DEMAND_CASE_QTY_DAY_6=" + String.valueOf(DEMAND_CASE_QTY_DAY_6));
+			sb.append(",DEMAND_CASE_QTY_DAY_7=" + String.valueOf(DEMAND_CASE_QTY_DAY_7));
+			sb.append(",DEMAND_SPLIT_QTY_DAY_1=" + String.valueOf(DEMAND_SPLIT_QTY_DAY_1));
+			sb.append(",DEMAND_SPLIT_QTY_DAY_2=" + String.valueOf(DEMAND_SPLIT_QTY_DAY_2));
+			sb.append(",DEMAND_SPLIT_QTY_DAY_3=" + String.valueOf(DEMAND_SPLIT_QTY_DAY_3));
+			sb.append(",DEMAND_SPLIT_QTY_DAY_4=" + String.valueOf(DEMAND_SPLIT_QTY_DAY_4));
+			sb.append(",DEMAND_SPLIT_QTY_DAY_5=" + String.valueOf(DEMAND_SPLIT_QTY_DAY_5));
+			sb.append(",DEMAND_SPLIT_QTY_DAY_6=" + String.valueOf(DEMAND_SPLIT_QTY_DAY_6));
+			sb.append(",DEMAND_SPLIT_QTY_DAY_7=" + String.valueOf(DEMAND_SPLIT_QTY_DAY_7));
+			sb.append(",DEMAND_CASE_WEEK_TOTAL_QTY=" + String.valueOf(DEMAND_CASE_WEEK_TOTAL_QTY));
+			sb.append(",DEMAND_SPLIT_WEEK_TOTAL_QTY=" + String.valueOf(DEMAND_SPLIT_WEEK_TOTAL_QTY));
+			sb.append(",CREATED_TIMESTAMP=" + String.valueOf(CREATED_TIMESTAMP));
+			sb.append(",CREATED_USER_ID=" + CREATED_USER_ID);
+			sb.append(",UPDATED_TIMESTAMP=" + String.valueOf(UPDATED_TIMESTAMP));
+			sb.append(",UPDATED_USER_ID=" + UPDATED_USER_ID);
+			sb.append(",IS_DELETED=" + String.valueOf(IS_DELETED));
+			sb.append(",CREATED_ORIGIN=" + CREATED_ORIGIN);
+			sb.append(",CREATED_ORIGIN_TIMESTAMP=" + String.valueOf(CREATED_ORIGIN_TIMESTAMP));
+			sb.append(",UPDATED_ORIGIN=" + UPDATED_ORIGIN);
+			sb.append(",UPDATED_ORIGIN_TIMESTAMP=" + String.valueOf(UPDATED_ORIGIN_TIMESTAMP));
+			sb.append(",TNPF_SVOP=" + TNPF_SVOP);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(Anticipated_Demand_InboundStruct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.SITE_ID, other.SITE_ID);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			returnValue = checkNullsAndCompare(this.ITEM_NO, other.ITEM_NO);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			returnValue = checkNullsAndCompare(this.DEMAND_WEEK_END_DATE, other.DEMAND_WEEK_END_DATE);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			returnValue = checkNullsAndCompare(this.DEMAND_TYPE, other.DEMAND_TYPE);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			returnValue = checkNullsAndCompare(this.REFERENCE_NO, other.REFERENCE_NO);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+		final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+		static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+
+		public String TNITEM;
+
+		public String getTNITEM() {
+			return this.TNITEM;
+		}
+
+		public BigDecimal TNDMED;
+
+		public BigDecimal getTNDMED() {
+			return this.TNDMED;
+		}
+
+		public String TNDTYP;
+
+		public String getTNDTYP() {
+			return this.TNDTYP;
+		}
+
+		public String TNADRF;
+
+		public String getTNADRF() {
+			return this.TNADRF;
+		}
+
+		public String TNDSTS;
+
+		public String getTNDSTS() {
+			return this.TNDSTS;
+		}
+
+		public String TNFCMT;
+
+		public String getTNFCMT() {
+			return this.TNFCMT;
+		}
+
+		public BigDecimal TNAPDT;
+
+		public BigDecimal getTNAPDT() {
+			return this.TNAPDT;
+		}
+
+		public BigDecimal TNDCD1;
+
+		public BigDecimal getTNDCD1() {
+			return this.TNDCD1;
+		}
+
+		public BigDecimal TNDCD2;
+
+		public BigDecimal getTNDCD2() {
+			return this.TNDCD2;
+		}
+
+		public BigDecimal TNDCD3;
+
+		public BigDecimal getTNDCD3() {
+			return this.TNDCD3;
+		}
+
+		public BigDecimal TNDCD4;
+
+		public BigDecimal getTNDCD4() {
+			return this.TNDCD4;
+		}
+
+		public BigDecimal TNDCD5;
+
+		public BigDecimal getTNDCD5() {
+			return this.TNDCD5;
+		}
+
+		public BigDecimal TNDCD6;
+
+		public BigDecimal getTNDCD6() {
+			return this.TNDCD6;
+		}
+
+		public BigDecimal TNDCD7;
+
+		public BigDecimal getTNDCD7() {
+			return this.TNDCD7;
+		}
+
+		public BigDecimal TNDSD1;
+
+		public BigDecimal getTNDSD1() {
+			return this.TNDSD1;
+		}
+
+		public BigDecimal TNDSD2;
+
+		public BigDecimal getTNDSD2() {
+			return this.TNDSD2;
+		}
+
+		public BigDecimal TNDSD3;
+
+		public BigDecimal getTNDSD3() {
+			return this.TNDSD3;
+		}
+
+		public BigDecimal TNDSD4;
+
+		public BigDecimal getTNDSD4() {
+			return this.TNDSD4;
+		}
+
+		public BigDecimal TNDSD5;
+
+		public BigDecimal getTNDSD5() {
+			return this.TNDSD5;
+		}
+
+		public BigDecimal TNDSD6;
+
+		public BigDecimal getTNDSD6() {
+			return this.TNDSD6;
+		}
+
+		public BigDecimal TNDSD7;
+
+		public BigDecimal getTNDSD7() {
+			return this.TNDSD7;
+		}
+
+		public BigDecimal TNDCWT;
+
+		public BigDecimal getTNDCWT() {
+			return this.TNDCWT;
+		}
+
+		public BigDecimal TNDSWT;
+
+		public BigDecimal getTNDSWT() {
+			return this.TNDSWT;
+		}
+
+		public String TNCPVN;
+
+		public String getTNCPVN() {
+			return this.TNCPVN;
+		}
+
+		public String TNWHSE;
+
+		public String getTNWHSE() {
+			return this.TNWHSE;
+		}
+
+		public String TNBUYR;
+
+		public String getTNBUYR() {
+			return this.TNBUYR;
+		}
+
+		public BigDecimal TNEADT;
+
+		public BigDecimal getTNEADT() {
+			return this.TNEADT;
+		}
+
+		public BigDecimal TNEATM;
+
+		public BigDecimal getTNEATM() {
+			return this.TNEATM;
+		}
+
+		public String TNEAID;
+
+		public String getTNEAID() {
+			return this.TNEAID;
+		}
+
+		public BigDecimal TNMODT;
+
+		public BigDecimal getTNMODT() {
+			return this.TNMODT;
+		}
+
+		public BigDecimal TNMOTM;
+
+		public BigDecimal getTNMOTM() {
+			return this.TNMOTM;
+		}
+
+		public String TNMOID;
+
+		public String getTNMOID() {
+			return this.TNMOID;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.TNITEM = readString(dis);
+
+					this.TNDMED = (BigDecimal) dis.readObject();
+
+					this.TNDTYP = readString(dis);
+
+					this.TNADRF = readString(dis);
+
+					this.TNDSTS = readString(dis);
+
+					this.TNFCMT = readString(dis);
+
+					this.TNAPDT = (BigDecimal) dis.readObject();
+
+					this.TNDCD1 = (BigDecimal) dis.readObject();
+
+					this.TNDCD2 = (BigDecimal) dis.readObject();
+
+					this.TNDCD3 = (BigDecimal) dis.readObject();
+
+					this.TNDCD4 = (BigDecimal) dis.readObject();
+
+					this.TNDCD5 = (BigDecimal) dis.readObject();
+
+					this.TNDCD6 = (BigDecimal) dis.readObject();
+
+					this.TNDCD7 = (BigDecimal) dis.readObject();
+
+					this.TNDSD1 = (BigDecimal) dis.readObject();
+
+					this.TNDSD2 = (BigDecimal) dis.readObject();
+
+					this.TNDSD3 = (BigDecimal) dis.readObject();
+
+					this.TNDSD4 = (BigDecimal) dis.readObject();
+
+					this.TNDSD5 = (BigDecimal) dis.readObject();
+
+					this.TNDSD6 = (BigDecimal) dis.readObject();
+
+					this.TNDSD7 = (BigDecimal) dis.readObject();
+
+					this.TNDCWT = (BigDecimal) dis.readObject();
+
+					this.TNDSWT = (BigDecimal) dis.readObject();
+
+					this.TNCPVN = readString(dis);
+
+					this.TNWHSE = readString(dis);
+
+					this.TNBUYR = readString(dis);
+
+					this.TNEADT = (BigDecimal) dis.readObject();
+
+					this.TNEATM = (BigDecimal) dis.readObject();
+
+					this.TNEAID = readString(dis);
+
+					this.TNMODT = (BigDecimal) dis.readObject();
+
+					this.TNMOTM = (BigDecimal) dis.readObject();
+
+					this.TNMOID = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				} catch (ClassNotFoundException eCNFE) {
+					throw new RuntimeException(eCNFE);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.TNITEM = readString(dis);
+
+					this.TNDMED = (BigDecimal) dis.readObject();
+
+					this.TNDTYP = readString(dis);
+
+					this.TNADRF = readString(dis);
+
+					this.TNDSTS = readString(dis);
+
+					this.TNFCMT = readString(dis);
+
+					this.TNAPDT = (BigDecimal) dis.readObject();
+
+					this.TNDCD1 = (BigDecimal) dis.readObject();
+
+					this.TNDCD2 = (BigDecimal) dis.readObject();
+
+					this.TNDCD3 = (BigDecimal) dis.readObject();
+
+					this.TNDCD4 = (BigDecimal) dis.readObject();
+
+					this.TNDCD5 = (BigDecimal) dis.readObject();
+
+					this.TNDCD6 = (BigDecimal) dis.readObject();
+
+					this.TNDCD7 = (BigDecimal) dis.readObject();
+
+					this.TNDSD1 = (BigDecimal) dis.readObject();
+
+					this.TNDSD2 = (BigDecimal) dis.readObject();
+
+					this.TNDSD3 = (BigDecimal) dis.readObject();
+
+					this.TNDSD4 = (BigDecimal) dis.readObject();
+
+					this.TNDSD5 = (BigDecimal) dis.readObject();
+
+					this.TNDSD6 = (BigDecimal) dis.readObject();
+
+					this.TNDSD7 = (BigDecimal) dis.readObject();
+
+					this.TNDCWT = (BigDecimal) dis.readObject();
+
+					this.TNDSWT = (BigDecimal) dis.readObject();
+
+					this.TNCPVN = readString(dis);
+
+					this.TNWHSE = readString(dis);
+
+					this.TNBUYR = readString(dis);
+
+					this.TNEADT = (BigDecimal) dis.readObject();
+
+					this.TNEATM = (BigDecimal) dis.readObject();
+
+					this.TNEAID = readString(dis);
+
+					this.TNMODT = (BigDecimal) dis.readObject();
+
+					this.TNMOTM = (BigDecimal) dis.readObject();
+
+					this.TNMOID = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				} catch (ClassNotFoundException eCNFE) {
+					throw new RuntimeException(eCNFE);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.TNITEM, dos);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDMED);
+
+				// String
+
+				writeString(this.TNDTYP, dos);
+
+				// String
+
+				writeString(this.TNADRF, dos);
+
+				// String
+
+				writeString(this.TNDSTS, dos);
+
+				// String
+
+				writeString(this.TNFCMT, dos);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNAPDT);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD1);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD2);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD3);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD4);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD5);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD6);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD7);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD1);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD2);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD3);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD4);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD5);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD6);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD7);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCWT);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSWT);
+
+				// String
+
+				writeString(this.TNCPVN, dos);
+
+				// String
+
+				writeString(this.TNWHSE, dos);
+
+				// String
+
+				writeString(this.TNBUYR, dos);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNEADT);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNEATM);
+
+				// String
+
+				writeString(this.TNEAID, dos);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNMODT);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNMOTM);
+
+				// String
+
+				writeString(this.TNMOID, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// String
+
+				writeString(this.TNITEM, dos);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDMED);
+
+				// String
+
+				writeString(this.TNDTYP, dos);
+
+				// String
+
+				writeString(this.TNADRF, dos);
+
+				// String
+
+				writeString(this.TNDSTS, dos);
+
+				// String
+
+				writeString(this.TNFCMT, dos);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNAPDT);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD1);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD2);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD3);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD4);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD5);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD6);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCD7);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD1);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD2);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD3);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD4);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD5);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD6);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSD7);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDCWT);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNDSWT);
+
+				// String
+
+				writeString(this.TNCPVN, dos);
+
+				// String
+
+				writeString(this.TNWHSE, dos);
+
+				// String
+
+				writeString(this.TNBUYR, dos);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNEADT);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNEATM);
+
+				// String
+
+				writeString(this.TNEAID, dos);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNMODT);
+
+				// BigDecimal
+
+				dos.writeObject(this.TNMOTM);
+
+				// String
+
+				writeString(this.TNMOID, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("TNITEM=" + TNITEM);
+			sb.append(",TNDMED=" + String.valueOf(TNDMED));
+			sb.append(",TNDTYP=" + TNDTYP);
+			sb.append(",TNADRF=" + TNADRF);
+			sb.append(",TNDSTS=" + TNDSTS);
+			sb.append(",TNFCMT=" + TNFCMT);
+			sb.append(",TNAPDT=" + String.valueOf(TNAPDT));
+			sb.append(",TNDCD1=" + String.valueOf(TNDCD1));
+			sb.append(",TNDCD2=" + String.valueOf(TNDCD2));
+			sb.append(",TNDCD3=" + String.valueOf(TNDCD3));
+			sb.append(",TNDCD4=" + String.valueOf(TNDCD4));
+			sb.append(",TNDCD5=" + String.valueOf(TNDCD5));
+			sb.append(",TNDCD6=" + String.valueOf(TNDCD6));
+			sb.append(",TNDCD7=" + String.valueOf(TNDCD7));
+			sb.append(",TNDSD1=" + String.valueOf(TNDSD1));
+			sb.append(",TNDSD2=" + String.valueOf(TNDSD2));
+			sb.append(",TNDSD3=" + String.valueOf(TNDSD3));
+			sb.append(",TNDSD4=" + String.valueOf(TNDSD4));
+			sb.append(",TNDSD5=" + String.valueOf(TNDSD5));
+			sb.append(",TNDSD6=" + String.valueOf(TNDSD6));
+			sb.append(",TNDSD7=" + String.valueOf(TNDSD7));
+			sb.append(",TNDCWT=" + String.valueOf(TNDCWT));
+			sb.append(",TNDSWT=" + String.valueOf(TNDSWT));
+			sb.append(",TNCPVN=" + TNCPVN);
+			sb.append(",TNWHSE=" + TNWHSE);
+			sb.append(",TNBUYR=" + TNBUYR);
+			sb.append(",TNEADT=" + String.valueOf(TNEADT));
+			sb.append(",TNEATM=" + String.valueOf(TNEATM));
+			sb.append(",TNEAID=" + TNEAID);
+			sb.append(",TNMODT=" + String.valueOf(TNMODT));
+			sb.append(",TNMOTM=" + String.valueOf(TNMOTM));
+			sb.append(",TNMOID=" + TNMOID);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row1Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row1Struct row1 = new row1Struct();
+				Anticipated_Demand_InboundStruct Anticipated_Demand_Inbound = new Anticipated_Demand_InboundStruct();
+
+				/**
+				 * [tDBOutput_1 begin ] start
+				 */
+
+				ok_Hash.put("tDBOutput_1", false);
+				start_Hash.put("tDBOutput_1", System.currentTimeMillis());
+
+				currentComponent = "tDBOutput_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Anticipated_Demand_Inbound");
+				}
+
+				int tos_count_tDBOutput_1 = 0;
+
+				String dbschema_tDBOutput_1 = null;
+				dbschema_tDBOutput_1 = context.GIM_Schema_Demand;
+
+				String tableName_tDBOutput_1 = null;
+				if (dbschema_tDBOutput_1 == null || dbschema_tDBOutput_1.trim().length() == 0) {
+					tableName_tDBOutput_1 = ("ANTICIPATED_DEMAND");
+				} else {
+					tableName_tDBOutput_1 = dbschema_tDBOutput_1 + "\".\"" + ("ANTICIPATED_DEMAND");
+				}
+
+				int nb_line_tDBOutput_1 = 0;
+				int nb_line_update_tDBOutput_1 = 0;
+				int nb_line_inserted_tDBOutput_1 = 0;
+				int nb_line_deleted_tDBOutput_1 = 0;
+				int nb_line_rejected_tDBOutput_1 = 0;
+
+				int deletedCount_tDBOutput_1 = 0;
+				int updatedCount_tDBOutput_1 = 0;
+				int insertedCount_tDBOutput_1 = 0;
+				int rowsToCommitCount_tDBOutput_1 = 0;
+				int rejectedCount_tDBOutput_1 = 0;
+
+				boolean whetherReject_tDBOutput_1 = false;
+
+				java.sql.Connection conn_tDBOutput_1 = null;
+				String dbUser_tDBOutput_1 = null;
+
+				java.lang.Class.forName("org.postgresql.Driver");
+
+				String url_tDBOutput_1 = "jdbc:postgresql://" + context.GIM_Server + ":" + context.GIM_Port + "/"
+						+ context.GIM_Database + "?" + context.GIM_AdditionalParams;
+				dbUser_tDBOutput_1 = context.GIM_Login;
+
+				final String decryptedPassword_tDBOutput_1 = context.GIM_Password;
+
+				String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
+
+				conn_tDBOutput_1 = java.sql.DriverManager.getConnection(url_tDBOutput_1, dbUser_tDBOutput_1,
+						dbPwd_tDBOutput_1);
+
+				resourceMap.put("conn_tDBOutput_1", conn_tDBOutput_1);
+				conn_tDBOutput_1.setAutoCommit(false);
+				int commitEvery_tDBOutput_1 = 1;
+				int commitCounter_tDBOutput_1 = 0;
+
+				int batchSize_tDBOutput_1 = 10000;
+				int batchSizeCounter_tDBOutput_1 = 0;
+
+				int count_tDBOutput_1 = 0;
+				String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1
+						+ "\" (\"SITE_ID\",\"ITEM_NO\",\"DEMAND_WEEK_END_DATE\",\"DEMAND_TYPE\",\"REFERENCE_NO\",\"STATUS_OF_DEMAND\",\"DEMAND_CASE_QTY_DAY_1\",\"DEMAND_CASE_QTY_DAY_2\",\"DEMAND_CASE_QTY_DAY_3\",\"DEMAND_CASE_QTY_DAY_4\",\"DEMAND_CASE_QTY_DAY_5\",\"DEMAND_CASE_QTY_DAY_6\",\"DEMAND_CASE_QTY_DAY_7\",\"DEMAND_SPLIT_QTY_DAY_1\",\"DEMAND_SPLIT_QTY_DAY_2\",\"DEMAND_SPLIT_QTY_DAY_3\",\"DEMAND_SPLIT_QTY_DAY_4\",\"DEMAND_SPLIT_QTY_DAY_5\",\"DEMAND_SPLIT_QTY_DAY_6\",\"DEMAND_SPLIT_QTY_DAY_7\",\"DEMAND_CASE_WEEK_TOTAL_QTY\",\"DEMAND_SPLIT_WEEK_TOTAL_QTY\",\"CREATED_TIMESTAMP\",\"CREATED_USER_ID\",\"UPDATED_TIMESTAMP\",\"UPDATED_USER_ID\",\"IS_DELETED\",\"CREATED_ORIGIN\",\"CREATED_ORIGIN_TIMESTAMP\",\"UPDATED_ORIGIN\",\"UPDATED_ORIGIN_TIMESTAMP\",\"TNPF_SVOP\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+				java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(insert_tDBOutput_1);
+				resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
+
+				/**
+				 * [tDBOutput_1 begin ] stop
+				 */
+
+				/**
+				 * [tMap_1 begin ] start
+				 */
+
+				ok_Hash.put("tMap_1", false);
+				start_Hash.put("tMap_1", System.currentTimeMillis());
+
+				currentComponent = "tMap_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
+				}
+
+				int tos_count_tMap_1 = 0;
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_1__Struct {
+					String TNITEM;
+					String DEMAND_WEEK_END_DATE;
+					String TNDTYP;
+					String TNADRF;
+					String TNDSTS;
+					String CREATED_TIMESTAMP;
+					String TNEAID;
+					String UPDATED_TIMESTAMP;
+					String TNMOID;
+				}
+				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				Anticipated_Demand_InboundStruct Anticipated_Demand_Inbound_tmp = new Anticipated_Demand_InboundStruct();
+// ###############################
+
+				/**
+				 * [tMap_1 begin ] stop
+				 */
+
+				/**
+				 * [tDBInput_1 begin ] start
+				 */
+
+				ok_Hash.put("tDBInput_1", false);
+				start_Hash.put("tDBInput_1", System.currentTimeMillis());
+
+				tStatCatcher_1.addMessage("begin", "tDBInput_1");
+				tStatCatcher_1Process(globalMap);
+
+				currentComponent = "tDBInput_1";
+
+				int tos_count_tDBInput_1 = 0;
+
+				int nb_line_tDBInput_1 = 0;
+				java.sql.Connection conn_tDBInput_1 = null;
+				String driverClass_tDBInput_1 = "com.ibm.as400.access.AS400JDBCDriver";
+				java.lang.Class jdbcclazz_tDBInput_1 = java.lang.Class.forName(driverClass_tDBInput_1);
+				String dbUser_tDBInput_1 = context.SUS_Login;
+
+				final String decryptedPassword_tDBInput_1 = context.SUS_Password;
+
+				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
+
+				String url_tDBInput_1 = "jdbc:as400://" + context.SUS_Server + "/" + context.SUS_Database + ";"
+						+ context.SUS_Additional_Params;
+
+				conn_tDBInput_1 = java.sql.DriverManager.getConnection(url_tDBInput_1, dbUser_tDBInput_1,
+						dbPwd_tDBInput_1);
+
+				java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
+
+				String dbquery_tDBInput_1 = "SELECT \n  IMMKTNPF.TNITEM, \n  IMMKTNPF.TNDMED, \n  IMMKTNPF.TNDTYP, \n  IMMKTNPF.TNADRF, \n  IMMKTNPF.TNDSTS, \n  IMMKTNPF."
+						+ "TNFCMT, \n  IMMKTNPF.TNAPDT, \n  IMMKTNPF.TNDCD1, \n  IMMKTNPF.TNDCD2, \n  IMMKTNPF.TNDCD3, \n  IMMKTNPF.TNDCD4, \n  IMMKTNPF."
+						+ "TNDCD5, \n  IMMKTNPF.TNDCD6, \n  IMMKTNPF.TNDCD7, \n  IMMKTNPF.TNDSD1, \n  IMMKTNPF.TNDSD2, \n  IMMKTNPF.TNDSD3, \n  IMMKTNPF."
+						+ "TNDSD4, \n  IMMKTNPF.TNDSD5, \n  IMMKTNPF.TNDSD6, \n  IMMKTNPF.TNDSD7, \n  IMMKTNPF.TNDCWT, \n  IMMKTNPF.TNDSWT, \n  IMMKTNPF."
+						+ "TNCPVN, \n  IMMKTNPF.TNWHSE, \n  IMMKTNPF.TNBUYR, \n  IMMKTNPF.TNEADT, \n  IMMKTNPF.TNEATM, \n  IMMKTNPF.TNEAID, \n  IMMKTNPF."
+						+ "TNMODT, \n  IMMKTNPF.TNMOTM, \n  IMMKTNPF.TNMOID\nFROM IMMKTNPF ORDER BY IMMKTNPF.TNEADT DESC";
+
+				globalMap.put("tDBInput_1_QUERY", dbquery_tDBInput_1);
+				java.sql.ResultSet rs_tDBInput_1 = null;
+
+				try {
+					rs_tDBInput_1 = stmt_tDBInput_1.executeQuery(dbquery_tDBInput_1);
+					java.sql.ResultSetMetaData rsmd_tDBInput_1 = rs_tDBInput_1.getMetaData();
+					int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
+
+					String tmpContent_tDBInput_1 = null;
+
+					while (rs_tDBInput_1.next()) {
+						nb_line_tDBInput_1++;
+
+						if (colQtyInRs_tDBInput_1 < 1) {
+							row1.TNITEM = null;
+						} else {
+
+							row1.TNITEM = routines.system.JDBCUtil.getString(rs_tDBInput_1, 1, true);
+						}
+						if (colQtyInRs_tDBInput_1 < 2) {
+							row1.TNDMED = null;
+						} else {
+
+							row1.TNDMED = rs_tDBInput_1.getBigDecimal(2);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 3) {
+							row1.TNDTYP = null;
+						} else {
+
+							row1.TNDTYP = routines.system.JDBCUtil.getString(rs_tDBInput_1, 3, true);
+						}
+						if (colQtyInRs_tDBInput_1 < 4) {
+							row1.TNADRF = null;
+						} else {
+
+							row1.TNADRF = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, true);
+						}
+						if (colQtyInRs_tDBInput_1 < 5) {
+							row1.TNDSTS = null;
+						} else {
+
+							row1.TNDSTS = routines.system.JDBCUtil.getString(rs_tDBInput_1, 5, true);
+						}
+						if (colQtyInRs_tDBInput_1 < 6) {
+							row1.TNFCMT = null;
+						} else {
+
+							row1.TNFCMT = routines.system.JDBCUtil.getString(rs_tDBInput_1, 6, true);
+						}
+						if (colQtyInRs_tDBInput_1 < 7) {
+							row1.TNAPDT = null;
+						} else {
+
+							row1.TNAPDT = rs_tDBInput_1.getBigDecimal(7);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 8) {
+							row1.TNDCD1 = null;
+						} else {
+
+							row1.TNDCD1 = rs_tDBInput_1.getBigDecimal(8);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 9) {
+							row1.TNDCD2 = null;
+						} else {
+
+							row1.TNDCD2 = rs_tDBInput_1.getBigDecimal(9);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 10) {
+							row1.TNDCD3 = null;
+						} else {
+
+							row1.TNDCD3 = rs_tDBInput_1.getBigDecimal(10);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 11) {
+							row1.TNDCD4 = null;
+						} else {
+
+							row1.TNDCD4 = rs_tDBInput_1.getBigDecimal(11);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 12) {
+							row1.TNDCD5 = null;
+						} else {
+
+							row1.TNDCD5 = rs_tDBInput_1.getBigDecimal(12);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 13) {
+							row1.TNDCD6 = null;
+						} else {
+
+							row1.TNDCD6 = rs_tDBInput_1.getBigDecimal(13);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 14) {
+							row1.TNDCD7 = null;
+						} else {
+
+							row1.TNDCD7 = rs_tDBInput_1.getBigDecimal(14);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 15) {
+							row1.TNDSD1 = null;
+						} else {
+
+							row1.TNDSD1 = rs_tDBInput_1.getBigDecimal(15);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 16) {
+							row1.TNDSD2 = null;
+						} else {
+
+							row1.TNDSD2 = rs_tDBInput_1.getBigDecimal(16);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 17) {
+							row1.TNDSD3 = null;
+						} else {
+
+							row1.TNDSD3 = rs_tDBInput_1.getBigDecimal(17);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 18) {
+							row1.TNDSD4 = null;
+						} else {
+
+							row1.TNDSD4 = rs_tDBInput_1.getBigDecimal(18);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 19) {
+							row1.TNDSD5 = null;
+						} else {
+
+							row1.TNDSD5 = rs_tDBInput_1.getBigDecimal(19);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 20) {
+							row1.TNDSD6 = null;
+						} else {
+
+							row1.TNDSD6 = rs_tDBInput_1.getBigDecimal(20);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 21) {
+							row1.TNDSD7 = null;
+						} else {
+
+							row1.TNDSD7 = rs_tDBInput_1.getBigDecimal(21);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 22) {
+							row1.TNDCWT = null;
+						} else {
+
+							row1.TNDCWT = rs_tDBInput_1.getBigDecimal(22);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 23) {
+							row1.TNDSWT = null;
+						} else {
+
+							row1.TNDSWT = rs_tDBInput_1.getBigDecimal(23);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 24) {
+							row1.TNCPVN = null;
+						} else {
+
+							row1.TNCPVN = routines.system.JDBCUtil.getString(rs_tDBInput_1, 24, true);
+						}
+						if (colQtyInRs_tDBInput_1 < 25) {
+							row1.TNWHSE = null;
+						} else {
+
+							row1.TNWHSE = routines.system.JDBCUtil.getString(rs_tDBInput_1, 25, true);
+						}
+						if (colQtyInRs_tDBInput_1 < 26) {
+							row1.TNBUYR = null;
+						} else {
+
+							row1.TNBUYR = routines.system.JDBCUtil.getString(rs_tDBInput_1, 26, true);
+						}
+						if (colQtyInRs_tDBInput_1 < 27) {
+							row1.TNEADT = null;
+						} else {
+
+							row1.TNEADT = rs_tDBInput_1.getBigDecimal(27);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 28) {
+							row1.TNEATM = null;
+						} else {
+
+							row1.TNEATM = rs_tDBInput_1.getBigDecimal(28);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 29) {
+							row1.TNEAID = null;
+						} else {
+
+							row1.TNEAID = routines.system.JDBCUtil.getString(rs_tDBInput_1, 29, true);
+						}
+						if (colQtyInRs_tDBInput_1 < 30) {
+							row1.TNMODT = null;
+						} else {
+
+							row1.TNMODT = rs_tDBInput_1.getBigDecimal(30);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 31) {
+							row1.TNMOTM = null;
+						} else {
+
+							row1.TNMOTM = rs_tDBInput_1.getBigDecimal(31);
+							if (rs_tDBInput_1.wasNull()) {
+								throw new RuntimeException("Null value in non-Nullable column");
+							}
+						}
+						if (colQtyInRs_tDBInput_1 < 32) {
+							row1.TNMOID = null;
+						} else {
+
+							row1.TNMOID = routines.system.JDBCUtil.getString(rs_tDBInput_1, 32, true);
+						}
+
+						/**
+						 * [tDBInput_1 begin ] stop
+						 */
+
+						/**
+						 * [tDBInput_1 main ] start
+						 */
+
+						currentComponent = "tDBInput_1";
+
+						tos_count_tDBInput_1++;
+
+						/**
+						 * [tDBInput_1 main ] stop
+						 */
+
+						/**
+						 * [tDBInput_1 process_data_begin ] start
+						 */
+
+						currentComponent = "tDBInput_1";
+
+						/**
+						 * [tDBInput_1 process_data_begin ] stop
+						 */
+
+						/**
+						 * [tMap_1 main ] start
+						 */
+
+						currentComponent = "tMap_1";
+
+						if (execStat) {
+							runStat.updateStatOnConnection(iterateId, 1, 1
+
+									, "row1"
+
+							);
+						}
+
+						boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
+
+						// ###############################
+						// # Input tables (lookups)
+						boolean rejectedInnerJoin_tMap_1 = false;
+						boolean mainRowRejected_tMap_1 = false;
+
+						// ###############################
+						{ // start of Var scope
+
+							// ###############################
+							// # Vars tables
+
+							Var__tMap_1__Struct Var = Var__tMap_1;
+							Var.TNITEM = CharSetHandling.convertEBCDICStrToASCII(row1.TNITEM);
+							Var.DEMAND_WEEK_END_DATE = TimeStampConverting.convertToDate(row1.TNDMED.toString());
+							Var.TNDTYP = CharSetHandling.convertEBCDICStrToASCII(row1.TNDTYP);
+							Var.TNADRF = CharSetHandling.convertEBCDICStrToASCII(row1.TNADRF);
+							Var.TNDSTS = CharSetHandling.convertEBCDICStrToASCII(row1.TNDSTS);
+							Var.CREATED_TIMESTAMP = TimeStampConverting.convertToTimeStamp(row1.TNEADT.toString(),
+									row1.TNEATM.toString());
+							Var.TNEAID = CharSetHandling.convertEBCDICStrToASCII(row1.TNEAID);
+							Var.UPDATED_TIMESTAMP = TimeStampConverting.convertToTimeStamp(row1.TNMODT.toString(),
+									row1.TNMOTM.toString());
+							Var.TNMOID = CharSetHandling.convertEBCDICStrToASCII(row1.TNMOID);// ###############################
+							// ###############################
+							// # Output tables
+
+							Anticipated_Demand_Inbound = null;
+
+// # Output table : 'Anticipated_Demand_Inbound'
+							Anticipated_Demand_Inbound_tmp.SITE_ID = context.opco;
+							Anticipated_Demand_Inbound_tmp.ITEM_NO = Var.TNITEM;
+							Anticipated_Demand_Inbound_tmp.DEMAND_WEEK_END_DATE = Var.DEMAND_WEEK_END_DATE != ""
+									? TalendDate.parseDate("dd-MM-yyyy", Var.DEMAND_WEEK_END_DATE)
+									: TalendDate.parseDate("dd-MM-yyyy", "01-01-0001");
+							Anticipated_Demand_Inbound_tmp.DEMAND_TYPE = Var.TNDTYP;
+							Anticipated_Demand_Inbound_tmp.REFERENCE_NO = Var.TNADRF;
+							Anticipated_Demand_Inbound_tmp.STATUS_OF_DEMAND = Var.TNDSTS;
+							Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_1 = row1.TNDCD1;
+							Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_2 = row1.TNDCD2;
+							Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_3 = row1.TNDCD3;
+							Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_4 = row1.TNDCD4;
+							Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_5 = row1.TNDCD5;
+							Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_6 = row1.TNDCD6;
+							Anticipated_Demand_Inbound_tmp.DEMAND_CASE_QTY_DAY_7 = row1.TNDCD7;
+							Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_1 = row1.TNDSD1;
+							Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_2 = row1.TNDSD2;
+							Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_3 = row1.TNDSD3;
+							Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_4 = row1.TNDSD4;
+							Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_5 = row1.TNDSD5;
+							Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_6 = row1.TNDSD6;
+							Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_QTY_DAY_7 = row1.TNDSD7;
+							Anticipated_Demand_Inbound_tmp.DEMAND_CASE_WEEK_TOTAL_QTY = row1.TNDCWT;
+							Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_WEEK_TOTAL_QTY = row1.TNDSWT;
+							Anticipated_Demand_Inbound_tmp.CREATED_TIMESTAMP = Var.CREATED_TIMESTAMP != ""
+									? TalendDate.parseDate("dd-MM-yyyy HH:mm:ss", Var.CREATED_TIMESTAMP)
+									: null;
+							Anticipated_Demand_Inbound_tmp.CREATED_USER_ID = Var.TNEAID;
+							Anticipated_Demand_Inbound_tmp.UPDATED_TIMESTAMP = Var.UPDATED_TIMESTAMP != ""
+									? TalendDate.parseDate("dd-MM-yyyy HH:mm:ss", Var.UPDATED_TIMESTAMP)
+									: null;
+							Anticipated_Demand_Inbound_tmp.UPDATED_USER_ID = Var.TNMOID;
+							Anticipated_Demand_Inbound_tmp.IS_DELETED = false;
+							Anticipated_Demand_Inbound_tmp.CREATED_ORIGIN = "SUS";
+							Anticipated_Demand_Inbound_tmp.CREATED_ORIGIN_TIMESTAMP = TalendDate
+									.parseDate("dd-MM-yyyy HH:mm:ss", TalendDate.getDate("dd-MM-yyyy HH:mm:ss"));
+							Anticipated_Demand_Inbound_tmp.UPDATED_ORIGIN = "SUS";
+							Anticipated_Demand_Inbound_tmp.UPDATED_ORIGIN_TIMESTAMP = TalendDate
+									.parseDate("dd-MM-yyyy HH:mm:ss", TalendDate.getDate("dd-MM-yyyy HH:mm:ss"));
+							Anticipated_Demand_Inbound_tmp.TNPF_SVOP = context.svop;
+							Anticipated_Demand_Inbound = Anticipated_Demand_Inbound_tmp;
+// ###############################
+
+						} // end of Var scope
+
+						rejectedInnerJoin_tMap_1 = false;
+
+						tos_count_tMap_1++;
+
+						/**
+						 * [tMap_1 main ] stop
+						 */
+
+						/**
+						 * [tMap_1 process_data_begin ] start
+						 */
+
+						currentComponent = "tMap_1";
+
+						/**
+						 * [tMap_1 process_data_begin ] stop
+						 */
+// Start of branch "Anticipated_Demand_Inbound"
+						if (Anticipated_Demand_Inbound != null) {
+
+							/**
+							 * [tDBOutput_1 main ] start
+							 */
+
+							currentComponent = "tDBOutput_1";
+
+							if (execStat) {
+								runStat.updateStatOnConnection(iterateId, 1, 1
+
+										, "Anticipated_Demand_Inbound"
+
+								);
+							}
+
+							whetherReject_tDBOutput_1 = false;
+							if (Anticipated_Demand_Inbound.SITE_ID == null) {
+								pstmt_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+							} else {
+								pstmt_tDBOutput_1.setString(1, Anticipated_Demand_Inbound.SITE_ID);
+							}
+
+							if (Anticipated_Demand_Inbound.ITEM_NO == null) {
+								pstmt_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
+							} else {
+								pstmt_tDBOutput_1.setString(2, Anticipated_Demand_Inbound.ITEM_NO);
+							}
+
+							if (Anticipated_Demand_Inbound.DEMAND_WEEK_END_DATE != null) {
+								pstmt_tDBOutput_1.setTimestamp(3, new java.sql.Timestamp(
+										Anticipated_Demand_Inbound.DEMAND_WEEK_END_DATE.getTime()));
+							} else {
+								pstmt_tDBOutput_1.setNull(3, java.sql.Types.TIMESTAMP);
+							}
+
+							if (Anticipated_Demand_Inbound.DEMAND_TYPE == null) {
+								pstmt_tDBOutput_1.setNull(4, java.sql.Types.VARCHAR);
+							} else {
+								pstmt_tDBOutput_1.setString(4, Anticipated_Demand_Inbound.DEMAND_TYPE);
+							}
+
+							if (Anticipated_Demand_Inbound.REFERENCE_NO == null) {
+								pstmt_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
+							} else {
+								pstmt_tDBOutput_1.setString(5, Anticipated_Demand_Inbound.REFERENCE_NO);
+							}
+
+							if (Anticipated_Demand_Inbound.STATUS_OF_DEMAND == null) {
+								pstmt_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
+							} else {
+								pstmt_tDBOutput_1.setString(6, Anticipated_Demand_Inbound.STATUS_OF_DEMAND);
+							}
+
+							pstmt_tDBOutput_1.setBigDecimal(7, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_1);
+
+							pstmt_tDBOutput_1.setBigDecimal(8, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_2);
+
+							pstmt_tDBOutput_1.setBigDecimal(9, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_3);
+
+							pstmt_tDBOutput_1.setBigDecimal(10, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_4);
+
+							pstmt_tDBOutput_1.setBigDecimal(11, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_5);
+
+							pstmt_tDBOutput_1.setBigDecimal(12, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_6);
+
+							pstmt_tDBOutput_1.setBigDecimal(13, Anticipated_Demand_Inbound.DEMAND_CASE_QTY_DAY_7);
+
+							pstmt_tDBOutput_1.setBigDecimal(14, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_1);
+
+							pstmt_tDBOutput_1.setBigDecimal(15, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_2);
+
+							pstmt_tDBOutput_1.setBigDecimal(16, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_3);
+
+							pstmt_tDBOutput_1.setBigDecimal(17, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_4);
+
+							pstmt_tDBOutput_1.setBigDecimal(18, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_5);
+
+							pstmt_tDBOutput_1.setBigDecimal(19, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_6);
+
+							pstmt_tDBOutput_1.setBigDecimal(20, Anticipated_Demand_Inbound.DEMAND_SPLIT_QTY_DAY_7);
+
+							pstmt_tDBOutput_1.setBigDecimal(21, Anticipated_Demand_Inbound.DEMAND_CASE_WEEK_TOTAL_QTY);
+
+							pstmt_tDBOutput_1.setBigDecimal(22, Anticipated_Demand_Inbound.DEMAND_SPLIT_WEEK_TOTAL_QTY);
+
+							if (Anticipated_Demand_Inbound.CREATED_TIMESTAMP != null) {
+								pstmt_tDBOutput_1.setTimestamp(23,
+										new java.sql.Timestamp(Anticipated_Demand_Inbound.CREATED_TIMESTAMP.getTime()));
+							} else {
+								pstmt_tDBOutput_1.setNull(23, java.sql.Types.TIMESTAMP);
+							}
+
+							if (Anticipated_Demand_Inbound.CREATED_USER_ID == null) {
+								pstmt_tDBOutput_1.setNull(24, java.sql.Types.VARCHAR);
+							} else {
+								pstmt_tDBOutput_1.setString(24, Anticipated_Demand_Inbound.CREATED_USER_ID);
+							}
+
+							if (Anticipated_Demand_Inbound.UPDATED_TIMESTAMP != null) {
+								pstmt_tDBOutput_1.setTimestamp(25,
+										new java.sql.Timestamp(Anticipated_Demand_Inbound.UPDATED_TIMESTAMP.getTime()));
+							} else {
+								pstmt_tDBOutput_1.setNull(25, java.sql.Types.TIMESTAMP);
+							}
+
+							if (Anticipated_Demand_Inbound.UPDATED_USER_ID == null) {
+								pstmt_tDBOutput_1.setNull(26, java.sql.Types.VARCHAR);
+							} else {
+								pstmt_tDBOutput_1.setString(26, Anticipated_Demand_Inbound.UPDATED_USER_ID);
+							}
+
+							pstmt_tDBOutput_1.setBoolean(27, Anticipated_Demand_Inbound.IS_DELETED);
+
+							if (Anticipated_Demand_Inbound.CREATED_ORIGIN == null) {
+								pstmt_tDBOutput_1.setNull(28, java.sql.Types.VARCHAR);
+							} else {
+								pstmt_tDBOutput_1.setString(28, Anticipated_Demand_Inbound.CREATED_ORIGIN);
+							}
+
+							if (Anticipated_Demand_Inbound.CREATED_ORIGIN_TIMESTAMP != null) {
+								pstmt_tDBOutput_1.setTimestamp(29, new java.sql.Timestamp(
+										Anticipated_Demand_Inbound.CREATED_ORIGIN_TIMESTAMP.getTime()));
+							} else {
+								pstmt_tDBOutput_1.setNull(29, java.sql.Types.TIMESTAMP);
+							}
+
+							if (Anticipated_Demand_Inbound.UPDATED_ORIGIN == null) {
+								pstmt_tDBOutput_1.setNull(30, java.sql.Types.VARCHAR);
+							} else {
+								pstmt_tDBOutput_1.setString(30, Anticipated_Demand_Inbound.UPDATED_ORIGIN);
+							}
+
+							if (Anticipated_Demand_Inbound.UPDATED_ORIGIN_TIMESTAMP != null) {
+								pstmt_tDBOutput_1.setTimestamp(31, new java.sql.Timestamp(
+										Anticipated_Demand_Inbound.UPDATED_ORIGIN_TIMESTAMP.getTime()));
+							} else {
+								pstmt_tDBOutput_1.setNull(31, java.sql.Types.TIMESTAMP);
+							}
+
+							if (Anticipated_Demand_Inbound.TNPF_SVOP == null) {
+								pstmt_tDBOutput_1.setNull(32, java.sql.Types.VARCHAR);
+							} else {
+								pstmt_tDBOutput_1.setString(32, Anticipated_Demand_Inbound.TNPF_SVOP);
+							}
+
+							pstmt_tDBOutput_1.addBatch();
+							nb_line_tDBOutput_1++;
+
+							batchSizeCounter_tDBOutput_1++;
+
+							if ((batchSize_tDBOutput_1 > 0)
+									&& (batchSize_tDBOutput_1 <= batchSizeCounter_tDBOutput_1)) {
+								try {
+									int countSum_tDBOutput_1 = 0;
+
+									for (int countEach_tDBOutput_1 : pstmt_tDBOutput_1.executeBatch()) {
+										countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0 : countEach_tDBOutput_1);
+									}
+									rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+									insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+									batchSizeCounter_tDBOutput_1 = 0;
+								} catch (java.sql.BatchUpdateException e_tDBOutput_1) {
+									globalMap.put("tDBOutput_1_ERROR_MESSAGE", e_tDBOutput_1.getMessage());
+									java.sql.SQLException ne_tDBOutput_1 = e_tDBOutput_1.getNextException(),
+											sqle_tDBOutput_1 = null;
+									String errormessage_tDBOutput_1;
+									if (ne_tDBOutput_1 != null) {
+										// build new exception to provide the original cause
+										sqle_tDBOutput_1 = new java.sql.SQLException(
+												e_tDBOutput_1.getMessage() + "\ncaused by: "
+														+ ne_tDBOutput_1.getMessage(),
+												ne_tDBOutput_1.getSQLState(), ne_tDBOutput_1.getErrorCode(),
+												ne_tDBOutput_1);
+										errormessage_tDBOutput_1 = sqle_tDBOutput_1.getMessage();
+									} else {
+										errormessage_tDBOutput_1 = e_tDBOutput_1.getMessage();
+									}
+
+									int countSum_tDBOutput_1 = 0;
+									for (int countEach_tDBOutput_1 : e_tDBOutput_1.getUpdateCounts()) {
+										countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0 : countEach_tDBOutput_1);
+									}
+									rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+									insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+									System.err.println(errormessage_tDBOutput_1);
+
+								}
+							}
+
+							commitCounter_tDBOutput_1++;
+							if (commitEvery_tDBOutput_1 <= commitCounter_tDBOutput_1) {
+								if ((batchSize_tDBOutput_1 > 0) && (batchSizeCounter_tDBOutput_1 > 0)) {
+									try {
+										int countSum_tDBOutput_1 = 0;
+
+										for (int countEach_tDBOutput_1 : pstmt_tDBOutput_1.executeBatch()) {
+											countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0
+													: countEach_tDBOutput_1);
+										}
+										rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+										insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+										batchSizeCounter_tDBOutput_1 = 0;
+									} catch (java.sql.BatchUpdateException e_tDBOutput_1) {
+										globalMap.put("tDBOutput_1_ERROR_MESSAGE", e_tDBOutput_1.getMessage());
+										java.sql.SQLException ne_tDBOutput_1 = e_tDBOutput_1.getNextException(),
+												sqle_tDBOutput_1 = null;
+										String errormessage_tDBOutput_1;
+										if (ne_tDBOutput_1 != null) {
+											// build new exception to provide the original cause
+											sqle_tDBOutput_1 = new java.sql.SQLException(
+													e_tDBOutput_1.getMessage() + "\ncaused by: "
+															+ ne_tDBOutput_1.getMessage(),
+													ne_tDBOutput_1.getSQLState(), ne_tDBOutput_1.getErrorCode(),
+													ne_tDBOutput_1);
+											errormessage_tDBOutput_1 = sqle_tDBOutput_1.getMessage();
+										} else {
+											errormessage_tDBOutput_1 = e_tDBOutput_1.getMessage();
+										}
+
+										int countSum_tDBOutput_1 = 0;
+										for (int countEach_tDBOutput_1 : e_tDBOutput_1.getUpdateCounts()) {
+											countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0
+													: countEach_tDBOutput_1);
+										}
+										rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+										insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+										System.err.println(errormessage_tDBOutput_1);
+
+									}
+								}
+								if (rowsToCommitCount_tDBOutput_1 != 0) {
+
+								}
+								conn_tDBOutput_1.commit();
+								if (rowsToCommitCount_tDBOutput_1 != 0) {
+
+									rowsToCommitCount_tDBOutput_1 = 0;
+								}
+								commitCounter_tDBOutput_1 = 0;
+							}
+
+							tos_count_tDBOutput_1++;
+
+							/**
+							 * [tDBOutput_1 main ] stop
+							 */
+
+							/**
+							 * [tDBOutput_1 process_data_begin ] start
+							 */
+
+							currentComponent = "tDBOutput_1";
+
+							/**
+							 * [tDBOutput_1 process_data_begin ] stop
+							 */
+
+							/**
+							 * [tDBOutput_1 process_data_end ] start
+							 */
+
+							currentComponent = "tDBOutput_1";
+
+							/**
+							 * [tDBOutput_1 process_data_end ] stop
+							 */
+
+						} // End of branch "Anticipated_Demand_Inbound"
+
+						/**
+						 * [tMap_1 process_data_end ] start
+						 */
+
+						currentComponent = "tMap_1";
+
+						/**
+						 * [tMap_1 process_data_end ] stop
+						 */
+
+						/**
+						 * [tDBInput_1 process_data_end ] start
+						 */
+
+						currentComponent = "tDBInput_1";
+
+						/**
+						 * [tDBInput_1 process_data_end ] stop
+						 */
+
+						/**
+						 * [tDBInput_1 end ] start
+						 */
+
+						currentComponent = "tDBInput_1";
+
+					}
+				} finally {
+					if (rs_tDBInput_1 != null) {
+						rs_tDBInput_1.close();
+					}
+					if (stmt_tDBInput_1 != null) {
+						stmt_tDBInput_1.close();
+					}
+					if (conn_tDBInput_1 != null && !conn_tDBInput_1.isClosed()) {
+
+						conn_tDBInput_1.close();
+
+						if ("com.mysql.cj.jdbc.Driver".equals((String) globalMap.get("driverClass_"))
+								&& routines.system.BundleUtils.inOSGi()) {
+							Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread")
+									.getMethod("checkedShutdown").invoke(null, (Object[]) null);
+						}
+
+					}
+				}
+				globalMap.put("tDBInput_1_NB_LINE", nb_line_tDBInput_1);
+
+				ok_Hash.put("tDBInput_1", true);
+				end_Hash.put("tDBInput_1", System.currentTimeMillis());
+
+				tStatCatcher_1.addMessage("end", "tDBInput_1",
+						end_Hash.get("tDBInput_1") - start_Hash.get("tDBInput_1"));
+				tStatCatcher_1Process(globalMap);
+
+				/**
+				 * [tDBInput_1 end ] stop
+				 */
+
+				/**
+				 * [tMap_1 end ] start
+				 */
+
+				currentComponent = "tMap_1";
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
+				}
+
+				ok_Hash.put("tMap_1", true);
+				end_Hash.put("tMap_1", System.currentTimeMillis());
+
+				/**
+				 * [tMap_1 end ] stop
+				 */
+
+				/**
+				 * [tDBOutput_1 end ] start
+				 */
+
+				currentComponent = "tDBOutput_1";
+
+				try {
+					int countSum_tDBOutput_1 = 0;
+					if (pstmt_tDBOutput_1 != null && batchSizeCounter_tDBOutput_1 > 0) {
+
+						for (int countEach_tDBOutput_1 : pstmt_tDBOutput_1.executeBatch()) {
+							countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0 : countEach_tDBOutput_1);
+						}
+						rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+					}
+
+					insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+				} catch (java.sql.BatchUpdateException e_tDBOutput_1) {
+					globalMap.put("tDBOutput_1_ERROR_MESSAGE", e_tDBOutput_1.getMessage());
+					java.sql.SQLException ne_tDBOutput_1 = e_tDBOutput_1.getNextException(), sqle_tDBOutput_1 = null;
+					String errormessage_tDBOutput_1;
+					if (ne_tDBOutput_1 != null) {
+						// build new exception to provide the original cause
+						sqle_tDBOutput_1 = new java.sql.SQLException(
+								e_tDBOutput_1.getMessage() + "\ncaused by: " + ne_tDBOutput_1.getMessage(),
+								ne_tDBOutput_1.getSQLState(), ne_tDBOutput_1.getErrorCode(), ne_tDBOutput_1);
+						errormessage_tDBOutput_1 = sqle_tDBOutput_1.getMessage();
+					} else {
+						errormessage_tDBOutput_1 = e_tDBOutput_1.getMessage();
+					}
+
+					int countSum_tDBOutput_1 = 0;
+					for (int countEach_tDBOutput_1 : e_tDBOutput_1.getUpdateCounts()) {
+						countSum_tDBOutput_1 += (countEach_tDBOutput_1 < 0 ? 0 : countEach_tDBOutput_1);
+					}
+					rowsToCommitCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+					insertedCount_tDBOutput_1 += countSum_tDBOutput_1;
+
+					System.err.println(errormessage_tDBOutput_1);
+
+				}
+
+				if (pstmt_tDBOutput_1 != null) {
+
+					pstmt_tDBOutput_1.close();
+					resourceMap.remove("pstmt_tDBOutput_1");
+				}
+				resourceMap.put("statementClosed_tDBOutput_1", true);
+				if (rowsToCommitCount_tDBOutput_1 != 0) {
+
+				}
+				conn_tDBOutput_1.commit();
+				if (rowsToCommitCount_tDBOutput_1 != 0) {
+
+					rowsToCommitCount_tDBOutput_1 = 0;
+				}
+				commitCounter_tDBOutput_1 = 0;
+
+				conn_tDBOutput_1.close();
+
+				resourceMap.put("finish_tDBOutput_1", true);
+
+				nb_line_deleted_tDBOutput_1 = nb_line_deleted_tDBOutput_1 + deletedCount_tDBOutput_1;
+				nb_line_update_tDBOutput_1 = nb_line_update_tDBOutput_1 + updatedCount_tDBOutput_1;
+				nb_line_inserted_tDBOutput_1 = nb_line_inserted_tDBOutput_1 + insertedCount_tDBOutput_1;
+				nb_line_rejected_tDBOutput_1 = nb_line_rejected_tDBOutput_1 + rejectedCount_tDBOutput_1;
+
+				globalMap.put("tDBOutput_1_NB_LINE", nb_line_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_UPDATED", nb_line_update_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_INSERTED", nb_line_inserted_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_DELETED", nb_line_deleted_tDBOutput_1);
+				globalMap.put("tDBOutput_1_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_1);
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "Anticipated_Demand_Inbound");
+				}
+
+				ok_Hash.put("tDBOutput_1", true);
+				end_Hash.put("tDBOutput_1", System.currentTimeMillis());
+
+				/**
+				 * [tDBOutput_1 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tDBInput_1 finally ] start
+				 */
+
+				currentComponent = "tDBInput_1";
+
+				/**
+				 * [tDBInput_1 finally ] stop
+				 */
+
+				/**
+				 * [tMap_1 finally ] start
+				 */
+
+				currentComponent = "tMap_1";
+
+				/**
+				 * [tMap_1 finally ] stop
+				 */
+
+				/**
+				 * [tDBOutput_1 finally ] start
+				 */
+
+				currentComponent = "tDBOutput_1";
+
+				try {
+					if (resourceMap.get("statementClosed_tDBOutput_1") == null) {
+						java.sql.PreparedStatement pstmtToClose_tDBOutput_1 = null;
+						if ((pstmtToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmt_tDBOutput_1")) != null) {
+							pstmtToClose_tDBOutput_1.close();
+						}
+					}
+				} finally {
+					if (resourceMap.get("finish_tDBOutput_1") == null) {
+						java.sql.Connection ctn_tDBOutput_1 = null;
+						if ((ctn_tDBOutput_1 = (java.sql.Connection) resourceMap.get("conn_tDBOutput_1")) != null) {
+							try {
+								ctn_tDBOutput_1.close();
+							} catch (java.sql.SQLException sqlEx_tDBOutput_1) {
+								String errorMessage_tDBOutput_1 = "failed to close the connection in tDBOutput_1 :"
+										+ sqlEx_tDBOutput_1.getMessage();
+								System.err.println(errorMessage_tDBOutput_1);
+							}
+						}
+					}
+				}
+
+				/**
+				 * [tDBOutput_1 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 1);
+	}
+
+	public static class Main_LogStruct implements routines.system.IPersistableRow<Main_LogStruct> {
+		final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+		static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+
+		public java.util.Date moment;
+
+		public java.util.Date getMoment() {
+			return this.moment;
+		}
+
+		public String pid;
+
+		public String getPid() {
+			return this.pid;
+		}
+
+		public String job;
+
+		public String getJob() {
+			return this.job;
+		}
+
+		public String type;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public String origin;
+
+		public String getOrigin() {
+			return this.origin;
+		}
+
+		public String message;
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(unmarshaller.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (date1 == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeLong(date1.getTime());
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.moment = readDate(dis);
+
+					this.pid = readString(dis);
+
+					this.job = readString(dis);
+
+					this.type = readString(dis);
+
+					this.origin = readString(dis);
+
+					this.message = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.moment = readDate(dis);
+
+					this.pid = readString(dis);
+
+					this.job = readString(dis);
+
+					this.type = readString(dis);
+
+					this.origin = readString(dis);
+
+					this.message = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.type, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.message, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.type, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.message, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("moment=" + String.valueOf(moment));
+			sb.append(",pid=" + pid);
+			sb.append(",job=" + job);
+			sb.append(",type=" + type);
+			sb.append(",origin=" + origin);
+			sb.append(",message=" + message);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(Main_LogStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row4Struct implements routines.system.IPersistableRow<row4Struct> {
+		final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+		static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+
+		public java.util.Date moment;
+
+		public java.util.Date getMoment() {
+			return this.moment;
+		}
+
+		public String pid;
+
+		public String getPid() {
+			return this.pid;
+		}
+
+		public String root_pid;
+
+		public String getRoot_pid() {
+			return this.root_pid;
+		}
+
+		public String father_pid;
+
+		public String getFather_pid() {
+			return this.father_pid;
+		}
+
+		public String project;
+
+		public String getProject() {
+			return this.project;
+		}
+
+		public String job;
+
+		public String getJob() {
+			return this.job;
+		}
+
+		public String context;
+
+		public String getContext() {
+			return this.context;
+		}
+
+		public Integer priority;
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public String type;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public String origin;
+
+		public String getOrigin() {
+			return this.origin;
+		}
+
+		public String message;
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public Integer code;
+
+		public Integer getCode() {
+			return this.code;
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(unmarshaller.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (date1 == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeLong(date1.getTime());
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private Integer readInteger(org.jboss.marshalling.Unmarshaller dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private void writeInteger(Integer intNum, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (intNum == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.moment = readDate(dis);
+
+					this.pid = readString(dis);
+
+					this.root_pid = readString(dis);
+
+					this.father_pid = readString(dis);
+
+					this.project = readString(dis);
+
+					this.job = readString(dis);
+
+					this.context = readString(dis);
+
+					this.priority = readInteger(dis);
+
+					this.type = readString(dis);
+
+					this.origin = readString(dis);
+
+					this.message = readString(dis);
+
+					this.code = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.moment = readDate(dis);
+
+					this.pid = readString(dis);
+
+					this.root_pid = readString(dis);
+
+					this.father_pid = readString(dis);
+
+					this.project = readString(dis);
+
+					this.job = readString(dis);
+
+					this.context = readString(dis);
+
+					this.priority = readInteger(dis);
+
+					this.type = readString(dis);
+
+					this.origin = readString(dis);
+
+					this.message = readString(dis);
+
+					this.code = readInteger(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.root_pid, dos);
+
+				// String
+
+				writeString(this.father_pid, dos);
+
+				// String
+
+				writeString(this.project, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.context, dos);
+
+				// Integer
+
+				writeInteger(this.priority, dos);
+
+				// String
+
+				writeString(this.type, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.message, dos);
+
+				// Integer
+
+				writeInteger(this.code, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.root_pid, dos);
+
+				// String
+
+				writeString(this.father_pid, dos);
+
+				// String
+
+				writeString(this.project, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.context, dos);
+
+				// Integer
+
+				writeInteger(this.priority, dos);
+
+				// String
+
+				writeString(this.type, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.message, dos);
+
+				// Integer
+
+				writeInteger(this.code, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("moment=" + String.valueOf(moment));
+			sb.append(",pid=" + pid);
+			sb.append(",root_pid=" + root_pid);
+			sb.append(",father_pid=" + father_pid);
+			sb.append(",project=" + project);
+			sb.append(",job=" + job);
+			sb.append(",context=" + context);
+			sb.append(",priority=" + String.valueOf(priority));
+			sb.append(",type=" + type);
+			sb.append(",origin=" + origin);
+			sb.append(",message=" + message);
+			sb.append(",code=" + String.valueOf(code));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row4Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tLogCatcher_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tLogCatcher_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row4Struct row4 = new row4Struct();
+				Main_LogStruct Main_Log = new Main_LogStruct();
+
+				/**
+				 * [tLogRow_3 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_3", false);
+				start_Hash.put("tLogRow_3", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_3";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Main_Log");
+				}
+
+				int tos_count_tLogRow_3 = 0;
+
+				///////////////////////
+
+				final String OUTPUT_FIELD_SEPARATOR_tLogRow_3 = "|";
+				java.io.PrintStream consoleOut_tLogRow_3 = null;
+
+				StringBuilder strBuffer_tLogRow_3 = null;
+				int nb_line_tLogRow_3 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_3 begin ] stop
+				 */
+
+				/**
+				 * [tMap_3 begin ] start
+				 */
+
+				ok_Hash.put("tMap_3", false);
+				start_Hash.put("tMap_3", System.currentTimeMillis());
+
+				currentComponent = "tMap_3";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row4");
+				}
+
+				int tos_count_tMap_3 = 0;
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_3__Struct {
+				}
+				Var__tMap_3__Struct Var__tMap_3 = new Var__tMap_3__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				Main_LogStruct Main_Log_tmp = new Main_LogStruct();
+// ###############################
+
+				/**
+				 * [tMap_3 begin ] stop
+				 */
+
+				/**
+				 * [tLogCatcher_1 begin ] start
+				 */
+
+				ok_Hash.put("tLogCatcher_1", false);
+				start_Hash.put("tLogCatcher_1", System.currentTimeMillis());
+
+				currentComponent = "tLogCatcher_1";
+
+				int tos_count_tLogCatcher_1 = 0;
+
+				try {
+					for (LogCatcherUtils.LogCatcherMessage lcm : tLogCatcher_1.getMessages()) {
+						row4.type = lcm.getType();
+						row4.origin = (lcm.getOrigin() == null || lcm.getOrigin().length() < 1 ? null
+								: lcm.getOrigin());
+						row4.priority = lcm.getPriority();
+						row4.message = lcm.getMessage();
+						row4.code = lcm.getCode();
+
+						row4.moment = java.util.Calendar.getInstance().getTime();
+
+						row4.pid = pid;
+						row4.root_pid = rootPid;
+						row4.father_pid = fatherPid;
+
+						row4.project = projectName;
+						row4.job = jobName;
+						row4.context = contextStr;
+
+						/**
+						 * [tLogCatcher_1 begin ] stop
+						 */
+
+						/**
+						 * [tLogCatcher_1 main ] start
+						 */
+
+						currentComponent = "tLogCatcher_1";
+
+						tos_count_tLogCatcher_1++;
+
+						/**
+						 * [tLogCatcher_1 main ] stop
+						 */
+
+						/**
+						 * [tLogCatcher_1 process_data_begin ] start
+						 */
+
+						currentComponent = "tLogCatcher_1";
+
+						/**
+						 * [tLogCatcher_1 process_data_begin ] stop
+						 */
+
+						/**
+						 * [tMap_3 main ] start
+						 */
+
+						currentComponent = "tMap_3";
+
+						if (execStat) {
+							runStat.updateStatOnConnection(iterateId, 1, 1
+
+									, "row4"
+
+							);
+						}
+
+						boolean hasCasePrimitiveKeyWithNull_tMap_3 = false;
+
+						// ###############################
+						// # Input tables (lookups)
+						boolean rejectedInnerJoin_tMap_3 = false;
+						boolean mainRowRejected_tMap_3 = false;
+
+						// ###############################
+						{ // start of Var scope
+
+							// ###############################
+							// # Vars tables
+
+							Var__tMap_3__Struct Var = Var__tMap_3;// ###############################
+							// ###############################
+							// # Output tables
+
+							Main_Log = null;
+
+// # Output table : 'Main_Log'
+							Main_Log_tmp.moment = row4.moment;
+							Main_Log_tmp.pid = row4.pid;
+							Main_Log_tmp.job = row4.job;
+							Main_Log_tmp.type = row4.type;
+							Main_Log_tmp.origin = row4.origin;
+							Main_Log_tmp.message = row4.message;
+							Main_Log = Main_Log_tmp;
+// ###############################
+
+						} // end of Var scope
+
+						rejectedInnerJoin_tMap_3 = false;
+
+						tos_count_tMap_3++;
+
+						/**
+						 * [tMap_3 main ] stop
+						 */
+
+						/**
+						 * [tMap_3 process_data_begin ] start
+						 */
+
+						currentComponent = "tMap_3";
+
+						/**
+						 * [tMap_3 process_data_begin ] stop
+						 */
+// Start of branch "Main_Log"
+						if (Main_Log != null) {
+
+							/**
+							 * [tLogRow_3 main ] start
+							 */
+
+							currentComponent = "tLogRow_3";
+
+							if (execStat) {
+								runStat.updateStatOnConnection(iterateId, 1, 1
+
+										, "Main_Log"
+
+								);
+							}
+
+///////////////////////		
+
+							strBuffer_tLogRow_3 = new StringBuilder();
+
+							if (Main_Log.moment != null) { //
+
+								strBuffer_tLogRow_3
+										.append(FormatterUtils.format_Date(Main_Log.moment, "yyyy-MM-dd HH:mm:ss"));
+
+							} //
+
+							strBuffer_tLogRow_3.append("|");
+
+							if (Main_Log.pid != null) { //
+
+								strBuffer_tLogRow_3.append(String.valueOf(Main_Log.pid));
+
+							} //
+
+							strBuffer_tLogRow_3.append("|");
+
+							if (Main_Log.job != null) { //
+
+								strBuffer_tLogRow_3.append(String.valueOf(Main_Log.job));
+
+							} //
+
+							strBuffer_tLogRow_3.append("|");
+
+							if (Main_Log.type != null) { //
+
+								strBuffer_tLogRow_3.append(String.valueOf(Main_Log.type));
+
+							} //
+
+							strBuffer_tLogRow_3.append("|");
+
+							if (Main_Log.origin != null) { //
+
+								strBuffer_tLogRow_3.append(String.valueOf(Main_Log.origin));
+
+							} //
+
+							strBuffer_tLogRow_3.append("|");
+
+							if (Main_Log.message != null) { //
+
+								strBuffer_tLogRow_3.append(String.valueOf(Main_Log.message));
+
+							} //
+
+							if (globalMap.get("tLogRow_CONSOLE") != null) {
+								consoleOut_tLogRow_3 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+							} else {
+								consoleOut_tLogRow_3 = new java.io.PrintStream(
+										new java.io.BufferedOutputStream(System.out));
+								globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_3);
+							}
+							consoleOut_tLogRow_3.println(strBuffer_tLogRow_3.toString());
+							consoleOut_tLogRow_3.flush();
+							nb_line_tLogRow_3++;
+//////
+
+//////                    
+
+///////////////////////    			
+
+							tos_count_tLogRow_3++;
+
+							/**
+							 * [tLogRow_3 main ] stop
+							 */
+
+							/**
+							 * [tLogRow_3 process_data_begin ] start
+							 */
+
+							currentComponent = "tLogRow_3";
+
+							/**
+							 * [tLogRow_3 process_data_begin ] stop
+							 */
+
+							/**
+							 * [tLogRow_3 process_data_end ] start
+							 */
+
+							currentComponent = "tLogRow_3";
+
+							/**
+							 * [tLogRow_3 process_data_end ] stop
+							 */
+
+						} // End of branch "Main_Log"
+
+						/**
+						 * [tMap_3 process_data_end ] start
+						 */
+
+						currentComponent = "tMap_3";
+
+						/**
+						 * [tMap_3 process_data_end ] stop
+						 */
+
+						/**
+						 * [tLogCatcher_1 process_data_end ] start
+						 */
+
+						currentComponent = "tLogCatcher_1";
+
+						/**
+						 * [tLogCatcher_1 process_data_end ] stop
+						 */
+
+						/**
+						 * [tLogCatcher_1 end ] start
+						 */
+
+						currentComponent = "tLogCatcher_1";
+
+					}
+				} catch (Exception e_tLogCatcher_1) {
+					globalMap.put("tLogCatcher_1_ERROR_MESSAGE", e_tLogCatcher_1.getMessage());
+					logIgnoredError(String.format(
+							"tLogCatcher_1 - tLogCatcher failed to process log message(s) due to internal error: %s",
+							e_tLogCatcher_1), e_tLogCatcher_1);
+				}
+
+				ok_Hash.put("tLogCatcher_1", true);
+				end_Hash.put("tLogCatcher_1", System.currentTimeMillis());
+
+				/**
+				 * [tLogCatcher_1 end ] stop
+				 */
+
+				/**
+				 * [tMap_3 end ] start
+				 */
+
+				currentComponent = "tMap_3";
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row4");
+				}
+
+				ok_Hash.put("tMap_3", true);
+				end_Hash.put("tMap_3", System.currentTimeMillis());
+
+				/**
+				 * [tMap_3 end ] stop
+				 */
+
+				/**
+				 * [tLogRow_3 end ] start
+				 */
+
+				currentComponent = "tLogRow_3";
+
+//////
+//////
+				globalMap.put("tLogRow_3_NB_LINE", nb_line_tLogRow_3);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "Main_Log");
+				}
+
+				ok_Hash.put("tLogRow_3", true);
+				end_Hash.put("tLogRow_3", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_3 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tLogCatcher_1 finally ] start
+				 */
+
+				currentComponent = "tLogCatcher_1";
+
+				/**
+				 * [tLogCatcher_1 finally ] stop
+				 */
+
+				/**
+				 * [tMap_3 finally ] start
+				 */
+
+				currentComponent = "tMap_3";
+
+				/**
+				 * [tMap_3 finally ] stop
+				 */
+
+				/**
+				 * [tLogRow_3 finally ] start
+				 */
+
+				currentComponent = "tLogRow_3";
+
+				/**
+				 * [tLogRow_3 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tLogCatcher_1_SUBPROCESS_STATE", 1);
+	}
+
+	public static class Main_StatStruct implements routines.system.IPersistableRow<Main_StatStruct> {
+		final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+		static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+
+		public java.util.Date moment;
+
+		public java.util.Date getMoment() {
+			return this.moment;
+		}
+
+		public String pid;
+
+		public String getPid() {
+			return this.pid;
+		}
+
+		public String job;
+
+		public String getJob() {
+			return this.job;
+		}
+
+		public String origin;
+
+		public String getOrigin() {
+			return this.origin;
+		}
+
+		public String message_type;
+
+		public String getMessage_type() {
+			return this.message_type;
+		}
+
+		public String message;
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public Long duration;
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(unmarshaller.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (date1 == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeLong(date1.getTime());
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.moment = readDate(dis);
+
+					this.pid = readString(dis);
+
+					this.job = readString(dis);
+
+					this.origin = readString(dis);
+
+					this.message_type = readString(dis);
+
+					this.message = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.duration = null;
+					} else {
+						this.duration = dis.readLong();
+					}
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.moment = readDate(dis);
+
+					this.pid = readString(dis);
+
+					this.job = readString(dis);
+
+					this.origin = readString(dis);
+
+					this.message_type = readString(dis);
+
+					this.message = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.duration = null;
+					} else {
+						this.duration = dis.readLong();
+					}
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.message_type, dos);
+
+				// String
+
+				writeString(this.message, dos);
+
+				// Long
+
+				if (this.duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.duration);
+				}
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.message_type, dos);
+
+				// String
+
+				writeString(this.message, dos);
+
+				// Long
+
+				if (this.duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.duration);
+				}
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("moment=" + String.valueOf(moment));
+			sb.append(",pid=" + pid);
+			sb.append(",job=" + job);
+			sb.append(",origin=" + origin);
+			sb.append(",message_type=" + message_type);
+			sb.append(",message=" + message);
+			sb.append(",duration=" + String.valueOf(duration));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(Main_StatStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+		final static byte[] commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+		static byte[] commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[0];
+
+		public java.util.Date moment;
+
+		public java.util.Date getMoment() {
+			return this.moment;
+		}
+
+		public String pid;
+
+		public String getPid() {
+			return this.pid;
+		}
+
+		public String father_pid;
+
+		public String getFather_pid() {
+			return this.father_pid;
+		}
+
+		public String root_pid;
+
+		public String getRoot_pid() {
+			return this.root_pid;
+		}
+
+		public Long system_pid;
+
+		public Long getSystem_pid() {
+			return this.system_pid;
+		}
+
+		public String project;
+
+		public String getProject() {
+			return this.project;
+		}
+
+		public String job;
+
+		public String getJob() {
+			return this.job;
+		}
+
+		public String job_repository_id;
+
+		public String getJob_repository_id() {
+			return this.job_repository_id;
+		}
+
+		public String job_version;
+
+		public String getJob_version() {
+			return this.job_version;
+		}
+
+		public String context;
+
+		public String getContext() {
+			return this.context;
+		}
+
+		public String origin;
+
+		public String getOrigin() {
+			return this.origin;
+		}
+
+		public String message_type;
+
+		public String getMessage_type() {
+			return this.message_type;
+		}
+
+		public String message;
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public Long duration;
+
+		public Long getDuration() {
+			return this.duration;
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = unmarshaller.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(unmarshaller.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (date1 == null) {
+				marshaller.writeByte(-1);
+			} else {
+				marshaller.writeByte(0);
+				marshaller.writeLong(date1.getTime());
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = unmarshaller.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length) {
+					if (length < 1024 && commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound.length == 0) {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[1024];
+					} else {
+						commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound = new byte[2 * length];
+					}
+				}
+				unmarshaller.readFully(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length);
+				strReturn = new String(commonByteArray_SUS_SLI_ETL_Anticipated_Demand_Inbound, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException {
+			if (str == null) {
+				marshaller.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				marshaller.writeInt(byteArray.length);
+				marshaller.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.moment = readDate(dis);
+
+					this.pid = readString(dis);
+
+					this.father_pid = readString(dis);
+
+					this.root_pid = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.system_pid = null;
+					} else {
+						this.system_pid = dis.readLong();
+					}
+
+					this.project = readString(dis);
+
+					this.job = readString(dis);
+
+					this.job_repository_id = readString(dis);
+
+					this.job_version = readString(dis);
+
+					this.context = readString(dis);
+
+					this.origin = readString(dis);
+
+					this.message_type = readString(dis);
+
+					this.message = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.duration = null;
+					} else {
+						this.duration = dis.readLong();
+					}
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+			synchronized (commonByteArrayLock_SUS_SLI_ETL_Anticipated_Demand_Inbound) {
+
+				try {
+
+					int length = 0;
+
+					this.moment = readDate(dis);
+
+					this.pid = readString(dis);
+
+					this.father_pid = readString(dis);
+
+					this.root_pid = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.system_pid = null;
+					} else {
+						this.system_pid = dis.readLong();
+					}
+
+					this.project = readString(dis);
+
+					this.job = readString(dis);
+
+					this.job_repository_id = readString(dis);
+
+					this.job_version = readString(dis);
+
+					this.context = readString(dis);
+
+					this.origin = readString(dis);
+
+					this.message_type = readString(dis);
+
+					this.message = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.duration = null;
+					} else {
+						this.duration = dis.readLong();
+					}
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.father_pid, dos);
+
+				// String
+
+				writeString(this.root_pid, dos);
+
+				// Long
+
+				if (this.system_pid == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.system_pid);
+				}
+
+				// String
+
+				writeString(this.project, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.job_repository_id, dos);
+
+				// String
+
+				writeString(this.job_version, dos);
+
+				// String
+
+				writeString(this.context, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.message_type, dos);
+
+				// String
+
+				writeString(this.message, dos);
+
+				// Long
+
+				if (this.duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.duration);
+				}
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public void writeData(org.jboss.marshalling.Marshaller dos) {
+			try {
+
+				// java.util.Date
+
+				writeDate(this.moment, dos);
+
+				// String
+
+				writeString(this.pid, dos);
+
+				// String
+
+				writeString(this.father_pid, dos);
+
+				// String
+
+				writeString(this.root_pid, dos);
+
+				// Long
+
+				if (this.system_pid == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.system_pid);
+				}
+
+				// String
+
+				writeString(this.project, dos);
+
+				// String
+
+				writeString(this.job, dos);
+
+				// String
+
+				writeString(this.job_repository_id, dos);
+
+				// String
+
+				writeString(this.job_version, dos);
+
+				// String
+
+				writeString(this.context, dos);
+
+				// String
+
+				writeString(this.origin, dos);
+
+				// String
+
+				writeString(this.message_type, dos);
+
+				// String
+
+				writeString(this.message, dos);
+
+				// Long
+
+				if (this.duration == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.duration);
+				}
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("moment=" + String.valueOf(moment));
+			sb.append(",pid=" + pid);
+			sb.append(",father_pid=" + father_pid);
+			sb.append(",root_pid=" + root_pid);
+			sb.append(",system_pid=" + String.valueOf(system_pid));
+			sb.append(",project=" + project);
+			sb.append(",job=" + job);
+			sb.append(",job_repository_id=" + job_repository_id);
+			sb.append(",job_version=" + job_version);
+			sb.append(",context=" + context);
+			sb.append(",origin=" + origin);
+			sb.append(",message_type=" + message_type);
+			sb.append(",message=" + message);
+			sb.append(",duration=" + String.valueOf(duration));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row3Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tStatCatcher_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tStatCatcher_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row3Struct row3 = new row3Struct();
+				Main_StatStruct Main_Stat = new Main_StatStruct();
+
+				/**
+				 * [tLogRow_2 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_2", false);
+				start_Hash.put("tLogRow_2", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_2";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "Main_Stat");
+				}
+
+				int tos_count_tLogRow_2 = 0;
+
+				///////////////////////
+
+				class Util_tLogRow_2 {
+
+					String[] des_top = { ".", ".", "-", "+" };
+
+					String[] des_head = { "|=", "=|", "-", "+" };
+
+					String[] des_bottom = { "'", "'", "-", "+" };
+
+					String name = "";
+
+					java.util.List<String[]> list = new java.util.ArrayList<String[]>();
+
+					int[] colLengths = new int[7];
+
+					public void addRow(String[] row) {
+
+						for (int i = 0; i < 7; i++) {
+							if (row[i] != null) {
+								colLengths[i] = Math.max(colLengths[i], row[i].length());
+							}
+						}
+						list.add(row);
+					}
+
+					public void setTableName(String name) {
+
+						this.name = name;
+					}
+
+					public StringBuilder format() {
+
+						StringBuilder sb = new StringBuilder();
+
+						sb.append(print(des_top));
+
+						int totals = 0;
+						for (int i = 0; i < colLengths.length; i++) {
+							totals = totals + colLengths[i];
+						}
+
+						// name
+						sb.append("|");
+						int k = 0;
+						for (k = 0; k < (totals + 6 - name.length()) / 2; k++) {
+							sb.append(' ');
+						}
+						sb.append(name);
+						for (int i = 0; i < totals + 6 - name.length() - k; i++) {
+							sb.append(' ');
+						}
+						sb.append("|\n");
+
+						// head and rows
+						sb.append(print(des_head));
+						for (int i = 0; i < list.size(); i++) {
+
+							String[] row = list.get(i);
+
+							java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
+
+							StringBuilder sbformat = new StringBuilder();
+							sbformat.append("|%1$-");
+							sbformat.append(colLengths[0]);
+							sbformat.append("s");
+
+							sbformat.append("|%2$-");
+							sbformat.append(colLengths[1]);
+							sbformat.append("s");
+
+							sbformat.append("|%3$-");
+							sbformat.append(colLengths[2]);
+							sbformat.append("s");
+
+							sbformat.append("|%4$-");
+							sbformat.append(colLengths[3]);
+							sbformat.append("s");
+
+							sbformat.append("|%5$-");
+							sbformat.append(colLengths[4]);
+							sbformat.append("s");
+
+							sbformat.append("|%6$-");
+							sbformat.append(colLengths[5]);
+							sbformat.append("s");
+
+							sbformat.append("|%7$-");
+							sbformat.append(colLengths[6]);
+							sbformat.append("s");
+
+							sbformat.append("|\n");
+
+							formatter.format(sbformat.toString(), (Object[]) row);
+
+							sb.append(formatter.toString());
+							if (i == 0)
+								sb.append(print(des_head)); // print the head
+						}
+
+						// end
+						sb.append(print(des_bottom));
+						return sb;
+					}
+
+					private StringBuilder print(String[] fillChars) {
+						StringBuilder sb = new StringBuilder();
+						// first column
+						sb.append(fillChars[0]);
+						for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[2] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[3] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[4] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+						for (int i = 0; i < colLengths[5] - fillChars[3].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[3]);
+
+						// last column
+						for (int i = 0; i < colLengths[6] - fillChars[1].length() + 1; i++) {
+							sb.append(fillChars[2]);
+						}
+						sb.append(fillChars[1]);
+						sb.append("\n");
+						return sb;
+					}
+
+					public boolean isTableEmpty() {
+						if (list.size() > 1)
+							return false;
+						return true;
+					}
+				}
+				Util_tLogRow_2 util_tLogRow_2 = new Util_tLogRow_2();
+				util_tLogRow_2.setTableName("tLogRow_2");
+				util_tLogRow_2.addRow(
+						new String[] { "moment", "pid", "job", "origin", "message_type", "message", "duration", });
+				StringBuilder strBuffer_tLogRow_2 = null;
+				int nb_line_tLogRow_2 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_2 begin ] stop
+				 */
+
+				/**
+				 * [tMap_2 begin ] start
+				 */
+
+				ok_Hash.put("tMap_2", false);
+				start_Hash.put("tMap_2", System.currentTimeMillis());
+
+				currentComponent = "tMap_2";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
+				}
+
+				int tos_count_tMap_2 = 0;
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_2__Struct {
+				}
+				Var__tMap_2__Struct Var__tMap_2 = new Var__tMap_2__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				Main_StatStruct Main_Stat_tmp = new Main_StatStruct();
+// ###############################
+
+				/**
+				 * [tMap_2 begin ] stop
+				 */
+
+				/**
+				 * [tStatCatcher_1 begin ] start
+				 */
+
+				ok_Hash.put("tStatCatcher_1", false);
+				start_Hash.put("tStatCatcher_1", System.currentTimeMillis());
+
+				currentComponent = "tStatCatcher_1";
+
+				int tos_count_tStatCatcher_1 = 0;
+
+				for (StatCatcherUtils.StatCatcherMessage scm : tStatCatcher_1.getMessages()) {
+					row3.pid = pid;
+					row3.root_pid = rootPid;
+					row3.father_pid = fatherPid;
+					row3.project = projectName;
+					row3.job = jobName;
+					row3.context = contextStr;
+					row3.origin = (scm.getOrigin() == null || scm.getOrigin().length() < 1 ? null : scm.getOrigin());
+					row3.message = scm.getMessage();
+					row3.duration = scm.getDuration();
+					row3.moment = scm.getMoment();
+					row3.message_type = scm.getMessageType();
+					row3.job_version = scm.getJobVersion();
+					row3.job_repository_id = scm.getJobId();
+					row3.system_pid = scm.getSystemPid();
+
+					/**
+					 * [tStatCatcher_1 begin ] stop
+					 */
+
+					/**
+					 * [tStatCatcher_1 main ] start
+					 */
+
+					currentComponent = "tStatCatcher_1";
+
+					tos_count_tStatCatcher_1++;
+
+					/**
+					 * [tStatCatcher_1 main ] stop
+					 */
+
+					/**
+					 * [tStatCatcher_1 process_data_begin ] start
+					 */
+
+					currentComponent = "tStatCatcher_1";
+
+					/**
+					 * [tStatCatcher_1 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tMap_2 main ] start
+					 */
+
+					currentComponent = "tMap_2";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(iterateId, 1, 1
+
+								, "row3"
+
+						);
+					}
+
+					boolean hasCasePrimitiveKeyWithNull_tMap_2 = false;
+
+					// ###############################
+					// # Input tables (lookups)
+					boolean rejectedInnerJoin_tMap_2 = false;
+					boolean mainRowRejected_tMap_2 = false;
+
+					// ###############################
+					{ // start of Var scope
+
+						// ###############################
+						// # Vars tables
+
+						Var__tMap_2__Struct Var = Var__tMap_2;// ###############################
+						// ###############################
+						// # Output tables
+
+						Main_Stat = null;
+
+// # Output table : 'Main_Stat'
+						Main_Stat_tmp.moment = row3.moment;
+						Main_Stat_tmp.pid = row3.pid;
+						Main_Stat_tmp.job = row3.job;
+						Main_Stat_tmp.origin = row3.origin;
+						Main_Stat_tmp.message_type = row3.message_type;
+						Main_Stat_tmp.message = row3.message;
+						Main_Stat_tmp.duration = row3.duration;
+						Main_Stat = Main_Stat_tmp;
+// ###############################
+
+					} // end of Var scope
+
+					rejectedInnerJoin_tMap_2 = false;
+
+					tos_count_tMap_2++;
+
+					/**
+					 * [tMap_2 main ] stop
+					 */
+
+					/**
+					 * [tMap_2 process_data_begin ] start
+					 */
+
+					currentComponent = "tMap_2";
+
+					/**
+					 * [tMap_2 process_data_begin ] stop
+					 */
+// Start of branch "Main_Stat"
+					if (Main_Stat != null) {
+
+						/**
+						 * [tLogRow_2 main ] start
+						 */
+
+						currentComponent = "tLogRow_2";
+
+						if (execStat) {
+							runStat.updateStatOnConnection(iterateId, 1, 1
+
+									, "Main_Stat"
+
+							);
+						}
+
+///////////////////////		
+
+						String[] row_tLogRow_2 = new String[7];
+
+						if (Main_Stat.moment != null) { //
+							row_tLogRow_2[0] = FormatterUtils.format_Date(Main_Stat.moment, "yyyy-MM-dd HH:mm:ss");
+
+						} //
+
+						if (Main_Stat.pid != null) { //
+							row_tLogRow_2[1] = String.valueOf(Main_Stat.pid);
+
+						} //
+
+						if (Main_Stat.job != null) { //
+							row_tLogRow_2[2] = String.valueOf(Main_Stat.job);
+
+						} //
+
+						if (Main_Stat.origin != null) { //
+							row_tLogRow_2[3] = String.valueOf(Main_Stat.origin);
+
+						} //
+
+						if (Main_Stat.message_type != null) { //
+							row_tLogRow_2[4] = String.valueOf(Main_Stat.message_type);
+
+						} //
+
+						if (Main_Stat.message != null) { //
+							row_tLogRow_2[5] = String.valueOf(Main_Stat.message);
+
+						} //
+
+						if (Main_Stat.duration != null) { //
+							row_tLogRow_2[6] = String.valueOf(Main_Stat.duration);
+
+						} //
+
+						util_tLogRow_2.addRow(row_tLogRow_2);
+						nb_line_tLogRow_2++;
+//////
+
+//////                    
+
+///////////////////////    			
+
+						tos_count_tLogRow_2++;
+
+						/**
+						 * [tLogRow_2 main ] stop
+						 */
+
+						/**
+						 * [tLogRow_2 process_data_begin ] start
+						 */
+
+						currentComponent = "tLogRow_2";
+
+						/**
+						 * [tLogRow_2 process_data_begin ] stop
+						 */
+
+						/**
+						 * [tLogRow_2 process_data_end ] start
+						 */
+
+						currentComponent = "tLogRow_2";
+
+						/**
+						 * [tLogRow_2 process_data_end ] stop
+						 */
+
+					} // End of branch "Main_Stat"
+
+					/**
+					 * [tMap_2 process_data_end ] start
+					 */
+
+					currentComponent = "tMap_2";
+
+					/**
+					 * [tMap_2 process_data_end ] stop
+					 */
+
+					/**
+					 * [tStatCatcher_1 process_data_end ] start
+					 */
+
+					currentComponent = "tStatCatcher_1";
+
+					/**
+					 * [tStatCatcher_1 process_data_end ] stop
+					 */
+
+					/**
+					 * [tStatCatcher_1 end ] start
+					 */
+
+					currentComponent = "tStatCatcher_1";
+
+				}
+
+				ok_Hash.put("tStatCatcher_1", true);
+				end_Hash.put("tStatCatcher_1", System.currentTimeMillis());
+
+				/**
+				 * [tStatCatcher_1 end ] stop
+				 */
+
+				/**
+				 * [tMap_2 end ] start
+				 */
+
+				currentComponent = "tMap_2";
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
+				}
+
+				ok_Hash.put("tMap_2", true);
+				end_Hash.put("tMap_2", System.currentTimeMillis());
+
+				/**
+				 * [tMap_2 end ] stop
+				 */
+
+				/**
+				 * [tLogRow_2 end ] start
+				 */
+
+				currentComponent = "tLogRow_2";
+
+//////
+
+				java.io.PrintStream consoleOut_tLogRow_2 = null;
+				if (globalMap.get("tLogRow_CONSOLE") != null) {
+					consoleOut_tLogRow_2 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+				} else {
+					consoleOut_tLogRow_2 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_2);
+				}
+
+				consoleOut_tLogRow_2.println(util_tLogRow_2.format().toString());
+				consoleOut_tLogRow_2.flush();
+//////
+				globalMap.put("tLogRow_2_NB_LINE", nb_line_tLogRow_2);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "Main_Stat");
+				}
+
+				ok_Hash.put("tLogRow_2", true);
+				end_Hash.put("tLogRow_2", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_2 end ] stop
+				 */
+
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tStatCatcher_1 finally ] start
+				 */
+
+				currentComponent = "tStatCatcher_1";
+
+				/**
+				 * [tStatCatcher_1 finally ] stop
+				 */
+
+				/**
+				 * [tMap_2 finally ] start
+				 */
+
+				currentComponent = "tMap_2";
+
+				/**
+				 * [tMap_2 finally ] stop
+				 */
+
+				/**
+				 * [tLogRow_2 finally ] start
+				 */
+
+				currentComponent = "tLogRow_2";
+
+				/**
+				 * [tLogRow_2 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tStatCatcher_1_SUBPROCESS_STATE", 1);
+	}
+
+	public String resuming_logs_dir_path = null;
+	public String resuming_checkpoint_path = null;
+	public String parent_part_launcher = null;
+	private String resumeEntryMethodName = null;
+	private boolean globalResumeTicket = false;
+
+	public boolean watch = false;
+	// portStats is null, it means don't execute the statistics
+	public Integer portStats = null;
+	public int portTraces = 4334;
+	public String clientHost;
+	public String defaultClientHost = "localhost";
+	public String contextStr = "Default";
+	public boolean isDefaultContext = true;
+	public String pid = "0";
+	public String rootPid = null;
+	public String fatherPid = null;
+	public String fatherNode = null;
+	public long startTime = 0;
+	public boolean isChildJob = false;
+	public String log4jLevel = "";
+
+	private boolean enableLogStash;
+
+	private boolean execStat = true;
+
+	private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
+		protected java.util.Map<String, String> initialValue() {
+			java.util.Map<String, String> threadRunResultMap = new java.util.HashMap<String, String>();
+			threadRunResultMap.put("errorCode", null);
+			threadRunResultMap.put("status", "");
+			return threadRunResultMap;
+		};
+	};
+
+	private SyncInt runningThreadCount = new SyncInt();
+
+	private class SyncInt {
+		private int count = 0;
+
+		public synchronized void add(int i) {
+			count += i;
+		}
+
+		public synchronized int getCount() {
+			return count;
+		}
+	}
+
+	protected PropertiesWithType context_param = new PropertiesWithType();
+	public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
+
+	public String status = "";
+
+	public static void main(String[] args) {
+		final Anticipated_Demand_Inbound Anticipated_Demand_InboundClass = new Anticipated_Demand_Inbound();
+
+		int exitCode = Anticipated_Demand_InboundClass.runJobInTOS(args);
+
+		System.exit(exitCode);
+	}
+
+	public String[][] runJob(String[] args) {
+
+		int exitCode = runJobInTOS(args);
+		String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
+
+		return bufferValue;
+	}
+
+	public boolean hastBufferOutputComponent() {
 		boolean hastBufferOutput = false;
-    	
-        return hastBufferOutput;
-    }
 
-    public int runJobInTOS(String[] args) {
-	   	// reset status
-	   	status = "";
-	   	
-        String lastStr = "";
-        for (String arg : args) {
-            if (arg.equalsIgnoreCase("--context_param")) {
-                lastStr = arg;
-            } else if (lastStr.equals("")) {
-                evalParam(arg);
-            } else {
-                evalParam(lastStr + " " + arg);
-                lastStr = "";
-            }
-        }
-        enableLogStash = "true".equalsIgnoreCase(System.getProperty("audit.enabled"));
+		return hastBufferOutput;
+	}
 
-    	
-    	
+	public int runJobInTOS(String[] args) {
+		// reset status
+		status = "";
 
-        if(clientHost == null) {
-            clientHost = defaultClientHost;
-        }
+		String lastStr = "";
+		for (String arg : args) {
+			if (arg.equalsIgnoreCase("--context_param")) {
+				lastStr = arg;
+			} else if (lastStr.equals("")) {
+				evalParam(arg);
+			} else {
+				evalParam(lastStr + " " + arg);
+				lastStr = "";
+			}
+		}
+		enableLogStash = "true".equalsIgnoreCase(System.getProperty("audit.enabled"));
 
-        if(pid == null || "0".equals(pid)) {
-            pid = TalendString.getAsciiRandomString(6);
-        }
+		if (clientHost == null) {
+			clientHost = defaultClientHost;
+		}
 
-        if (rootPid==null) {
-            rootPid = pid;
-        }
-        if (fatherPid==null) {
-            fatherPid = pid;
-        }else{
-            isChildJob = true;
-        }
+		if (pid == null || "0".equals(pid)) {
+			pid = TalendString.getAsciiRandomString(6);
+		}
 
-        if (portStats != null) {
-            // portStats = -1; //for testing
-            if (portStats < 0 || portStats > 65535) {
-                // issue:10869, the portStats is invalid, so this client socket can't open
-                System.err.println("The statistics socket port " + portStats + " is invalid.");
-                execStat = false;
-            }
-        } else {
-            execStat = false;
-        }
-        boolean inOSGi = routines.system.BundleUtils.inOSGi();
+		if (rootPid == null) {
+			rootPid = pid;
+		}
+		if (fatherPid == null) {
+			fatherPid = pid;
+		} else {
+			isChildJob = true;
+		}
 
-        if (inOSGi) {
-            java.util.Dictionary<String, Object> jobProperties = routines.system.BundleUtils.getJobProperties(jobName);
+		if (portStats != null) {
+			// portStats = -1; //for testing
+			if (portStats < 0 || portStats > 65535) {
+				// issue:10869, the portStats is invalid, so this client socket can't open
+				System.err.println("The statistics socket port " + portStats + " is invalid.");
+				execStat = false;
+			}
+		} else {
+			execStat = false;
+		}
+		boolean inOSGi = routines.system.BundleUtils.inOSGi();
 
-            if (jobProperties != null && jobProperties.get("context") != null) {
-                contextStr = (String)jobProperties.get("context");
-            }
-        }
+		if (inOSGi) {
+			java.util.Dictionary<String, Object> jobProperties = routines.system.BundleUtils.getJobProperties(jobName);
 
-        try {
-            //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
-            java.io.InputStream inContext = Anticipated_Demand_Inbound.class.getClassLoader().getResourceAsStream("sus_sli_etl/anticipated_demand_inbound_0_1/contexts/" + contextStr + ".properties");
-            if (inContext == null) {
-                inContext = Anticipated_Demand_Inbound.class.getClassLoader().getResourceAsStream("config/contexts/" + contextStr + ".properties");
-            }
-            if (inContext != null) {
-                try {
-                    //defaultProps is in order to keep the original context value
-                    if(context != null && context.isEmpty()) {
-	                defaultProps.load(inContext);
-	                context = new ContextProperties(defaultProps);
-                    }
-                } finally {
-                    inContext.close();
-                }
-            } else if (!isDefaultContext) {
-                //print info and job continue to run, for case: context_param is not empty.
-                System.err.println("Could not find the context " + contextStr);
-            }
+			if (jobProperties != null && jobProperties.get("context") != null) {
+				contextStr = (String) jobProperties.get("context");
+			}
+		}
 
-            if(!context_param.isEmpty()) {
-                context.putAll(context_param);
-				//set types for params from parentJobs
-				for (Object key: context_param.keySet()){
+		try {
+			// call job/subjob with an existing context, like: --context=production. if
+			// without this parameter, there will use the default context instead.
+			java.io.InputStream inContext = Anticipated_Demand_Inbound.class.getClassLoader().getResourceAsStream(
+					"sus_sli_etl/anticipated_demand_inbound_0_1/contexts/" + contextStr + ".properties");
+			if (inContext == null) {
+				inContext = Anticipated_Demand_Inbound.class.getClassLoader()
+						.getResourceAsStream("config/contexts/" + contextStr + ".properties");
+			}
+			if (inContext != null) {
+				try {
+					// defaultProps is in order to keep the original context value
+					if (context != null && context.isEmpty()) {
+						defaultProps.load(inContext);
+						context = new ContextProperties(defaultProps);
+					}
+				} finally {
+					inContext.close();
+				}
+			} else if (!isDefaultContext) {
+				// print info and job continue to run, for case: context_param is not empty.
+				System.err.println("Could not find the context " + contextStr);
+			}
+
+			if (!context_param.isEmpty()) {
+				context.putAll(context_param);
+				// set types for params from parentJobs
+				for (Object key : context_param.keySet()) {
 					String context_key = key.toString();
 					String context_type = context_param.getContextType(context_key);
 					context.setContextType(context_key, context_type);
 
 				}
-            }
-            class ContextProcessing {
-                private void processContext_0() {
-                        context.setContextType("opco", "id_String");
-                        if(context.getStringValue("opco") == null) {
-                            context.opco = null;
-                        } else {
-                            context.opco=(String) context.getProperty("opco");
-                        }
-                        context.setContextType("server", "id_String");
-                        if(context.getStringValue("server") == null) {
-                            context.server = null;
-                        } else {
-                            context.server=(String) context.getProperty("server");
-                        }
-                        context.setContextType("sopco", "id_String");
-                        if(context.getStringValue("sopco") == null) {
-                            context.sopco = null;
-                        } else {
-                            context.sopco=(String) context.getProperty("sopco");
-                        }
-                        context.setContextType("svop", "id_String");
-                        if(context.getStringValue("svop") == null) {
-                            context.svop = null;
-                        } else {
-                            context.svop=(String) context.getProperty("svop");
-                        }
-                        context.setContextType("GIM_AdditionalParams", "id_String");
-                        if(context.getStringValue("GIM_AdditionalParams") == null) {
-                            context.GIM_AdditionalParams = null;
-                        } else {
-                            context.GIM_AdditionalParams=(String) context.getProperty("GIM_AdditionalParams");
-                        }
-                        context.setContextType("GIM_Database", "id_String");
-                        if(context.getStringValue("GIM_Database") == null) {
-                            context.GIM_Database = null;
-                        } else {
-                            context.GIM_Database=(String) context.getProperty("GIM_Database");
-                        }
-                        context.setContextType("GIM_Login", "id_String");
-                        if(context.getStringValue("GIM_Login") == null) {
-                            context.GIM_Login = null;
-                        } else {
-                            context.GIM_Login=(String) context.getProperty("GIM_Login");
-                        }
-                        context.setContextType("GIM_Password", "id_Password");
-                        if(context.getStringValue("GIM_Password") == null) {
-                            context.GIM_Password = null;
-                        } else {
-                            String pwd_GIM_Password_value = context.getProperty("GIM_Password");
-                            context.GIM_Password = null;
-                            if(pwd_GIM_Password_value!=null) {
-                                if(context_param.containsKey("GIM_Password")) {//no need to decrypt if it come from program argument or parent job runtime
-                                    context.GIM_Password = pwd_GIM_Password_value;
-                                } else if (!pwd_GIM_Password_value.isEmpty()) {
-                                    try {
-                                        context.GIM_Password = routines.system.PasswordEncryptUtil.decryptPassword(pwd_GIM_Password_value);
-                                        context.put("GIM_Password",context.GIM_Password);
-                                    } catch (java.lang.RuntimeException e) {
-                                        //do nothing
-                                    }
-                                }
-                            }
-                        }
-                        context.setContextType("GIM_Port", "id_String");
-                        if(context.getStringValue("GIM_Port") == null) {
-                            context.GIM_Port = null;
-                        } else {
-                            context.GIM_Port=(String) context.getProperty("GIM_Port");
-                        }
-                        context.setContextType("GIM_Schema_Demand", "id_String");
-                        if(context.getStringValue("GIM_Schema_Demand") == null) {
-                            context.GIM_Schema_Demand = null;
-                        } else {
-                            context.GIM_Schema_Demand=(String) context.getProperty("GIM_Schema_Demand");
-                        }
-                        context.setContextType("GIM_Schema_PO", "id_String");
-                        if(context.getStringValue("GIM_Schema_PO") == null) {
-                            context.GIM_Schema_PO = null;
-                        } else {
-                            context.GIM_Schema_PO=(String) context.getProperty("GIM_Schema_PO");
-                        }
-                        context.setContextType("GIM_Server", "id_String");
-                        if(context.getStringValue("GIM_Server") == null) {
-                            context.GIM_Server = null;
-                        } else {
-                            context.GIM_Server=(String) context.getProperty("GIM_Server");
-                        }
-                        context.setContextType("SUS_Additional_Params", "id_String");
-                        if(context.getStringValue("SUS_Additional_Params") == null) {
-                            context.SUS_Additional_Params = null;
-                        } else {
-                            context.SUS_Additional_Params=(String) context.getProperty("SUS_Additional_Params");
-                        }
-                        context.setContextType("SUS_Database", "id_String");
-                        if(context.getStringValue("SUS_Database") == null) {
-                            context.SUS_Database = null;
-                        } else {
-                            context.SUS_Database=(String) context.getProperty("SUS_Database");
-                        }
-                        context.setContextType("SUS_Login", "id_String");
-                        if(context.getStringValue("SUS_Login") == null) {
-                            context.SUS_Login = null;
-                        } else {
-                            context.SUS_Login=(String) context.getProperty("SUS_Login");
-                        }
-                        context.setContextType("SUS_Password", "id_Password");
-                        if(context.getStringValue("SUS_Password") == null) {
-                            context.SUS_Password = null;
-                        } else {
-                            String pwd_SUS_Password_value = context.getProperty("SUS_Password");
-                            context.SUS_Password = null;
-                            if(pwd_SUS_Password_value!=null) {
-                                if(context_param.containsKey("SUS_Password")) {//no need to decrypt if it come from program argument or parent job runtime
-                                    context.SUS_Password = pwd_SUS_Password_value;
-                                } else if (!pwd_SUS_Password_value.isEmpty()) {
-                                    try {
-                                        context.SUS_Password = routines.system.PasswordEncryptUtil.decryptPassword(pwd_SUS_Password_value);
-                                        context.put("SUS_Password",context.SUS_Password);
-                                    } catch (java.lang.RuntimeException e) {
-                                        //do nothing
-                                    }
-                                }
-                            }
-                        }
-                        context.setContextType("SUS_Server", "id_String");
-                        if(context.getStringValue("SUS_Server") == null) {
-                            context.SUS_Server = null;
-                        } else {
-                            context.SUS_Server=(String) context.getProperty("SUS_Server");
-                        }
-                } 
-                public void processAllContext() {
-                        processContext_0();
-                }
-            }
+			}
+			class ContextProcessing {
+				private void processContext_0() {
+					context.setContextType("opco", "id_String");
+					if (context.getStringValue("opco") == null) {
+						context.opco = null;
+					} else {
+						context.opco = (String) context.getProperty("opco");
+					}
+					context.setContextType("server", "id_String");
+					if (context.getStringValue("server") == null) {
+						context.server = null;
+					} else {
+						context.server = (String) context.getProperty("server");
+					}
+					context.setContextType("sopco", "id_String");
+					if (context.getStringValue("sopco") == null) {
+						context.sopco = null;
+					} else {
+						context.sopco = (String) context.getProperty("sopco");
+					}
+					context.setContextType("svop", "id_String");
+					if (context.getStringValue("svop") == null) {
+						context.svop = null;
+					} else {
+						context.svop = (String) context.getProperty("svop");
+					}
+					context.setContextType("GIM_AdditionalParams", "id_String");
+					if (context.getStringValue("GIM_AdditionalParams") == null) {
+						context.GIM_AdditionalParams = null;
+					} else {
+						context.GIM_AdditionalParams = (String) context.getProperty("GIM_AdditionalParams");
+					}
+					context.setContextType("GIM_Database", "id_String");
+					if (context.getStringValue("GIM_Database") == null) {
+						context.GIM_Database = null;
+					} else {
+						context.GIM_Database = (String) context.getProperty("GIM_Database");
+					}
+					context.setContextType("GIM_Login", "id_String");
+					if (context.getStringValue("GIM_Login") == null) {
+						context.GIM_Login = null;
+					} else {
+						context.GIM_Login = (String) context.getProperty("GIM_Login");
+					}
+					context.setContextType("GIM_Password", "id_Password");
+					if (context.getStringValue("GIM_Password") == null) {
+						context.GIM_Password = null;
+					} else {
+						String pwd_GIM_Password_value = context.getProperty("GIM_Password");
+						context.GIM_Password = null;
+						if (pwd_GIM_Password_value != null) {
+							if (context_param.containsKey("GIM_Password")) {// no need to decrypt if it come from
+																			// program argument or parent job runtime
+								context.GIM_Password = pwd_GIM_Password_value;
+							} else if (!pwd_GIM_Password_value.isEmpty()) {
+								try {
+									context.GIM_Password = routines.system.PasswordEncryptUtil
+											.decryptPassword(pwd_GIM_Password_value);
+									context.put("GIM_Password", context.GIM_Password);
+								} catch (java.lang.RuntimeException e) {
+									// do nothing
+								}
+							}
+						}
+					}
+					context.setContextType("GIM_Port", "id_String");
+					if (context.getStringValue("GIM_Port") == null) {
+						context.GIM_Port = null;
+					} else {
+						context.GIM_Port = (String) context.getProperty("GIM_Port");
+					}
+					context.setContextType("GIM_Schema_Demand", "id_String");
+					if (context.getStringValue("GIM_Schema_Demand") == null) {
+						context.GIM_Schema_Demand = null;
+					} else {
+						context.GIM_Schema_Demand = (String) context.getProperty("GIM_Schema_Demand");
+					}
+					context.setContextType("GIM_Schema_PO", "id_String");
+					if (context.getStringValue("GIM_Schema_PO") == null) {
+						context.GIM_Schema_PO = null;
+					} else {
+						context.GIM_Schema_PO = (String) context.getProperty("GIM_Schema_PO");
+					}
+					context.setContextType("GIM_Server", "id_String");
+					if (context.getStringValue("GIM_Server") == null) {
+						context.GIM_Server = null;
+					} else {
+						context.GIM_Server = (String) context.getProperty("GIM_Server");
+					}
+					context.setContextType("SUS_Additional_Params", "id_String");
+					if (context.getStringValue("SUS_Additional_Params") == null) {
+						context.SUS_Additional_Params = null;
+					} else {
+						context.SUS_Additional_Params = (String) context.getProperty("SUS_Additional_Params");
+					}
+					context.setContextType("SUS_Database", "id_String");
+					if (context.getStringValue("SUS_Database") == null) {
+						context.SUS_Database = null;
+					} else {
+						context.SUS_Database = (String) context.getProperty("SUS_Database");
+					}
+					context.setContextType("SUS_Login", "id_String");
+					if (context.getStringValue("SUS_Login") == null) {
+						context.SUS_Login = null;
+					} else {
+						context.SUS_Login = (String) context.getProperty("SUS_Login");
+					}
+					context.setContextType("SUS_Password", "id_Password");
+					if (context.getStringValue("SUS_Password") == null) {
+						context.SUS_Password = null;
+					} else {
+						String pwd_SUS_Password_value = context.getProperty("SUS_Password");
+						context.SUS_Password = null;
+						if (pwd_SUS_Password_value != null) {
+							if (context_param.containsKey("SUS_Password")) {// no need to decrypt if it come from
+																			// program argument or parent job runtime
+								context.SUS_Password = pwd_SUS_Password_value;
+							} else if (!pwd_SUS_Password_value.isEmpty()) {
+								try {
+									context.SUS_Password = routines.system.PasswordEncryptUtil
+											.decryptPassword(pwd_SUS_Password_value);
+									context.put("SUS_Password", context.SUS_Password);
+								} catch (java.lang.RuntimeException e) {
+									// do nothing
+								}
+							}
+						}
+					}
+					context.setContextType("SUS_Server", "id_String");
+					if (context.getStringValue("SUS_Server") == null) {
+						context.SUS_Server = null;
+					} else {
+						context.SUS_Server = (String) context.getProperty("SUS_Server");
+					}
+				}
 
-            new ContextProcessing().processAllContext();
-        } catch (java.io.IOException ie) {
-            System.err.println("Could not load context "+contextStr);
-            ie.printStackTrace();
-        }
+				public void processAllContext() {
+					processContext_0();
+				}
+			}
 
-        // get context value from parent directly
-        if (parentContextMap != null && !parentContextMap.isEmpty()) {if (parentContextMap.containsKey("opco")) {
-                context.opco = (String) parentContextMap.get("opco");
-            }if (parentContextMap.containsKey("server")) {
-                context.server = (String) parentContextMap.get("server");
-            }if (parentContextMap.containsKey("sopco")) {
-                context.sopco = (String) parentContextMap.get("sopco");
-            }if (parentContextMap.containsKey("svop")) {
-                context.svop = (String) parentContextMap.get("svop");
-            }if (parentContextMap.containsKey("GIM_AdditionalParams")) {
-                context.GIM_AdditionalParams = (String) parentContextMap.get("GIM_AdditionalParams");
-            }if (parentContextMap.containsKey("GIM_Database")) {
-                context.GIM_Database = (String) parentContextMap.get("GIM_Database");
-            }if (parentContextMap.containsKey("GIM_Login")) {
-                context.GIM_Login = (String) parentContextMap.get("GIM_Login");
-            }if (parentContextMap.containsKey("GIM_Password")) {
-                context.GIM_Password = (java.lang.String) parentContextMap.get("GIM_Password");
-            }if (parentContextMap.containsKey("GIM_Port")) {
-                context.GIM_Port = (String) parentContextMap.get("GIM_Port");
-            }if (parentContextMap.containsKey("GIM_Schema_Demand")) {
-                context.GIM_Schema_Demand = (String) parentContextMap.get("GIM_Schema_Demand");
-            }if (parentContextMap.containsKey("GIM_Schema_PO")) {
-                context.GIM_Schema_PO = (String) parentContextMap.get("GIM_Schema_PO");
-            }if (parentContextMap.containsKey("GIM_Server")) {
-                context.GIM_Server = (String) parentContextMap.get("GIM_Server");
-            }if (parentContextMap.containsKey("SUS_Additional_Params")) {
-                context.SUS_Additional_Params = (String) parentContextMap.get("SUS_Additional_Params");
-            }if (parentContextMap.containsKey("SUS_Database")) {
-                context.SUS_Database = (String) parentContextMap.get("SUS_Database");
-            }if (parentContextMap.containsKey("SUS_Login")) {
-                context.SUS_Login = (String) parentContextMap.get("SUS_Login");
-            }if (parentContextMap.containsKey("SUS_Password")) {
-                context.SUS_Password = (java.lang.String) parentContextMap.get("SUS_Password");
-            }if (parentContextMap.containsKey("SUS_Server")) {
-                context.SUS_Server = (String) parentContextMap.get("SUS_Server");
-            }
-        }
+			new ContextProcessing().processAllContext();
+		} catch (java.io.IOException ie) {
+			System.err.println("Could not load context " + contextStr);
+			ie.printStackTrace();
+		}
 
-        //Resume: init the resumeUtil
-        resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
-        resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
-        resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
+		// get context value from parent directly
+		if (parentContextMap != null && !parentContextMap.isEmpty()) {
+			if (parentContextMap.containsKey("opco")) {
+				context.opco = (String) parentContextMap.get("opco");
+			}
+			if (parentContextMap.containsKey("server")) {
+				context.server = (String) parentContextMap.get("server");
+			}
+			if (parentContextMap.containsKey("sopco")) {
+				context.sopco = (String) parentContextMap.get("sopco");
+			}
+			if (parentContextMap.containsKey("svop")) {
+				context.svop = (String) parentContextMap.get("svop");
+			}
+			if (parentContextMap.containsKey("GIM_AdditionalParams")) {
+				context.GIM_AdditionalParams = (String) parentContextMap.get("GIM_AdditionalParams");
+			}
+			if (parentContextMap.containsKey("GIM_Database")) {
+				context.GIM_Database = (String) parentContextMap.get("GIM_Database");
+			}
+			if (parentContextMap.containsKey("GIM_Login")) {
+				context.GIM_Login = (String) parentContextMap.get("GIM_Login");
+			}
+			if (parentContextMap.containsKey("GIM_Password")) {
+				context.GIM_Password = (java.lang.String) parentContextMap.get("GIM_Password");
+			}
+			if (parentContextMap.containsKey("GIM_Port")) {
+				context.GIM_Port = (String) parentContextMap.get("GIM_Port");
+			}
+			if (parentContextMap.containsKey("GIM_Schema_Demand")) {
+				context.GIM_Schema_Demand = (String) parentContextMap.get("GIM_Schema_Demand");
+			}
+			if (parentContextMap.containsKey("GIM_Schema_PO")) {
+				context.GIM_Schema_PO = (String) parentContextMap.get("GIM_Schema_PO");
+			}
+			if (parentContextMap.containsKey("GIM_Server")) {
+				context.GIM_Server = (String) parentContextMap.get("GIM_Server");
+			}
+			if (parentContextMap.containsKey("SUS_Additional_Params")) {
+				context.SUS_Additional_Params = (String) parentContextMap.get("SUS_Additional_Params");
+			}
+			if (parentContextMap.containsKey("SUS_Database")) {
+				context.SUS_Database = (String) parentContextMap.get("SUS_Database");
+			}
+			if (parentContextMap.containsKey("SUS_Login")) {
+				context.SUS_Login = (String) parentContextMap.get("SUS_Login");
+			}
+			if (parentContextMap.containsKey("SUS_Password")) {
+				context.SUS_Password = (java.lang.String) parentContextMap.get("SUS_Password");
+			}
+			if (parentContextMap.containsKey("SUS_Server")) {
+				context.SUS_Server = (String) parentContextMap.get("SUS_Server");
+			}
+		}
+
+		// Resume: init the resumeUtil
+		resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
+		resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
+		resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
 
 		List<String> parametersToEncrypt = new java.util.ArrayList<String>();
-			parametersToEncrypt.add("GIM_Password");
-			parametersToEncrypt.add("SUS_Password");
-        //Resume: jobStart
-        resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
+		parametersToEncrypt.add("GIM_Password");
+		parametersToEncrypt.add("SUS_Password");
+		// Resume: jobStart
+		resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "",
+				"", "", "", "", resumeUtil.convertToJsonText(context, parametersToEncrypt));
 
-if(execStat) {
-    try {
-        runStat.openSocket(!isChildJob);
-        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
-        runStat.startThreadStat(clientHost, portStats);
-        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
-    } catch (java.io.IOException ioException) {
-        ioException.printStackTrace();
-    }
-}
+		if (execStat) {
+			try {
+				runStat.openSocket(!isChildJob);
+				runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+				runStat.startThreadStat(clientHost, portStats);
+				runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+			} catch (java.io.IOException ioException) {
+				ioException.printStackTrace();
+			}
+		}
 
+		java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
+		globalMap.put("concurrentHashMap", concurrentHashMap);
 
+		long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+		long endUsedMemory = 0;
+		long end = 0;
 
-	
-	    java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
-	    globalMap.put("concurrentHashMap", concurrentHashMap);
-	
+		startTime = System.currentTimeMillis();
+		tStatCatcher_1.addMessage("begin");
 
-    long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-    long endUsedMemory = 0;
-    long end = 0;
+		this.globalResumeTicket = true;// to run tPreJob
 
-    startTime = System.currentTimeMillis();
-        tStatCatcher_1.addMessage("begin");
+		try {
+			tStatCatcher_1Process(globalMap);
+		} catch (java.lang.Exception e) {
+			e.printStackTrace();
+		}
 
+		this.globalResumeTicket = false;// to run others jobs
+		final Thread launchingThread = Thread.currentThread();
+		runningThreadCount.add(1);
+		new Thread() {
+			public void run() {
+				java.util.Map threadRunResultMap = new java.util.HashMap();
+				threadRunResultMap.put("errorCode", null);
+				threadRunResultMap.put("status", "");
+				threadLocal.set(threadRunResultMap);
 
-this.globalResumeTicket = true;//to run tPreJob
+				try {
+					((java.util.Map) threadLocal.get()).put("errorCode", null);
+					tJava_1Process(globalMap);
+					if (!"failure".equals(((java.util.Map) threadLocal.get()).get("status"))) {
+						((java.util.Map) threadLocal.get()).put("status", "end");
+					}
+				} catch (TalendException e_tJava_1) {
+					globalMap.put("tJava_1_SUBPROCESS_STATE", -1);
 
+					e_tJava_1.printStackTrace();
 
+				} catch (java.lang.Error e_tJava_1) {
+					globalMap.put("tJava_1_SUBPROCESS_STATE", -1);
+					((java.util.Map) threadLocal.get()).put("status", "failure");
+					throw e_tJava_1;
 
+				} finally {
+					Integer localErrorCode = (Integer) (((java.util.Map) threadLocal.get()).get("errorCode"));
+					String localStatus = (String) (((java.util.Map) threadLocal.get()).get("status"));
+					if (localErrorCode != null) {
+						if (errorCode == null || localErrorCode.compareTo(errorCode) > 0) {
+							errorCode = localErrorCode;
+						}
+					}
+					if (!status.equals("failure")) {
+						status = localStatus;
+					}
 
-        try {
-            tStatCatcher_1Process(globalMap);
-        } catch (java.lang.Exception e) {
-            e.printStackTrace();
-        }
+					if ("true".equals(((java.util.Map) threadLocal.get()).get("JobInterrupted"))) {
+						launchingThread.interrupt();
+					}
 
-this.globalResumeTicket = false;//to run others jobs
-final Thread launchingThread = Thread.currentThread();
-        runningThreadCount.add(1);
-        new Thread(){
-            public void run() {
-                java.util.Map threadRunResultMap = new java.util.HashMap();
-                threadRunResultMap.put("errorCode", null);
-                threadRunResultMap.put("status", "");
-                threadLocal.set(threadRunResultMap);
+					runningThreadCount.add(-1);
+				}
+			}
+		}.start();
 
-                try {
-((java.util.Map) threadLocal.get()).put("errorCode", null);tJava_1Process(globalMap);
-if ( !"failure".equals(((java.util.Map)threadLocal.get()).get("status")) ) {
-((java.util.Map) threadLocal.get()).put("status", "end");
-}
-}catch (TalendException e_tJava_1) {
-globalMap.put("tJava_1_SUBPROCESS_STATE", -1);
+		boolean interrupted = false;
+		while (runningThreadCount.getCount() > 0) {
+			try {
+				Thread.sleep(10);
+			} catch (java.lang.InterruptedException e) {
+				interrupted = true;
+			} catch (java.lang.Exception e) {
+				e.printStackTrace();
+			}
+		}
 
-e_tJava_1.printStackTrace();
+		if (interrupted) {
+			Thread.currentThread().interrupt();
+		}
 
-}catch (java.lang.Error e_tJava_1) {
-globalMap.put("tJava_1_SUBPROCESS_STATE", -1);
-((java.util.Map) threadLocal.get()).put("status", "failure");throw e_tJava_1;
+		this.globalResumeTicket = true;// to run tPostJob
 
-}
-                finally {
-                    Integer localErrorCode = (Integer)(((java.util.Map)threadLocal.get()).get("errorCode"));
-                    String localStatus = (String)(((java.util.Map)threadLocal.get()).get("status"));
-                    if (localErrorCode != null) {
-                        if (errorCode == null || localErrorCode.compareTo(errorCode) > 0) {
-                           errorCode = localErrorCode;
-                        }
-                    }
-                    if (!status.equals("failure")){
-                        status = localStatus;
-                    }
+		end = System.currentTimeMillis();
 
-                    if ("true".equals(((java.util.Map) threadLocal.get()).get("JobInterrupted"))) {
-                        launchingThread.interrupt();
-                    }
+		if (watch) {
+			System.out.println((end - startTime) + " milliseconds");
+		}
 
-                    runningThreadCount.add(-1);
-                }
-            }
-        }.start();
+		endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+		if (false) {
+			System.out.println((endUsedMemory - startUsedMemory)
+					+ " bytes memory increase when running : Anticipated_Demand_Inbound");
+		}
+		tStatCatcher_1.addMessage(status == "" ? "end" : status, (end - startTime));
+		try {
+			tStatCatcher_1Process(globalMap);
+		} catch (java.lang.Exception e) {
+			e.printStackTrace();
+		}
 
-    boolean interrupted = false;
-    while (runningThreadCount.getCount() > 0) {
-        try {
-            Thread.sleep(10);
-        } catch (java.lang.InterruptedException e) {
-            interrupted = true;
-        } catch (java.lang.Exception e) {
-            e.printStackTrace();
-        }
-    }
+		if (execStat) {
+			runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+			runStat.stopThreadStat();
+		}
+		int returnCode = 0;
 
-    if (interrupted) {
-        Thread.currentThread().interrupt();
-    }
+		Integer localErrorCode = (Integer) (((java.util.Map) threadLocal.get()).get("errorCode"));
+		String localStatus = (String) (((java.util.Map) threadLocal.get()).get("status"));
+		if (localErrorCode != null) {
+			if (errorCode == null || localErrorCode.compareTo(errorCode) > 0) {
+				errorCode = localErrorCode;
+			}
+		}
+		if (localStatus != null && !status.equals("failure")) {
+			status = localStatus;
+		}
 
+		if (errorCode == null) {
+			returnCode = status != null && status.equals("failure") ? 1 : 0;
+		} else {
+			returnCode = errorCode.intValue();
+		}
+		resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "",
+				"" + returnCode, "", "", "");
 
+		return returnCode;
 
-this.globalResumeTicket = true;//to run tPostJob
+	}
 
+	// only for OSGi env
+	public void destroy() {
 
+	}
 
+	private java.util.Map<String, Object> getSharedConnections4REST() {
+		java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
 
-        end = System.currentTimeMillis();
+		return connections;
+	}
 
-        if (watch) {
-            System.out.println((end-startTime)+" milliseconds");
-        }
-
-        endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-        if (false) {
-            System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : Anticipated_Demand_Inbound");
-        }
-        tStatCatcher_1.addMessage(status==""?"end":status, (end-startTime));
-        try {
-            tStatCatcher_1Process(globalMap);
-        } catch (java.lang.Exception e) {
-            e.printStackTrace();
-        }
-
-
-
-if (execStat) {
-    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
-    runStat.stopThreadStat();
-}
-    int returnCode = 0;
-
-        Integer localErrorCode = (Integer)(((java.util.Map)threadLocal.get()).get("errorCode"));
-        String localStatus = (String)(((java.util.Map)threadLocal.get()).get("status"));
-        if (localErrorCode != null) {
-            if (errorCode == null || localErrorCode.compareTo(errorCode) > 0) {
-                   errorCode = localErrorCode;
-            }
-        }
-        if (localStatus != null && !status.equals("failure")){
-            status = localStatus;
-        }
-
-    if(errorCode == null) {
-         returnCode = status != null && status.equals("failure") ? 1 : 0;
-    } else {
-         returnCode = errorCode.intValue();
-    }
-    resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","" + returnCode,"","","");
-
-    return returnCode;
-
-  }
-
-    // only for OSGi env
-    public void destroy() {
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private java.util.Map<String, Object> getSharedConnections4REST() {
-        java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
-
-
-
-
-
-
-        return connections;
-    }
-
-    private void evalParam(String arg) {
-        if (arg.startsWith("--resuming_logs_dir_path")) {
-            resuming_logs_dir_path = arg.substring(25);
-        } else if (arg.startsWith("--resuming_checkpoint_path")) {
-            resuming_checkpoint_path = arg.substring(27);
-        } else if (arg.startsWith("--parent_part_launcher")) {
-            parent_part_launcher = arg.substring(23);
-        } else if (arg.startsWith("--watch")) {
-            watch = true;
-        } else if (arg.startsWith("--stat_port=")) {
-            String portStatsStr = arg.substring(12);
-            if (portStatsStr != null && !portStatsStr.equals("null")) {
-                portStats = Integer.parseInt(portStatsStr);
-            }
-        } else if (arg.startsWith("--trace_port=")) {
-            portTraces = Integer.parseInt(arg.substring(13));
-        } else if (arg.startsWith("--client_host=")) {
-            clientHost = arg.substring(14);
-        } else if (arg.startsWith("--context=")) {
-            contextStr = arg.substring(10);
-            isDefaultContext = false;
-        } else if (arg.startsWith("--father_pid=")) {
-            fatherPid = arg.substring(13);
-        } else if (arg.startsWith("--root_pid=")) {
-            rootPid = arg.substring(11);
-        } else if (arg.startsWith("--father_node=")) {
-            fatherNode = arg.substring(14);
-        } else if (arg.startsWith("--pid=")) {
-            pid = arg.substring(6);
-        } else if (arg.startsWith("--context_type")) {
-            String keyValue = arg.substring(15);
+	private void evalParam(String arg) {
+		if (arg.startsWith("--resuming_logs_dir_path")) {
+			resuming_logs_dir_path = arg.substring(25);
+		} else if (arg.startsWith("--resuming_checkpoint_path")) {
+			resuming_checkpoint_path = arg.substring(27);
+		} else if (arg.startsWith("--parent_part_launcher")) {
+			parent_part_launcher = arg.substring(23);
+		} else if (arg.startsWith("--watch")) {
+			watch = true;
+		} else if (arg.startsWith("--stat_port=")) {
+			String portStatsStr = arg.substring(12);
+			if (portStatsStr != null && !portStatsStr.equals("null")) {
+				portStats = Integer.parseInt(portStatsStr);
+			}
+		} else if (arg.startsWith("--trace_port=")) {
+			portTraces = Integer.parseInt(arg.substring(13));
+		} else if (arg.startsWith("--client_host=")) {
+			clientHost = arg.substring(14);
+		} else if (arg.startsWith("--context=")) {
+			contextStr = arg.substring(10);
+			isDefaultContext = false;
+		} else if (arg.startsWith("--father_pid=")) {
+			fatherPid = arg.substring(13);
+		} else if (arg.startsWith("--root_pid=")) {
+			rootPid = arg.substring(11);
+		} else if (arg.startsWith("--father_node=")) {
+			fatherNode = arg.substring(14);
+		} else if (arg.startsWith("--pid=")) {
+			pid = arg.substring(6);
+		} else if (arg.startsWith("--context_type")) {
+			String keyValue = arg.substring(15);
 			int index = -1;
-            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-                if (fatherPid==null) {
-                    context_param.setContextType(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
-                } else { // the subjob won't escape the especial chars
-                    context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1) );
-                }
+			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+				if (fatherPid == null) {
+					context_param.setContextType(keyValue.substring(0, index),
+							replaceEscapeChars(keyValue.substring(index + 1)));
+				} else { // the subjob won't escape the especial chars
+					context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1));
+				}
 
-            }
+			}
 
 		} else if (arg.startsWith("--context_param")) {
-            String keyValue = arg.substring(16);
-            int index = -1;
-            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-                if (fatherPid==null) {
-                    context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
-                } else { // the subjob won't escape the especial chars
-                    context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1) );
-                }
-            }
-        } else if (arg.startsWith("--log4jLevel=")) {
-            log4jLevel = arg.substring(13);
-		} else if (arg.startsWith("--audit.enabled") && arg.contains("=")) {//for trunjob call
-		    final int equal = arg.indexOf('=');
+			String keyValue = arg.substring(16);
+			int index = -1;
+			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+				if (fatherPid == null) {
+					context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
+				} else { // the subjob won't escape the especial chars
+					context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1));
+				}
+			}
+		} else if (arg.startsWith("--log4jLevel=")) {
+			log4jLevel = arg.substring(13);
+		} else if (arg.startsWith("--audit.enabled") && arg.contains("=")) {// for trunjob call
+			final int equal = arg.indexOf('=');
 			final String key = arg.substring("--".length(), equal);
 			System.setProperty(key, arg.substring(equal + 1));
 		}
-    }
-    
-    private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
+	}
 
-    private final String[][] escapeChars = {
-        {"\\\\","\\"},{"\\n","\n"},{"\\'","\'"},{"\\r","\r"},
-        {"\\f","\f"},{"\\b","\b"},{"\\t","\t"}
-        };
-    private String replaceEscapeChars (String keyValue) {
+	private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
+
+	private final String[][] escapeChars = { { "\\\\", "\\" }, { "\\n", "\n" }, { "\\'", "\'" }, { "\\r", "\r" },
+			{ "\\f", "\f" }, { "\\b", "\b" }, { "\\t", "\t" } };
+
+	private String replaceEscapeChars(String keyValue) {
 
 		if (keyValue == null || ("").equals(keyValue.trim())) {
 			return keyValue;
@@ -9866,15 +8525,17 @@ if (execStat) {
 			int index = -1;
 			// judege if the left string includes escape chars
 			for (String[] strArray : escapeChars) {
-				index = keyValue.indexOf(strArray[0],currIndex);
-				if (index>=0) {
+				index = keyValue.indexOf(strArray[0], currIndex);
+				if (index >= 0) {
 
-					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0], strArray[1]));
+					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0],
+							strArray[1]));
 					currIndex = index + strArray[0].length();
 					break;
 				}
 			}
-			// if the left string doesn't include escape chars, append the left into the result
+			// if the left string doesn't include escape chars, append the left into the
+			// result
 			if (index < 0) {
 				result.append(keyValue.substring(currIndex));
 				currIndex = currIndex + keyValue.length();
@@ -9882,20 +8543,19 @@ if (execStat) {
 		}
 
 		return result.toString();
-    }
+	}
 
-    public Integer getErrorCode() {
-        return errorCode;
-    }
+	public Integer getErrorCode() {
+		return errorCode;
+	}
 
+	public String getStatus() {
+		return status;
+	}
 
-    public String getStatus() {
-        return status;
-    }
-
-    ResumeUtil resumeUtil = null;
+	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     249188 characters generated by Talend Open Studio for Data Integration 
- *     on the August 31, 2022 at 3:39:46 PM IST
+ * 249231 characters generated by Talend Open Studio for Data Integration on the
+ * October 12, 2022 at 6:49:00 PM IST
  ************************************************************************************************/

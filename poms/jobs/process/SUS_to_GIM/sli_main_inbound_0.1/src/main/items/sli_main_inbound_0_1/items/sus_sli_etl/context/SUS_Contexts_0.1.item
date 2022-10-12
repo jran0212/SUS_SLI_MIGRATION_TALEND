@@ -3,7 +3,7 @@
   <talendfile:ContextType xmi:id="_Ve10cPILEeyQ56Px76rksQ" confirmationNeeded="false" name="Default">
     <contextParameter xmi:id="_W2RE8PIMEeyQ56Px76rksQ" comment="" name="SUS_Port" prompt="SUS_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
     <contextParameter xmi:id="_W2RE8fIMEeyQ56Px76rksQ" comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="C056IRDD"/>
-    <contextParameter xmi:id="_W2RE8vIMEeyQ56Px76rksQ" comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:EtOKCyezkMpoICFv6WzcZtsTlq5waEzw7J/cvZ11RqWkuDqDUw=="/>
+    <contextParameter xmi:id="_W2RE8vIMEeyQ56Px76rksQ" comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:DMNOp3GBQBURsN7lXs53NWGjkPr/L8s81+vS1v6P2TRgU/54gw=="/>
     <contextParameter xmi:id="_W2RE8_IMEeyQ56Px76rksQ" comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="C056IRDD"/>
     <contextParameter xmi:id="_W2RE9PIMEeyQ56Px76rksQ" comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="AS242K.na.sysco.net"/>
     <contextParameter xmi:id="_W2RE9fIMEeyQ56Px76rksQ" comment="" name="SUS_Schema" prompt="SUS_Schema?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
@@ -13,9 +13,9 @@
   <talendfile:ContextType xmi:id="_WCbq0Bn5Ee2S4de24gXtjA" confirmationNeeded="false" name="PROD">
     <contextParameter xmi:id="_WCbq0Rn5Ee2S4de24gXtjA" comment="" name="SUS_Port" prompt="SUS_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
     <contextParameter xmi:id="_WCbq0hn5Ee2S4de24gXtjA" comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="PRJAR000"/>
-    <contextParameter xmi:id="_WCbq0xn5Ee2S4de24gXtjA" comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:s7EJ27lkuiaSu4rW3JiOZK8j+nPc3WradwlrQ7D00/E/WIQtNEI="/>
+    <contextParameter xmi:id="_WCbq0xn5Ee2S4de24gXtjA" comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:lSjNV57qb3QAh6voWnWsvgGhkdYlnDaIpwj5Qf4CEOhj1bVyefc="/>
     <contextParameter xmi:id="_WCbq1Bn5Ee2S4de24gXtjA" comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="SCDBFP10"/>
-    <contextParameter xmi:id="_WCbq1Rn5Ee2S4de24gXtjA" comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="AS011A.na.sysco.net"/>
+    <contextParameter xmi:id="_WCbq1Rn5Ee2S4de24gXtjA" comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="AS009A.na.sysco.net"/>
     <contextParameter xmi:id="_WCbq1hn5Ee2S4de24gXtjA" comment="" name="SUS_Schema" prompt="SUS_Schema?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
     <contextParameter xmi:id="_WCbq1xn5Ee2S4de24gXtjA" comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="naming=system;errors=full;"/>
     <contextParameter xmi:id="_WCbq2Bn5Ee2S4de24gXtjA" comment="" name="SUS_Database_ARDBFA" prompt="SUS_Database_ARDBFA?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="ARDBFA"/>

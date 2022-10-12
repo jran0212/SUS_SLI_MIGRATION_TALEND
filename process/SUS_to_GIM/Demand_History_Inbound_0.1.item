@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="068" internalId="_Wton4A5cEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="C068QNRD" internalId="_Wton4Q5cEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="068" internalId="_Wton4g5cEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="056" internalId="_Wton4A5cEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="AS242K" internalId="_Wton4Q5cEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="056" internalId="_Wton4g5cEe2Tk6JrIvvEdg"/>
     <contextParameter comment="svop" name="svop" prompt="svop?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="00000000000000000000000000000020220101000000000000" internalId="_Wton4w5cEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_AdditionalParams" prompt="GIM_AdditionalParams?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="" internalId="_Wton5A5cEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Database" prompt="GIM_Database?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="GIM" internalId="_Wton5Q5cEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="postgres" internalId="_Wton5g5cEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:18TPDi7DHxDUbxbJSnWTdN1KCX9JOZ/Zn5zlR83C0L1O48dh" internalId="_Wton5w5cEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:Z4vO2JjMmU33/37+Z4MZbao1IYIgsQyivE5Y8dB6nG5Cvb32" internalId="_Wton5w5cEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Port" prompt="GIM_Port?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="5432" internalId="_Wton6A5cEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Schema_Demand" prompt="GIM_Schema_Demand?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="demand" internalId="_Wton6Q5cEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Schema_PO" prompt="GIM_Schema_PO?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="purchaseorder" internalId="_Wton6g5cEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="merch-qa-pg-master-db.merchandising-platform-np.us-east-1.aws.sysco.net" internalId="_Wton6w5cEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="naming=system;errors=full;" internalId="_Wton7A5cEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C068QNRD" internalId="_Wton7Q5cEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C068QNRD" internalId="_Wton7g5cEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:MHyfcKs0zuF4nRndTlCiROqObh44LI+Hn14xD+SIwGg0aFbD" internalId="_Wton7w5cEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS239V.na.sysco.net" internalId="_Wton8A5cEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C056IRDD" internalId="_Wton7Q5cEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C056IRDD" internalId="_Wton7g5cEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:VS4xjmlrGA1Nw3+2AgL2ZlMbIJRU9f4LSbA1dWSbNFQUKK4RuA==" internalId="_Wton7w5cEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS242K.na.sysco.net" internalId="_Wton8A5cEe2Tk6JrIvvEdg"/>
   </context>
   <context confirmationNeeded="false" name="PROD">
     <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="009" internalId="_V3vdwBn5Ee2S4de24gXtjA"/>
@@ -26,14 +26,14 @@
     <contextParameter comment="svop" name="svop" prompt="svop?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="00000000000000000000000000000020220101000000000000" internalId="_V3vdwxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_AdditionalParams" prompt="GIM_AdditionalParams?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="" internalId="_V3vdxBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Database" prompt="GIM_Database?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="GIM" internalId="_V3vdxRn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="postgres" internalId="_V3vdxhn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:CpOKji8ExfWipmCJn90DPIXGqV5YrR1CfwWPgewJFdmYTmP+" internalId="_V3vdxxn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="gimuser" internalId="_V3vdxhn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:u6K1Io60qQksOUbBux9TO8HbUMWMNGfYeE8hDMWKjfTZGLCTENkmZNmgOYk=" internalId="_V3vdxxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Port" prompt="GIM_Port?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="5432" internalId="_V3vdyBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Schema_Demand" prompt="GIM_Schema_Demand?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="demand" internalId="_V3vdyRn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Schema_PO" prompt="GIM_Schema_PO?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="purchaseorder" internalId="_V3vdyhn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="merch-qa-pg-master-db.merchandising-platform-np.us-east-1.aws.sysco.net" internalId="_V3vdyxn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="integrated-planning-instance-1.c0frwcpwfx1h.us-east-1.rds.amazonaws.com" internalId="_V3vdyxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="PRJAR000" internalId="_V3vdzBn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:pbeL9ij00RBcmhGk8RF/OyO5qO20p1YJTvwAotz462plUCPBbU4=" internalId="_V3vdzRn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:q77IfD3BPaMHq8/9F3/J2YGoCN3iTyHBIkmApyXgELRMvEkFil8=" internalId="_V3vdzRn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="SCDBFP10" internalId="_V3vdzhn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS009A.na.sysco.net" internalId="_V3vdzxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="naming=system;errors=full;" internalId="_V3vd0Bn5Ee2S4de24gXtjA"/>
@@ -80,7 +80,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:C0XmlzaDMU4G8mtIuF85hmkbplbuqoMgCncj+rAZ" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:lSxtBjz+/bPbJzUPSxXxxScU5z0VhvaGt1NwuKi1" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -115,7 +115,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:9SjbDfYAj6T6g6zRI6Bx4fLoPgFVN+eKHFhKP1nR" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:g5sKOhHadZ8zGGHkH14J+kVpAv5ha0tvNzTjK52n" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -158,7 +158,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Qz18gXFqwRSiZKA8SkO0CMLvK0Lvb1w8DDs42C4/N3JFSnEYYnqcRrqrOIbolylQ"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:lZL5SfBK6j4EMTjj0BzzAcZ1u4SJCcXUl95JCv8cevY4YVMOwQp3zAjxauMuEiGv"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMLTPPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -342,73 +342,88 @@
       <column comment="" key="true" length="2" name="DEMAND_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="REFERENCE_NO" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="REFERENCE_NO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_1" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_1" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_2" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_2" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_3" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_3" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_4" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_4" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_5" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_5" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_6" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_6" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_7" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_7" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_1" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_1" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_2" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_2" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_3" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_3" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_4" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_4" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_5" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_5" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_6" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_6" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_7" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_7" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="true" length="10" name="CUST_PREFERENCE_VENDOR" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="7" name="ACTUAL_DEMAND_CASE_WEEK_TOTAL_QTY" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="7" name="ACTUAL_DEMAND_CASE_WEEK_TOTAL_QTY" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_WEEK_TOTAL_QTY" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_WEEK_TOTAL_QTY" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="29" name="CREATED_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="CREATED_USER_ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="CREATED_USER_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="29" name="UPDATED_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="UPDATED_USER_ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="UPDATED_USER_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="'false'" key="false" length="1" name="IS_DELETED" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" usefulColumn="true">
+      <column comment="" defaultValue="'false'" key="false" length="1" name="IS_DELETED" nullable="false" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'GIM'::character varying'" key="false" length="3" name="CREATED_ORIGIN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'timezone('utc'::text, now())'" key="false" length="29" name="CREATED_ORIGIN_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'GIM'::character varying'" key="false" length="3" name="UPDATED_ORIGIN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'timezone('utc'::text, now())'" key="false" length="29" name="UPDATED_ORIGIN_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="TPPF_SVOP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
@@ -425,34 +440,39 @@
         <mapperTableEntries name="CREATED_TIMESTAMP" expression="TimeStampConverting.convertToTimeStamp(row1.TPEADT.toString(), row1.TPEATM.toString()) " type="id_String"/>
         <mapperTableEntries name="UPDATED_TIMESTAMP" expression="TimeStampConverting.convertToTimeStamp(row1.TPMODT.toString(), row1.TPMOTM.toString()) " type="id_String"/>
       </varTables>
-      <outputTables sizeState="INTERMEDIATE" name="DEMAND_HISTORY" activateCondensedTool="true">
+      <outputTables sizeState="INTERMEDIATE" name="DEMAND_HISTORY">
         <mapperTableEntries name="SITE_ID" expression="context.opco" type="id_String"/>
         <mapperTableEntries name="ITEM_NO" expression="Var.TPITEM" type="id_String"/>
-        <mapperTableEntries name="DEMAND_WEEK_END_DATE" expression="Var.DEMAND_WEEK_END_DATE!=&quot;&quot;? TalendDate.parseDate(&quot;dd-MM-yyyy&quot;,Var.DEMAND_WEEK_END_DATE):null " type="id_Date"/>
+        <mapperTableEntries name="DEMAND_WEEK_END_DATE" expression="Var.DEMAND_WEEK_END_DATE!=&quot;&quot;? TalendDate.parseDate(&quot;dd-MM-yyyy&quot;,Var.DEMAND_WEEK_END_DATE):TalendDate.parseDate(&quot;dd-MM-yyyy&quot;,&quot;01-01-0001&quot;) " type="id_Date"/>
         <mapperTableEntries name="DEMAND_TYPE" expression="Var.TPDTYP" type="id_String"/>
-        <mapperTableEntries name="REFERENCE_NO" expression="Var.TPADRF" type="id_String" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_1" expression="row1.TPADC1 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_2" expression="row1.TPADC2 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_3" expression="row1.TPADC3 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_4" expression="row1.TPADC4 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_5" expression="row1.TPADC5 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_6" expression="row1.TPADC6 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_7" expression="row1.TPADC7 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_1" expression="row1.TPADS1 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_2" expression="row1.TPADS2 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_3" expression="row1.TPADS3 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_4" expression="row1.TPADS4 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_5" expression="row1.TPADS5 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_6" expression="row1.TPADS6 " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_7" expression="row1.TPADS7 " type="id_BigDecimal" nullable="true"/>
+        <mapperTableEntries name="REFERENCE_NO" expression="Var.TPADRF" type="id_String"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_1" expression="row1.TPADC1 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_2" expression="row1.TPADC2 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_3" expression="row1.TPADC3 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_4" expression="row1.TPADC4 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_5" expression="row1.TPADC5 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_6" expression="row1.TPADC6 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_CASE_QTY_DAY_7" expression="row1.TPADC7 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_1" expression="row1.TPADS1 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_2" expression="row1.TPADS2 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_3" expression="row1.TPADS3 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_4" expression="row1.TPADS4 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_5" expression="row1.TPADS5 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_6" expression="row1.TPADS6 " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_QTY_DAY_7" expression="row1.TPADS7 " type="id_BigDecimal"/>
         <mapperTableEntries name="CUST_PREFERENCE_VENDOR" expression="Var.TPCPVN" type="id_String"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_CASE_WEEK_TOTAL_QTY" expression="row1.TPCSWK " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_WEEK_TOTAL_QTY" expression="row1.TPSPWK " type="id_BigDecimal" nullable="true"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_CASE_WEEK_TOTAL_QTY" expression="row1.TPCSWK " type="id_BigDecimal"/>
+        <mapperTableEntries name="ACTUAL_DEMAND_SPLIT_WEEK_TOTAL_QTY" expression="row1.TPSPWK " type="id_BigDecimal"/>
         <mapperTableEntries name="CREATED_TIMESTAMP" expression="Var.CREATED_TIMESTAMP!=&quot;&quot;? TalendDate.parseDate(&quot;dd-MM-yyyy HH:mm:ss&quot;,Var.CREATED_TIMESTAMP):null " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="CREATED_USER_ID" expression="Var.TPEAID" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CREATED_USER_ID" expression="Var.TPEAID" type="id_String"/>
         <mapperTableEntries name="UPDATED_TIMESTAMP" expression="Var.UPDATED_TIMESTAMP!=&quot;&quot;? TalendDate.parseDate(&quot;dd-MM-yyyy HH:mm:ss&quot;,Var.UPDATED_TIMESTAMP):null " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="UPDATED_USER_ID" expression="Var.TPMOID" type="id_String" nullable="true"/>
-        <mapperTableEntries name="IS_DELETED" expression="false" type="id_Boolean" nullable="true"/>
+        <mapperTableEntries name="UPDATED_USER_ID" expression="Var.TPMOID" type="id_String"/>
+        <mapperTableEntries name="IS_DELETED" expression="false" type="id_Boolean"/>
+        <mapperTableEntries name="CREATED_ORIGIN" expression="&quot;SUS&quot;" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CREATED_ORIGIN_TIMESTAMP" expression="TalendDate.parseDate(&quot;dd-MM-yyyy HH:mm:ss&quot;, TalendDate.getDate(&quot;dd-MM-yyyy HH:mm:ss&quot;)) " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="UPDATED_ORIGIN" expression="&quot;SUS&quot;" type="id_String" nullable="true"/>
+        <mapperTableEntries name="UPDATED_ORIGIN_TIMESTAMP" expression="TalendDate.parseDate(&quot;dd-MM-yyyy HH:mm:ss&quot;, TalendDate.getDate(&quot;dd-MM-yyyy HH:mm:ss&quot;)) " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="TPPF_SVOP" expression="context.svop" type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="TPITEM" type="id_String"/>
@@ -498,12 +518,10 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Demand"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:QEDv5Afh7tQfEl+XQCLOuFyviqMATTzLwDXE+3uvB4dCfyBwFwK6SSfH1uB+vY7T"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:/1nR9B+0nyWyfVnQ9/MI4yUo7s8EfI5OZj3QqL0PlACwSbdaHhad2NIhfDkcYrne"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;DEMAND_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:REPOSITORY_SCHEMA_TYPE" value="_W_8m8AOHEe2mdNKMHGUS9Q - DEMAND_HISTORY" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false" show="false"/>
     <elementParameter field="CHECK" name="SPATIAL_INDEX" value="false" show="false"/>
     <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" value="false" show="false"/>
@@ -657,15 +675,40 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CREATED_ORIGIN"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CREATED_ORIGIN_TIMESTAMP"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="UPDATED_ORIGIN"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="UPDATED_ORIGIN_TIMESTAMP"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TPPF_SVOP"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
-    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="DEMAND_HISTORY" name="tDBOutput_1">
+    <metadata connector="FLOW" name="tDBOutput_1">
       <column comment="" key="true" length="5" name="SITE_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -678,77 +721,92 @@
       <column comment="" key="true" length="2" name="DEMAND_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="REFERENCE_NO" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="REFERENCE_NO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_1" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_1" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_2" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_2" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_3" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_3" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_4" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_4" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_5" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_5" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_6" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_6" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_7" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_7" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_1" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_1" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_2" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_2" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_3" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_3" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_4" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_4" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_5" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_5" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_6" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_6" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_7" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_7" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="true" length="10" name="CUST_PREFERENCE_VENDOR" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="7" name="ACTUAL_DEMAND_CASE_WEEK_TOTAL_QTY" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="7" name="ACTUAL_DEMAND_CASE_WEEK_TOTAL_QTY" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_WEEK_TOTAL_QTY" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_WEEK_TOTAL_QTY" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="29" name="CREATED_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="CREATED_USER_ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="CREATED_USER_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="29" name="UPDATED_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="UPDATED_USER_ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="UPDATED_USER_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="'false'" key="false" length="1" name="IS_DELETED" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" usefulColumn="true">
+      <column comment="" defaultValue="'false'" key="false" length="1" name="IS_DELETED" nullable="false" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'GIM'::character varying'" key="false" length="3" name="CREATED_ORIGIN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'timezone('utc'::text, now())'" key="false" length="29" name="CREATED_ORIGIN_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'GIM'::character varying'" key="false" length="3" name="UPDATED_ORIGIN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'timezone('utc'::text, now())'" key="false" length="29" name="UPDATED_ORIGIN_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="TPPF_SVOP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
-    <metadata connector="REJECT" label="DEMAND_HISTORY" name="REJECT">
+    <metadata connector="REJECT" name="REJECT">
       <column comment="" key="true" length="5" name="SITE_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -761,235 +819,88 @@
       <column comment="" key="true" length="2" name="DEMAND_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="REFERENCE_NO" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="REFERENCE_NO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_1" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_1" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_2" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_2" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_3" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_3" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_4" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_4" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_5" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_5" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_6" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_6" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_7" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_7" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_1" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_1" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_2" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_2" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_3" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_3" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_4" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_4" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_5" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_5" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_6" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_6" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_7" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="10" name="CUST_PREFERENCE_VENDOR" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="7" name="ACTUAL_DEMAND_CASE_WEEK_TOTAL_QTY" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_WEEK_TOTAL_QTY" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="29" name="CREATED_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="CREATED_USER_ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="29" name="UPDATED_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="UPDATED_USER_ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" defaultValue="'false'" key="false" length="1" name="IS_DELETED" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="416">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_1" show="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;" show="false"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false" show="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false" show="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" show="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" show="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="SITE_ID"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ITEM_NO"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DEMAND_WEEK_END_DATE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DEMAND_TYPE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="REFERENCE_NO"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_CASE_QTY_DAY_1"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_CASE_QTY_DAY_2"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_CASE_QTY_DAY_3"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_CASE_QTY_DAY_4"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_CASE_QTY_DAY_5"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_CASE_QTY_DAY_6"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_CASE_QTY_DAY_7"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_SPLIT_QTY_DAY_1"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_SPLIT_QTY_DAY_2"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_SPLIT_QTY_DAY_3"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_SPLIT_QTY_DAY_4"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_SPLIT_QTY_DAY_5"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_SPLIT_QTY_DAY_6"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_SPLIT_QTY_DAY_7"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CUST_PREFERENCE_VENDOR"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_CASE_WEEK_TOTAL_QTY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ACTUAL_DEMAND_SPLIT_WEEK_TOTAL_QTY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CREATED_TIMESTAMP"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CREATED_USER_ID"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="UPDATED_TIMESTAMP"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="UPDATED_USER_ID"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IS_DELETED"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="errorCode"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="errorMessage"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="DEMAND_HISTORY" name="tLogRow_1">
-      <column comment="" key="true" length="5" name="SITE_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="9" name="ITEM_NO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="13" name="DEMAND_WEEK_END_DATE" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="2" name="DEMAND_TYPE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="REFERENCE_NO" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_1" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_2" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_3" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_4" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_5" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_6" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_CASE_QTY_DAY_7" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_1" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_2" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_3" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_4" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_5" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_6" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_7" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_QTY_DAY_7" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="true" length="10" name="CUST_PREFERENCE_VENDOR" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="7" name="ACTUAL_DEMAND_CASE_WEEK_TOTAL_QTY" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="7" name="ACTUAL_DEMAND_CASE_WEEK_TOTAL_QTY" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_WEEK_TOTAL_QTY" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="5" name="ACTUAL_DEMAND_SPLIT_WEEK_TOTAL_QTY" nullable="false" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="29" name="CREATED_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="CREATED_USER_ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="CREATED_USER_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="29" name="UPDATED_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="UPDATED_USER_ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="UPDATED_USER_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="'false'" key="false" length="1" name="IS_DELETED" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" usefulColumn="true">
+      <column comment="" defaultValue="'false'" key="false" length="1" name="IS_DELETED" nullable="false" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'GIM'::character varying'" key="false" length="3" name="CREATED_ORIGIN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'timezone('utc'::text, now())'" key="false" length="29" name="CREATED_ORIGIN_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'GIM'::character varying'" key="false" length="3" name="UPDATED_ORIGIN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'timezone('utc'::text, now())'" key="false" length="29" name="UPDATED_ORIGIN_TIMESTAMP" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="6" sourceType="TIMESTAMP" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="TPPF_SVOP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -1355,12 +1266,25 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="DEMAND_HISTORY" lineStyle="0" metaname="DEMAND_HISTORY" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="CREATED_ORIGIN_TIMESTAMP"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="UPDATED_ORIGIN_TIMESTAMP"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="TPPF_SVOP"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="CREATED_ORIGIN"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="UPDATED_ORIGIN"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="DEMAND_HISTORY" show="false"/>
-  </connection>
-  <connection connectorName="REJECT" label="row2" lineStyle="0" metaname="REJECT" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tLogRow_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tStatCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_1" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>

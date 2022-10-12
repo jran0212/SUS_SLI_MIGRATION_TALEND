@@ -115,10 +115,15 @@ SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
 [WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.13.2
 [WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.2
 [WARNING] Missing POM for org.slf4j:slf4j-api:jar:1.7.29
+[WARNING] Missing POM for org.jboss.marshalling:jboss-marshalling:jar:2.0.12.Final
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-api:jar:2.13.2
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.13.2
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.2
+[WARNING] Missing POM for org.slf4j:slf4j-api:jar:1.7.29
 [INFO] Building zip: C:\Program Files (x86)\TOS_DI-8.0.1\studio\workspace\SUS_SLI_ETL\poms\jobs\process\SUS_to_GIM\sli_main_inbound_0.1\target\sli_main_inbound_0_1.zip
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.349 s
-[INFO] Finished at: 2022-08-30T21:20:06+05:30
+[INFO] Total time:  2.643 s
+[INFO] Finished at: 2022-10-12T13:13:50+05:30
 [INFO] ------------------------------------------------------------------------

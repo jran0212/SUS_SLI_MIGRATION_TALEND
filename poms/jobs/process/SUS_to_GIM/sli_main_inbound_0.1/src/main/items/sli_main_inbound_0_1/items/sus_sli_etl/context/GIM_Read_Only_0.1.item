@@ -2,7 +2,7 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd">
   <talendfile:ContextType xmi:id="_CoeeAPXSEeynBeV-b3d1ug" confirmationNeeded="false" name="Default">
     <contextParameter xmi:id="_CoeeAfXSEeynBeV-b3d1ug" comment="" name="GIM_Read_Only_Port" prompt="GIM_Read_Only_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="5432"/>
-    <contextParameter xmi:id="_CoeeAvXSEeynBeV-b3d1ug" comment="" name="GIM_Read_Only_Password" prompt="GIM_Read_Only_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:lXQOYBvjoPCoxGFozoDTIb3vhE2CBlewVYVzQsSh4qpChxQM"/>
+    <contextParameter xmi:id="_CoeeAvXSEeynBeV-b3d1ug" comment="" name="GIM_Read_Only_Password" prompt="GIM_Read_Only_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:Jey19KyToX28L3+OwTdgygRxsPyUpFg81sh65GXP2cdusW5o"/>
     <contextParameter xmi:id="_CoeeBfXSEeynBeV-b3d1ug" comment="" name="GIM_Read_Only_Login" prompt="GIM_Read_Only_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="postgres"/>
     <contextParameter xmi:id="_CoeeBvXSEeynBeV-b3d1ug" comment="" name="GIM_Read_Only_Server" prompt="GIM_Read_Only_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="merch-qa-pg-master-db.merchandising-platform-np.us-east-1.aws.sysco.net"/>
     <contextParameter xmi:id="_CoeeB_XSEeynBeV-b3d1ug" comment="" name="GIM_Read_Only_Database" prompt="GIM_Read_Only_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="GIM"/>
@@ -11,9 +11,9 @@
   </talendfile:ContextType>
   <talendfile:ContextType xmi:id="_EyKhIBufEe25jaK7YFabrA" confirmationNeeded="false" name="PROD">
     <contextParameter xmi:id="_EyKhIRufEe25jaK7YFabrA" comment="" name="GIM_Read_Only_Port" prompt="GIM_Read_Only_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="5432"/>
-    <contextParameter xmi:id="_EyKhIhufEe25jaK7YFabrA" comment="" name="GIM_Read_Only_Password" prompt="GIM_Read_Only_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:ZGEABSj7DZlMDSVgds4dRH2PHARN6jJ76C9UShTti4bsxbLO"/>
-    <contextParameter xmi:id="_EyKhIxufEe25jaK7YFabrA" comment="" name="GIM_Read_Only_Login" prompt="GIM_Read_Only_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="postgres"/>
-    <contextParameter xmi:id="_EyKhJBufEe25jaK7YFabrA" comment="" name="GIM_Read_Only_Server" prompt="GIM_Read_Only_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="merch-qa-pg-master-db.merchandising-platform-np.us-east-1.aws.sysco.net"/>
+    <contextParameter xmi:id="_EyKhIhufEe25jaK7YFabrA" comment="" name="GIM_Read_Only_Password" prompt="GIM_Read_Only_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:7MalYaYVKIAzXLCZ56/NB1H4FyWAviXVcN93WuJqElV3uCXDnDcTJk6N1Tw="/>
+    <contextParameter xmi:id="_EyKhIxufEe25jaK7YFabrA" comment="" name="GIM_Read_Only_Login" prompt="GIM_Read_Only_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="gimuser"/>
+    <contextParameter xmi:id="_EyKhJBufEe25jaK7YFabrA" comment="" name="GIM_Read_Only_Server" prompt="GIM_Read_Only_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="integrated-planning-instance-1.c0frwcpwfx1h.us-east-1.rds.amazonaws.com"/>
     <contextParameter xmi:id="_EyKhJRufEe25jaK7YFabrA" comment="" name="GIM_Read_Only_Database" prompt="GIM_Read_Only_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="GIM"/>
     <contextParameter xmi:id="_EyKhJhufEe25jaK7YFabrA" comment="" name="GIM_Read_Only_AdditionalParams" prompt="GIM_Read_Only_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
     <contextParameter xmi:id="_EyKhJxufEe25jaK7YFabrA" comment="" name="GIM_Read_Only_Schema_Inventory" prompt="GIM_Read_Only_Schema_Inventory?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="inventory"/>

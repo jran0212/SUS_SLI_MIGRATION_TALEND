@@ -21,8 +21,8 @@
     <talend.job.path>sus_sli_etl</talend.job.path>
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <talend.job.stat>true</talend.job.stat>
-    <talend.job.jvmargs>-Xms256M -Xmx1024M -Dfile.encoding=UTF-8 </talend.job.jvmargs>
-    <talend.job.id>_ajRUwAQsEe2Hm-5Lqgv_5w</talend.job.id>
+    <talend.job.jvmargs>-Xms256M -Xmx1024M </talend.job.jvmargs>
+    <talend.job.id>_NHLWADjEEe2XZpkYHNSlRw</talend.job.id>
     <talend.job.version>0.1</talend.job.version>
     <talend.job.framework></talend.job.framework>
     <talend.routine.groupid>org.example.sus_sli_etl.code</talend.routine.groupid>
@@ -30,7 +30,7 @@
     <current.resources.dir>${basedir}/src/main/ext-resources</current.resources.dir>
     <talend.project.name.lowercase>sus_sli_etl</talend.project.name.lowercase>
     <talend.project.id>0</talend.project.id>
-    <talend.job.applyContextToChildren>false</talend.job.applyContextToChildren>
+    <talend.job.applyContextToChildren>true</talend.job.applyContextToChildren>
     <output.resources.dir>${talend.job.name}/src/main/resources</output.resources.dir>
     <maven.build.timestamp.format>yyyy-MM-dd HHmmssSSS</maven.build.timestamp.format>
     <talend.product.version>8.0.1.20211109_1610</talend.product.version>
@@ -76,17 +76,6 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>net.sf.jt400</groupId>
-      <artifactId>jt400</artifactId>
-      <version>9.8</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>*</artifactId>
-          <groupId>*</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
       <version>2.13.2</version>
@@ -120,17 +109,6 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <version>42.2.14</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>*</artifactId>
-          <groupId>*</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.29</version>
@@ -145,6 +123,16 @@
       <groupId>org.example.sus_sli_etl.code</groupId>
       <artifactId>routines</artifactId>
       <version>8.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.sus_sli_etl.job</groupId>
+      <artifactId>Obligation_Detail1_Inbound</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.sus_sli_etl.job</groupId>
+      <artifactId>Obligation_Detail2_Inbound</artifactId>
+      <version>0.1.0</version>
     </dependency>
   </dependencies>
   <build>

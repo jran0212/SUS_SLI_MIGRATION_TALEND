@@ -32,6 +32,24 @@ public class TimeStampConverting {
 	}
 
 	/**
+	 * return time which is converted using string inputs.
+	 * 
+	 * 
+	 * {talendTypes} String
+	 * 
+	 * {Category} User Defined
+	 * 
+	 * {param} string("524") input: string time.
+	 * 
+	 */
+	public static String convertToTime(String time) {
+		String convertedTime = "";
+		String paddedTime = integerPadding(time);
+		convertedTime = paddedTime.substring(0, 2) + ":" + paddedTime.substring(2, 4) + ":" + paddedTime.substring(4, 6);
+		return convertedTime;
+	}
+	
+	/**
 	 * return timeStamp which is converted using date and time inputs
 	 * 
 	 * 

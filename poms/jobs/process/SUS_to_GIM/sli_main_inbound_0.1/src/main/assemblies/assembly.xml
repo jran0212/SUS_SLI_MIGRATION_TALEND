@@ -283,12 +283,13 @@
                 <include>org.example.sus_sli_etl.job:Order_Process_Detail_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:SLI_MVP1_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Item_True_Vendor_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Record_Count_Compare_MVP1:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Rdc_Item_Pay_To_Vendor_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Order_Process_Header_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Item_Inventory_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Vendor_Item_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Item_Relationship_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:SLI_Main_Inbound:jar:0.1.0</include>
-                <include>org.example.sus_sli_etl.job:Record_Count_Compare:jar:0.1.0</include>
             </includes>
             <outputFileNameMapping>${artifact.build.finalName}.${artifact.extension}</outputFileNameMapping>
             <useProjectArtifact>true</useProjectArtifact>

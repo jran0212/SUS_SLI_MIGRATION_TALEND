@@ -273,7 +273,9 @@
         <dependencySet>
             <outputDirectory>${talend.job.name}</outputDirectory>
             <includes>
+                <include>org.example.sus_sli_etl.job:Obligation_Detail2_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Obligation_Detail_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Obligation_Detail1_Inbound:jar:0.1.0</include>
             </includes>
             <outputFileNameMapping>${artifact.build.finalName}.${artifact.extension}</outputFileNameMapping>
             <useProjectArtifact>true</useProjectArtifact>

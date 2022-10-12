@@ -2,7 +2,7 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd">
   <talendfile:ContextType xmi:id="_CoeeAPXSEeynBeV-b3d1ug" confirmationNeeded="false" name="Default">
     <contextParameter xmi:id="_CoeeAfXSEeynBeV-b3d1ug" comment="" name="GIM_Port" prompt="GIM_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="5432"/>
-    <contextParameter xmi:id="_CoeeAvXSEeynBeV-b3d1ug" comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:L9lbRNAec1q4j+tBxPdPkNKqH7Wt0SLa0+h+4jQ+OhbH//iH"/>
+    <contextParameter xmi:id="_CoeeAvXSEeynBeV-b3d1ug" comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:UbtfFfMBMK2hEcuAk9AUdrAmu0MzgTzo5ENG+KtdwYoBQfjJ"/>
     <contextParameter xmi:id="_CoeeA_XSEeynBeV-b3d1ug" comment="" name="GIM_Schema_PO" prompt="GIM_Schema_PO?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="purchaseorder"/>
     <contextParameter xmi:id="_CoeeBPXSEeynBeV-b3d1ug" comment="" name="GIM_Schema_System" prompt="GIM_Schema_System?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="system"/>
     <contextParameter xmi:id="_CoeeBfXSEeynBeV-b3d1ug" comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="postgres"/>
@@ -17,11 +17,11 @@
   </talendfile:ContextType>
   <talendfile:ContextType xmi:id="_pIIwYBn5Ee2S4de24gXtjA" confirmationNeeded="false" name="PROD">
     <contextParameter xmi:id="_pIIwYRn5Ee2S4de24gXtjA" comment="" name="GIM_Port" prompt="GIM_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="5432"/>
-    <contextParameter xmi:id="_pIIwYhn5Ee2S4de24gXtjA" comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:IBgetC1EwLjtFQONjP+cpmlpG44hgwIS/jt1g5BbU9b+a8MA"/>
+    <contextParameter xmi:id="_pIIwYhn5Ee2S4de24gXtjA" comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:EPuxIgraaRwmxgGN4LSLIX9Zx8Wj+l/cFWd4YnWUtFj9/RIbRDaQQKp2SLM="/>
     <contextParameter xmi:id="_pIIwYxn5Ee2S4de24gXtjA" comment="" name="GIM_Schema_PO" prompt="GIM_Schema_PO?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="purchaseorder"/>
     <contextParameter xmi:id="_pIIwZBn5Ee2S4de24gXtjA" comment="" name="GIM_Schema_System" prompt="GIM_Schema_System?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="system"/>
-    <contextParameter xmi:id="_pIIwZRn5Ee2S4de24gXtjA" comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="postgres"/>
-    <contextParameter xmi:id="_pIIwZhn5Ee2S4de24gXtjA" comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="merch-qa-pg-master-db.merchandising-platform-np.us-east-1.aws.sysco.net"/>
+    <contextParameter xmi:id="_pIIwZRn5Ee2S4de24gXtjA" comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="gimuser"/>
+    <contextParameter xmi:id="_pIIwZhn5Ee2S4de24gXtjA" comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="integrated-planning-instance-1.c0frwcpwfx1h.us-east-1.rds.amazonaws.com"/>
     <contextParameter xmi:id="_pIIwZxn5Ee2S4de24gXtjA" comment="" name="GIM_Database" prompt="GIM_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="GIM"/>
     <contextParameter xmi:id="_pIIwaBn5Ee2S4de24gXtjA" comment="" name="GIM_AdditionalParams" prompt="GIM_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
     <contextParameter xmi:id="_pIIwaRn5Ee2S4de24gXtjA" comment="" name="GIM_Schema_Inventory" prompt="GIM_Schema_Inventory?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="inventory"/>

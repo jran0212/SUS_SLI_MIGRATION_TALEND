@@ -199,6 +199,18 @@ protected static void logIgnoredError(String message, Throwable cause) {
 				
 			}
 			
+			if(SUS_Additional_Params != null){
+				
+					this.setProperty("SUS_Additional_Params", SUS_Additional_Params.toString());
+				
+			}
+			
+			if(SUS_Database != null){
+				
+					this.setProperty("SUS_Database", SUS_Database.toString());
+				
+			}
+			
 			if(SUS_Login != null){
 				
 					this.setProperty("SUS_Login", SUS_Login.toString());
@@ -211,21 +223,9 @@ protected static void logIgnoredError(String message, Throwable cause) {
 				
 			}
 			
-			if(SUS_Database != null){
-				
-					this.setProperty("SUS_Database", SUS_Database.toString());
-				
-			}
-			
 			if(SUS_Server != null){
 				
 					this.setProperty("SUS_Server", SUS_Server.toString());
-				
-			}
-			
-			if(SUS_Additional_Params != null){
-				
-					this.setProperty("SUS_Additional_Params", SUS_Additional_Params.toString());
 				
 			}
 			
@@ -288,6 +288,14 @@ public String GIM_Server;
 public String getGIM_Server(){
 	return this.GIM_Server;
 }
+public String SUS_Additional_Params;
+public String getSUS_Additional_Params(){
+	return this.SUS_Additional_Params;
+}
+public String SUS_Database;
+public String getSUS_Database(){
+	return this.SUS_Database;
+}
 public String SUS_Login;
 public String getSUS_Login(){
 	return this.SUS_Login;
@@ -296,17 +304,9 @@ public java.lang.String SUS_Password;
 public java.lang.String getSUS_Password(){
 	return this.SUS_Password;
 }
-public String SUS_Database;
-public String getSUS_Database(){
-	return this.SUS_Database;
-}
 public String SUS_Server;
 public String getSUS_Server(){
 	return this.SUS_Server;
-}
-public String SUS_Additional_Params;
-public String getSUS_Additional_Params(){
-	return this.SUS_Additional_Params;
 }
 	}
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
@@ -6639,7 +6639,7 @@ Anticipated_Demand_Inbound = null;
 // # Output table : 'Anticipated_Demand_Inbound'
 Anticipated_Demand_Inbound_tmp.SITE_ID = context.opco;
 Anticipated_Demand_Inbound_tmp.ITEM_NO = Var.TNITEM ;
-Anticipated_Demand_Inbound_tmp.DEMAND_WEEK_END_DATE = Var.DEMAND_WEEK_END_DATE!=""? TalendDate.parseDate("dd-MM-yyyy",Var.DEMAND_WEEK_END_DATE):null ;
+Anticipated_Demand_Inbound_tmp.DEMAND_WEEK_END_DATE = Var.DEMAND_WEEK_END_DATE!=""? TalendDate.parseDate("dd-MM-yyyy",Var.DEMAND_WEEK_END_DATE):TalendDate.parseDate("dd-MM-yyyy","01-01-0001") ;
 Anticipated_Demand_Inbound_tmp.DEMAND_TYPE = Var.TNDTYP ;
 Anticipated_Demand_Inbound_tmp.REFERENCE_NO = Var.TNADRF ;
 Anticipated_Demand_Inbound_tmp.STATUS_OF_DEMAND = Var.TNDSTS;
@@ -6661,7 +6661,7 @@ Anticipated_Demand_Inbound_tmp.DEMAND_CASE_WEEK_TOTAL_QTY = row1.TNDCWT ;
 Anticipated_Demand_Inbound_tmp.DEMAND_SPLIT_WEEK_TOTAL_QTY = row1.TNDSWT ;
 Anticipated_Demand_Inbound_tmp.CREATED_TIMESTAMP = Var.CREATED_TIMESTAMP!=""? TalendDate.parseDate("dd-MM-yyyy HH:mm:ss",Var.CREATED_TIMESTAMP):null ;
 Anticipated_Demand_Inbound_tmp.CREATED_USER_ID = Var.TNEAID;
-Anticipated_Demand_Inbound_tmp.UPDATED_TIMESTAMP = Var.UPDATED_TIMESTAMP!=""? TalendDate.parseDate("dd-MM-yyyy HH:mm:ss",Var.UPDATED_TIMESTAMP):TalendDate.parseDate("dd-MM-yyyy HH:mm:ss","01-01-0000 00:00:00") ;
+Anticipated_Demand_Inbound_tmp.UPDATED_TIMESTAMP = Var.UPDATED_TIMESTAMP!=""? TalendDate.parseDate("dd-MM-yyyy HH:mm:ss",Var.UPDATED_TIMESTAMP):null ;
 Anticipated_Demand_Inbound_tmp.UPDATED_USER_ID = Var.TNMOID ;
 Anticipated_Demand_Inbound_tmp.IS_DELETED = false;
 Anticipated_Demand_Inbound_tmp.CREATED_ORIGIN = "SUS";
@@ -9502,6 +9502,18 @@ end_Hash.put("tLogRow_4", System.currentTimeMillis());
                         } else {
                             context.GIM_Server=(String) context.getProperty("GIM_Server");
                         }
+                        context.setContextType("SUS_Additional_Params", "id_String");
+                        if(context.getStringValue("SUS_Additional_Params") == null) {
+                            context.SUS_Additional_Params = null;
+                        } else {
+                            context.SUS_Additional_Params=(String) context.getProperty("SUS_Additional_Params");
+                        }
+                        context.setContextType("SUS_Database", "id_String");
+                        if(context.getStringValue("SUS_Database") == null) {
+                            context.SUS_Database = null;
+                        } else {
+                            context.SUS_Database=(String) context.getProperty("SUS_Database");
+                        }
                         context.setContextType("SUS_Login", "id_String");
                         if(context.getStringValue("SUS_Login") == null) {
                             context.SUS_Login = null;
@@ -9527,23 +9539,11 @@ end_Hash.put("tLogRow_4", System.currentTimeMillis());
                                 }
                             }
                         }
-                        context.setContextType("SUS_Database", "id_String");
-                        if(context.getStringValue("SUS_Database") == null) {
-                            context.SUS_Database = null;
-                        } else {
-                            context.SUS_Database=(String) context.getProperty("SUS_Database");
-                        }
                         context.setContextType("SUS_Server", "id_String");
                         if(context.getStringValue("SUS_Server") == null) {
                             context.SUS_Server = null;
                         } else {
                             context.SUS_Server=(String) context.getProperty("SUS_Server");
-                        }
-                        context.setContextType("SUS_Additional_Params", "id_String");
-                        if(context.getStringValue("SUS_Additional_Params") == null) {
-                            context.SUS_Additional_Params = null;
-                        } else {
-                            context.SUS_Additional_Params=(String) context.getProperty("SUS_Additional_Params");
                         }
                 } 
                 public void processAllContext() {
@@ -9582,16 +9582,16 @@ end_Hash.put("tLogRow_4", System.currentTimeMillis());
                 context.GIM_Schema_PO = (String) parentContextMap.get("GIM_Schema_PO");
             }if (parentContextMap.containsKey("GIM_Server")) {
                 context.GIM_Server = (String) parentContextMap.get("GIM_Server");
+            }if (parentContextMap.containsKey("SUS_Additional_Params")) {
+                context.SUS_Additional_Params = (String) parentContextMap.get("SUS_Additional_Params");
+            }if (parentContextMap.containsKey("SUS_Database")) {
+                context.SUS_Database = (String) parentContextMap.get("SUS_Database");
             }if (parentContextMap.containsKey("SUS_Login")) {
                 context.SUS_Login = (String) parentContextMap.get("SUS_Login");
             }if (parentContextMap.containsKey("SUS_Password")) {
                 context.SUS_Password = (java.lang.String) parentContextMap.get("SUS_Password");
-            }if (parentContextMap.containsKey("SUS_Database")) {
-                context.SUS_Database = (String) parentContextMap.get("SUS_Database");
             }if (parentContextMap.containsKey("SUS_Server")) {
                 context.SUS_Server = (String) parentContextMap.get("SUS_Server");
-            }if (parentContextMap.containsKey("SUS_Additional_Params")) {
-                context.SUS_Additional_Params = (String) parentContextMap.get("SUS_Additional_Params");
             }
         }
 
@@ -9896,6 +9896,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     249246 characters generated by Talend Open Studio for Data Integration 
- *     on the August 14, 2022 at 10:32:26 PM IST
+ *     249228 characters generated by Talend Open Studio for Data Integration 
+ *     on the October 12, 2022 at 1:13:17 PM IST
  ************************************************************************************************/
