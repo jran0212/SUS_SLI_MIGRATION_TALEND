@@ -8,33 +8,33 @@
     <contextParameter comment="" name="GIM_AdditionalParams" prompt="GIM_AdditionalParams?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="" internalId="_Tnen5A5fEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Database" prompt="GIM_Database?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="GIM" internalId="_Tnen5Q5fEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="postgres" internalId="_Tnen5g5fEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:fLEPNoyhpFrAYpVHV+GPFB6OJEEO2fd8GBRe7VHmb6FsZAhI" internalId="_Tnen5w5fEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:x712dlsobJm4buafS6yJxi47+lmGwkbcjiCPkrc9e0cxXOIk" internalId="_Tnen5w5fEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Port" prompt="GIM_Port?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="5432" internalId="_Tnen6A5fEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Schema_Migrating_Test" prompt="GIM_Schema_Migrating_Test?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="migratingtest" internalId="_Tnen6Q5fEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="merch-qa-pg-master-db.merchandising-platform-np.us-east-1.aws.sysco.net" internalId="_Tnen6g5fEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="naming=system;errors=full;" internalId="_Tnen6w5fEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C056IRDD" internalId="_Tnen7A5fEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C056IRDD" internalId="_Tnen7Q5fEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:+BnWhmb0G/Sbg++T6IOKi+mzaFPjyiBTtZx8u6B/+s44LIOhpQ==" internalId="_Tnen7g5fEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:qgKUkcDTGHBakFYgk5b60r4ZlPuB8zyRbLkPSAf2mDb9KQTjLA==" internalId="_Tnen7g5fEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS242K.na.sysco.net" internalId="_Tnen7w5fEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Schema_Master" prompt="GIM_Schema_Master?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="master" internalId="_mQpPwDTdEe26j-i-8AoW1w"/>
   </context>
   <context confirmationNeeded="false" name="PROD">
-    <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="009" internalId="_VuLSEBn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="AS009A" internalId="_VuLSERn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="009" internalId="_VuLSEhn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="344" internalId="_VuLSEBn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="AS344A" internalId="_VuLSERn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="344" internalId="_VuLSEhn5Ee2S4de24gXtjA"/>
     <contextParameter comment="svop" name="svop" prompt="svop?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="00000000000000000000000000000020220101000000000000" internalId="_VuLSExn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_AdditionalParams" prompt="GIM_AdditionalParams?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="" internalId="_VuLSFBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Database" prompt="GIM_Database?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="GIM" internalId="_VuLSFRn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="gimuser" internalId="_VuLSFhn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:58LpmiEBT7h2eI9cJTgrALE5l0LDPvxbw9+AWTBlFNySfX66F3LnGTyXweI=" internalId="_VuLSFxn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:N4XMwBNye94sCTkpKXxk+07e99c/eHSsxkmaIMDQdaH4308UyzOr23pHGRA=" internalId="_VuLSFxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Port" prompt="GIM_Port?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="5432" internalId="_VuLSGBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Schema_Migrating_Test" prompt="GIM_Schema_Migrating_Test?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="migratingtest" internalId="_VuLSGRn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="integrated-planning-instance-1.c0frwcpwfx1h.us-east-1.rds.amazonaws.com" internalId="_VuLSGhn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="PRJAR000" internalId="_VuLSGxn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:lgHdLGEmh21lUpYzhFJGJN2+iWzPPGjBpeMUNHn3VS9FAf4SPhg=" internalId="_VuLSHBn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:Xqn/4wXAGNWZOR13HhHjOtMFytoq245SpkOI7qwpLCMaFozuNI0=" internalId="_VuLSHBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="SCDBFP10" internalId="_VuLSHRn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS009A.na.sysco.net" internalId="_VuLSHhn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS344A.na.sysco.net" internalId="_VuLSHhn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="naming=system;errors=full;" internalId="_VuLSHxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Schema_Master" prompt="GIM_Schema_Master?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="master" internalId="_mQpPwTTdEe26j-i-8AoW1w"/>
   </context>
@@ -80,7 +80,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:61SEbhRFdARYd48wtzvsakQR0XW7nutD4IPKdHi9" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:jh1gjkhrhKZ9886o3w0seQm9p1cJFfiqbteHSz5h" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -115,14 +115,14 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:fTREAeTZD9io5l/A8Coab4ySm05FkdvueYtw5jp+" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:3yS8+QqK0KyCfealpc0fGr3Jm8j0B+sV41//7gRR" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="false" show="false"/>
     <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false" show="false"/>
     <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" value="" show="false"/>
     <elementParameter field="CHECK" name="HEADER_ENABLED" value="false" show="false"/>
@@ -157,7 +157,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pb3uBMadK5xR6IYj7mOkKXxTu8uhuvg5a+imdWjmtd1mxX/6aJPjbqRKpTA9guT8"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:DYYi2zsRVeJ6CmpzULe1oK4RYXcHKom50iPnMSuuCgQDovxVrFFQapa1iAjRTAHI"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;USIBJGPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -475,6 +475,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="416">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_1" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_saet0PX9EeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -486,7 +487,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Master"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ZjLXWrZLdvdTk7h+5TAjPJqaLKLlLcYRxZvzNnefPEHB4ttGsiR1BIJl6HrEtzPC"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:nj4B7UIUnzcxVHta5xB6HMq12j2pVAkXkMFaz2YRduaGhAbpJMpLLJEX9ogErKt7"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_PAY_TO_VENDOR&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -578,7 +579,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_PAY_TO_VENDOR" name="tDBOutput_1">

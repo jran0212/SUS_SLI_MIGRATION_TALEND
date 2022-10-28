@@ -8,32 +8,32 @@
     <contextParameter comment="" name="GIM_Read_Only_AdditionalParams" prompt="GIM_Read_Only_AdditionalParams?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="" internalId="_HChttBSuEe2xWf-s01MNKw"/>
     <contextParameter comment="" name="GIM_Read_Only_Database" prompt="GIM_Read_Only_Database?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="GIM" internalId="_HChttRSuEe2xWf-s01MNKw"/>
     <contextParameter comment="" name="GIM_Read_Only_Login" prompt="GIM_Read_Only_Login?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="postgres" internalId="_HChtthSuEe2xWf-s01MNKw"/>
-    <contextParameter comment="" name="GIM_Read_Only_Password" prompt="GIM_Read_Only_Password?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_Password" value="enc:system.encryption.key.v1:38YLVltNdORgYPhU/N7WqQHGqa8qqHRevEuvtvzXAVg53eZ7" internalId="_HChttxSuEe2xWf-s01MNKw"/>
+    <contextParameter comment="" name="GIM_Read_Only_Password" prompt="GIM_Read_Only_Password?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_Password" value="enc:system.encryption.key.v1:RdHZDCvl2KDmp/M1T+VBRoD42YPbSwO639MHhLo2HMpIPElz" internalId="_HChttxSuEe2xWf-s01MNKw"/>
     <contextParameter comment="" name="GIM_Read_Only_Port" prompt="GIM_Read_Only_Port?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="5432" internalId="_HChtuBSuEe2xWf-s01MNKw"/>
     <contextParameter comment="" name="GIM_Read_Only_Schema_Inventory" prompt="GIM_Read_Only_Schema_Inventory?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="inventory" internalId="_HChtuRSuEe2xWf-s01MNKw"/>
     <contextParameter comment="" name="GIM_Read_Only_Server" prompt="GIM_Read_Only_Server?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="merch-qa-pg-master-db.merchandising-platform-np.us-east-1.aws.sysco.net" internalId="_HChtuhSuEe2xWf-s01MNKw"/>
     <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS242K.na.sysco.net" internalId="_s9SmABS0Ee2xWf-s01MNKw"/>
     <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C056IRDD" internalId="_s9SmARS0Ee2xWf-s01MNKw"/>
     <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C056IRDD" internalId="_s9SmAhS0Ee2xWf-s01MNKw"/>
-    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:eNifSNsYwGbhVNqxl8TW+9rY5w9ta0hv8mh9gBDVMjBnv/1RxA==" internalId="_s9SmAxS0Ee2xWf-s01MNKw"/>
+    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:nUuJVB440ky1fBD1IOhHJL/Wv+mta0XPBJjN+sD4J39L6crfcw==" internalId="_s9SmAxS0Ee2xWf-s01MNKw"/>
     <contextParameter comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="naming=system;errors=full;" internalId="_s9SmBBS0Ee2xWf-s01MNKw"/>
   </context>
   <context confirmationNeeded="false" name="PROD">
-    <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="009" internalId="_V0bEABn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="AS009A" internalId="_V0bEARn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="009" internalId="_V0bEAhn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="344" internalId="_V0bEABn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="AS344A" internalId="_V0bEARn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="344" internalId="_V0bEAhn5Ee2S4de24gXtjA"/>
     <contextParameter comment="svop" name="svop" prompt="svop?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="00000000000000000000000000000020220101000000000000" internalId="_V0bEAxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Read_Only_AdditionalParams" prompt="GIM_Read_Only_AdditionalParams?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="" internalId="_V0bEBBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Read_Only_Database" prompt="GIM_Read_Only_Database?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="GIM" internalId="_V0bEBRn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Read_Only_Login" prompt="GIM_Read_Only_Login?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="gimuser" internalId="_V0bEBhn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="GIM_Read_Only_Password" prompt="GIM_Read_Only_Password?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_Password" value="enc:system.encryption.key.v1:ab11EaE/JK3OoAERh9Wa6KwN0kiaO6lHR9L89+RKDyJjaVICRCC/txKKdis=" internalId="_V0bEBxn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="GIM_Read_Only_Password" prompt="GIM_Read_Only_Password?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_Password" value="enc:system.encryption.key.v1:AL+ZBkfVyvOh0Nx80NHFjlgOSX89EqYyCefqyuAUL5RnMlESvv4lH7vEqz4=" internalId="_V0bEBxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Read_Only_Port" prompt="GIM_Read_Only_Port?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="5432" internalId="_V0bECBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Read_Only_Schema_Inventory" prompt="GIM_Read_Only_Schema_Inventory?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="inventory" internalId="_V0bECRn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Read_Only_Server" prompt="GIM_Read_Only_Server?" promptNeeded="false" repositoryContextId="_xbdEIBSYEe2jbLcAAgBBhw" type="id_String" value="integrated-planning-instance-1.c0frwcpwfx1h.us-east-1.rds.amazonaws.com" internalId="_V0bEChn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="PRJAR000" internalId="_V0bECxn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:HZS5Wz2XoaxVtIKwU6ULNdclgLF48fZ4defCastK5iySlotjACM=" internalId="_V0bEDBn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:KRaWyk5Dtpo5WVztZ1rMioZGGggvsuSgDrvsCw3PtUpX2OgF2UI=" internalId="_V0bEDBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="SCDBFP10" internalId="_V0bEDRn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS009A.na.sysco.net" internalId="_V0bEDhn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS344A.na.sysco.net" internalId="_V0bEDhn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="naming=system;errors=full;" internalId="_V0bEDxn5Ee2S4de24gXtjA"/>
   </context>
   <parameters>
@@ -78,7 +78,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:vMNeITJQJWSBBSH8ph/3fqC94CC2r+v31FIM2j7C" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:/Tuff6LGml0iabVy8lVusna8UStOR+/Goj8P1FcC" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -113,14 +113,14 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:sm1F0ITLEs8pOyPB+az3Fpwl4kqMGMrkvI3wIheg" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:R12aQak2jRngN8PyHwa2WlMObE7gPSrLA4qh8exS" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="false" show="false"/>
     <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false" show="false"/>
     <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" value="" show="false"/>
     <elementParameter field="CHECK" name="HEADER_ENABLED" value="false" show="false"/>
@@ -502,13 +502,13 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.GIM_Read_Only_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Read_Only_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Read_Only_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:dKu+/mRJjR01rWOwLqnyCHJsqzI7Czzf5ILKZUddxuBj8MnG4vEqeEkK7gv/Uq7KelklxuSgXoZHkA=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:VCpOQGLC5axI5twUqwG7qJO5o7KtlQIuB44Pu9cd/Lw8M3AAXVUSC1GzCbfKxM+hchCwYmlpD2HP0A=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT 'ANTICIPATED_DEMAND',count(*) FROM demand.\&quot;ANTICIPATED_DEMAND\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION &#xD;&#xA;SELECT 'ITEM_DETAIL',count(*) FROM master.\&quot;ITEM_DETAIL\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_INVENTORY',count(*) FROM inventory.\&quot;ITEM_INVENTORY\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION &#xD;&#xA;SELECT 'ITEM_RELATIONSHIP',count(*) FROM master.\&quot;ITEM_RELATIONSHIP\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_TRUE_VENDOR',count(*) FROM master.\&quot;ITEM_TRUE_VENDOR\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'VENDOR_ITEM',count(*) FROM master.\&quot;VENDOR_ITEM\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'ORDER_PROCESS_DETAIL',count(*) FROM orderprocessing.\&quot;ORDER_PROCESS_DETAIL\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'RDC_ITEM_PAY_TO_VENDOR',count(*) FROM master.\&quot;RDC_ITEM_PAY_TO_VENDOR\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT 'ANTICIPATED_DEMAND',count(*) FROM demand.\&quot;ANTICIPATED_DEMAND\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION &#xD;&#xA;SELECT 'ITEM_DETAIL',count(*) FROM master.\&quot;ITEM_DETAIL\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_INVENTORY',count(*) FROM inventory.\&quot;ITEM_INVENTORY\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION &#xD;&#xA;SELECT 'ITEM_RELATIONSHIP',count(*) FROM master.\&quot;ITEM_RELATIONSHIP\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_TRUE_VENDOR',count(*) FROM master.\&quot;ITEM_TRUE_VENDOR\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'VENDOR_ITEM',count(*) FROM master.\&quot;VENDOR_ITEM\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'ORDER_PROCESS_HEADER',count(*) FROM orderprocessing.\&quot;ORDER_PROCESS_HEADER\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'ORDER_PROCESS_DETAIL',count(*) FROM orderprocessing.\&quot;ORDER_PROCESS_DETAIL\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false &#xD;&#xA;UNION&#xD;&#xA;SELECT 'RDC_ITEM_PAY_TO_VENDOR',count(*) FROM master.\&quot;RDC_ITEM_PAY_TO_VENDOR\&quot; WHERE \&quot;SITE_ID\&quot; = '&quot; + context.opco + &quot;' AND \&quot;IS_DELETED\&quot; is false&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -593,13 +593,13 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:XFBcrPFdGmvYKW6VH9bmW8k3/zzMZl7X+wQyAM6kLtiqHPWlq6tzbLBz/AdqPSGO"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:EdoDqOP/5xM1OHwILQZU170nKGgcs3Jv22Rj1ASEf4kT5qscmiOsftXKe2vNLZea"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT 'ANTICIPATED_DEMAND', COUNT(*) FROM immktnpf &#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_DETAIL', COUNT(*) FROM usiajfpf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_HEADER', COUNT(*) FROM usiajfpf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_INVENTORY', COUNT(*) FROM immht7pf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_RELATIONSHIP', COUNT(*) FROM usifafpf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_TRUE_VENDOR', COUNT(*) FROM usiamqrf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'VENDOR_ITEM', COUNT(*) FROM immatwtf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'ORDER_PROCESS_DETAIL', COUNT(*) FROM opnib7pf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'RDC_ITEM_PAY_TO_VENDOR', COUNT(*) FROM usibmirf&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT 'ANTICIPATED_DEMAND', COUNT(*) FROM immktnpf &#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_DETAIL', COUNT(*) FROM usiajfpf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_INVENTORY', COUNT(*) FROM immht7pf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_RELATIONSHIP', COUNT(*) FROM usifafpf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'ITEM_TRUE_VENDOR', COUNT(*) FROM usiamqrf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'VENDOR_ITEM', COUNT(*) FROM immatwtf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'ORDER_PROCESS_HEADER', COUNT(*) FROM opnjb6pf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'ORDER_PROCESS_DETAIL', COUNT(*) FROM opnib7pf&#xD;&#xA;UNION&#xD;&#xA;SELECT 'RDC_ITEM_PAY_TO_VENDOR', COUNT(*) FROM usibmirf&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="context.SUS_Additional_Params"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>

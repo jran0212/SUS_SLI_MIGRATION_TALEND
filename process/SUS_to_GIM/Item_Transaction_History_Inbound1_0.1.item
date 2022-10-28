@@ -8,14 +8,14 @@
     <contextParameter comment="" name="GIM_AdditionalParams" prompt="GIM_AdditionalParams?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="" internalId="_oZ2a9DmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_Database" prompt="GIM_Database?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="GIM" internalId="_oZ2a9TmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="postgres" internalId="_oZ2a9jmeEe2Kn_GZW_vgjg"/>
-    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:J4p3IAOcX5Lw62/7uzsX2AAPbXCmBxaz6iTVR3TrrzMBbeeE" internalId="_oZ2a9zmeEe2Kn_GZW_vgjg"/>
+    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:oYuHkSS0f0uJ6Ug2NzJQzXGJ9MB/if8u4pbOjipp8XHqSZhI" internalId="_oZ2a9zmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_Port" prompt="GIM_Port?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="5432" internalId="_oZ2a-DmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_Schema_Inventory" prompt="GIM_Schema_Inventory?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="inventory" internalId="_oZ2a-TmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="merch-qa-pg-master-db.merchandising-platform-np.us-east-1.aws.sysco.net" internalId="_oZ2a-jmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_AdditionalParams" prompt="LOCAL_AdditionalParams?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="" internalId="_oZ2a-zmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_Database_Test" prompt="LOCAL_Database_Test?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="test" internalId="_oZ2a_DmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_Login" prompt="LOCAL_Login?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="postgres" internalId="_oZ2a_TmeEe2Kn_GZW_vgjg"/>
-    <contextParameter comment="" name="LOCAL_Password" prompt="LOCAL_Password?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:3JwFTd0VE3m+F/c0vKTWMbWbmZBKxfCylXwckDVIRCn+0A==" internalId="_oZ2a_jmeEe2Kn_GZW_vgjg"/>
+    <contextParameter comment="" name="LOCAL_Password" prompt="LOCAL_Password?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:7yLjA10Evfzmf89DKeRGz3QfUOLXHr0hU4+bv+YHsZYn6Q==" internalId="_oZ2a_jmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_Port" prompt="LOCAL_Port?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="5432" internalId="_oZ2a_zmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_Schema_Public" prompt="LOCAL_Schema_Public?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="public" internalId="_oZ2bADmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_Server" prompt="LOCAL_Server?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="127.0.0.1" internalId="_oZ2bATmeEe2Kn_GZW_vgjg"/>
@@ -47,25 +47,25 @@
     <contextParameter comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="naming=system;errors=full;" internalId="_oZ2bGzmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C056IRDD" internalId="_oZ2bHDmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C056IRDD" internalId="_oZ2bHTmeEe2Kn_GZW_vgjg"/>
-    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:wxXceZb3JHFSvJ2NaWUCG5m8e0QKC61TP4XLllv/d74JxL5rWg==" internalId="_oZ2bHjmeEe2Kn_GZW_vgjg"/>
+    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:AalRJMrXA1vOOtxuCZGqGfxL8cpixEKQzs5Qe+kENOgtdeLeNQ==" internalId="_oZ2bHjmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS242K.na.sysco.net" internalId="_oZ2bHzmeEe2Kn_GZW_vgjg"/>
   </context>
   <context confirmationNeeded="false" name="PROD">
-    <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="009" internalId="_oZ2bIDmeEe2Kn_GZW_vgjg"/>
-    <contextParameter comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="AS009A" internalId="_oZ2bITmeEe2Kn_GZW_vgjg"/>
-    <contextParameter comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="009" internalId="_oZ2bIjmeEe2Kn_GZW_vgjg"/>
+    <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="344" internalId="_oZ2bIDmeEe2Kn_GZW_vgjg"/>
+    <contextParameter comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="AS344A" internalId="_oZ2bITmeEe2Kn_GZW_vgjg"/>
+    <contextParameter comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="344" internalId="_oZ2bIjmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="svop" name="svop" prompt="svop?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="00000000000000000000000000000020220101000000000000" internalId="_oZ2bIzmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_AdditionalParams" prompt="GIM_AdditionalParams?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="" internalId="_oZ2bJDmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_Database" prompt="GIM_Database?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="GIM" internalId="_oZ2bJTmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="gimuser" internalId="_oZ2bJjmeEe2Kn_GZW_vgjg"/>
-    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:CIiwOFh2i2XGPlfSWqEEIzoxvAovwvqvAnohpEExXwLbnSqzxRFt3VWFDM0=" internalId="_oZ2bJzmeEe2Kn_GZW_vgjg"/>
+    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:by/Y2xrvaIiJnXaLeVIwWStL98hb6bskkEHFgwDnXMA6OJEfT5qtv3QBPWc=" internalId="_oZ2bJzmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_Port" prompt="GIM_Port?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="5432" internalId="_oZ2bKDmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_Schema_Inventory" prompt="GIM_Schema_Inventory?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="inventory" internalId="_oZ2bKTmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="integrated-planning-instance-1.c0frwcpwfx1h.us-east-1.rds.amazonaws.com" internalId="_oZ2bKjmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_AdditionalParams" prompt="LOCAL_AdditionalParams?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="" internalId="_oZ2bKzmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_Database_Test" prompt="LOCAL_Database_Test?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="test" internalId="_oZ2bLDmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_Login" prompt="LOCAL_Login?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="postgres" internalId="_oZ2bLTmeEe2Kn_GZW_vgjg"/>
-    <contextParameter comment="" name="LOCAL_Password" prompt="LOCAL_Password?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:CR9WcmuxTqvCFrA8zMsm7MKEau/cKTFgP9xLZzBpKDQb0A==" internalId="_oZ2bLjmeEe2Kn_GZW_vgjg"/>
+    <contextParameter comment="" name="LOCAL_Password" prompt="LOCAL_Password?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:eIs4coVnA3Cz2fFGZq/CisjbwhJbtPARHK/+1Jf7ATiYnQ==" internalId="_oZ2bLjmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_Port" prompt="LOCAL_Port?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="5432" internalId="_oZ2bLzmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_Schema_Public" prompt="LOCAL_Schema_Public?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="public" internalId="_oZ2bMDmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="LOCAL_Server" prompt="LOCAL_Server?" promptNeeded="false" repositoryContextId="_N_aNcPIWEeyQ56Px76rksQ" type="id_String" value="127.0.0.1" internalId="_oZ2bMTmeEe2Kn_GZW_vgjg"/>
@@ -97,11 +97,13 @@
     <contextParameter comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="naming=system;errors=full;" internalId="_oZ2bSzmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="SCDBFP10" internalId="_oZ2bTDmeEe2Kn_GZW_vgjg"/>
     <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="PRJAR000" internalId="_oZ2bTTmeEe2Kn_GZW_vgjg"/>
-    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:zF5BR/6IWVgGcurcqwjZh1DCkEVsu3lfVw1MkKlVYZkwofehBq0=" internalId="_oZ2bTjmeEe2Kn_GZW_vgjg"/>
-    <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS009A.na.sysco.net" internalId="_oZ2bTzmeEe2Kn_GZW_vgjg"/>
+    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:hJ650DIHBiyuLRrdsHzyq7uv0OvUGl1tbGZVTxHCbEGCmezzjLo=" internalId="_oZ2bTjmeEe2Kn_GZW_vgjg"/>
+    <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS344A.na.sysco.net" internalId="_oZ2bTzmeEe2Kn_GZW_vgjg"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
+    <elementParameter field="TEXT" name="JOB_RUN_VM_ARGUMENTS" value="{&quot;JOB_RUN_VM_ARGUMENTS&quot;:[&quot;-Xms512M&quot;,&quot;-Xmx4096M&quot;]}" show="false"/>
+    <elementParameter field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" value="true" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
@@ -142,7 +144,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:pw4wuBjGl0sUj7WrBnAbGJl1dvet24OqIlws6YQE" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:UOb+SUJ+6bNqfb/d+YcuSdybCaYEeyj+AEMo4P+Q" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -177,14 +179,14 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pUOwymE4SVxYjoU6IlDaNgozhnVhJw15pZsW1zmA" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:+vh80XDnwsWok3oZhHUZKruFPTwDafqTLeqY66gR" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="false" show="false"/>
     <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false" show="false"/>
     <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" value="" show="false"/>
     <elementParameter field="CHECK" name="HEADER_ENABLED" value="false" show="false"/>
@@ -219,7 +221,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:hPcZclLQv3AaL/KbBUxTo92NtGAtrRYr6Q+cQI66dikcU6YReQ+BO8ZEMAvqbB08"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:yJqKQjvlIXYw/+utNRUPFNcs+gix2lrMFY739J/P9CIeMBpKubWGGKZX81WPAZGv"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -946,6 +948,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="416">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_1" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -957,7 +960,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:C3p7ErNUfbzWtQxWFHt36RdIJ5yoHSl7mNgGbZmVmWMW771jFUQF1ZTzmWTvUDjd"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:p+Nphgx9iOIFdfFDVmSjx5lfm0L1k4N1AeoplIhElJlBtHxHz1g/6xwn4/328acb"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -1334,7 +1337,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_1">
@@ -2130,7 +2133,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:iaTIYUrx7+lODQQF6rLHJXiLrlfaZrp0bqoTj7eaSJ56TE7s0O3MQEaVIOT+shXu"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:CfdpdpbvtysAhuiWmUPU7/CrEY4TjkAT78h0hM/b7TkQlZJOO+v6gy71O44YjmJn"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -2857,6 +2860,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="512">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_2" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -2868,7 +2872,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:LA0nOUNMT8HlMpj+RARromsTvMQQzvZ/N53MYBqVGX3+h9LcLPz2Pfeh6YixCG1X"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:1tWbNXD7g2mrAhRTHbFMwBtONvLpw57+d4CZLlK+iT93uXuNI4+aMymLrXk6igvD"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -3245,7 +3249,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_2">
@@ -3687,7 +3691,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:4gtXK1We3i5LwY7VQO1Ufu//SjHhbhsYErlomnCMYKr0VIqLPXvxQFxHiDAqtb1i"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pzI+yHcFj261psJiiToDUR9BeERVfuuBpC6j6vXPnHxAaJcSLsM1r1rtA7UPiLNT"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -4414,6 +4418,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_3" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -4425,7 +4430,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:btaKa9TP6FpBrvYjNRVaVBjoYGMILb86aNFExJclYYKGm8IRvjh+D3zCAQnvXOOi"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:CnLreSES7lpew/Yqd5SkBAGLOK5zrIJg8zayCSx+WGCpFMxF+wVY0LIxY2O2SzRS"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -4802,7 +4807,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_3">
@@ -5244,7 +5249,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:FTJGC6ComhnqQdyNY10qc7EF31x0UmV+abJi9/vOFT9PtTOI6IVjVymxn/wHMVKY"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:OeAdd6B0hl/RPfx+DwIaNyucgqV1Jv/wjrGk4OKut6PWBoPGmgxxeKTiyCC4KRxn"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -5971,6 +5976,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="704">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_4" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -5982,7 +5988,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:N+jsK6C7znoEArWv7JdGKxexZf87YgYCfwKX1v3EYDHyGIMJMreQ+c6V28WekkQq"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Zi2AT80Ub16OwcSZYliJDrzXb1+BOARzqoevtRR3FLRZV1MZb2cvwUsDyi5pq1We"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -6359,7 +6365,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_4">
@@ -6801,7 +6807,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:LLASZgRn5WaSI8VcWvykpxHQzY0ubnnpPrCMyAS4EWdi3c+wz4xaaM2/3U5y1zIu"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:QXTiSCTDc2CXlUePXYxFBRU6pZQIUj4jOYsc5ULBlhUrF80iifmesgr+/t+CwG4H"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -7528,6 +7534,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="800">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_5" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -7539,7 +7546,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:5npZrXPNwuvM/nE3VsyN+mGdEEdhWxDf4deVpv6FZYsU70R7AkJuJpobWEdF+eVA"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:u37khyNKqfTvbxdJatA9Y/QDu/1N6AGUtSwDg+TCI/QaytRvwaXnRl+QpSteJw8l"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -7916,7 +7923,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_5">
@@ -8358,7 +8365,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2E7mATax/6/NCfyBEHt5oYoDgTKrx6gujFaceL66ijqbH15fhKmg3R7vbbAcuWoU"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:87wKzemJtBwHGJc6t1hi4AGwo+KkZ8IainCr6B5mpt1WCdihttWmD8wiaIQ/Pj7o"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -9085,6 +9092,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="896">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_6" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -9096,7 +9104,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:DQvFGpvERvtDKVnsOuITlBGuOJAjYdL6Yc3jDDt+A6OzDjFGDFc9SI/neqCnrU4Q"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:vGzt9emMqO2BOEEJqf38P1ya6ENUbO5qxprZcXh0bs5VllH3qDxR8jyNJZJrDAEi"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -9473,7 +9481,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_6">
@@ -9915,7 +9923,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:BYphVpAYykioiWvT/XZzi2iPCmhBEFtDZa5peQ++5uQIvCnAYU6BCsTVVjxF2146"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:cv+ceRm+3Lxvn6N2/FcA2LQ8kZpiJy7LH4Va+IzSb+X4o2eEGs2mIktLwfpYj3CN"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -10642,6 +10650,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="992">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_7" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -10653,7 +10662,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:eHINxgJTWJohXQitEymz36GUush7n7tpPwfQ3517c2jFUzvjzemLp2YrlYi7gZ6g"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:EURlWHj0jR2RNVE3Jt4MVJ5PIknMbv71ON+/1om6VrLnsc14aV04z2zb7MrEGDdx"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -11030,7 +11039,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_7">
@@ -11472,7 +11481,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:q943lEmtGzE2V4z6R2IhY3aJffTtfa7Z8Gciz72DVwo+o+zf6Geb/atEGcIspTok"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:zb+zUmu0BQ8rduY9CgLyJpeVUknd+2qtNi+u1YK2L8uBEdTTQOICPtU+MW6YP6MU"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -12199,6 +12208,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="1088">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_8" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -12210,7 +12220,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:L32jQTMgbW/pTq0Yr5CcePAVNwpNvZdZdFD+tkWO7nPDYiLC+7KvgwS7SFkIHudd"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:RLTxIymJdyVVNiz6K/8YjLdFE4yzrdu+ZGBzlmuyBS637FMjINjbQ7dL6S9L9K1z"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -12587,7 +12597,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_8">
@@ -13029,7 +13039,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Yzwp6LbNQpbC+iyWhM1rDQh+ZZ33JGahvAx0MAaCZw/dVxS+4RwTwxqtMSFBzTAB"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Q8bwJ/u6IUPJYbqu56MsraGxN/mW5Bq0b8LvK7CUSyRko6gUjQNQ0A5wkBGAuAON"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -13756,6 +13766,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="1184">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_9" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -13767,7 +13778,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:PxIUCFik3heW22MCa+GoW9uyE3ggj8tZgUqMg9BSbDRWsgtsgHgk+ysZSY2YkXdx"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:DPDAJDN0DS3U2WRU+//FuEKyHsKLnmoaXBAzVaN7DjG2hf7UO++CHA0l7RU+GO+U"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -14144,7 +14155,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_9">
@@ -14586,7 +14597,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:cfw+C0oLdJnlAxgLkRakifEPpjJZ9f9ozpsz/ZUMUhHqxtwZmdEqcEccL05hoMzO"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Aqglg3Odng1ImyCTniTn8tASgA5mouNgGJGpDAVDqpGv6Pb/R01xX0uUFHCgBSqj"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -15313,6 +15324,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="1280">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_10" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -15324,7 +15336,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:rGZo+s7jAXlfRJqfLtzAXN/2zobIT0gV/z2R/W65XfW9qbA1WsEChrvT8l2P+YL3"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:vlpGj4Nn2k/znjKpSdvY8oWKwnQf62Cs2LlPBRQaintbP7/k1q22iMoj0JNG97RN"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -15701,7 +15713,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_10">
@@ -16143,7 +16155,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:lNc+qrwQmJbL7wYB3ZxBnXRgCo14sXrHzyxiGKmPMZbcOYg08WkuTDB8kfNJqrIz"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:NMRrRKP16up0SIQbSgyz4zlX9Kq8bcsM3un3ROBjjUln/GRP9n/TheDgJYirPkm6"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -16870,6 +16882,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="1376">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_11" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -16881,7 +16894,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:VxPWc4YWq7HVrrfhFvw49HE5vpXAUErdJ1A82z1Ls4GL2R4ZzpZ9RlKs4IEQrl9B"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:bu13DL+7EFg0CfMQmkG5GShfkzCpFSO+yWuIRF785IqOSNH+vlJhDh7WGzt5pEJo"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -17258,7 +17271,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_11">
@@ -17700,7 +17713,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:sS+jzTD/4id9VA0UAhNkXY09wNThCr5Vyq05CyrsHGsOVMrWYxQoY9y2UhGuzXNR"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:95WDosyKa2JNTABwwDpq26CiQd8T0QWkWap5Zcvk+LRoobQf/1jP0L2GnYFWyUjo"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -18427,6 +18440,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="1472">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_12" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -18438,7 +18452,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:PKVus3u+vPe1B0KpqrPWFB4yxJoNcKxIdBHQOU7r6iCoFYT0GTwkl6pMCu5DiFEw"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:kkieoUmdxKhIfMyEPbMa2WB6XnRMkXGffgwbSLgF0POZgoJxbj/dCdwb5UpJgdkK"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -18815,7 +18829,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_12">
@@ -19257,7 +19271,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:v8DrYeNt8A7y8cXpVPJKRqeb5WSzS9GpRCHdQiv2vzfXsM6se0x5h8d68vrwEybm"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:fVwIBVJ6iosSlfbi8prxp9YuNEaTxSrsyrH10sH6Uq0FpcI8Ab81s/dpkfHTr0pc"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -19984,6 +19998,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="1568">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_13" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -19995,7 +20010,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:UNCQJEtwzeeUqy85U831SJhyjAOw2XsqOXjW2m1RtsW7QAxogQ6RxtLqlF+dsxOX"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:XHo+7hLTQJer9NEiPQeKY3JNc5Q9vtI89Vh3pKQhCClwTxXzSEi8V9bPe9QgY5bM"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -20372,7 +20387,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_13">
@@ -20814,7 +20829,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:HYmCJVOZYk9zr2hUHAGPlPM1EgbUHEHEGw8FUEZ5CtLm4UVlZjQnLNDhRlMk3Pyj"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:SjWIl0L4fHOY7cayz2WAz88SwI1ovpyXsTyxWqhyEr8JR4VcKLtS0DVtAhGWZSHk"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -21541,6 +21556,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="1664">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_14" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -21552,7 +21568,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:lCbp/zDnqB/OENyr8gbki0Y2TiHCu+o3kjXRT4Vik6gYQVrc2nS+SAKPxLWSPSii"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:gS/dkZEkgVS+CKsZqsbuc4taothg1webl0/+K5wt4hBvxyrCqD4ETdIXP1X/f1/+"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -21929,7 +21945,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_14">
@@ -22371,7 +22387,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:m3UWsoKa4/flvFl3ymzDCazfgj0L48n9vZgxRuVZoNnaVhA0ym7lZRK/k65kl+WA"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:O8smmn0EGa1ItgEC4UjCZoyPwoYqVFsbsr2cEHLYLUqzMy7gZrt3RygUGF40v+ox"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -23098,6 +23114,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="1760">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_15" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -23109,7 +23126,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:RFX3s6z/pzxiZoC1N2cWkSCxEvjFng+8XKynF83LWcbiaCq+FfevoL7pYpi4W7QC"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2N5Dj3rAbY1nVaP6qGv+8gWRhPRO64pcfAe4JIVpFAgv0hRdLTtmdf/q1F0b9z3d"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -23486,7 +23503,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_15">
@@ -23928,7 +23945,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:MZBOJKsrM984jZHVRduRx8MGQ7okWpmiEUbl6ErShejbdDwPFRdoUtKFXPdEIGm8"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:T3tlP1XTuj036hbwYzMyZz4h7JQxQAZNfbhS/kZyCty6jTegO5ESR3aAmR+xryAE"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -24655,6 +24672,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="1856">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_16" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -24666,7 +24684,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Mxvn80KffQAp+bsDj3iprYMR+8JOYoA1Rt02t4JLYRzrcHmAsKfdY2XxEhl3TX/P"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:U7M3GJSRpgP1DNp8LsbascX59L4eW9DEadkH2U+YzJ7sOYk2YXTlxjXnPRAw8Zr3"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -25043,7 +25061,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_16">
@@ -25485,7 +25503,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pzz12hOI62PlJ9CEOfgrgPlFiedRnUiSen80nN+v/D44sTBajDRSpvcYUJpnoklr"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:mg6Pxm7MEa0z55Z4B8J1z2l8sfzYToVivFM7WdeCBzxCIfnMyACgiFW0GTL32M+/"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -26212,6 +26230,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="1952">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_17" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -26223,7 +26242,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Hpq+xEX71I3X5lzvMJ3KUdXykxjJmZ4Qm90Q1pR7yT2sROFFDWczn0mR32S5muhq"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:dViagQ1cvS3w4raZ6ud0V/pVOexmxhnnTV28G8sMP6qTB3hhqK7MGPDupnkYsziT"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -26600,7 +26619,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_17">
@@ -27042,7 +27061,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:nTYudMGGrds3hSAoRgjY1iiu9CFzsW2l/irhNyMsyl6CfVA1KqR875aRlWi+fbeW"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:GyucsE7mCUn5NWYdYMoAuZSc6zpsBre3YWqBuwpvq1KezzlW4WJMEKKIR8M0GBhs"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -27769,6 +27788,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="2048">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_18" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -27780,7 +27800,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:G9qgBhHClAE+rXZLVhEDTO2uYx9YjlKxZrkgllntGAIVbdQuXl741MMGzhP/S1ZA"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:rhgZGfkXXJSmLTNlVl/2Br1Py9G2JTCNDE4kpbouvj62R7fbG+SuhveczboeHffa"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -28157,7 +28177,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_18">
@@ -28599,7 +28619,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:+wS/zy+2gF9KkM+K8OTsO2nUu1JRWKQkER7dv+NG0voQUvBygMIuovhwSLRsG6CR"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:GChm9uKeTtkECFh6I6UqCtPFQ8E2Q9Hcx+BNb8aS5kG6xwXFLMK27lC/iHccqGFC"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -29326,6 +29346,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="2144">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_19" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -29337,7 +29358,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:WQiFFE2H98uJJ2TdZhSf/LALmqk93A4Xbiyhl9zLZE4G1sWbUz1O90u3Z2UhCw5w"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:/MFAhsx9fMyk1irPZFXSZUztGvpAPbu5Gb7kI55xl5zGUSEMJ1N8v6y+EaMH29FE"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -29714,7 +29735,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_19">
@@ -30156,7 +30177,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Zwp3yR/sc96nlPPiluJQD2B5l6OgKxx0a64PiStMCN/XrT/wwmyjWmBHnIYQsZRP"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:PuP5fwI34FvNrQdp92kZGwsIQn8X5ZT3NivWHmOIoO47Oeb4aNZVRXqtDhiprSCK"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -30883,6 +30904,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="2240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_20" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -30894,7 +30916,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:/teLX+t3L+39NYuv7GiWK6NsPHFG6ukuN2ElTszw2y4WY7TdouJZeElmklF6pP4B"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:rJnbOnT4c20LojpRn+sIvK00C8391nfGd3LYbCpaCOgarlqK+fKIGEn/4mg3Gyfa"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -31271,7 +31293,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_20">
@@ -31713,7 +31735,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:06EUv+8Aiqt1ElIIkbNzxtLb3s2Z5uKWGrydvd1LUklOL1YOcpa9KKYlA/gOV4U6"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ZJr4sAzyJmyVoeiMInUrVBjnwYmZgufyou/blHsj2bM0Sjlh4Dl9nOrjBc7Sz6Kk"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -32440,6 +32462,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="2336">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_21" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -32451,7 +32474,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:tNv8FFajegIR5UefRg2hMMpUB0QZvtdFPh6O4D7/IfGacJC5DNA9S7YlFvGn4/wp"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:3J9jdhA4NSbKXSsU4ZV3l+1tJ39TeeLlFD3UPWGPI91Bfz9t4zq24qaA31wfAumc"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -32828,7 +32851,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_21">
@@ -33270,7 +33293,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:LdZ8a7FzDBUypTtfox8vakrEwWOCWAp5tM6wnU5ewKbZyuKpOHSw3OYM6b4myT+O"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:JhUnq2rNmo0Thbt+4VQnkbWLcNDI33Pv8d2f3dXOnAOnMfOtyAL/eObhJ5iynG/2"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -33997,6 +34020,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="2432">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_22" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -34008,7 +34032,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:yNhmgTDFyO6+aBjvGdTGdQALtPOE7ooC1ayZylH9D9uIGvUoS1PYbKatr1DBFuki"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:BjuI8EQjRsU5l3F2Pu4b52nK6gzvTkugbEUaOizy4EdQT6Z59rZOMTPxi8XycWpM"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -34385,7 +34409,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_22">
@@ -34827,7 +34851,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:MAvZFMuPbTSkHWyuYw6/29J0X1++sL9/hRcrZF6zIywbt422hLUd/3FpdUJaN+xA"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:19xRF0DEkw2eJk67mtXy5OME+lMBgonV5iQNuqdCAkdWgRums+Li8IfRRKwhtuZh"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -35554,6 +35578,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="2528">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_23" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -35565,7 +35590,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:LhDviM6pNJyBY5M0vifhP21zcPUaj+YgUs6lPNnkW8UqWC1aMg9QcmCdq2NNJAd2"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:MsAMzSTxP2IAvBOZvpay96h7QcbR9g3eHnVVNk5dwxMLksdStW7QrsO6XcPB56YE"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -35942,7 +35967,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_23">
@@ -36384,7 +36409,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ce1k8ZdkGkaeKc+iPi2ELUgFtetgGJXlwR2yHsXK2o62X6sROXujOcqBIv/p4kOd"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:04IfuagjxIeFX9nUs4sGot6hdLPaqOMOmLbrVlNdzgWaWOeU91fQIHGoKZ+9OKKR"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -37111,6 +37136,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="2624">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_24" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -37122,7 +37148,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pPxED6hc11GgKL4bPc6VXr/dZ4HH9piI79SihCVqZdJTwpGmgonEmf3Xw66BB/Iv"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:OnBZ+plQO1+T+2yn5oWTpIYn/QdhfDCJMXLCz+F2FdXAZysKRamzFQz2Z7473XnX"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -37499,7 +37525,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_24">
@@ -37941,7 +37967,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:UuCV8eDvLbheOWGMz/z9o9fstmCvWaRomKI1XWr74d22jYVusyJvKtX5OeUEBG8x"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:f0AFEGKHGbkae08rIv33jzQtwxAgsbDB26jRbLoQZDnv56NQA89885dtavR+pKQb"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;IMMMTUPF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -38668,6 +38694,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="2720">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_25" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9djBgPXiEeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -38679,7 +38706,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Inventory"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:igsLbyvZrNfViUHrs49uqC4E5AURwqLMq8k/4/7wR8ds/pCZmxF7Lm+iqAN0q4RU"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:fclmBhSty0K/7LqAttz7PkQjSJreOqrpmQtdQTfGkkyX0Doe8VNocTJCjaqTiJUa"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ITEM_TRANSACTION_HISTORY&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -39056,7 +39083,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ITEM_TRANSACTION_HISTORY" name="tDBOutput_25">

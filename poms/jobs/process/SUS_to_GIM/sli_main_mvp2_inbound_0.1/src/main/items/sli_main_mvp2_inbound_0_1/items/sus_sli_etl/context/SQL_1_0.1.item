@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd">
+  <talendfile:ContextType xmi:id="_i2W4EOLHEeq1xt73eUwDrg" confirmationNeeded="false" name="Default">
+    <contextParameter xmi:id="_i2W4EeLHEeq1xt73eUwDrg" comment="" name="between1" prompt="between1?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20140101 AND 20140631"/>
+    <contextParameter xmi:id="_i2W4EuLHEeq1xt73eUwDrg" comment="" name="between2" prompt="between2?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20140701 AND 20141231"/>
+    <contextParameter xmi:id="_i2W4E-LHEeq1xt73eUwDrg" comment="" name="between3" prompt="between3?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20150101 AND 20150631"/>
+    <contextParameter xmi:id="_i2W4FOLHEeq1xt73eUwDrg" comment="" name="between4" prompt="between4?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20150701 AND 20151231"/>
+    <contextParameter xmi:id="_i2W4FeLHEeq1xt73eUwDrg" comment="" name="between5" prompt="between5?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20160101 AND 20160631"/>
+    <contextParameter xmi:id="_i2W4FuLHEeq1xt73eUwDrg" comment="" name="between6" prompt="between6?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20160701 AND 20161231"/>
+    <contextParameter xmi:id="_i2W4F-LHEeq1xt73eUwDrg" comment="" name="between7" prompt="between7?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20170101 AND 20170631"/>
+    <contextParameter xmi:id="_i2W4GOLHEeq1xt73eUwDrg" comment="" name="between8" prompt="between8?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20170701 AND 20171231"/>
+    <contextParameter xmi:id="_i2W4GeLHEeq1xt73eUwDrg" comment="" name="between9" prompt="between9?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20180101 AND 20180331"/>
+    <contextParameter xmi:id="_i2W4GuLHEeq1xt73eUwDrg" comment="" name="between10" prompt="between10?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20180401 AND 20180631"/>
+    <contextParameter xmi:id="_i2W4G-LHEeq1xt73eUwDrg" comment="" name="between11" prompt="between11?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20180701 AND 20180931"/>
+    <contextParameter xmi:id="_i2W4HOLHEeq1xt73eUwDrg" comment="" name="between12" prompt="between12?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20181001 AND 20181231"/>
+    <contextParameter xmi:id="_i2W4HeLHEeq1xt73eUwDrg" comment="" name="between13" prompt="between13?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20190101 AND 20190231"/>
+    <contextParameter xmi:id="_i2W4HuLHEeq1xt73eUwDrg" comment="" name="between14" prompt="between14?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20190301 AND 20190431"/>
+    <contextParameter xmi:id="_i2W4H-LHEeq1xt73eUwDrg" comment="" name="between15" prompt="between15?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20190501 AND 20190631"/>
+    <contextParameter xmi:id="_i2W4IOLHEeq1xt73eUwDrg" comment="" name="between16" prompt="between16?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20190701 AND 20190831"/>
+    <contextParameter xmi:id="_i2W4IeLHEeq1xt73eUwDrg" comment="" name="between17" prompt="between17?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20190901 AND 20191031"/>
+    <contextParameter xmi:id="_i2W4IuLHEeq1xt73eUwDrg" comment="" name="between18" prompt="between18?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20191101 AND 20191231"/>
+    <contextParameter xmi:id="_i2W4I-LHEeq1xt73eUwDrg" comment="" name="between19" prompt="between19?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20200101 AND 20200231"/>
+    <contextParameter xmi:id="_i2W4JOLHEeq1xt73eUwDrg" comment="" name="between20" prompt="between20?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20200301 AND 20200431"/>
+    <contextParameter xmi:id="_i2W4JeLHEeq1xt73eUwDrg" comment="" name="between21" prompt="between21?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20200501 AND 20200631"/>
+    <contextParameter xmi:id="_i2W4JuLHEeq1xt73eUwDrg" comment="" name="between22" prompt="between22?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20200701 AND 20200831"/>
+    <contextParameter xmi:id="_xwUqYOPiEequqdovsWUoKw" comment="" name="between23" prompt="between23?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20200901 AND 20201031"/>
+    <contextParameter xmi:id="_xwUqYePiEequqdovsWUoKw" comment="" name="between24" prompt="between24?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20201101 AND 20201231"/>
+    <contextParameter xmi:id="_xwUqYuPiEequqdovsWUoKw" comment="" name="between25" prompt="between25?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20210101 AND 20211231"/>
+    <contextParameter xmi:id="_lrHBEDgPEe2bVqj4pUS4Yw" comment="" name="between26" prompt="between26?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20220101 AND 20221231"/>
+  </talendfile:ContextType>
+  <talendfile:ContextType xmi:id="_p87bkDgPEe2bVqj4pUS4Yw" confirmationNeeded="false" name="PROD">
+    <contextParameter xmi:id="_p87bkTgPEe2bVqj4pUS4Yw" comment="" name="between1" prompt="between1?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20140101 AND 20140631"/>
+    <contextParameter xmi:id="_p87bkjgPEe2bVqj4pUS4Yw" comment="" name="between2" prompt="between2?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20140701 AND 20141231"/>
+    <contextParameter xmi:id="_p87bkzgPEe2bVqj4pUS4Yw" comment="" name="between3" prompt="between3?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20150101 AND 20150631"/>
+    <contextParameter xmi:id="_p87blDgPEe2bVqj4pUS4Yw" comment="" name="between4" prompt="between4?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20150701 AND 20151231"/>
+    <contextParameter xmi:id="_p87blTgPEe2bVqj4pUS4Yw" comment="" name="between5" prompt="between5?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20160101 AND 20160631"/>
+    <contextParameter xmi:id="_p87bljgPEe2bVqj4pUS4Yw" comment="" name="between6" prompt="between6?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20160701 AND 20161231"/>
+    <contextParameter xmi:id="_p87blzgPEe2bVqj4pUS4Yw" comment="" name="between7" prompt="between7?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20170101 AND 20170631"/>
+    <contextParameter xmi:id="_p87bmDgPEe2bVqj4pUS4Yw" comment="" name="between8" prompt="between8?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20170701 AND 20171231"/>
+    <contextParameter xmi:id="_p87bmTgPEe2bVqj4pUS4Yw" comment="" name="between9" prompt="between9?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20180101 AND 20180331"/>
+    <contextParameter xmi:id="_p87bmjgPEe2bVqj4pUS4Yw" comment="" name="between10" prompt="between10?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20180401 AND 20180631"/>
+    <contextParameter xmi:id="_p87bmzgPEe2bVqj4pUS4Yw" comment="" name="between11" prompt="between11?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20180701 AND 20180931"/>
+    <contextParameter xmi:id="_p87bnDgPEe2bVqj4pUS4Yw" comment="" name="between12" prompt="between12?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20181001 AND 20181231"/>
+    <contextParameter xmi:id="_p87bnTgPEe2bVqj4pUS4Yw" comment="" name="between13" prompt="between13?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20190101 AND 20190231"/>
+    <contextParameter xmi:id="_p87bnjgPEe2bVqj4pUS4Yw" comment="" name="between14" prompt="between14?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20190301 AND 20190431"/>
+    <contextParameter xmi:id="_p87bnzgPEe2bVqj4pUS4Yw" comment="" name="between15" prompt="between15?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20190501 AND 20190631"/>
+    <contextParameter xmi:id="_p87boDgPEe2bVqj4pUS4Yw" comment="" name="between16" prompt="between16?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20190701 AND 20190831"/>
+    <contextParameter xmi:id="_p87boTgPEe2bVqj4pUS4Yw" comment="" name="between17" prompt="between17?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20190901 AND 20191031"/>
+    <contextParameter xmi:id="_p87bojgPEe2bVqj4pUS4Yw" comment="" name="between18" prompt="between18?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20191101 AND 20191231"/>
+    <contextParameter xmi:id="_p87bozgPEe2bVqj4pUS4Yw" comment="" name="between19" prompt="between19?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20200101 AND 20200231"/>
+    <contextParameter xmi:id="_p87bpDgPEe2bVqj4pUS4Yw" comment="" name="between20" prompt="between20?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20200301 AND 20200431"/>
+    <contextParameter xmi:id="_p87bpTgPEe2bVqj4pUS4Yw" comment="" name="between21" prompt="between21?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20200501 AND 20200631"/>
+    <contextParameter xmi:id="_p87bpjgPEe2bVqj4pUS4Yw" comment="" name="between22" prompt="between22?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20200701 AND 20200831"/>
+    <contextParameter xmi:id="_p87bpzgPEe2bVqj4pUS4Yw" comment="" name="between23" prompt="between23?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20200901 AND 20201031"/>
+    <contextParameter xmi:id="_p87bqDgPEe2bVqj4pUS4Yw" comment="" name="between24" prompt="between24?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20201101 AND 20201231"/>
+    <contextParameter xmi:id="_p87bqTgPEe2bVqj4pUS4Yw" comment="" name="between25" prompt="between25?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20210101 AND 20211231"/>
+    <contextParameter xmi:id="_p87bqjgPEe2bVqj4pUS4Yw" comment="" name="between26" prompt="between26?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="20220101 AND 20221231"/>
+  </talendfile:ContextType>
+</xmi:XMI>

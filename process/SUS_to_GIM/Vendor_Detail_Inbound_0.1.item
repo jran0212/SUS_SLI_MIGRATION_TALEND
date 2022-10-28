@@ -8,33 +8,33 @@
     <contextParameter comment="" name="GIM_AdditionalParams" prompt="GIM_AdditionalParams?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="" internalId="_1GL1hA5uEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Database" prompt="GIM_Database?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="GIM" internalId="_1GL1hQ5uEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="postgres" internalId="_1GL1hg5uEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:/dQq21cd9hulHIOP0k4gnX2ZTBtzC1fJdhVe2ML/LNQdO3On" internalId="_1GL1hw5uEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:721b8OSOOAb7RYdyBxmVBngGYQkrsgEfqbXbairX0KYg74In" internalId="_1GL1hw5uEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Port" prompt="GIM_Port?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="5432" internalId="_1GL1iA5uEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Schema_Migrating_Test" prompt="GIM_Schema_Migrating_Test?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="migratingtest" internalId="_1GL1iQ5uEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="merch-qa-pg-master-db.merchandising-platform-np.us-east-1.aws.sysco.net" internalId="_1GL1ig5uEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="naming=system;errors=full;" internalId="_1GL1iw5uEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C056IRDD" internalId="_1GL1jA5uEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="C056IRDD" internalId="_1GL1jQ5uEe2Tk6JrIvvEdg"/>
-    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:MTJiRjvJpGtODwu9ZNhGYQiQOoA/+p6Srktzr/9ZfqsIjWh0BA==" internalId="_1GL1jg5uEe2Tk6JrIvvEdg"/>
+    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:c6OjneGboJzkSQJaP1wvD/S9+mEc2d74scnKuEewBLr5GB7KdQ==" internalId="_1GL1jg5uEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS242K.na.sysco.net" internalId="_1GL1jw5uEe2Tk6JrIvvEdg"/>
     <contextParameter comment="" name="GIM_Schema_Master" prompt="GIM_Schema_Master?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="master" internalId="_bbIvwDQiEe2zp5QzfN-LDQ"/>
   </context>
   <context confirmationNeeded="false" name="PROD">
-    <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="009" internalId="_VxZlMBn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="AS009A" internalId="_VxZlMRn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="009" internalId="_VxZlMhn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="Target OpCo Number" name="opco" prompt="opco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="344" internalId="_VxZlMBn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="as400 Server" name="server" prompt="server?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="AS344A" internalId="_VxZlMRn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="Source OpCo Number" name="sopco" prompt="sopco?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="344" internalId="_VxZlMhn5Ee2S4de24gXtjA"/>
     <contextParameter comment="svop" name="svop" prompt="svop?" promptNeeded="false" repositoryContextId="_0_mtgAzbEe2eWPQCKoTP8Q" type="id_String" value="00000000000000000000000000000020220101000000000000" internalId="_VxZlMxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_AdditionalParams" prompt="GIM_AdditionalParams?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="" internalId="_VxZlNBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Database" prompt="GIM_Database?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="GIM" internalId="_VxZlNRn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Login" prompt="GIM_Login?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="gimuser" internalId="_VxZlNhn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:Poy+zUBi7r5MqpBaNBV9R/n2/rWPlWsnEyuu9jjkL1Zd74sq+bKuq8YzyTc=" internalId="_VxZlNxn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="GIM_Password" prompt="GIM_Password?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_Password" value="enc:system.encryption.key.v1:XUPtcYDN3gbXF0LN0+CVBOjJzoGYeAqFFNxseGgiZzv1p1F/ovF2XTMcB8w=" internalId="_VxZlNxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Port" prompt="GIM_Port?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="5432" internalId="_VxZlOBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Schema_Migrating_Test" prompt="GIM_Schema_Migrating_Test?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="migratingtest" internalId="_VxZlORn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Server" prompt="GIM_Server?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="integrated-planning-instance-1.c0frwcpwfx1h.us-east-1.rds.amazonaws.com" internalId="_VxZlOhn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Login" prompt="SUS_Login?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="PRJAR000" internalId="_VxZlOxn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:LgPDvj+UPzIi+TL8LjMQ16N12cRIB4Wxn4Gep5DcpqUxXqt+pxg=" internalId="_VxZlPBn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="SUS_Password" prompt="SUS_Password?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_Password" value="enc:system.encryption.key.v1:AKSHRQX8Vtd1Prsxb4THx7lKhBjXPbIUbsVW0Hqh1iJuF9HVgLg=" internalId="_VxZlPBn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Database" prompt="SUS_Database?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="SCDBFP10" internalId="_VxZlPRn5Ee2S4de24gXtjA"/>
-    <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS009A.na.sysco.net" internalId="_VxZlPhn5Ee2S4de24gXtjA"/>
+    <contextParameter comment="" name="SUS_Server" prompt="SUS_Server?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="AS344A.na.sysco.net" internalId="_VxZlPhn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="SUS_Additional_Params" prompt="SUS_Additional_Params?" promptNeeded="false" repositoryContextId="_VeNiUPILEeyQ56Px76rksQ" type="id_String" value="naming=system;errors=full;" internalId="_VxZlPxn5Ee2S4de24gXtjA"/>
     <contextParameter comment="" name="GIM_Schema_Master" prompt="GIM_Schema_Master?" promptNeeded="false" repositoryContextId="_Cn4oIPXSEeynBeV-b3d1ug" type="id_String" value="master" internalId="_bbIvwTQiEe2zp5QzfN-LDQ"/>
   </context>
@@ -80,7 +80,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:lYC01uwXiqyJ1lsgwFDo/rT6i1BzeiEHUD8ACqCs" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:yUUVH5njofsqRpwudk2lSvzycyalzUaVnkeJ/Bjg" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -115,14 +115,14 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:hRRunyguTTkBzWiDByFsnE8nthCZhNNfktATacrO" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6oTNP3LI+8fTWnTlvlnFg4JL62MzQi/0xhwYIY8W" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true" show="false"/>
-    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="false" show="false"/>
     <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false" show="false"/>
     <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" value="" show="false"/>
     <elementParameter field="CHECK" name="HEADER_ENABLED" value="false" show="false"/>
@@ -156,7 +156,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:SzU/9/QWsxEs29zjM3mW5qhdC2T27PVXT+ysjDXoNqb160DsknOHkGtSITH6D0gp"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:QMxWAGM7q6ANZaBJaMJHtgvWQDE9YihLlEypJg1Nc9a0uQJgHT5a/CQeTojmuJ23"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;USVBA2PF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -649,6 +649,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_1" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_saet0PX9EeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -660,7 +661,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Master"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:OAbNGgLEydXKyPWM8NiNWNXxh7S+i42XpWKDzjSo6OZHKidUfIZBshqfvo3i1+mN"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:CBKsLSIdey9l4hOaLX7iZIa48TEFZXc4Vgsbg58hs/s7QUhkKIuoCtNVp6YnGsxn"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;VENDOR_DETAIL&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -732,7 +733,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="VENDOR_DETAIL" name="tDBOutput_1">
@@ -1162,7 +1163,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:n4/GS02HaAsWtSu1hv+6dHTzsHg72H1wHGJ5//pDTmZ5R+UOBebKR49QpJb5AM+3"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:kPoN0r62z9xcZK2LZCp0vdj5L7NhjiQCMoaaah91a7yhWSdyizGlBX3PbHCTfq15"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;USVBMKRF&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -1325,7 +1326,10 @@
       <column comment="" key="true" length="10" name="VENDOR_NO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="50" name="EMAIL_ADDRESS" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" defaultValue="''::character varying'" key="false" length="50" name="EMAIL_ADDRESS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="MKRF_SVOP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
@@ -1335,7 +1339,8 @@
       <outputTables sizeState="INTERMEDIATE" name="VENDOR_DETAIL_UPDATE">
         <mapperTableEntries name="SITE_ID" expression="context.opco" type="id_String"/>
         <mapperTableEntries name="VENDOR_NO" expression="row2.MKVNBR " type="id_String"/>
-        <mapperTableEntries name="EMAIL_ADDRESS" expression="row2.MKEMAL " type="id_String"/>
+        <mapperTableEntries name="EMAIL_ADDRESS" expression="row2.MKEMAL " type="id_String" nullable="true"/>
+        <mapperTableEntries name="MKRF_SVOP" expression="context.svop" type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row2" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="MKCOCO" type="id_String"/>
@@ -1367,6 +1372,7 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_2" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_saet0PX9EeynBeV-b3d1ug" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -1378,7 +1384,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Master"/>
     <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:wuIaJNMfPDJx7if29nVRitWf9BzBn5e5ZSzAYUSR/aZoUXPGSD60NiQOKWNZ+pm8"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:9khB3qMPJfzPCOP62JopKlkhWFBr/hluS0C0OaDYv10IAwiQ7ft2EbU0VrYNU1aE"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;VENDOR_DETAIL&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE"/>
@@ -1415,12 +1421,17 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKRF_SVOP"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="VENDOR_DETAIL" name="tDBOutput_2">
@@ -1430,7 +1441,10 @@
       <column comment="" key="true" length="10" name="VENDOR_NO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="50" name="EMAIL_ADDRESS" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" defaultValue="''::character varying'" key="false" length="50" name="EMAIL_ADDRESS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="MKRF_SVOP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
@@ -1441,7 +1455,10 @@
       <column comment="" key="true" length="10" name="VENDOR_NO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="50" name="EMAIL_ADDRESS" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" defaultValue="''::character varying'" key="false" length="50" name="EMAIL_ADDRESS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="MKRF_SVOP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -1450,10 +1467,346 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="32" posY="576">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;Starting the Migrating Data from USVBMKRF to VENDOR_DETAIL...........&quot;);&#xA;System.out.println(&quot;Target OpCO No    : &quot; + context.opco);&#xA;System.out.println(&quot;Source OpCO No    : &quot; + context.sopco);&#xA;System.out.println(&quot;Migration SVOP    : &quot; + context.svop);&#xA;System.out.println(&quot;DateTime          : &quot; + java.time.LocalDate.now());  &#xA;System.out.println(&quot;SUS DB2 Connection: &quot; + context.SUS_Server); &#xA;System.out.println(&quot;SUS DB2 Database  : &quot; + context.SUS_Database);  &#xA;System.out.println(&quot;PG Connection     : &quot; + context.GIM_Server);  &#xA;System.out.println(&quot;PG Database       : &quot; + context.GIM_Database);  "/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;Starting the Updating Data from USVBMKRF to VENDOR_DETAIL...........&quot;);&#xA;System.out.println(&quot;Target OpCO No    : &quot; + context.opco);&#xA;System.out.println(&quot;Source OpCO No    : &quot; + context.sopco);&#xA;System.out.println(&quot;Migration SVOP    : &quot; + context.svop);&#xA;System.out.println(&quot;DateTime          : &quot; + java.time.LocalDate.now());  &#xA;System.out.println(&quot;SUS DB2 Connection: &quot; + context.SUS_Server); &#xA;System.out.println(&quot;SUS DB2 Database  : &quot; + context.SUS_Database);  &#xA;System.out.println(&quot;PG Connection     : &quot; + context.GIM_Server);  &#xA;System.out.println(&quot;PG Database       : &quot; + context.GIM_Database);  "/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_2"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="32" posY="704">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;Starting the Migrating Data from USVBMKRF to VENDOR_DETAIL...........&quot;);&#xA;System.out.println(&quot;Target OpCO No    : &quot; + context.opco);&#xA;System.out.println(&quot;Source OpCO No    : &quot; + context.sopco);&#xA;System.out.println(&quot;Migration SVOP    : &quot; + context.svop);&#xA;System.out.println(&quot;DateTime          : &quot; + java.time.LocalDate.now());  &#xA;System.out.println(&quot;SUS DB2 Connection: &quot; + context.SUS_Server); &#xA;System.out.println(&quot;SUS DB2 Database  : &quot; + context.SUS_Database);  &#xA;System.out.println(&quot;PG Connection     : &quot; + context.GIM_Server);  &#xA;System.out.println(&quot;PG Database       : &quot; + context.GIM_Database);  "/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_3"/>
+  </node>
+  <node componentName="tAS400Input" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="704">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_3" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_EP3YQPIREeyQ56Px76rksQ" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400-9.8.jar"/>
+    <elementParameter field="TEXT" name="HOST" value="context.SUS_Server"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.SUS_Database"/>
+    <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="context.SUS_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Bn+b1nIgkkraorNx+MJTaU5d7vQzpFkCTfTmUgdFYUl7/cXHtR9RWHnlAvDjIgD4"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;USVBMKRF&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  USVBMKRF.MKCOCO, &#xA;  USVBMKRF.MKVNBR, &#xA;  USVBMKRF.MKVNNM, &#xA;  USVBMKRF.MKSAAC, &#xA;  USVBMKRF.MKDVCT, &#xA;  USVBMKRF.MKEMAL, &#xA;  USVBMKRF.MKUDNM, &#xA;  USVBMKRF.MKFUA1, &#xA;  USVBMKRF.MKFUA2, &#xA;  USVBMKRF.MKFUA3, &#xA;  USVBMKRF.MKFUF1, &#xA;  USVBMKRF.MKFUF2, &#xA;  USVBMKRF.MKFUF3, &#xA;  USVBMKRF.MKFUN1, &#xA;  USVBMKRF.MKFUN2, &#xA;  USVBMKRF.MKFUN3, &#xA;  USVBMKRF.MKEADT, &#xA;  USVBMKRF.MKEATM, &#xA;  USVBMKRF.MKEAID, &#xA;  USVBMKRF.MKEAPG, &#xA;  USVBMKRF.MKMODT, &#xA;  USVBMKRF.MKMOTM, &#xA;  USVBMKRF.MKMOID, &#xA;  USVBMKRF.MKMOPG&#xA;FROM USVBMKRF ORDER BY USVBMKRF.MKEADT DESC&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.SUS_Additional_Params"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="true"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKCOCO"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKVNBR"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKVNNM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKSAAC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKDVCT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKEMAL"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKUDNM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKFUA1"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKFUA2"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKFUA3"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKFUF1"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKFUF2"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKFUF3"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKFUN1"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKFUN2"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKFUN3"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKEADT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKEATM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKEAID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKEAPG"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKMODT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKMOTM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKMOID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKMOPG"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="USVBMKRF" name="tDBInput_3">
+      <column comment="" defaultValue="' '" key="false" length="5" name="MKCOCO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="10" name="MKVNBR" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="30" name="MKVNNM" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="4" name="MKSAAC" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="1" name="MKDVCT" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="50" name="MKEMAL" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="50" name="MKUDNM" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="15" name="MKFUA1" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="15" name="MKFUA2" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="15" name="MKFUA3" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="1" name="MKFUF1" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="1" name="MKFUF2" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="1" name="MKFUF3" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="13" name="MKFUN1" nullable="false" pattern="" precision="4" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="13" name="MKFUN2" nullable="false" pattern="" precision="4" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="13" name="MKFUN3" nullable="false" pattern="" precision="4" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="MKEADT" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="6" name="MKEATM" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="10" name="MKEAID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="10" name="MKEAPG" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="MKMODT" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="6" name="MKMOTM" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="10" name="MKMOID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="' '" key="false" length="10" name="MKMOPG" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <additionalProperties key="SYSTEM_TABLE_NAME" value="USVBMKRF"/>
+      <additionalProperties key="TABLE_SCHEMA" value="C056IRDD"/>
+      <additionalProperties key="SYSTEM_TABLE_SCHEMA" value="C056IRDD"/>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="704">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_6" show="false"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_MfTaYAvlEe2eScgMP1UCyw-tMap_6-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" value="0" show="false"/>
+    <elementParameter field="TEXT" name="JACCARD" value="0" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="VENDOR_DETAIL" name="VENDOR_DETAIL_MKRF">
+      <column comment="" key="true" length="5" name="SITE_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="10" name="VENDOR_NO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''::character varying'" key="false" length="50" name="EMAIL_ADDRESS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'false'" key="false" length="1" name="IS_ACTIVE" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="MKRF_SVOP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
+      <outputTables sizeState="INTERMEDIATE" name="VENDOR_DETAIL_MKRF">
+        <mapperTableEntries name="SITE_ID" expression="context.opco" type="id_String"/>
+        <mapperTableEntries name="VENDOR_NO" expression="row3.MKVNBR " type="id_String"/>
+        <mapperTableEntries name="EMAIL_ADDRESS" expression="row3.MKEMAL " type="id_String" nullable="true"/>
+        <mapperTableEntries name="IS_ACTIVE" expression="false" type="id_Boolean" nullable="true"/>
+        <mapperTableEntries name="MKRF_SVOP" expression="context.svop" type="id_String" nullable="true"/>
+      </outputTables>
+      <inputTables sizeState="INTERMEDIATE" name="row3" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="MKCOCO" type="id_String"/>
+        <mapperTableEntries name="MKVNBR" type="id_String"/>
+        <mapperTableEntries name="MKVNNM" type="id_String"/>
+        <mapperTableEntries name="MKSAAC" type="id_String"/>
+        <mapperTableEntries name="MKDVCT" type="id_String"/>
+        <mapperTableEntries name="MKEMAL" type="id_String"/>
+        <mapperTableEntries name="MKUDNM" type="id_String"/>
+        <mapperTableEntries name="MKFUA1" type="id_String"/>
+        <mapperTableEntries name="MKFUA2" type="id_String"/>
+        <mapperTableEntries name="MKFUA3" type="id_String"/>
+        <mapperTableEntries name="MKFUF1" type="id_String"/>
+        <mapperTableEntries name="MKFUF2" type="id_String"/>
+        <mapperTableEntries name="MKFUF3" type="id_String"/>
+        <mapperTableEntries name="MKFUN1" type="id_BigDecimal"/>
+        <mapperTableEntries name="MKFUN2" type="id_BigDecimal"/>
+        <mapperTableEntries name="MKFUN3" type="id_BigDecimal"/>
+        <mapperTableEntries name="MKEADT" type="id_BigDecimal"/>
+        <mapperTableEntries name="MKEATM" type="id_BigDecimal"/>
+        <mapperTableEntries name="MKEAID" type="id_String"/>
+        <mapperTableEntries name="MKEAPG" type="id_String"/>
+        <mapperTableEntries name="MKMODT" type="id_BigDecimal"/>
+        <mapperTableEntries name="MKMOTM" type="id_BigDecimal"/>
+        <mapperTableEntries name="MKMOID" type="id_String"/>
+        <mapperTableEntries name="MKMOPG" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="704">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_3" show="false"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_saet0PX9EeynBeV-b3d1ug" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" value="context.GIM_Server"/>
+    <elementParameter field="TEXT" name="PORT" value="context.GIM_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.GIM_Database"/>
+    <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.GIM_Schema_Master"/>
+    <elementParameter field="TEXT" name="USER" value="context.GIM_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:hUwfe5GDemyzQSrhwKfRnNtwBxixokQOQp6yMnACI2zmGvQKSRbWsgCoPQbVfLI7"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;VENDOR_DETAIL&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="SPATIAL_INDEX" value="false" show="false"/>
+    <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" value="false" show="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="postgres_id" show="false"/>
+    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false" show="false"/>
+    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.GIM_AdditionalParams"/>
+    <elementParameter field="CHECK" name="SAVE_POINT" value="false" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="1"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="SITE_ID"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VENDOR_NO"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="EMAIL_ADDRESS"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IS_ACTIVE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MKRF_SVOP"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
+    <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="1"/>
+    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="VENDOR_DETAIL" name="tDBOutput_3">
+      <column comment="" key="true" length="5" name="SITE_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="10" name="VENDOR_NO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''::character varying'" key="false" length="50" name="EMAIL_ADDRESS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'false'" key="false" length="1" name="IS_ACTIVE" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="MKRF_SVOP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+    <metadata connector="REJECT" label="VENDOR_DETAIL" name="REJECT">
+      <column comment="" key="true" length="5" name="SITE_ID" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="10" name="VENDOR_NO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''::character varying'" key="false" length="50" name="EMAIL_ADDRESS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="'false'" key="false" length="1" name="IS_ACTIVE" nullable="true" pattern="" precision="0" sourceType="BOOL" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="MKRF_SVOP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -1502,12 +1855,42 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
   </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tJava_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk6" show="false"/>
+  </connection>
   <connection connectorName="FLOW" label="VENDOR_DETAIL_UPDATE" lineStyle="0" metaname="VENDOR_DETAIL_UPDATE" offsetLabelX="0" offsetLabelY="0" source="tMap_5" target="tDBOutput_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="MKRF_SVOP"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="IS_ACTIVE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="VENDOR_DETAIL_UPDATE" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_2" offsetLabelX="0" offsetLabelY="0" source="tJava_2" target="tDBInput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_3" offsetLabelX="0" offsetLabelY="0" source="tJava_3" target="tDBInput_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk5" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tMap_6">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="VENDOR_DETAIL_MKRF" lineStyle="0" metaname="VENDOR_DETAIL_MKRF" offsetLabelX="0" offsetLabelY="0" source="tMap_6" target="tDBOutput_3">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="MKRF_SVOP"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="IS_ACTIVE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="VENDOR_DETAIL_MKRF" show="false"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
@@ -1541,6 +1924,16 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_3" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>

@@ -262,11 +262,11 @@
         <dependencySet>
             <outputDirectory>lib</outputDirectory>
             <includes>
+                <include>org.apache.logging.log4j:log4j-api:jar:2.17.1</include>
                 <include>org.postgresql:postgresql:jar:42.2.14</include>
                 <include>net.sf.jt400:jt400:jar:9.8</include>
-                <include>org.apache.logging.log4j:log4j-api:jar:2.13.2</include>
-                <include>org.apache.logging.log4j:log4j-core:jar:2.13.2</include>
-                <include>org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.2</include>
+                <include>org.apache.logging.log4j:log4j-core:jar:2.17.1</include>
+                <include>org.apache.logging.log4j:log4j-slf4j-impl:jar:2.17.1</include>
             </includes>
             <useProjectArtifact>false</useProjectArtifact>
         </dependencySet>
@@ -276,13 +276,16 @@
                 <include>org.example.sus_sli_etl.job:Item_Warehouse_Param_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Hazard_Detail_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:User_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Purchase_Order_Detail_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Order_Process_Detail_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Item_Pay_To_Vendor_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Item_Transaction_History_Inbound1:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Entity_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Proforma_Order_Master_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Vendor_Detail_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Broker_Ship_From_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Obligation_Detail1_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:PO_Reason_Code_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Item_Vendor_Ship_From_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Strategic_Broker_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Vendor_Ship_From_Inbound:jar:0.1.0</include>
@@ -302,10 +305,14 @@
                 <include>org.example.sus_sli_etl.job:Customer_Ship_To_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Customer_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Item_Transaction_History_Inbound2:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Purchase_Order_Detail_Update_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Critical_Item_Sus_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Purchase_Order_Header_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Strategic_Broker_Item_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Inbound_Scheduling_Header_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Obligation_Detail_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Site_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Purchase_Order_Detail_Insert_Inbound:jar:0.1.0</include>
             </includes>
             <outputFileNameMapping>${artifact.build.finalName}.${artifact.extension}</outputFileNameMapping>
             <useProjectArtifact>true</useProjectArtifact>

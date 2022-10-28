@@ -70,20 +70,10 @@ SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
 [WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.13.2
 [WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.2
 [WARNING] Missing POM for org.slf4j:slf4j-api:jar:1.7.29
-[WARNING] Missing POM for org.jboss.marshalling:jboss-marshalling:jar:2.0.12.Final
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-api:jar:2.13.2
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.13.2
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.2
-[WARNING] Missing POM for org.slf4j:slf4j-api:jar:1.7.29
-[WARNING] Missing POM for org.jboss.marshalling:jboss-marshalling:jar:2.0.12.Final
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-api:jar:2.13.2
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.13.2
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.2
-[WARNING] Missing POM for org.slf4j:slf4j-api:jar:1.7.29
 [INFO] Building zip: C:\Program Files (x86)\TOS_DI-8.0.1\studio\workspace\SUS_SLI_ETL\poms\jobs\process\SUS_to_GIM\po_master_inbound_0.1\target\po_master_inbound_0_1.zip
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.433 s
-[INFO] Finished at: 2022-10-11T18:52:33+05:30
+[INFO] Total time:  2.097 s
+[INFO] Finished at: 2022-10-25T09:44:30+05:30
 [INFO] ------------------------------------------------------------------------
