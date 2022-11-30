@@ -187,15 +187,9 @@ protected static void logIgnoredError(String message, Throwable cause) {
 				
 			}
 			
-			if(SUS_Server != null){
+			if(SUS_Additional_Params != null){
 				
-					this.setProperty("SUS_Server", SUS_Server.toString());
-				
-			}
-			
-			if(SUS_Login != null){
-				
-					this.setProperty("SUS_Login", SUS_Login.toString());
+					this.setProperty("SUS_Additional_Params", SUS_Additional_Params.toString());
 				
 			}
 			
@@ -205,15 +199,39 @@ protected static void logIgnoredError(String message, Throwable cause) {
 				
 			}
 			
+			if(SUS_Database_ARDBFA != null){
+				
+					this.setProperty("SUS_Database_ARDBFA", SUS_Database_ARDBFA.toString());
+				
+			}
+			
+			if(SUS_Login != null){
+				
+					this.setProperty("SUS_Login", SUS_Login.toString());
+				
+			}
+			
 			if(SUS_Password != null){
 				
 					this.setProperty("SUS_Password", SUS_Password.toString());
 				
 			}
 			
-			if(SUS_Additional_Params != null){
+			if(SUS_Port != null){
 				
-					this.setProperty("SUS_Additional_Params", SUS_Additional_Params.toString());
+					this.setProperty("SUS_Port", SUS_Port.toString());
+				
+			}
+			
+			if(SUS_Schema != null){
+				
+					this.setProperty("SUS_Schema", SUS_Schema.toString());
+				
+			}
+			
+			if(SUS_Server != null){
+				
+					this.setProperty("SUS_Server", SUS_Server.toString());
 				
 			}
 			
@@ -272,25 +290,37 @@ public String GIM_Read_Only_Server;
 public String getGIM_Read_Only_Server(){
 	return this.GIM_Read_Only_Server;
 }
-public String SUS_Server;
-public String getSUS_Server(){
-	return this.SUS_Server;
-}
-public String SUS_Login;
-public String getSUS_Login(){
-	return this.SUS_Login;
+public String SUS_Additional_Params;
+public String getSUS_Additional_Params(){
+	return this.SUS_Additional_Params;
 }
 public String SUS_Database;
 public String getSUS_Database(){
 	return this.SUS_Database;
 }
+public String SUS_Database_ARDBFA;
+public String getSUS_Database_ARDBFA(){
+	return this.SUS_Database_ARDBFA;
+}
+public String SUS_Login;
+public String getSUS_Login(){
+	return this.SUS_Login;
+}
 public java.lang.String SUS_Password;
 public java.lang.String getSUS_Password(){
 	return this.SUS_Password;
 }
-public String SUS_Additional_Params;
-public String getSUS_Additional_Params(){
-	return this.SUS_Additional_Params;
+public String SUS_Port;
+public String getSUS_Port(){
+	return this.SUS_Port;
+}
+public String SUS_Schema;
+public String getSUS_Schema(){
+	return this.SUS_Schema;
+}
+public String SUS_Server;
+public String getSUS_Server(){
+	return this.SUS_Server;
 }
 	}
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
@@ -343,8 +373,8 @@ private RunStat runStat = new RunStat();
 	}
 
 	LogCatcherUtils tLogCatcher_1 = new LogCatcherUtils();
-	StatCatcherUtils tStatCatcher_1 = new StatCatcherUtils("_7sAdABSPEe25L90ILRGJ9A", "0.1");
-	MetterCatcherUtils tFlowMeterCatcher_1 = new MetterCatcherUtils("_7sAdABSPEe25L90ILRGJ9A", "0.1");
+	StatCatcherUtils tStatCatcher_1 = new StatCatcherUtils("_-sJ68GsYEe2sS5Ghjqp5Ag", "0.1");
+	MetterCatcherUtils tFlowMeterCatcher_1 = new MetterCatcherUtils("_-sJ68GsYEe2sS5Ghjqp5Ag", "0.1");
 
 private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
 private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
@@ -7027,13 +7057,33 @@ SUS_GIM_COUNT_COMPAREStruct SUS_GIM_COUNT_COMPARE_tmp = new SUS_GIM_COUNT_COMPAR
 		    
 			java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
 
-		    String dbquery_tDBInput_1 = "SELECT 'ANTICIPATED_DEMAND',count(*) FROM demand.\"ANTICIPATED_DEMAND\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION \nSELECT 'ITEM_DETAIL',count(*) FROM master.\"ITEM_DETAIL\" WHERE \"SITE_ID\" = '"
-+"" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'ITEM_INVENTORY',count(*) FROM inventory.\"ITEM_INVENTORY\" WHERE \"SITE_"
-+"ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION \nSELECT 'ITEM_RELATIONSHIP',count(*) FROM master.\"ITEM_RELATIONSHIP\" WHERE \"S"
+		    String dbquery_tDBInput_1 = "SELECT 'DEMAND_HISTORY',count(*) FROM demand.\"DEMAND_HISTORY\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION \nSELECT 'ITEM_PERIOD_DEMAND',count(*) FROM demand.\"ITEM_PERIOD_DEMAND\" WHERE "
++"\"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'CRITICAL_ITEM_SUS',count(*) FROM inventory.\"CRITICAL_ITEM_SUS\" WHERE "
++"\"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION \nSELECT 'ITEM_TRANSACTION_HISTORY',count(*) FROM inventory.\"ITEM_TRANSACTION_HI"
++"STORY\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'ITEM_WAREHOUSE_PARAM',count(*) FROM inventory.\"ITEM_WAREHOUSE_PARAM\" W"
++"HERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'BROKER_SHIP_FROM',count(*) FROM master.\"BROKER_SHIP_FROM\" WHERE \"SITE"
++"_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'BUYER',count(*) FROM master.\"BUYER\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'CUSTOMER',count(*) FROM master.\"CUSTOMER\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'CUSTOMER_SHIP_TO',count(*) FROM master.\"CUSTOMER_SHIP_TO\" WHERE \"SITE"
++"_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'ENTITY',count(*) FROM master.\"ENTITY\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'HAZARD_DETAIL',count(*) FROM master.\"HAZARD_DETAIL\" WHERE \"SITE_ID\" "
++"= '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'ITEM_NOTE',count(*) FROM master.\"ITEM_NOTE\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'ITEM_PAY_TO_VENDOR',count(*) FROM master.\"ITEM_PAY_TO_VENDOR\" WHERE \""
++"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'ITEM_VENDOR_SHIP_FROM',count(*) FROM master.\"ITEM_VENDOR_SHIP_FROM\" WH"
++"ERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false AND \"FMPF_SVOP\" is not null\nUNION\nSELECT 'SHIP_VIA',count(*) FROM master.\"SHIP_VIA\""
++" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'STRATEGIC_BROKER',count(*) FROM master.\"STRATEGIC_BROKER\" WHERE \"SITE"
++"_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'STRATEGIC_BROKER_ITEM',count(*) FROM master.\"STRATEGIC_BROKER_ITEM\" WH"
++"ERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'USER',count(*) FROM master.\"USER\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'VENDOR_DETAIL',count(*) FROM master.\"VENDOR_DETAIL\" WHERE \"SITE_ID\" "
++"= '" + context.opco + "' AND \"IS_DELETED\" is false AND \"A2PF_SVOP\" is not null\nUNION\nSELECT 'VENDOR_INVENTORY1',count(*) FROM master.\"V"
++"ENDOR_INVENTORY\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false AND \"BUYING_GROUP_FLAG\" = '1'\nUNION\nSELECT 'VENDOR_INVENTORY0',count(*) FROM master."
++"\"VENDOR_INVENTORY\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false AND \"BUYING_GROUP_FLAG\" = '0'\nUNION\nSELECT 'VENDOR_SHIP_FROM',count(*) FROM master.\""
++"VENDOR_SHIP_FROM\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false AND \"A6PF_SVOP\" is not null\nUNION\nSELECT 'ITEM_DETAIL',count(*) FROM master.\"ITEM_DE"
++"TAIL\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false AND \"JFPF_SVOP\" is not null \nUNION\nSELECT 'RDC_ITEM_PAY_TO_VENDOR',count(*) FROM mast"
++"er.\"RDC_ITEM_PAY_TO_VENDOR\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'ORDER_PROCESS_HEADER',count(*) FROM orderprocessing.\"ORDER_PROCESS_HEAD"
++"ER\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'ORDER_PROCESS_DETAIL',count(*) FROM orderprocessing.\"ORDER_PROCESS_DETA"
++"IL\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'OBLIGATION_DETAIL',count(*) FROM orderprocessing.\"OBLIGATION_DETAIL\" W"
++"HERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false\nUNION\nSELECT 'PO_REASON_CODE',count(*) FROM purchaseorder.\"PO_REASON_CODE\" WHERE \"SI"
++"TE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false\nUNION\nSELECT 'ANTICIPATED_DEMAND',count(*) FROM demand.\"ANTICIPATED_DEMAND\" WHERE \"S"
++"ITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION \nSELECT 'ITEM_INVENTORY',count(*) FROM inventory.\"ITEM_INVENTORY\" WHERE \"SITE"
++"_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION \nSELECT 'ITEM_RELATIONSHIP',count(*) FROM master.\"ITEM_RELATIONSHIP\" WHERE \"S"
 +"ITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'ITEM_TRUE_VENDOR',count(*) FROM master.\"ITEM_TRUE_VENDOR\" WHERE \"SITE"
-+"_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'VENDOR_ITEM',count(*) FROM master.\"VENDOR_ITEM\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'ORDER_PROCESS_DETAIL',count(*) FROM orderprocessing.\"ORDER_PROCESS_DETA"
-+"IL\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'RDC_ITEM_PAY_TO_VENDOR',count(*) FROM master.\"RDC_ITEM_PAY_TO_VENDOR\" "
-+"WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false";
++"_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false \nUNION\nSELECT 'VENDOR_ITEM',count(*) FROM master.\"VENDOR_ITEM\" WHERE \"SITE_ID\" = '" + context.opco + "' AND \"IS_DELETED\" is false";
 		    
 
             	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
@@ -8238,11 +8288,22 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 		    
 			java.sql.Statement stmt_tDBInput_2 = conn_tDBInput_2.createStatement();
 
-		    String dbquery_tDBInput_2 = "SELECT 'ANTICIPATED_DEMAND', COUNT(*) FROM immktnpf \nUNION\nSELECT 'ITEM_DETAIL', COUNT(*) FROM usiajfpf\nUNION\nSELEC"
-+"T 'ITEM_HEADER', COUNT(*) FROM usiajfpf\nUNION\nSELECT 'ITEM_INVENTORY', COUNT(*) FROM immht7pf\nUNION\nSELECT 'ITEM_REL"
-+"ATIONSHIP', COUNT(*) FROM usifafpf\nUNION\nSELECT 'ITEM_TRUE_VENDOR', COUNT(*) FROM usiamqrf\nUNION\nSELECT 'VENDOR_ITEM"
-+"', COUNT(*) FROM immatwtf\nUNION\nSELECT 'ORDER_PROCESS_DETAIL', COUNT(*) FROM opnib7pf\nUNION\nSELECT 'RDC_ITEM_PAY_TO_"
-+"VENDOR', COUNT(*) FROM usibmirf";
+		    String dbquery_tDBInput_2 = "SELECT 'DEMAND_HISTORY',count(*) FROM immltppf\nUNION \nSELECT 'ITEM_PERIOD_DEMAND',count(*) FROM imitbepf\nUNION\nSELE"
++"CT 'CRITICAL_ITEM_SUS',count(*) FROM imcig6ff\nUNION \nSELECT 'ITEM_TRANSACTION_HISTORY',count(*) FROM immmtupf\nUNION\n"
++"SELECT 'ITEM_WAREHOUSE_PARAM',count(*) FROM usizrzpf\nUNION\nSELECT 'BROKER_SHIP_FROM',count(*) FROM referp WHERE REFCAT"
++"='AEK'\nUNION\nSELECT 'BUYER',count(*) FROM referp WHERE REFCAT='JB'\nUNION\nSELECT 'CUSTOMER',count(*) FROM ardbfa.arpc"
++"u\nUNION\nSELECT 'CUSTOMER_SHIP_TO',count(*) FROM uscbjopf\nUNION\nSELECT 'ENTITY',count(*) FROM msliy5pf\nUNION\nSELECT"
++" 'HAZARD_DETAIL',count(*) FROM ushahuff\nUNION\nSELECT 'ITEM_NOTE',count(*) FROM usijc7pf\nUNION\nSELECT 'ITEM_PAY_TO_VE"
++"NDOR',count(*) FROM usibjgpf\nUNION\nSELECT 'ITEM_VENDOR_SHIP_FROM',count(*) FROM usiufmpf\nUNION\nSELECT 'SHIP_VIA',cou"
++"nt(*) FROM referp WHERE REFCAT='HA'\nUNION\nSELECT 'STRATEGIC_BROKER',count(*) FROM imvbserf\nUNION\nSELECT 'STRATEGIC_B"
++"ROKER_ITEM',count(*) FROM usdvvbrf\nUNION\nSELECT 'USER',count(*) FROM sydbo4pf\nUNION\nSELECT 'VENDOR_DETAIL',count(*) "
++"FROM usvba2pf\nUNION\nSELECT 'VENDOR_INVENTORY1',count(*) FROM immatvtf\nUNION\nSELECT 'VENDOR_INVENTORY0',count(*) FROM"
++" immat0pf\nUNION\nSELECT 'VENDOR_SHIP_FROM',count(*) FROM usvfa6pf\nUNION\nSELECT 'ITEM_DETAIL',count(*) FROM usiajfpf\n"
++"UNION\nSELECT 'RDC_ITEM_PAY_TO_VENDOR',count(*) FROM usibmirf\nUNION\nSELECT 'ORDER_PROCESS_HEADER',count(*) FROM opnjb6"
++"pf\nUNION\nSELECT 'ORDER_PROCESS_DETAIL',count(*) FROM opnib7pf\nUNION\nSELECT 'OBLIGATION_DETAIL',count(*) FROM opnbb1p"
++"f\nUNION\nSELECT 'PO_REASON_CODE',count(*) FROM impol7rf\nUNION\nSELECT 'ANTICIPATED_DEMAND', COUNT(*) FROM immktnpf \nU"
++"NION\nSELECT 'ITEM_INVENTORY', COUNT(*) FROM immht7pf\nUNION\nSELECT 'ITEM_RELATIONSHIP', COUNT(*) FROM usifafpf\nUNION"
++"\nSELECT 'ITEM_TRUE_VENDOR', COUNT(*) FROM usiamqrf\nUNION\nSELECT 'VENDOR_ITEM', COUNT(*) FROM immatwtf";
 		    
 
             	globalMap.put("tDBInput_2_QUERY",dbquery_tDBInput_2);
@@ -8828,23 +8889,29 @@ end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
                         } else {
                             context.GIM_Read_Only_Server=(String) context.getProperty("GIM_Read_Only_Server");
                         }
-                        context.setContextType("SUS_Server", "id_String");
-                        if(context.getStringValue("SUS_Server") == null) {
-                            context.SUS_Server = null;
+                        context.setContextType("SUS_Additional_Params", "id_String");
+                        if(context.getStringValue("SUS_Additional_Params") == null) {
+                            context.SUS_Additional_Params = null;
                         } else {
-                            context.SUS_Server=(String) context.getProperty("SUS_Server");
-                        }
-                        context.setContextType("SUS_Login", "id_String");
-                        if(context.getStringValue("SUS_Login") == null) {
-                            context.SUS_Login = null;
-                        } else {
-                            context.SUS_Login=(String) context.getProperty("SUS_Login");
+                            context.SUS_Additional_Params=(String) context.getProperty("SUS_Additional_Params");
                         }
                         context.setContextType("SUS_Database", "id_String");
                         if(context.getStringValue("SUS_Database") == null) {
                             context.SUS_Database = null;
                         } else {
                             context.SUS_Database=(String) context.getProperty("SUS_Database");
+                        }
+                        context.setContextType("SUS_Database_ARDBFA", "id_String");
+                        if(context.getStringValue("SUS_Database_ARDBFA") == null) {
+                            context.SUS_Database_ARDBFA = null;
+                        } else {
+                            context.SUS_Database_ARDBFA=(String) context.getProperty("SUS_Database_ARDBFA");
+                        }
+                        context.setContextType("SUS_Login", "id_String");
+                        if(context.getStringValue("SUS_Login") == null) {
+                            context.SUS_Login = null;
+                        } else {
+                            context.SUS_Login=(String) context.getProperty("SUS_Login");
                         }
                         context.setContextType("SUS_Password", "id_Password");
                         if(context.getStringValue("SUS_Password") == null) {
@@ -8865,11 +8932,23 @@ end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
                                 }
                             }
                         }
-                        context.setContextType("SUS_Additional_Params", "id_String");
-                        if(context.getStringValue("SUS_Additional_Params") == null) {
-                            context.SUS_Additional_Params = null;
+                        context.setContextType("SUS_Port", "id_String");
+                        if(context.getStringValue("SUS_Port") == null) {
+                            context.SUS_Port = null;
                         } else {
-                            context.SUS_Additional_Params=(String) context.getProperty("SUS_Additional_Params");
+                            context.SUS_Port=(String) context.getProperty("SUS_Port");
+                        }
+                        context.setContextType("SUS_Schema", "id_String");
+                        if(context.getStringValue("SUS_Schema") == null) {
+                            context.SUS_Schema = null;
+                        } else {
+                            context.SUS_Schema=(String) context.getProperty("SUS_Schema");
+                        }
+                        context.setContextType("SUS_Server", "id_String");
+                        if(context.getStringValue("SUS_Server") == null) {
+                            context.SUS_Server = null;
+                        } else {
+                            context.SUS_Server=(String) context.getProperty("SUS_Server");
                         }
                 } 
                 public void processAllContext() {
@@ -8906,16 +8985,22 @@ end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
                 context.GIM_Read_Only_Schema_Inventory = (String) parentContextMap.get("GIM_Read_Only_Schema_Inventory");
             }if (parentContextMap.containsKey("GIM_Read_Only_Server")) {
                 context.GIM_Read_Only_Server = (String) parentContextMap.get("GIM_Read_Only_Server");
-            }if (parentContextMap.containsKey("SUS_Server")) {
-                context.SUS_Server = (String) parentContextMap.get("SUS_Server");
-            }if (parentContextMap.containsKey("SUS_Login")) {
-                context.SUS_Login = (String) parentContextMap.get("SUS_Login");
-            }if (parentContextMap.containsKey("SUS_Database")) {
-                context.SUS_Database = (String) parentContextMap.get("SUS_Database");
-            }if (parentContextMap.containsKey("SUS_Password")) {
-                context.SUS_Password = (java.lang.String) parentContextMap.get("SUS_Password");
             }if (parentContextMap.containsKey("SUS_Additional_Params")) {
                 context.SUS_Additional_Params = (String) parentContextMap.get("SUS_Additional_Params");
+            }if (parentContextMap.containsKey("SUS_Database")) {
+                context.SUS_Database = (String) parentContextMap.get("SUS_Database");
+            }if (parentContextMap.containsKey("SUS_Database_ARDBFA")) {
+                context.SUS_Database_ARDBFA = (String) parentContextMap.get("SUS_Database_ARDBFA");
+            }if (parentContextMap.containsKey("SUS_Login")) {
+                context.SUS_Login = (String) parentContextMap.get("SUS_Login");
+            }if (parentContextMap.containsKey("SUS_Password")) {
+                context.SUS_Password = (java.lang.String) parentContextMap.get("SUS_Password");
+            }if (parentContextMap.containsKey("SUS_Port")) {
+                context.SUS_Port = (String) parentContextMap.get("SUS_Port");
+            }if (parentContextMap.containsKey("SUS_Schema")) {
+                context.SUS_Schema = (String) parentContextMap.get("SUS_Schema");
+            }if (parentContextMap.containsKey("SUS_Server")) {
+                context.SUS_Server = (String) parentContextMap.get("SUS_Server");
             }
         }
 
@@ -9159,6 +9244,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     215993 characters generated by Talend Open Studio for Data Integration 
- *     on the August 31, 2022 at 3:39:54 PM IST
+ *     223578 characters generated by Talend Open Studio for Data Integration 
+ *     on the November 29, 2022 at 8:52:07 AM IST
  ************************************************************************************************/

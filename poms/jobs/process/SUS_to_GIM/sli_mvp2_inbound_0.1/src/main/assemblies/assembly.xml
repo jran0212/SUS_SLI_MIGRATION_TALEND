@@ -283,10 +283,10 @@
                 <include>org.example.sus_sli_etl.job:Entity_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Proforma_Order_Master_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Vendor_Detail_Inbound:jar:0.1.0</include>
-                <include>org.example.sus_sli_etl.job:Broker_Ship_From_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Obligation_Detail1_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:PO_Reason_Code_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Item_Vendor_Ship_From_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Broker_Ship_From:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Strategic_Broker_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Vendor_Ship_From_Inbound:jar:0.1.0</include>
                 <include>org.example.sus_sli_etl.job:Ship_Via_Inbound:jar:0.1.0</include>

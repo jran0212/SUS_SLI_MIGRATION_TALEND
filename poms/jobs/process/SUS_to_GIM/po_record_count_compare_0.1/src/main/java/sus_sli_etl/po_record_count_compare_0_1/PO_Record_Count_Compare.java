@@ -52,15 +52,12 @@ import java.util.Comparator;
  * @status
  */
 public class PO_Record_Count_Compare implements TalendJob {
-	static {
-		System.setProperty("TalendJob.log", "PO_Record_Count_Compare.log");
-	}
-
-	private static org.apache.logging.log4j.Logger log = org.apache.logging.log4j.LogManager
-			.getLogger(PO_Record_Count_Compare.class);
 
 	protected static void logIgnoredError(String message, Throwable cause) {
-		log.error(message, cause);
+		System.err.println(message);
+		if (cause != null) {
+			cause.printStackTrace();
+		}
 
 	}
 
@@ -777,48 +774,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 			return sb.toString();
 		}
 
-		public String toLogString() {
-			StringBuilder sb = new StringBuilder();
-
-			if (SITE_ID == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(SITE_ID);
-			}
-
-			sb.append("|");
-
-			if (TABLE_NAME == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(TABLE_NAME);
-			}
-
-			sb.append("|");
-
-			sb.append(GIM_COUNT);
-
-			sb.append("|");
-
-			sb.append(SUS_COUNT);
-
-			sb.append("|");
-
-			sb.append(DIFFERENCE);
-
-			sb.append("|");
-
-			if (PERCENTAGE == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(PERCENTAGE);
-			}
-
-			sb.append("|");
-
-			return sb.toString();
-		}
-
 		/**
 		 * Compare keys
 		 */
@@ -1054,28 +1009,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 			sb.append("TABLE_NAME=" + TABLE_NAME);
 			sb.append(",RECORD_COUNT=" + String.valueOf(RECORD_COUNT));
 			sb.append("]");
-
-			return sb.toString();
-		}
-
-		public String toLogString() {
-			StringBuilder sb = new StringBuilder();
-
-			if (TABLE_NAME == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(TABLE_NAME);
-			}
-
-			sb.append("|");
-
-			if (RECORD_COUNT == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(RECORD_COUNT);
-			}
-
-			sb.append("|");
 
 			return sb.toString();
 		}
@@ -1319,28 +1252,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 			return sb.toString();
 		}
 
-		public String toLogString() {
-			StringBuilder sb = new StringBuilder();
-
-			if (TABLE_NAME == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(TABLE_NAME);
-			}
-
-			sb.append("|");
-
-			if (RECORD_COUNT == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(RECORD_COUNT);
-			}
-
-			sb.append("|");
-
-			return sb.toString();
-		}
-
 		/**
 		 * Compare keys
 		 */
@@ -1413,28 +1324,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 				}
 
 				int tos_count_tLogRow_1 = 0;
-
-				if (log.isDebugEnabled())
-					log.debug("tLogRow_1 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tLogRow_1 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tLogRow_1 = new StringBuilder();
-							log4jParamters_tLogRow_1.append("Parameters:");
-							log4jParamters_tLogRow_1.append("BASIC_MODE" + " = " + "false");
-							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("TABLE_PRINT" + " = " + "true");
-							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("VERTICAL" + " = " + "false");
-							log4jParamters_tLogRow_1.append(" | ");
-							log4jParamters_tLogRow_1.append("PRINT_CONTENT_WITH_LOG4J" + " = " + "true");
-							log4jParamters_tLogRow_1.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tLogRow_1 - " + (log4jParamters_tLogRow_1));
-						}
-					}
-					new BytesLimit65535_tLogRow_1().limitLog4jByte();
-				}
 
 				///////////////////////
 
@@ -1605,33 +1494,8 @@ public class PO_Record_Count_Compare implements TalendJob {
 
 				int tos_count_tMap_1 = 0;
 
-				if (log.isDebugEnabled())
-					log.debug("tMap_1 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tMap_1 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tMap_1 = new StringBuilder();
-							log4jParamters_tMap_1.append("Parameters:");
-							log4jParamters_tMap_1.append("LINK_STYLE" + " = " + "AUTO");
-							log4jParamters_tMap_1.append(" | ");
-							log4jParamters_tMap_1.append("TEMPORARY_DATA_DIRECTORY" + " = " + "");
-							log4jParamters_tMap_1.append(" | ");
-							log4jParamters_tMap_1.append("ROWS_BUFFER_SIZE" + " = " + "2000000");
-							log4jParamters_tMap_1.append(" | ");
-							log4jParamters_tMap_1.append("CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" + " = " + "true");
-							log4jParamters_tMap_1.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tMap_1 - " + (log4jParamters_tMap_1));
-						}
-					}
-					new BytesLimit65535_tMap_1().limitLog4jByte();
-				}
-
 // ###############################
 // # Lookup's keys initialization
-				int count_row1_tMap_1 = 0;
-
-				int count_row2_tMap_1 = 0;
 
 				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) globalMap
 						.get("tHash_Lookup_row2"));
@@ -1655,8 +1519,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 
 // ###############################
 // # Outputs initialization
-				int count_SUS_GIM_COUNT_COMPARE_tMap_1 = 0;
-
 				SUS_GIM_COUNT_COMPAREStruct SUS_GIM_COUNT_COMPARE_tmp = new SUS_GIM_COUNT_COMPAREStruct();
 // ###############################
 
@@ -1675,61 +1537,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 
 				int tos_count_tDBInput_1 = 0;
 
-				if (log.isDebugEnabled())
-					log.debug("tDBInput_1 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tDBInput_1 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tDBInput_1 = new StringBuilder();
-							log4jParamters_tDBInput_1.append("Parameters:");
-							log4jParamters_tDBInput_1.append("USE_EXISTING_CONNECTION" + " = " + "false");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("DB_VERSION" + " = " + "V9_X");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("HOST" + " = " + "context.GIM_Read_Only_Server");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("PORT" + " = " + "context.GIM_Read_Only_Port");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("DBNAME" + " = " + "context.GIM_Read_Only_Database");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1
-									.append("SCHEMA_DB" + " = " + "context.GIM_Read_Only_Schema_Inventory");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("USER" + " = " + "context.GIM_Read_Only_Login");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1
-									.append("PASS" + " = "
-											+ String.valueOf(routines.system.PasswordEncryptUtil
-													.encryptPassword(context.GIM_Read_Only_Password)).substring(0, 4)
-											+ "...");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("QUERYSTORE" + " = " + "\"\"");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("QUERY" + " = "
-									+ "\"SELECT 'PURCHASE_ORDER',count(*) FROM purchaseorder.\\\"PURCHASE_ORDER\\\" WHERE \\\"SITE_ID\\\" = '\" + context.opco + \"' AND \\\"UPDATED_ORIGIN\\\" = 'SUS' AND \\\"IS_DELETED\\\" is false AND \\\"IS_ACTIVE\\\" is true  UNION  SELECT 'PURCHASE_ORDER_DETAIL',count(*) FROM purchaseorder.\\\"PURCHASE_ORDER_DETAIL\\\" WHERE \\\"SITE_ID\\\" = '\" + context.opco + \"' AND \\\"UPDATED_ORIGIN\\\" = 'SUS' AND \\\"IS_DELETED\\\" is false\"");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("SPECIFY_DATASOURCE_ALIAS" + " = " + "false");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1
-									.append("PROPERTIES" + " = " + "context.GIM_Read_Only_AdditionalParams");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("USE_CURSOR" + " = " + "false");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("TRIM_ALL_COLUMN" + " = " + "false");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append(
-									"TRIM_COLUMN" + " = " + "[{TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("TABLE_NAME")
-											+ "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("RECORD_COUNT") + "}]");
-							log4jParamters_tDBInput_1.append(" | ");
-							log4jParamters_tDBInput_1.append("UNIFIED_COMPONENTS" + " = " + "tPostgresqlInput");
-							log4jParamters_tDBInput_1.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tDBInput_1 - " + (log4jParamters_tDBInput_1));
-						}
-					}
-					new BytesLimit65535_tDBInput_1().limitLog4jByte();
-				}
-
 				int nb_line_tDBInput_1 = 0;
 				java.sql.Connection conn_tDBInput_1 = null;
 				String driverClass_tDBInput_1 = "org.postgresql.Driver";
@@ -1744,16 +1551,8 @@ public class PO_Record_Count_Compare implements TalendJob {
 						+ context.GIM_Read_Only_Port + "/" + context.GIM_Read_Only_Database + "?"
 						+ context.GIM_Read_Only_AdditionalParams;
 
-				log.debug("tDBInput_1 - Driver ClassName: " + driverClass_tDBInput_1 + ".");
-
-				log.debug("tDBInput_1 - Connection attempt to '" + url_tDBInput_1 + "' with the username '"
-						+ dbUser_tDBInput_1 + "'.");
-
 				conn_tDBInput_1 = java.sql.DriverManager.getConnection(url_tDBInput_1, dbUser_tDBInput_1,
 						dbPwd_tDBInput_1);
-				log.debug("tDBInput_1 - Connection to '" + url_tDBInput_1 + "' has succeeded.");
-
-				log.debug("tDBInput_1 - Connection is set auto commit to 'false'.");
 
 				conn_tDBInput_1.setAutoCommit(false);
 
@@ -1765,8 +1564,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 						+ "ETAIL',count(*) FROM purchaseorder.\"PURCHASE_ORDER_DETAIL\" WHERE \"SITE_ID\" = '"
 						+ context.opco + "' AND \"UPDATED_ORIGIN\" = 'SUS' AND \"IS_DELETED\" is false";
 
-				log.debug("tDBInput_1 - Executing the query: '" + dbquery_tDBInput_1 + "'.");
-
 				globalMap.put("tDBInput_1_QUERY", dbquery_tDBInput_1);
 				java.sql.ResultSet rs_tDBInput_1 = null;
 
@@ -1776,8 +1573,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 					int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
 
 					String tmpContent_tDBInput_1 = null;
-
-					log.debug("tDBInput_1 - Retrieving records from the database.");
 
 					while (rs_tDBInput_1.next()) {
 						nb_line_tDBInput_1++;
@@ -1797,8 +1592,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 								row1.RECORD_COUNT = null;
 							}
 						}
-
-						log.debug("tDBInput_1 - Retrieving the record " + nb_line_tDBInput_1 + ".");
 
 						/**
 						 * [tDBInput_1 begin ] stop
@@ -1838,10 +1631,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 									, "row1"
 
 							);
-						}
-
-						if (log.isTraceEnabled()) {
-							log.trace("row1 - " + (row1 == null ? "" : row1.toLogString()));
 						}
 
 						boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
@@ -1915,8 +1704,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 							SUS_GIM_COUNT_COMPARE = null;
 
 // # Output table : 'SUS_GIM_COUNT_COMPARE'
-							count_SUS_GIM_COUNT_COMPARE_tMap_1++;
-
 							SUS_GIM_COUNT_COMPARE_tmp.SITE_ID = Var.SITE_ID;
 							SUS_GIM_COUNT_COMPARE_tmp.TABLE_NAME = Var.TABLE_NAME;
 							SUS_GIM_COUNT_COMPARE_tmp.GIM_COUNT = Var.GIM_COUNT;
@@ -1924,9 +1711,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 							SUS_GIM_COUNT_COMPARE_tmp.DIFFERENCE = Var.DIFFERENCE;
 							SUS_GIM_COUNT_COMPARE_tmp.PERCENTAGE = String.format("%.2f", Var.PERCENTAGE);
 							SUS_GIM_COUNT_COMPARE = SUS_GIM_COUNT_COMPARE_tmp;
-							log.debug("tMap_1 - Outputting the record " + count_SUS_GIM_COUNT_COMPARE_tMap_1
-									+ " of the output table 'SUS_GIM_COUNT_COMPARE'.");
-
 // ###############################
 
 						} // end of Var scope
@@ -1965,11 +1749,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 								);
 							}
 
-							if (log.isTraceEnabled()) {
-								log.trace("SUS_GIM_COUNT_COMPARE - "
-										+ (SUS_GIM_COUNT_COMPARE == null ? "" : SUS_GIM_COUNT_COMPARE.toLogString()));
-							}
-
 ///////////////////////		
 
 							String[] row_tLogRow_1 = new String[6];
@@ -1997,8 +1776,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 
 							util_tLogRow_1.addRow(row_tLogRow_1);
 							nb_line_tLogRow_1++;
-							log.info("tLogRow_1 - Content of row " + nb_line_tLogRow_1 + ": "
-									+ TalendString.unionString("|", row_tLogRow_1));
 //////
 
 //////                    
@@ -2069,13 +1846,7 @@ public class PO_Record_Count_Compare implements TalendJob {
 					}
 					if (conn_tDBInput_1 != null && !conn_tDBInput_1.isClosed()) {
 
-						log.debug("tDBInput_1 - Connection starting to commit.");
-
 						conn_tDBInput_1.commit();
-
-						log.debug("tDBInput_1 - Connection commit has succeeded.");
-
-						log.debug("tDBInput_1 - Closing the connection to the database.");
 
 						conn_tDBInput_1.close();
 
@@ -2085,16 +1856,10 @@ public class PO_Record_Count_Compare implements TalendJob {
 									.getMethod("checkedShutdown").invoke(null, (Object[]) null);
 						}
 
-						log.debug("tDBInput_1 - Connection to the database closed.");
-
 					}
 
 				}
 				globalMap.put("tDBInput_1_NB_LINE", nb_line_tDBInput_1);
-				log.debug("tDBInput_1 - Retrieved records count: " + nb_line_tDBInput_1 + " .");
-
-				if (log.isDebugEnabled())
-					log.debug("tDBInput_1 - " + ("Done."));
 
 				ok_Hash.put("tDBInput_1", true);
 				end_Hash.put("tDBInput_1", System.currentTimeMillis());
@@ -2117,15 +1882,10 @@ public class PO_Record_Count_Compare implements TalendJob {
 				globalMap.remove("tHash_Lookup_row2");
 
 // ###############################      
-				log.debug("tMap_1 - Written records count in the table 'SUS_GIM_COUNT_COMPARE': "
-						+ count_SUS_GIM_COUNT_COMPARE_tMap_1 + ".");
 
 				if (execStat) {
 					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
 				}
-
-				if (log.isDebugEnabled())
-					log.debug("tMap_1 - " + ("Done."));
 
 				ok_Hash.put("tMap_1", true);
 				end_Hash.put("tMap_1", System.currentTimeMillis());
@@ -2154,17 +1914,12 @@ public class PO_Record_Count_Compare implements TalendJob {
 				consoleOut_tLogRow_1.flush();
 //////
 				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
-				if (log.isInfoEnabled())
-					log.info("tLogRow_1 - " + ("Printed row count: ") + (nb_line_tLogRow_1) + ("."));
 
 ///////////////////////    			
 
 				if (execStat) {
 					runStat.updateStat(resourceMap, iterateId, 2, 0, "SUS_GIM_COUNT_COMPARE");
 				}
-
-				if (log.isDebugEnabled())
-					log.debug("tLogRow_1 - " + ("Done."));
 
 				ok_Hash.put("tLogRow_1", true);
 				end_Hash.put("tLogRow_1", System.currentTimeMillis());
@@ -2176,10 +1931,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 			} // end the resume
 
 		} catch (java.lang.Exception e) {
-
-			if (!(e instanceof TalendException)) {
-				log.fatal(currentComponent + " " + e.getMessage(), e);
-			}
 
 			TalendException te = new TalendException(e, currentComponent, globalMap);
 
@@ -2545,28 +2296,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 			return sb.toString();
 		}
 
-		public String toLogString() {
-			StringBuilder sb = new StringBuilder();
-
-			if (TABLE_NAME == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(TABLE_NAME);
-			}
-
-			sb.append("|");
-
-			if (RECORD_COUNT == null) {
-				sb.append("<null>");
-			} else {
-				sb.append(RECORD_COUNT);
-			}
-
-			sb.append("|");
-
-			return sb.toString();
-		}
-
 		/**
 		 * Compare keys
 		 */
@@ -2669,53 +2398,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 
 				int tos_count_tDBInput_2 = 0;
 
-				if (log.isDebugEnabled())
-					log.debug("tDBInput_2 - " + ("Start to work."));
-				if (log.isDebugEnabled()) {
-					class BytesLimit65535_tDBInput_2 {
-						public void limitLog4jByte() throws Exception {
-							StringBuilder log4jParamters_tDBInput_2 = new StringBuilder();
-							log4jParamters_tDBInput_2.append("Parameters:");
-							log4jParamters_tDBInput_2.append("USE_EXISTING_CONNECTION" + " = " + "false");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("DB_VERSION" + " = " + "jt400-9.8.jar");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("HOST" + " = " + "context.SUS_Server");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("DBNAME" + " = " + "context.SUS_Database");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("USER" + " = " + "context.SUS_Login");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("PASS" + " = "
-									+ String.valueOf(
-											routines.system.PasswordEncryptUtil.encryptPassword(context.SUS_Password))
-											.substring(0, 4)
-									+ "...");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("TABLE" + " = " + "\"\"");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("QUERYSTORE" + " = " + "\"\"");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("QUERY" + " = "
-									+ "\"SELECT 'PURCHASE_ORDER',count(*) FROM imhav3pf  UNION  SELECT 'PURCHASE_ORDER_DETAIL',count(*) FROM imhbv4pf\"");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("PROPERTIES" + " = " + "context.SUS_Additional_Params");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("TRIM_ALL_COLUMN" + " = " + "false");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append(
-									"TRIM_COLUMN" + " = " + "[{TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("TABLE_NAME")
-											+ "}, {TRIM=" + ("false") + ", SCHEMA_COLUMN=" + ("RECORD_COUNT") + "}]");
-							log4jParamters_tDBInput_2.append(" | ");
-							log4jParamters_tDBInput_2.append("UNIFIED_COMPONENTS" + " = " + "tAS400Input");
-							log4jParamters_tDBInput_2.append(" | ");
-							if (log.isDebugEnabled())
-								log.debug("tDBInput_2 - " + (log4jParamters_tDBInput_2));
-						}
-					}
-					new BytesLimit65535_tDBInput_2().limitLog4jByte();
-				}
-
 				int nb_line_tDBInput_2 = 0;
 				java.sql.Connection conn_tDBInput_2 = null;
 				String driverClass_tDBInput_2 = "com.ibm.as400.access.AS400JDBCDriver";
@@ -2729,20 +2411,12 @@ public class PO_Record_Count_Compare implements TalendJob {
 				String url_tDBInput_2 = "jdbc:as400://" + context.SUS_Server + "/" + context.SUS_Database + ";"
 						+ context.SUS_Additional_Params;
 
-				log.debug("tDBInput_2 - Driver ClassName: " + driverClass_tDBInput_2 + ".");
-
-				log.debug("tDBInput_2 - Connection attempt to '" + url_tDBInput_2 + "' with the username '"
-						+ dbUser_tDBInput_2 + "'.");
-
 				conn_tDBInput_2 = java.sql.DriverManager.getConnection(url_tDBInput_2, dbUser_tDBInput_2,
 						dbPwd_tDBInput_2);
-				log.debug("tDBInput_2 - Connection to '" + url_tDBInput_2 + "' has succeeded.");
 
 				java.sql.Statement stmt_tDBInput_2 = conn_tDBInput_2.createStatement();
 
 				String dbquery_tDBInput_2 = "SELECT 'PURCHASE_ORDER',count(*) FROM imhav3pf\nUNION\nSELECT 'PURCHASE_ORDER_DETAIL',count(*) FROM imhbv4pf";
-
-				log.debug("tDBInput_2 - Executing the query: '" + dbquery_tDBInput_2 + "'.");
 
 				globalMap.put("tDBInput_2_QUERY", dbquery_tDBInput_2);
 				java.sql.ResultSet rs_tDBInput_2 = null;
@@ -2753,8 +2427,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 					int colQtyInRs_tDBInput_2 = rsmd_tDBInput_2.getColumnCount();
 
 					String tmpContent_tDBInput_2 = null;
-
-					log.debug("tDBInput_2 - Retrieving records from the database.");
 
 					while (rs_tDBInput_2.next()) {
 						nb_line_tDBInput_2++;
@@ -2774,8 +2446,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 								row2.RECORD_COUNT = null;
 							}
 						}
-
-						log.debug("tDBInput_2 - Retrieving the record " + nb_line_tDBInput_2 + ".");
 
 						/**
 						 * [tDBInput_2 begin ] stop
@@ -2815,10 +2485,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 									, "row2"
 
 							);
-						}
-
-						if (log.isTraceEnabled()) {
-							log.trace("row2 - " + (row2 == null ? "" : row2.toLogString()));
 						}
 
 						row2Struct row2_HashRow = new row2Struct();
@@ -2881,8 +2547,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 					}
 					if (conn_tDBInput_2 != null && !conn_tDBInput_2.isClosed()) {
 
-						log.debug("tDBInput_2 - Closing the connection to the database.");
-
 						conn_tDBInput_2.close();
 
 						if ("com.mysql.cj.jdbc.Driver".equals((String) globalMap.get("driverClass_"))
@@ -2891,15 +2555,9 @@ public class PO_Record_Count_Compare implements TalendJob {
 									.getMethod("checkedShutdown").invoke(null, (Object[]) null);
 						}
 
-						log.debug("tDBInput_2 - Connection to the database closed.");
-
 					}
 				}
 				globalMap.put("tDBInput_2_NB_LINE", nb_line_tDBInput_2);
-				log.debug("tDBInput_2 - Retrieved records count: " + nb_line_tDBInput_2 + " .");
-
-				if (log.isDebugEnabled())
-					log.debug("tDBInput_2 - " + ("Done."));
 
 				ok_Hash.put("tDBInput_2", true);
 				end_Hash.put("tDBInput_2", System.currentTimeMillis());
@@ -2930,10 +2588,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 			} // end the resume
 
 		} catch (java.lang.Exception e) {
-
-			if (!(e instanceof TalendException)) {
-				log.fatal(currentComponent + " " + e.getMessage(), e);
-			}
 
 			TalendException te = new TalendException(e, currentComponent, globalMap);
 
@@ -3022,9 +2676,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 		final PO_Record_Count_Compare PO_Record_Count_CompareClass = new PO_Record_Count_Compare();
 
 		int exitCode = PO_Record_Count_CompareClass.runJobInTOS(args);
-		if (exitCode == 0) {
-			log.info("TalendJob: 'PO_Record_Count_Compare' - Done.");
-		}
 
 		System.exit(exitCode);
 	}
@@ -3059,36 +2710,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 			}
 		}
 		enableLogStash = "true".equalsIgnoreCase(System.getProperty("audit.enabled"));
-
-		if (!"".equals(log4jLevel)) {
-
-			if ("trace".equalsIgnoreCase(log4jLevel)) {
-				org.apache.logging.log4j.core.config.Configurator.setLevel(log.getName(),
-						org.apache.logging.log4j.Level.TRACE);
-			} else if ("debug".equalsIgnoreCase(log4jLevel)) {
-				org.apache.logging.log4j.core.config.Configurator.setLevel(log.getName(),
-						org.apache.logging.log4j.Level.DEBUG);
-			} else if ("info".equalsIgnoreCase(log4jLevel)) {
-				org.apache.logging.log4j.core.config.Configurator.setLevel(log.getName(),
-						org.apache.logging.log4j.Level.INFO);
-			} else if ("warn".equalsIgnoreCase(log4jLevel)) {
-				org.apache.logging.log4j.core.config.Configurator.setLevel(log.getName(),
-						org.apache.logging.log4j.Level.WARN);
-			} else if ("error".equalsIgnoreCase(log4jLevel)) {
-				org.apache.logging.log4j.core.config.Configurator.setLevel(log.getName(),
-						org.apache.logging.log4j.Level.ERROR);
-			} else if ("fatal".equalsIgnoreCase(log4jLevel)) {
-				org.apache.logging.log4j.core.config.Configurator.setLevel(log.getName(),
-						org.apache.logging.log4j.Level.FATAL);
-			} else if ("off".equalsIgnoreCase(log4jLevel)) {
-				org.apache.logging.log4j.core.config.Configurator.setLevel(log.getName(),
-						org.apache.logging.log4j.Level.OFF);
-			}
-			org.apache.logging.log4j.core.config.Configurator
-					.setLevel(org.apache.logging.log4j.LogManager.getRootLogger().getName(), log.getLevel());
-
-		}
-		log.info("TalendJob: 'PO_Record_Count_Compare' - Start.");
 
 		if (clientHost == null) {
 			clientHost = defaultClientHost;
@@ -3560,6 +3181,6 @@ public class PO_Record_Count_Compare implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 117599 characters generated by Talend Open Studio for Data Integration on the
- * October 27, 2022 at 9:29:46 AM IST
+ * 99741 characters generated by Talend Open Studio for Data Integration on the
+ * November 16, 2022 at 5:36:37 PM IST
  ************************************************************************************************/

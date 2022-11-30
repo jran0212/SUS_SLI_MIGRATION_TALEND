@@ -10,9 +10,9 @@ SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
 [INFO] Building SUS_SLI_ETL Item_Master_Update_Inbound-0.1.0 (0.1,Job Designs) 0.1.0
 [INFO] --------------------------------[ jar ]---------------------------------
 [WARNING] The POM for org.jboss.marshalling:jboss-marshalling:jar:2.0.12.Final is missing, no dependency information available
-[WARNING] The POM for org.apache.logging.log4j:log4j-api:jar:2.13.2 is missing, no dependency information available
-[WARNING] The POM for org.apache.logging.log4j:log4j-core:jar:2.13.2 is missing, no dependency information available
-[WARNING] The POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.2 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-api:jar:2.17.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-core:jar:2.17.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.17.1 is missing, no dependency information available
 [WARNING] The POM for org.slf4j:slf4j-api:jar:1.7.29 is missing, no dependency information available
 [WARNING] The POM for org.apache.commons:commons-lang3:jar:3.9 is missing, no dependency information available
 [INFO] 
@@ -59,9 +59,9 @@ SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
 [WARNING] The POM for commons-codec:commons-codec:jar:1.6 is missing, no dependency information available
 [INFO] Reading assembly descriptor: C:\Program Files (x86)\TOS_DI-8.0.1\studio\workspace\SUS_SLI_ETL\poms\jobs\process\SUS_to_GIM\item_master_update_inbound_0.1/src/main/assemblies/assembly.xml
 [WARNING] Missing POM for org.jboss.marshalling:jboss-marshalling:jar:2.0.12.Final
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-api:jar:2.13.2
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.13.2
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.2
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-api:jar:2.17.1
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.17.1
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.17.1
 [WARNING] Missing POM for org.slf4j:slf4j-api:jar:1.7.29
 [WARNING] Missing POM for org.jboss.marshalling:jboss-marshalling:jar:2.0.12.Final
 [WARNING] Missing POM for org.slf4j:slf4j-api:jar:1.7.29
@@ -69,6 +69,6 @@ SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.983 s
-[INFO] Finished at: 2022-10-04T17:18:56+05:30
+[INFO] Total time:  1.977 s
+[INFO] Finished at: 2022-11-02T15:09:02+05:30
 [INFO] ------------------------------------------------------------------------

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd">
+  <talendfile:ContextType xmi:id="_OWdOoGPcEe2K5_rbpYBRjA" confirmationNeeded="false" name="Default">
+    <contextParameter xmi:id="_OWdOoWPcEe2K5_rbpYBRjA" comment="" name="OPCO_LIST" prompt="OPCO_LIST?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="056 068"/>
+    <contextParameter xmi:id="_WNomQGPcEe2K5_rbpYBRjA" comment="" name="QUERY" prompt="QUERY?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter xmi:id="_jD4qEGuqEe20e-1AHBZGSA" comment="" name="OPCO_COUNT" prompt="OPCO_COUNT?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value=""/>
+  </talendfile:ContextType>
+  <talendfile:ContextType xmi:id="_OWdOomPcEe2K5_rbpYBRjA" confirmationNeeded="false" name="PROD">
+    <contextParameter xmi:id="_OWdOo2PcEe2K5_rbpYBRjA" comment="" name="OPCO_LIST" prompt="OPCO_LIST?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="026 029"/>
+    <contextParameter xmi:id="_WNomQWPcEe2K5_rbpYBRjA" comment="" name="QUERY" prompt="QUERY?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter xmi:id="_jD4qEWuqEe20e-1AHBZGSA" comment="" name="OPCO_COUNT" prompt="OPCO_COUNT?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value=""/>
+  </talendfile:ContextType>
+</xmi:XMI>

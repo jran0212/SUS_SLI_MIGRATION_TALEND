@@ -16,6 +16,9 @@ SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
 [WARNING] The POM for org.slf4j:slf4j-api:jar:1.7.29 is missing, no dependency information available
 [WARNING] The POM for org.apache.commons:commons-lang3:jar:3.9 is missing, no dependency information available
 [WARNING] The POM for org.apache.logging.log4j:log4j-1.2-api:jar:2.17.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-api:jar:2.13.2 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-core:jar:2.13.2 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.2 is missing, no dependency information available
 [INFO] 
 [INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ SLI_Main_MVP2_Inbound ---
 [WARNING] The POM for commons-io:commons-io:jar:2.6 is missing, no dependency information available
@@ -268,14 +271,14 @@ SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
 [WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.17.1
 [WARNING] Missing POM for org.slf4j:slf4j-api:jar:1.7.29
 [WARNING] Missing POM for org.jboss.marshalling:jboss-marshalling:jar:2.0.12.Final
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-api:jar:2.17.1
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.17.1
-[WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.17.1
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-api:jar:2.13.2
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.13.2
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.2
 [WARNING] Missing POM for org.slf4j:slf4j-api:jar:1.7.29
 [INFO] Building zip: C:\Program Files (x86)\TOS_DI-8.0.1\studio\workspace\SUS_SLI_ETL\poms\jobs\process\SUS_to_GIM\sli_main_mvp2_inbound_0.1\target\sli_main_mvp2_inbound_0_1.zip
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  5.620 s
-[INFO] Finished at: 2022-10-28T10:59:02+05:30
+[INFO] Total time:  6.099 s
+[INFO] Finished at: 2022-11-01T14:37:56+05:30
 [INFO] ------------------------------------------------------------------------

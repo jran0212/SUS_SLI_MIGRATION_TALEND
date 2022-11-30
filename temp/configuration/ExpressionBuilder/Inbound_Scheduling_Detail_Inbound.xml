@@ -1,0 +1,56 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="Var.ORIG_SCHEDULED_TIMESTAMP!=&quot;&quot;? TalendDate.parseDate(&quot;dd-MM-yyyy HH:mm:ss&quot;,Var.ORIG_SCHEDULED_TIMESTAMP):null">
+  <variables name="row1.VYLOAD" value="null" talendType="id_String"/>
+  <variables name="row1.VYSCDT" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYAREA" value="null" talendType="id_String"/>
+  <variables name="row1.VYDOOR" value="null" talendType="id_String"/>
+  <variables name="row1.VYSCTM" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYLDST" value="null" talendType="id_String"/>
+  <variables name="row1.VYVNBR" value="null" talendType="id_String"/>
+  <variables name="row1.VYADCD" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYCRNM" value="null" talendType="id_String"/>
+  <variables name="row1.VYEUTM" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYETPC" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYETPL" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYETWT" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYETCB" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYPTPE" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYPTPL" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYPTWT" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYPTCB" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYLUMP" value="null" talendType="id_String"/>
+  <variables name="row1.VYLTP1" value="null" talendType="id_String"/>
+  <variables name="row1.VYLTP2" value="null" talendType="id_String"/>
+  <variables name="row1.VYLTP3" value="null" talendType="id_String"/>
+  <variables name="row1.VYCMT1" value="null" talendType="id_String"/>
+  <variables name="row1.VYCMT2" value="null" talendType="id_String"/>
+  <variables name="row1.VYCMT3" value="null" talendType="id_String"/>
+  <variables name="row1.VYAATM" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYUSTM" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYUETM" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYADTI" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYADOR" value="null" talendType="id_String"/>
+  <variables name="row1.VYARCV" value="null" talendType="id_String"/>
+  <variables name="row1.VYBUYR" value="null" talendType="id_String"/>
+  <variables name="row1.VYOSDA" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYOSTM" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYOSDR" value="null" talendType="id_String"/>
+  <variables name="row1.VYAR02" value="null" talendType="id_String"/>
+  <variables name="row1.VYAR03" value="null" talendType="id_String"/>
+  <variables name="row1.VYARDT" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYUDT8" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYDDTF" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYDDT1" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYEADT" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYEATM" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYEAID" value="null" talendType="id_String"/>
+  <variables name="row1.VYMODT" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYMOTM" value="null" talendType="id_BigDecimal"/>
+  <variables name="row1.VYMOID" value="null" talendType="id_String"/>
+  <variables name="row1.VYMOPG" value="null" talendType="id_String"/>
+  <variables name="TimeStampConverting.convertToDate(row1.VYSCDT.toString()) " value="null" talendType="id_String"/>
+  <variables name="TimeStampConverting.convertToTime(row1.VYSCTM.toString()) " value="null" talendType="id_String"/>
+  <variables name="TimeStampConverting.convertToTimeStamp(row1.VYEADT.toString(),row1.VYEATM.toString()) " value="null" talendType="id_String"/>
+  <variables name="TimeStampConverting.convertToTimeStamp(row1.VYMODT.toString(),row1.VYMOTM.toString()) " value="null" talendType="id_String"/>
+  <variables name="TimeStampConverting.convertToTimeStamp(row1.VYOSDA.toString(),row1.VYOSTM.toString()) " value="null" talendType="id_String"/>
+</expression:EMFExpression>

@@ -273,7 +273,7 @@
         <dependencySet>
             <outputDirectory>${talend.job.name}</outputDirectory>
             <includes>
-                <include>org.example.sus_sli_etl.job:Broker_Ship_From_Inbound:jar:0.1.0</include>
+                <include>org.example.sus_sli_etl.job:Broker_Ship_From:jar:0.1.0</include>
             </includes>
             <outputFileNameMapping>${artifact.build.finalName}.${artifact.extension}</outputFileNameMapping>
             <useProjectArtifact>true</useProjectArtifact>

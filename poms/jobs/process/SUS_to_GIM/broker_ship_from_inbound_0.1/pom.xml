@@ -9,15 +9,15 @@
     <relativePath>../../../../</relativePath>
   </parent>
   <groupId>org.example.sus_sli_etl.job</groupId>
-  <artifactId>Broker_Ship_From_Inbound</artifactId>
+  <artifactId>Broker_Ship_From</artifactId>
   <version>0.1.0</version>
-  <name>SUS_SLI_ETL Broker_Ship_From_Inbound-0.1.0 (0.1,Job Designs)</name>
+  <name>SUS_SLI_ETL Broker_Ship_From-0.1.0 (0.1,Job Designs)</name>
   <properties>
     <talend.job.type>Standard</talend.job.type>
     <talend.job.date>${maven.build.timestamp}</talend.job.date>
     <talend.pigudf.groupid>org.example.sus_sli_etl.pigudf</talend.pigudf.groupid>
     <talend.job.folder>sus_to_gim/</talend.job.folder>
-    <talend.job.context>Default</talend.job.context>
+    <talend.job.context>PROD</talend.job.context>
     <talend.job.path>sus_sli_etl</talend.job.path>
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <talend.job.stat>true</talend.job.stat>
@@ -38,8 +38,8 @@
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
     <project.distribution-management.repository.url>${project.distributionManagement.repository.url}</project.distribution-management.repository.url>
     <current.bundle.resources.dir>${basedir}/src/main/bundle-resources</current.bundle.resources.dir>
-    <talend.job.name>Broker_Ship_From_Inbound</talend.job.name>
-    <talend.job.finalName>broker_ship_from_inbound_0_1</talend.job.finalName>
+    <talend.job.name>Broker_Ship_From</talend.job.name>
+    <talend.job.finalName>broker_ship_from_0_1</talend.job.finalName>
   </properties>
   <dependencies>
     <dependency>

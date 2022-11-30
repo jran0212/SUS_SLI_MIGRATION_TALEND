@@ -1,0 +1,3 @@
+%~d0
+cd %~dp0
+java -Dtalend.component.manager.m2.repository="%cd%/../lib" -Xms1024M -Xmx16384M -cp .;../lib/routines.jar;../lib/log4j-slf4j-impl-2.17.1.jar;../lib/log4j-api-2.17.1.jar;../lib/log4j-core-2.17.1.jar;../lib/jboss-marshalling-2.0.12.Final.jar;../lib/dom4j-2.1.3.jar;../lib/slf4j-api-1.7.29.jar;../lib/crypto-utils-0.31.12.jar;mvp2_large_inbound_0_1.jar;item_transaction_history_inbound1_0_1.jar;item_transaction_history_inbound2_0_1.jar;demand_history_inbound_0_1.jar;item_transaction_history_inbound_0_1.jar;obligation_detail1_inbound_0_1.jar;obligation_detail_inbound_0_1.jar;item_note_inbound_0_1.jar;obligation_detail2_inbound_0_1.jar; sus_sli_etl.mvp2_large_inbound_0_1.MVP2_Large_Inbound --context=PROD %*
